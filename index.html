@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUI-GEN — 感動でつながり、世界を拡げる。</title>
+<meta name="description" content="株式会社SUI-GEN。リアルから生まれる感動でつながり、テクノロジーで人の可能性を拡げる。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ========================================================
+   SUI-GEN — Editorial Gothic on White
+   White canvas / Emerald accent / Bold geometric sans.
+   "感動でつながり、世界を拡げる。"
+======================================================== */
+:root{
+  --bg:#FAFAF7;
+  --bg-2:#F1F1ED;
+  --bg-3:#E7E7E1;
+  --ink:#0B0F0D;
+  --ink-80:#0B0F0DCC;
+  --ink-65:#0B0F0DA6;
+  --ink-50:#0B0F0D80;
+  --ink-35:#0B0F0D59;
+  --ink-20:#0B0F0D33;
+  --ink-12:#0B0F0D1F;
+  --ink-08:#0B0F0D14;
+  --emerald:#0E8C5F;
+  --emerald-deep:#066045;
+  --emerald-bright:#10B981;
+  --emerald-soft:#D5F0E5;
+  --hair:#0B0F0D14;
+  --rule:#0B0F0D1A;
+  --sans:"Inter","Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;
+  --sans-jp:"Noto Sans JP","Inter",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --container:1320px;
+  --gutter:clamp(20px,4vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans-jp);
+  background:var(--bg);color:var(--ink);
+  font-size:15px;line-height:1.85;font-weight:400;
+  font-feature-settings:"palt";
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+::selection{background:var(--emerald);color:#fff}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.18s}
+.reveal[data-d="3"]{transition-delay:.28s}.reveal[data-d="4"]{transition-delay:.38s}
+
+/* Eyebrow */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:14px;
+  font-family:var(--sans);font-size:10px;font-weight:600;
+  letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-65);
+}
+.eyebrow::before{content:"";width:32px;height:1px;background:var(--ink-35)}
+.eyebrow .num{font-family:var(--mono);font-size:12px;letter-spacing:0;color:var(--emerald);text-transform:none;font-weight:500}
+
+/* ============ Header ============ */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  transition:background .4s,backdrop-filter .4s,border-color .4s;
+  border-bottom:1px solid transparent;
+}
+.site-header.scrolled{
+  background:rgba(250,250,247,.85);
+  backdrop-filter:saturate(1.1) blur(16px);
+  -webkit-backdrop-filter:saturate(1.1) blur(16px);
+  border-bottom-color:var(--hair);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .mark{width:32px;height:32px;display:flex;align-items:center;justify-content:center}
+.brand .mark img{width:100%;height:auto}
+.brand .wordmark{font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:0.22em;color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:48px}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-links a{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-80);transition:color .25s;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--emerald);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.nav-links a:hover{color:var(--emerald)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--ink);color:var(--bg);padding:14px 24px;
+  font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;
+  transition:background .3s,color .3s,gap .3s;
+}
+.nav-cta:hover{background:var(--emerald);color:#fff;gap:14px}
+
+/* ============ Hero ============ */
+.hero{
+  position:relative;min-height:100vh;
+  padding:160px 0 80px;display:flex;align-items:center;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(900px 600px at 80% 20%, rgba(16,185,129,.10), transparent 60%),
+    radial-gradient(700px 500px at 5% 90%, rgba(14,140,95,.07), transparent 60%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:
+    linear-gradient(var(--ink-08) 1px, transparent 1px),
+    linear-gradient(90deg, var(--ink-08) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, #000 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, #000 30%, transparent 80%);
+  opacity:.6;pointer-events:none;
+}
+.hero-grid{position:relative;z-index:2;width:100%}
+.hero-tag{
+  display:flex;align-items:center;gap:18px;margin-bottom:64px;
+  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;
+  color:var(--ink-65);
+}
+.hero-tag .line{width:48px;height:1px;background:var(--ink-35)}
+.hero-tag .ja{font-family:var(--sans-jp);font-size:13px;letter-spacing:0.06em;color:var(--ink);text-transform:none;font-weight:500}
+.hero h1{
+  font-family:var(--sans);font-weight:800;
+  font-size:clamp(48px,9.5vw,168px);
+  line-height:0.98;letter-spacing:-0.025em;
+  margin-bottom:48px;text-wrap:balance;
+}
+.hero h1 .en{
+  display:block;font-weight:800;
+  font-size:clamp(56px,11vw,200px);line-height:.94;letter-spacing:-0.035em;
+  color:var(--ink);
+}
+.hero h1 .en .accent{color:var(--emerald)}
+.hero h1 .jp{
+  display:block;margin-top:32px;font-family:var(--sans-jp);
+  font-size:clamp(22px,2.4vw,38px);font-weight:600;line-height:1.45;
+  color:var(--ink-80);letter-spacing:0.04em;
+}
+.hero h1 .jp em{font-style:normal;font-weight:700;color:var(--emerald)}
+
+.hero-bottom{
+  display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(40px,5vw,96px);
+  align-items:end;margin-top:clamp(56px,7vw,96px);
+  padding-top:32px;border-top:1px solid var(--hair);
+}
+.hero-sub{
+  font-family:var(--sans-jp);font-size:clamp(14px,1.05vw,16px);
+  line-height:2.0;color:var(--ink-80);letter-spacing:0.04em;
+  max-width:480px;text-wrap:pretty;font-weight:400;
+}
+.hero-meta{display:flex;justify-content:flex-end;gap:48px;flex-wrap:wrap}
+.hero-meta .item{display:flex;flex-direction:column;gap:8px}
+.hero-meta .k{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-50)}
+.hero-meta .v{font-family:var(--sans);font-size:18px;font-weight:600;color:var(--ink);letter-spacing:0.01em}
+
+/* Scroll cue */
+.scroll-cue{
+  position:absolute;left:50%;bottom:32px;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+  font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;
+  color:var(--ink-50);z-index:3;
+}
+.scroll-cue .bar{width:1px;height:40px;background:linear-gradient(to bottom,var(--ink-35),transparent);animation:trickle 2.4s ease-in-out infinite}
+@keyframes trickle{
+  0%{transform:scaleY(0);transform-origin:top}
+  50%{transform:scaleY(1);transform-origin:top}
+  51%{transform:scaleY(1);transform-origin:bottom}
+  100%{transform:scaleY(0);transform-origin:bottom}
+}
+
+/* ============ Mantra Marquee ============ */
+.mantra{
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:36px 0;overflow:hidden;background:var(--bg);
+}
+.mantra-track{
+  display:flex;gap:80px;white-space:nowrap;
+  animation:slide 60s linear infinite;
+  font-family:var(--sans);font-weight:800;font-style:italic;
+  font-size:clamp(36px,5.4vw,76px);color:var(--ink);letter-spacing:-0.02em;
+}
+.mantra-track > span{display:inline-flex;align-items:center;gap:64px}
+.mantra-track .sep{color:var(--emerald);font-style:normal;font-weight:700;font-size:.6em}
+.mantra-track .ja{font-family:var(--sans-jp);font-style:normal;color:var(--ink-65);font-size:.7em;letter-spacing:0.02em;font-weight:700}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* Section base */
+section{padding:clamp(120px,14vw,200px) 0;position:relative}
+.section-head{
+  display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(40px,6vw,120px);
+  margin-bottom:clamp(80px,9vw,128px);align-items:end;
+}
+.section-head h2{
+  font-family:var(--sans-jp);font-weight:800;
+  font-size:clamp(36px,5.4vw,80px);line-height:1.18;letter-spacing:-0.01em;
+  margin-top:32px;text-wrap:balance;
+}
+.section-head h2 em{font-style:normal;font-weight:800;color:var(--emerald)}
+.section-head .lead{
+  font-family:var(--sans-jp);font-size:15px;line-height:2.0;
+  color:var(--ink-65);letter-spacing:0.03em;max-width:520px;text-wrap:pretty;font-weight:400;
+}
+
+/* Big section index */
+.big-index{
+  display:flex;align-items:baseline;gap:24px;margin-bottom:24px;
+}
+.big-index .n{
+  font-family:var(--sans);font-weight:800;
+  font-size:clamp(80px,9vw,140px);color:var(--ink-12);line-height:1;letter-spacing:-0.04em;
+}
+.big-index .label{
+  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.36em;text-transform:uppercase;
+  color:var(--ink-65);padding-bottom:18px;
+}
+
+/* ============ Vision ============ */
+.vision-purpose{text-align:center;margin-bottom:clamp(120px,14vw,200px)}
+.vision-purpose .label{
+  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.36em;text-transform:uppercase;
+  color:var(--ink-50);margin-bottom:48px;display:inline-block;
+}
+.vision-purpose .label::before,.vision-purpose .label::after{
+  content:"";display:inline-block;width:48px;height:1px;background:var(--ink-35);
+  vertical-align:middle;margin:0 24px;
+}
+.vision-purpose h3{
+  font-family:var(--sans);font-weight:800;
+  font-size:clamp(48px,9vw,148px);line-height:0.98;letter-spacing:-0.04em;
+  color:var(--ink);text-wrap:balance;margin-bottom:40px;
+}
+.vision-purpose h3 .accent{color:var(--emerald)}
+.vision-purpose .ja{
+  font-family:var(--sans-jp);font-size:clamp(22px,2.4vw,32px);font-weight:600;
+  letter-spacing:0.06em;color:var(--ink-80);
+}
+.vision-purpose .by{
+  font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink-50);
+  letter-spacing:0.18em;text-transform:uppercase;margin-top:32px;display:block;
+}
+
+.vision-rows{display:grid;border-top:1px solid var(--rule)}
+.vision-row{
+  display:grid;grid-template-columns:auto 1fr 1.6fr;gap:clamp(32px,5vw,96px);
+  padding:clamp(48px,6vw,80px) 0;border-bottom:1px solid var(--rule);align-items:start;
+}
+.vision-row .v-num{
+  font-family:var(--sans);font-weight:800;
+  font-size:clamp(48px,5vw,72px);color:var(--emerald);line-height:1;letter-spacing:-0.04em;
+}
+.vision-row .v-label{display:flex;flex-direction:column;gap:14px}
+.vision-row .v-en{
+  font-family:var(--sans);font-weight:700;
+  font-size:clamp(28px,3vw,42px);color:var(--ink);line-height:1.1;letter-spacing:-0.02em;
+}
+.vision-row .v-jp{
+  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;
+  color:var(--ink-50);
+}
+.vision-row .v-text{
+  font-family:var(--sans-jp);font-size:clamp(18px,1.7vw,24px);line-height:1.85;
+  color:var(--ink-80);letter-spacing:0.03em;text-wrap:pretty;font-weight:400;
+}
+.vision-row .v-text em{font-style:normal;font-weight:700;color:var(--emerald)}
+
+/* ============ Business ============ */
+.business{background:var(--bg-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.biz-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);margin-top:48px}
+.biz-card{
+  background:var(--bg-2);padding:clamp(40px,5vw,80px);
+  display:flex;flex-direction:column;gap:32px;
+  position:relative;transition:background .4s;
+}
+.biz-card:hover{background:var(--bg)}
+.biz-card .tag{
+  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.36em;text-transform:uppercase;
+  color:var(--emerald);
+}
+.biz-card h3{
+  font-family:var(--sans);font-weight:800;
+  font-size:clamp(48px,5.5vw,84px);line-height:1;letter-spacing:-0.04em;
+}
+.biz-card .jp{font-family:var(--sans-jp);font-size:18px;letter-spacing:0.06em;color:var(--ink-80);font-weight:700}
+.biz-card p{font-family:var(--sans-jp);font-size:15px;line-height:1.95;color:var(--ink-65);letter-spacing:0.03em;text-wrap:pretty;font-weight:400}
+.biz-list{list-style:none;display:flex;flex-direction:column;gap:0;margin-top:auto;border-top:1px solid var(--rule)}
+.biz-list li{
+  display:grid;grid-template-columns:auto 1fr;gap:24px;
+  padding:18px 0;border-bottom:1px solid var(--rule);
+  font-family:var(--sans-jp);font-size:14px;letter-spacing:0.04em;color:var(--ink-80);font-weight:500;
+}
+.biz-list li:last-child{border-bottom:0}
+.biz-list .n{font-family:var(--mono);font-size:12px;color:var(--emerald);font-weight:500}
+
+/* ============ Services ============ */
+.services{background:var(--bg)}
+.svc-list{display:grid;border-top:1px solid var(--rule)}
+.svc-row{
+  display:grid;grid-template-columns:80px 1fr 1.4fr 1fr auto;
+  gap:clamp(24px,3vw,64px);padding:48px 0;border-bottom:1px solid var(--rule);
+  align-items:center;transition:padding .35s,background .35s;
+}
+.svc-row:hover{padding-left:16px;padding-right:16px;background:var(--bg-2)}
+.svc-row .n{font-family:var(--sans);font-weight:800;font-size:32px;color:var(--emerald);letter-spacing:-0.04em}
+.svc-row .name{display:flex;flex-direction:column;gap:6px}
+.svc-row .name .en{font-family:var(--sans);font-weight:700;font-size:24px;color:var(--ink);letter-spacing:-0.02em}
+.svc-row .name .ja{font-family:var(--sans-jp);font-size:14px;color:var(--ink-65);letter-spacing:0.04em;font-weight:500}
+.svc-row .desc{font-family:var(--sans-jp);font-size:14px;line-height:1.85;color:var(--ink-80);letter-spacing:0.02em;font-weight:400}
+.svc-row .target{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink-50)}
+.svc-row .arrow{font-family:var(--sans);font-weight:600;font-size:20px;color:var(--emerald);transition:transform .3s}
+.svc-row:hover .arrow{transform:translateX(8px)}
+
+/* ============ CTA ============ */
+.cta{background:var(--ink);color:var(--bg)}
+.cta-inner{
+  display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(40px,6vw,96px);
+  align-items:end;
+}
+.cta h2{
+  font-family:var(--sans);font-weight:800;
+  font-size:clamp(56px,9vw,148px);line-height:.94;letter-spacing:-0.04em;
+}
+.cta h2 .accent{color:var(--emerald-bright)}
+.cta h2 .ja{
+  display:block;margin-top:24px;font-family:var(--sans-jp);
+  font-size:clamp(20px,2vw,30px);font-weight:600;letter-spacing:0.06em;color:rgba(250,250,247,.65);
+}
+.cta-side{display:flex;flex-direction:column;gap:24px;padding-bottom:24px}
+.cta-mail{
+  font-family:var(--sans);font-weight:700;font-size:clamp(20px,2vw,28px);
+  color:var(--emerald-bright);padding-bottom:14px;border-bottom:1px solid var(--emerald-bright);
+  display:inline-flex;align-items:center;gap:18px;transition:gap .3s,color .3s,border-color .3s;letter-spacing:-0.01em;
+}
+.cta-mail:hover{gap:28px;color:var(--bg);border-bottom-color:var(--bg)}
+.cta-side .meta{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:rgba(250,250,247,.55)}
+
+/* ============ Footer ============ */
+.site-footer{background:var(--bg);border-top:1px solid var(--rule);padding:96px 0 40px}
+.footer-top{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:clamp(32px,5vw,96px);padding-bottom:80px;
+  border-bottom:1px solid var(--rule);
+}
+.footer-brand .mark{width:36px;height:36px;margin-bottom:24px}
+.footer-brand .name{font-family:var(--sans);font-size:14px;letter-spacing:0.22em;font-weight:700;margin-bottom:24px}
+.footer-brand .purpose{font-family:var(--sans-jp);font-size:16px;line-height:1.85;color:var(--ink-80);letter-spacing:0.04em;margin-bottom:8px;font-weight:500}
+.footer-brand .by{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--emerald);letter-spacing:0.18em;text-transform:uppercase}
+.footer-col h4{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-50);margin-bottom:24px}
+.footer-col ul{list-style:none}.footer-col li{margin-bottom:12px}
+.footer-col a{font-family:var(--sans-jp);font-size:13px;color:var(--ink-80);transition:color .25s;letter-spacing:0.03em;font-weight:500}
+.footer-col a:hover{color:var(--emerald)}
+.footer-bottom{padding-top:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
+.footer-bottom .copy{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.12em;color:var(--ink-50)}
+.footer-bottom .legal{display:flex;gap:28px;flex-wrap:wrap}
+.footer-bottom .legal a{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-50)}
+
+@media (max-width:980px){
+  .nav-links{display:none}
+  .hero-bottom{grid-template-columns:1fr;gap:32px}
+  .hero-meta{justify-content:flex-start;gap:24px}
+  .section-head{grid-template-columns:1fr;gap:24px}
+  .biz-grid{grid-template-columns:1fr}
+  .svc-row{grid-template-columns:auto 1fr;gap:16px}
+  .svc-row .desc,.svc-row .target,.svc-row .arrow{display:none}
+  .vision-row{grid-template-columns:1fr;gap:20px}
+  .cta-inner{grid-template-columns:1fr;gap:40px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:48px}
+  .footer-brand{grid-column:1/-1}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="header">
+  <div class="container">
+    <nav class="nav">
+      <a href="index.html" class="brand">
+        <div class="mark"><img src="assets/sui-gen-logo.png" alt="SUI-GEN"></div>
+        <span class="wordmark">SUI-GEN</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="about.html">About</a>
+          <a href="real.html">Real</a>
+          <a href="tech.html">Tech</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a href="#contact" class="nav-cta">Get in Touch →</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="container hero-grid">
+    <div class="hero-tag reveal">
+      <span class="line"></span>
+      <span>Sui-Gen Inc.</span>
+      <span class="ja">— 株式会社スイゲン</span>
+    </div>
+    <h1 class="reveal" data-d="1">
+      <span class="en">Connect with <span class="accent">Moments,</span><br>Expand the World.</span>
+      <span class="jp">感動でつながり、<em>世界を</em>拡げる。</span>
+    </h1>
+    <div class="hero-bottom reveal" data-d="2">
+      <p class="hero-sub">
+        リアルから生まれる感動でつながり、テクノロジーで人の可能性を拡げる。SUI-GENは、現場の熱量と先端の知をひとつの流れに編む Moments Creator です。
+      </p>
+      <div class="hero-meta">
+        <div class="item"><span class="k">Founded</span><span class="v">2026</span></div>
+        <div class="item"><span class="k">Based in</span><span class="v">Tokyo / Iwate</span></div>
+        <div class="item"><span class="k">Field</span><span class="v">Real × Tech</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <div class="bar"></div>
+  </div>
+</section>
+
+<!-- ============ MANTRA ============ -->
+<div class="mantra" aria-hidden="true">
+  <div class="mantra-track">
+    <span>
+      Connect with Moments
+      <span class="sep">✦</span>
+      <span class="ja">感動でつながる</span>
+      <span class="sep">✦</span>
+      Expand the World
+      <span class="sep">✦</span>
+      <span class="ja">世界を拡げる</span>
+      <span class="sep">✦</span>
+      Real × Tech
+      <span class="sep">✦</span>
+    </span>
+    <span>
+      Connect with Moments
+      <span class="sep">✦</span>
+      <span class="ja">感動でつながる</span>
+      <span class="sep">✦</span>
+      Expand the World
+      <span class="sep">✦</span>
+      <span class="ja">世界を拡げる</span>
+      <span class="sep">✦</span>
+      Real × Tech
+      <span class="sep">✦</span>
+    </span>
+  </div>
+</div>
+
+<!-- ============ VISION ============ -->
+<section id="vision" data-screen-label="02 Vision">
+  <div class="container">
+    <div class="big-index reveal">
+      <span class="n">01</span>
+      <span class="label">Purpose / Vision</span>
+    </div>
+
+    <div class="vision-purpose reveal" data-d="1">
+      <span class="label">Our Purpose</span>
+      <h3>
+        Connect with <span class="accent">Moments,</span><br>
+        Expand the World.
+      </h3>
+      <div class="ja">感動でつながり、世界を拡げる。</div>
+      <span class="by">— SUI-GEN, Moments Creator</span>
+    </div>
+
+    <div class="vision-rows">
+      <div class="vision-row reveal">
+        <div class="v-num">01</div>
+        <div class="v-label">
+          <div class="v-en">Mission</div>
+          <div class="v-jp">使命</div>
+        </div>
+        <div class="v-text">
+          リアルから生まれる<em>感動の総量</em>を、社会の意思決定が変わるところまで届ける。現場の熱を、テクノロジーで再現可能な仕組みに編み直す。
+        </div>
+      </div>
+      <div class="vision-row reveal" data-d="1">
+        <div class="v-num">02</div>
+        <div class="v-label">
+          <div class="v-en">Vision</div>
+          <div class="v-jp">未来像</div>
+        </div>
+        <div class="v-text">
+          人と地域、企業と学生、リアルとテック——分断されてきた領域を一本の流れにする<em>プラットフォーム</em>であり続ける。
+        </div>
+      </div>
+      <div class="vision-row reveal" data-d="2">
+        <div class="v-num">03</div>
+        <div class="v-label">
+          <div class="v-en">Values</div>
+          <div class="v-jp">行動原則</div>
+        </div>
+        <div class="v-text">
+          良き批判であり、最高の友であろう。<br>行動で自信をまとい、次の行動へつなげよう。<br>改善し続け、<em>改革</em>を起こそう。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUSINESS ============ -->
+<section class="business" id="business" data-screen-label="03 Business">
+  <div class="container">
+    <div class="big-index reveal">
+      <span class="n">02</span>
+      <span class="label">Business Field</span>
+    </div>
+    <div class="section-head">
+      <div class="reveal">
+        <span class="eyebrow"><span class="num">— 02</span> Real × Tech</span>
+        <h2>二つの源泉、<br><em>ひとつの流れ。</em></h2>
+      </div>
+      <div class="lead reveal" data-d="1">
+        現場の熱量（Real）と、再現可能な知（Tech）。SUI-GENは、この二つを別物にしない。一本の流れの中で、感動を循環させ、世界の可能性を拡げます。
+      </div>
+    </div>
+
+    <div class="biz-grid">
+      <div class="biz-card reveal">
+        <span class="tag">— i. Real</span>
+        <h3>Real.</h3>
+        <div class="jp">現場の熱量</div>
+        <p>学生・社会人・地域・スポーツ。人と人が直接出会う場で、感動と関係性が生まれる。SUI-GENは、その源泉を社会に届くかたちにする。</p>
+        <ul class="biz-list">
+          <li><span class="n">→</span><span>詳しくは <em>/real</em> で公開予定</span></li>
+        </ul>
+      </div>
+      <div class="biz-card reveal" data-d="1">
+        <span class="tag">— ii. Tech</span>
+        <h3>Tech.</h3>
+        <div class="jp">再現可能な知</div>
+        <p>AIを中心とした研修・コンサルティング・プロダクト開発。リアルで生まれた熱を、再現可能な仕組みへ編み直す。</p>
+        <ul class="biz-list">
+          <li><span class="n">→</span><span>詳しくは <em>/tech</em> で公開予定</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="contact" data-screen-label="04 Contact">
+  <div class="container cta-inner">
+    <h2 class="reveal">
+      Build with <span class="accent">us.</span>
+      <span class="ja">— 一緒に、流れをつくる。</span>
+    </h2>
+    <div class="cta-side reveal" data-d="1">
+      <span class="meta">— Get in Touch</span>
+      <a href="mailto:contact@sui-gen.jp" class="cta-mail">contact@sui-gen.jp →</a>
+      <span class="meta">— Tokyo / Iwate, Japan</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="mark"><img src="assets/sui-gen-logo.png" alt=""></div>
+        <div class="name">SUI-GEN</div>
+        <div class="purpose">感動でつながり、世界を拡げる。</div>
+        <div class="by">Moments Creator</div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="about.html#info">会社概要</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Field</h4>
+        <ul>
+          <li><a href="real.html">Real</a></li>
+          <li><a href="tech.html">Tech</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:contact@sui-gen.jp">contact@sui-gen.jp</a></li>
+          <li><a href="#">X / Twitter</a></li>
+          <li><a href="#">note</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span>
+      <div class="legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Header scroll
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 30);
+}, {passive: true});
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold: 0.12, rootMargin: '0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

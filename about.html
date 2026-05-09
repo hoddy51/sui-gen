@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>About — SUI-GEN</title>
+<meta name="description" content="株式会社SUI-GENの会社概要・経営理念・チームについて。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css">
+<style>
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,6vw,120px);padding:clamp(80px,10vw,140px) 0;border-top:1px solid var(--rule);align-items:start}
+.about-grid h2{font-family:var(--sans);font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.2;letter-spacing:-0.025em;margin-bottom:36px;text-wrap:balance}
+.about-grid h2 em{font-style:normal;font-weight:800;color:var(--emerald)}
+.about-grid p{font-family:var(--sans-jp);font-size:15px;line-height:2.0;color:var(--ink-80);letter-spacing:0.03em;margin-bottom:20px;text-wrap:pretty;font-weight:400}
+dl.facts{display:grid;grid-template-columns:160px 1fr;gap:24px;border-top:1px solid var(--rule);padding-top:32px}
+dl.facts dt{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-50);padding-top:6px}
+dl.facts dd{font-family:var(--sans-jp);font-size:15px;line-height:1.9;color:var(--ink);letter-spacing:0.03em;padding-bottom:18px;border-bottom:1px solid var(--rule);font-weight:500}
+dl.facts dd em{font-family:var(--sans);font-style:normal;font-weight:700;color:var(--emerald)}
+dl.facts dt:last-of-type+dd,dl.facts dd:last-of-type{border-bottom:0}
+.values-block{padding:clamp(80px,10vw,140px) 0;border-top:1px solid var(--rule)}
+.values-block h2{font-family:var(--sans);font-weight:800;font-size:clamp(32px,4.2vw,56px);line-height:1.15;letter-spacing:-0.03em;margin-bottom:64px;text-wrap:balance;max-width:720px}
+.values-block h2 em{font-style:normal;font-weight:800;color:var(--emerald)}
+.v-list{display:grid;gap:0;border-top:1px solid var(--rule)}
+.v-row{display:grid;grid-template-columns:80px 1fr 2fr;gap:clamp(24px,4vw,72px);padding:clamp(40px,5vw,64px) 0;border-bottom:1px solid var(--rule);align-items:start}
+.v-row .no{font-family:var(--mono);font-weight:500;font-size:24px;color:var(--emerald);letter-spacing:0}
+.v-row .t{font-family:var(--sans-jp);font-weight:700;font-size:clamp(18px,1.6vw,22px);line-height:1.55;letter-spacing:0.03em;text-wrap:balance}
+.v-row .d{font-family:var(--sans-jp);font-size:14px;line-height:2.0;color:var(--ink-65);letter-spacing:0.02em;text-wrap:pretty;font-weight:400}
+@media (max-width:980px){.about-grid{grid-template-columns:1fr}.v-row{grid-template-columns:auto 1fr;gap:16px}.v-row .d{grid-column:1/-1;margin-top:8px}dl.facts{grid-template-columns:1fr;gap:8px}dl.facts dt{padding-top:0;margin-top:8px}dl.facts dd{border-bottom:0;padding-bottom:8px}}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="container-wide">
+    <nav class="nav">
+      <a href="index.html" class="brand"><span class="mark"><img src="assets/sui-gen-logo.png" alt="SUI-GEN"></span><span class="wordmark">SUI-GEN</span></a>
+      <div class="nav-links">
+        <a href="about.html" class="active">About</a>
+        <a href="real.html">Real</a>
+        <a href="tech.html">Tech</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <a href="mailto:contact@sui-gen.jp" class="nav-cta">Get in touch →</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumb">— About / 私たちについて</div>
+    <h1>会社という、<br><em>ひとつの流れ。</em></h1>
+    <p class="lead">SUI-GEN は、リアルから生まれる感動と、人の可能性を拡げるテクノロジーを、ひとつの流れとして扱う会社です。スポーツ、学び、地域コミュニティ。源（みなもと）からの一滴が、いつしか川となり、誰かの世界を拡げていく——そんな循環を、事業として組み立てています。</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <h2>個の幸福と、<br>社会の改善を、<em>同時に。</em></h2>
+        <p>私たちの経営理念は、全従業員の物心両面の幸福を追求することと、日本社会の改善に真に貢献する事業のみを追求すること。これは二つの目標ではなく、ひとつの構えです。</p>
+        <p>働く人が満たされていなければ、社会に向ける手は形だけになる。社会への貢献を諦めてしまえば、働く意味が痩せていく。両方を同じ流れで追いかけることが、SUI-GEN の前提です。</p>
+      </div>
+      <div>
+        <dl class="facts">
+          <dt>Company</dt><dd>株式会社SUI-GEN <em>/ SUI-GEN Inc.</em></dd>
+          <dt>Founded</dt><dd><em>January 20, 2026</em></dd>
+          <dt>Representative</dt><dd>小野寺 穂高 <em>/ Hodaka Onodera, CEO</em></dd>
+          <dt>Team</dt><dd>5 members</dd>
+          <dt>Contact</dt><dd><em>contact@sui-gen.jp</em></dd>
+          <dt>Domain</dt><dd><em>sui-gen.jp</em></dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="values-block">
+      <h2>三つの<em>哲学。</em></h2>
+      <div class="v-list">
+        <div class="v-row"><span class="no">01</span><h3 class="t">良き批判者であり、最高の友であろう。</h3><p class="d">ともに働くチームメートは最高の友であり、勝負の世界では良き批判者として切磋琢磨し合う最高の仲間となり、共に頂きを目指します。</p></div>
+        <div class="v-row"><span class="no">02</span><h3 class="t">行動で自信を生み、次の行動へつなげよう。</h3><p class="d">ビジョンに向かって勇気を持って行動すると自信が身につき、次の行動への自信となります。その結果さらなる行動へつながり、自信と行動力を兼ね備えます。</p></div>
+        <div class="v-row"><span class="no">03</span><h3 class="t">改善し続け、改革を起こそう。</h3><p class="d">日々改善を続けて時が満ちたら改革を起こします。変化を恐れず時代や市場の流れを捉え、柔軟にアップデートし続けるチームであり続けます。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-block">
+  <div class="container">
+    <div class="cta-inner">
+      <h2>ご一緒できる<em>かたち</em>を、<br>探していきましょう。</h2>
+      <a href="mailto:contact@sui-gen.jp" class="cta-mail">contact@sui-gen.jp →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container-wide">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="mark"><img src="assets/sui-gen-logo.png" alt=""></span>
+        <div class="name">SUI-GEN</div>
+        <p class="purpose">感動でつながり、<br>世界を<em>拡げる</em>。</p>
+        <span class="by">Moments Creator</span>
+      </div>
+      <div class="footer-col"><h4>Site</h4><ul><li><a href="about.html">About</a></li><li><a href="real.html">Real</a></li><li><a href="tech.html">Tech</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">X / Twitter</a></li><li><a href="#">Instagram</a></li><li><a href="mailto:contact@sui-gen.jp">contact@sui-gen.jp</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="#">プライバシーポリシー</a></li><li><a href="#">特定商取引法</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span><div class="legal"><a href="#">sui-gen.jp</a><a href="#top">Back to top ↑</a></div></div>
+  </div>
+</footer>
+
+<script>
+const h=document.getElementById('header');addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>24),{passive:true});
+</script>
+</body>
+</html>
