@@ -100,7 +100,29 @@ body.nav-open{overflow:hidden}
 
 section{padding:clamp(96px,12vw,160px) 0}
 
-/* Coming-soon block */
+/* Service detail block (used in /real for SGC, /tech for AI Gym) */
+.service-detail{padding:clamp(64px,8vw,120px) 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.service-detail .label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--emerald);margin-bottom:24px;display:block}
+.service-detail .title{font-family:var(--sans);font-weight:800;font-size:clamp(40px,5vw,72px);line-height:1.05;letter-spacing:-0.04em;margin-bottom:16px}
+.service-detail .tagline{font-family:var(--sans-jp);font-weight:800;font-size:clamp(22px,2.4vw,32px);line-height:1.4;letter-spacing:-0.01em;color:var(--ink);margin-bottom:48px;text-wrap:balance}
+.service-detail .lead{font-family:var(--sans-jp);font-size:clamp(15px,1.2vw,17px);line-height:2.0;color:var(--ink-80);letter-spacing:0.03em;max-width:760px;margin-bottom:64px;text-wrap:pretty;font-weight:400}
+.service-detail .axes{display:grid;border-top:1px solid var(--rule)}
+.service-detail .axis{display:grid;grid-template-columns:auto 220px 1fr;gap:clamp(20px,3vw,64px);padding:clamp(36px,4vw,56px) 0;border-bottom:1px solid var(--rule);align-items:start}
+.service-detail .axis .n{font-family:var(--sans);font-weight:800;font-size:clamp(28px,2.8vw,40px);color:var(--emerald);letter-spacing:-0.04em;line-height:1;min-width:60px}
+.service-detail .axis .name{display:flex;flex-direction:column;gap:8px}
+.service-detail .axis .name .en{font-family:var(--sans);font-weight:700;font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-50)}
+.service-detail .axis .name .ja{font-family:var(--sans-jp);font-weight:700;font-size:clamp(18px,1.6vw,22px);letter-spacing:0.02em;color:var(--ink);line-height:1.4}
+.service-detail .axis .body{font-family:var(--sans-jp);font-size:clamp(14px,1.1vw,16px);line-height:1.95;color:var(--ink-80);letter-spacing:0.02em;text-wrap:pretty;font-weight:400}
+.service-detail .examples{margin:0 0 40px;padding-left:24px;list-style:none}
+.service-detail .examples li{font-family:var(--sans-jp);font-size:clamp(14px,1.1vw,16px);line-height:1.95;color:var(--ink-80);position:relative;padding:6px 0;letter-spacing:0.02em}
+.service-detail .examples li::before{content:"";position:absolute;left:-20px;top:18px;width:8px;height:1px;background:var(--emerald)}
+.service-detail .closing{font-family:var(--sans-jp);font-size:clamp(15px,1.2vw,17px);line-height:1.95;color:var(--ink);letter-spacing:0.02em;padding-top:32px;border-top:1px solid var(--rule);max-width:760px;font-weight:500}
+@media (max-width:680px){
+  .service-detail .axis{grid-template-columns:auto 1fr;gap:16px}
+  .service-detail .axis .body{grid-column:1/-1;padding-top:8px}
+}
+
+/* Coming-soon block (legacy, kept for fallback) */
 .soon{display:grid;grid-template-columns:1fr 2fr;gap:clamp(40px,6vw,120px);align-items:start;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:clamp(64px,8vw,120px) 0}
 .soon .label{font-family:var(--sans);font-weight:800;font-size:clamp(40px,4.4vw,64px);color:var(--emerald);letter-spacing:-0.04em;line-height:1}
 .soon .text{font-family:var(--sans-jp);font-size:clamp(18px,1.6vw,22px);line-height:1.85;color:var(--ink-80);letter-spacing:0.03em;text-wrap:pretty;font-weight:400}
