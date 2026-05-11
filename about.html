@@ -62,7 +62,7 @@ dl.facts dt:last-of-type+dd,dl.facts dd:last-of-type{border-bottom:0}
 <header class="site-header" id="header">
   <div class="container-wide">
     <nav class="nav">
-      <a href="index.html" class="brand"><span class="mark"><img src="assets/sui-gen-logo.png" alt="SUI-GEN"></span><span class="wordmark">SUI-GEN</span></a>
+      <a href="index.html" class="brand"><span class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="SUI-GEN" width="36" height="36" loading="eager"></picture></span><span class="wordmark">SUI-GEN</span></a>
       <div class="nav-links">
         <a href="about.html" class="active">About</a>
         <a href="real.html">Real</a>
@@ -70,9 +70,22 @@ dl.facts dt:last-of-type+dd,dl.facts dd:last-of-type{border-bottom:0}
         <a href="index.html#contact">Contact</a>
       </div>
       <a href="mailto:hodaka-onodera@sui-gen.jp" class="nav-cta">Get in touch →</a>
+      <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
     </nav>
   </div>
 </header>
+
+<div id="mobile-nav" class="mobile-nav" hidden>
+  <a href="/about" class="mn-link">About</a>
+  <a href="/real" class="mn-link">Real</a>
+  <a href="/tech" class="mn-link">Tech</a>
+  <a href="/#contact" class="mn-link">Contact</a>
+  <div class="mn-meta">
+    Get in touch
+    <a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
+  </div>
+</div>
+
 
 <section class="page-hero">
   <div class="container">
@@ -126,21 +139,35 @@ dl.facts dt:last-of-type+dd,dl.facts dd:last-of-type{border-bottom:0}
   <div class="container-wide">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="mark"><img src="assets/sui-gen-logo.png" alt=""></span>
+        <span class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="" width="36" height="36" loading="lazy"></picture></span>
         <div class="name">SUI-GEN</div>
         <p class="purpose">感動でつながり、<br>世界を<em>拡げる</em>。</p>
         <span class="by">Moments Creator</span>
       </div>
       <div class="footer-col"><h4>Site</h4><ul><li><a href="about.html">About</a></li><li><a href="real.html">Real</a></li><li><a href="tech.html">Tech</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Connect</h4><ul><li><a href="#">X / Twitter</a></li><li><a href="#">Instagram</a></li><li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="#">プライバシーポリシー</a></li><li><a href="#">特定商取引法</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy">プライバシーポリシー</a></li><li><a href="/terms">利用規約</a></li><li><a href="/tokushou">特定商取引法</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span><div class="legal"><a href="#">sui-gen.jp</a><a href="#top">Back to top ↑</a></div></div>
+    <div class="footer-bottom"><span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span><div class="legal"><a href="/sitemap.xml">Sitemap</a><a href="#top">Back to top ↑</a></div></div>
   </div>
 </footer>
 
 <script>
 const h=document.getElementById('header');addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>24),{passive:true});
+(function(){
+  const hb=document.querySelector('.hamburger');
+  const mn=document.getElementById('mobile-nav');
+  if(!hb||!mn)return;
+  hb.addEventListener('click',()=>{
+    const open=hb.getAttribute('aria-expanded')==='true';
+    hb.setAttribute('aria-expanded',String(!open));
+    if(open){mn.setAttribute('hidden','');document.body.classList.remove('nav-open');}
+    else{mn.removeAttribute('hidden');document.body.classList.add('nav-open');}
+  });
+  mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    hb.setAttribute('aria-expanded','false');mn.setAttribute('hidden','');document.body.classList.remove('nav-open');
+  }));
+})();
 </script>
 </body>
 </html>

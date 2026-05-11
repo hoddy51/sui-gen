@@ -437,8 +437,30 @@ section{padding:clamp(120px,14vw,200px) 0;position:relative}
 .footer-bottom .legal{display:flex;gap:28px;flex-wrap:wrap}
 .footer-bottom .legal a{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-50)}
 
+/* Hamburger button */
+.hamburger{display:none;width:44px;height:44px;background:transparent;cursor:pointer;position:relative;align-items:center;justify-content:center;border:0;z-index:60}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);position:absolute;left:50%;transform-origin:center;transition:transform .3s ease,opacity .3s ease,top .3s ease}
+.hamburger span:nth-child(1){top:15px;transform:translateX(-50%)}
+.hamburger span:nth-child(2){top:21px;transform:translateX(-50%)}
+.hamburger span:nth-child(3){top:27px;transform:translateX(-50%)}
+.hamburger[aria-expanded="true"] span:nth-child(1){top:21px;transform:translateX(-50%) rotate(45deg)}
+.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.hamburger[aria-expanded="true"] span:nth-child(3){top:21px;transform:translateX(-50%) rotate(-45deg)}
+
+/* Mobile nav drawer */
+.mobile-nav{position:fixed;top:80px;left:0;right:0;bottom:0;background:var(--bg);z-index:49;display:flex;flex-direction:column;padding:48px 24px 80px;gap:8px;overflow-y:auto}
+.mobile-nav[hidden]{display:none}
+.mobile-nav a.mn-link{font-family:var(--sans-jp);font-weight:800;font-size:36px;letter-spacing:-0.02em;color:var(--ink);padding:18px 0;border-bottom:1px solid var(--rule);transition:color .25s}
+.mobile-nav a.mn-link:hover{color:var(--emerald)}
+.mobile-nav .mn-meta{margin-top:auto;padding-top:32px;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-50)}
+.mobile-nav .mn-meta a{display:block;font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--emerald);margin-top:12px}
+body.nav-open{overflow:hidden}
+@media (min-width:981px){.mobile-nav{display:none !important}}
+
 @media (max-width:980px){
   .nav-links{display:none}
+  .nav-cta{display:none}
+  .hamburger{display:flex}
   .hero-bottom{grid-template-columns:1fr;gap:32px}
   .hero-meta{justify-content:flex-start;gap:24px}
   .section-head{grid-template-columns:1fr;gap:24px}
@@ -459,7 +481,7 @@ section{padding:clamp(120px,14vw,200px) 0;position:relative}
   <div class="container">
     <nav class="nav">
       <a href="index.html" class="brand">
-        <div class="mark"><img src="assets/sui-gen-logo.png" alt="SUI-GEN"></div>
+        <div class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="SUI-GEN" width="36" height="36" loading="eager"></picture></div>
         <span class="wordmark">SUI-GEN</span>
       </a>
       <div class="nav-right">
@@ -470,10 +492,22 @@ section{padding:clamp(120px,14vw,200px) 0;position:relative}
           <a href="#contact">Contact</a>
         </div>
         <a href="#contact" class="nav-cta">Get in Touch →</a>
+        <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
       </div>
     </nav>
   </div>
 </header>
+
+<div id="mobile-nav" class="mobile-nav" hidden>
+  <a href="/about" class="mn-link">About</a>
+  <a href="/real" class="mn-link">Real</a>
+  <a href="/tech" class="mn-link">Tech</a>
+  <a href="/#contact" class="mn-link">Contact</a>
+  <div class="mn-meta">
+    Get in touch
+    <a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
+  </div>
+</div>
 
 <!-- ============ HERO ============ -->
 <section class="hero" data-screen-label="01 Hero">
@@ -646,7 +680,7 @@ section{padding:clamp(120px,14vw,200px) 0;position:relative}
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="mark"><img src="assets/sui-gen-logo.png" alt=""></div>
+        <div class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="" width="36" height="36" loading="lazy"></picture></div>
         <div class="name">SUI-GEN</div>
         <div class="purpose">感動でつながり、世界を拡げる。</div>
         <div class="by">Moments Creator</div>
@@ -670,17 +704,21 @@ section{padding:clamp(120px,14vw,200px) 0;position:relative}
         <h4>Connect</h4>
         <ul>
           <li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li>
-          <li><a href="#">X / Twitter</a></li>
-          <li><a href="#">note</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">プライバシーポリシー</a></li>
+          <li><a href="/terms">利用規約</a></li>
+          <li><a href="/tokushou">特定商取引法</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span>
       <div class="legal">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Sitemap</a>
+        <a href="/sitemap.xml">Sitemap</a>
       </div>
     </div>
   </div>
@@ -698,6 +736,22 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, {threshold: 0.12, rootMargin: '0px 0px -60px 0px'});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Mobile nav toggle
+(function(){
+  const hb=document.querySelector('.hamburger');
+  const mn=document.getElementById('mobile-nav');
+  if(!hb||!mn)return;
+  hb.addEventListener('click',()=>{
+    const open=hb.getAttribute('aria-expanded')==='true';
+    hb.setAttribute('aria-expanded',String(!open));
+    if(open){mn.setAttribute('hidden','');document.body.classList.remove('nav-open');}
+    else{mn.removeAttribute('hidden');document.body.classList.add('nav-open');}
+  });
+  mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    hb.setAttribute('aria-expanded','false');mn.setAttribute('hidden','');document.body.classList.remove('nav-open');
+  }));
+})();
 </script>
 </body>
 </html>
