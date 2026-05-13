@@ -1742,11 +1742,20 @@ section {
   padding: clamp(120px, 16vh, 180px) var(--pad-x) !important;
   display: flex;
   align-items: center;
+  position: relative;
+}
+.founders-bg {
+  z-index: 1 !important;
+}
+.founders-layout {
+  position: relative;
+  z-index: 3;
 }
 .founders-scene::before {
   /* 暗オーバーレイを強めて文字を浮かせる */
   background:
     linear-gradient(180deg, rgba(20,19,15,.55) 0%, rgba(20,19,15,.3) 35%, rgba(20,19,15,.55) 100%) !important;
+  z-index: 2 !important;
 }
 .founders-bg img {
   filter: grayscale(.08) contrast(1.05) brightness(.95);
@@ -2083,15 +2092,13 @@ section {
 /* --- Team: Apple "Meet the team" 風 — 100vh の風景バナー --- */
 .team-working-top {
   position: relative;
-  margin: 0 auto clamp(72px, 9vw, 120px) !important;
+  margin: 0 0 clamp(72px, 9vw, 120px) !important;
   max-width: none !important;
-  width: 100vw;
-  margin-left: calc(-1 * var(--pad-x)) !important;
-  margin-right: calc(-1 * var(--pad-x)) !important;
-  min-height: 90vh;
+  width: 100%;
+  min-height: 78vh;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
+  display: block;
+  z-index: 1;
 }
 .team-working-top .frame {
   position: absolute !important;
