@@ -290,6 +290,57 @@ section {
   font-weight: 300;
   text-wrap: pretty;
 }
+.hero-founders {
+  margin-top: 36px;
+  display: flex; align-items: center; gap: 28px;
+  flex-wrap: wrap;
+}
+.hf-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(245,241,232,.5);
+}
+.hf-people {
+  display: flex; gap: 28px; flex-wrap: wrap;
+}
+.founder-mini {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity .2s ease;
+}
+.founder-mini:hover { opacity: .8; }
+.founder-mini img {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: grayscale(.15) contrast(1.02);
+  border: 1px solid rgba(245,241,232,.18);
+  transition: filter .3s ease;
+}
+.founder-mini:hover img { filter: grayscale(0) contrast(1.04); }
+.fm-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--paper);
+  letter-spacing: .005em;
+}
+.fm-role {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  color: rgba(245,241,232,.55);
+  margin-top: 2px;
+}
+@media (max-width: 720px) {
+  .hero-founders { gap: 16px; margin-top: 28px; }
+  .hf-people { gap: 18px; }
+  .founder-mini img { width: 40px; height: 40px; }
+}
+
 .hero-actions {
   margin-top: 44px;
   display: flex; gap: 14px; flex-wrap: wrap;
@@ -1506,6 +1557,27 @@ section {
         2000年生まれの現役起業家2名が、自社の営業・開発・経理・資料作成まで、毎日AIで事業を回している。<br />
         その実装の手触りごと、あなたの会社で動かす。<wbr /> ——日本のAX（AI Transformation）に、当事者の温度を。
       </p>
+
+      <div class="hero-founders">
+        <div class="hf-label">— Founders</div>
+        <div class="hf-people">
+          <a class="founder-mini" href="#team">
+            <img src="assets/hodaka.jpg" alt="小野寺 穂高" loading="lazy" />
+            <div class="founder-mini-info">
+              <div class="fm-name">小野寺 穂高</div>
+              <div class="fm-role">CEO · SUI-GEN</div>
+            </div>
+          </a>
+          <a class="founder-mini" href="#team">
+            <img src="assets/tanno.jpg" alt="丹野 健心" loading="lazy" style="object-position: center 30%;" />
+            <div class="founder-mini-info">
+              <div class="fm-name">丹野 健心</div>
+              <div class="fm-role">CEO · スポンサル</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
       <div class="hero-actions">
         <a class="btn btn-primary btn-lg" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%5D%20%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">
           無料相談を予約 <span class="arr">→</span>
