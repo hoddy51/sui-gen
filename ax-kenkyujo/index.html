@@ -656,6 +656,9 @@ section {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
+.case-wide { grid-column: 1 / -1; }
+.case-wide .meta { flex-wrap: wrap; }
+.case-wide .meta-sep { color: rgba(245,241,232,.3); padding: 0 2px; }
 @media (max-width: 820px) { .case-grid { grid-template-columns: 1fr; } }
 
 .case {
@@ -1512,16 +1515,16 @@ section {
 
       <div class="hero-foot">
         <div class="stat">
-          <div class="k">Founders</div>
-          <div class="v">2 <small>/ 25・26歳の現役起業家</small></div>
+          <div class="k">Community</div>
+          <div class="v">¥10,000 <small>/ 月</small></div>
         </div>
         <div class="stat">
-          <div class="k">Operating Co.</div>
-          <div class="v">2 <small>/ SUI-GEN × Sponsaru</small></div>
+          <div class="k">Pro · Recommended</div>
+          <div class="v">¥50,000 <small>/ 月</small></div>
         </div>
         <div class="stat">
-          <div class="k">Coverage</div>
-          <div class="v">研修 → 実装 → 運用</div>
+          <div class="k">Build</div>
+          <div class="v">ASK <small>・個別見積</small></div>
         </div>
         <div class="stat">
           <div class="k">First Meeting</div>
@@ -1534,89 +1537,14 @@ section {
   </div>
 </section>
 
-<!-- thin marquee — currency proof -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>
-      自社で毎日AIを使い倒している
-      <i class="dot"></i>
-      研修屋ではない、現場の当事者
-      <i class="dot"></i>
-      営業 / 開発 / 経理 / 資料作成すべてをAIで
-      <i class="dot"></i>
-      運送業のAI業務フロー改善を実装
-      <i class="dot"></i>
-      セキュリティ担保エンジニア網あり
-      <i class="dot"></i>
-      Community → Pro → Build まで一気通貫
-      <i class="dot"></i>
-    </span>
-    <span aria-hidden="true">
-      自社で毎日AIを使い倒している
-      <i class="dot"></i>
-      研修屋ではない、現場の当事者
-      <i class="dot"></i>
-      営業 / 開発 / 経理 / 資料作成すべてをAIで
-      <i class="dot"></i>
-      運送業のAI業務フロー改善を実装
-      <i class="dot"></i>
-      セキュリティ担保エンジニア網あり
-      <i class="dot"></i>
-      Community → Pro → Build まで一気通貫
-      <i class="dot"></i>
-    </span>
-  </div>
-</div>
-
-<!-- ============================================================ -->
-<!-- PROBLEM                                                       -->
-<!-- ============================================================ -->
-<section class="problem" id="problem" data-screen-label="02 Problem">
-  <div class="container">
-    <div class="section-head row reveal">
-      <div>
-        <div class="section-eyebrow"><span class="section-num">01</span> Problem</div>
-        <h2 class="section-title">こんなAI研修に、<br />もう疲れていませんか。</h2>
-      </div>
-      <p class="section-lede">
-        ChatGPTの使い方の説明会。雛形プロンプトの配布。「PoCをご支援します」というスライド。
-        ——どれも悪くはない。けれど、月曜日の朝、現場では誰もAIを開いていない。
-      </p>
-    </div>
-
-    <div class="problem-grid reveal">
-      <div class="card">
-        <div class="n">— 01</div>
-        <h3>「使い方研修」で終わってしまう</h3>
-        <p>講義は受けた。プロンプト集ももらった。だが、自社の請求書フローも、営業資料も、誰がいつ何をAIに任せるのか、何ひとつ決まっていない。</p>
-      </div>
-      <div class="card">
-        <div class="n">— 02</div>
-        <h3>コンサルが現場を知らない</h3>
-        <p>抽象的なフレームワークと、AIを実装したことのない担当者。「DX人材育成」と書かれた資料は重く、最終ページに見積もりだけが残る。</p>
-      </div>
-      <div class="card">
-        <div class="n">— 03</div>
-        <h3>大手SIerでは小回りが利かない</h3>
-        <p>稟議、相見積もり、半年のキックオフ。動き始める頃にはモデルが3世代進む。経営はもっと、毎週の意思決定としてAIを扱いたい。</p>
-      </div>
-    </div>
-
-    <div class="problem-quote reveal">
-      AIに必要なのは、<span class="strike">研修カリキュラム</span> でも <span class="strike">PoC計画書</span> でもなく、
-      <span class="high">毎日それでメシを食っている人間が、隣に座ること</span>。
-    </div>
-  </div>
-</section>
-
 <!-- ============================================================ -->
 <!-- WHY AX研究所                                                   -->
 <!-- ============================================================ -->
-<section class="why" id="why" data-screen-label="03 Why AX研究所">
+<section class="why" id="why" data-screen-label="02 Why AX研究所">
   <div class="container">
     <div class="section-head row reveal">
       <div>
-        <div class="section-eyebrow"><span class="section-num">02</span> Why AX研究所</div>
+        <div class="section-eyebrow"><span class="section-num">01</span> Why AX研究所</div>
         <h2 class="section-title">AX研究所にしか出せない、<em>3つの当事者性</em>。</h2>
       </div>
       <p class="section-lede">
@@ -1653,11 +1581,11 @@ section {
 <!-- ============================================================ -->
 <!-- PLANS                                                         -->
 <!-- ============================================================ -->
-<section class="plans" id="plans" data-screen-label="04 Plans">
+<section class="plans" id="plans" data-screen-label="03 Plans">
   <div class="container">
     <div class="section-head row reveal">
       <div>
-        <div class="section-eyebrow"><span class="section-num">03</span> Plans</div>
+        <div class="section-eyebrow"><span class="section-num">02</span> Plans</div>
         <h2 class="section-title">入口から実装まで、<br />5つのプラン。</h2>
       </div>
       <p class="section-lede">
@@ -1730,11 +1658,11 @@ section {
 <!-- ============================================================ -->
 <!-- CASES                                                         -->
 <!-- ============================================================ -->
-<section class="cases" id="cases" data-screen-label="05 Cases">
+<section class="cases" id="cases" data-screen-label="04 Cases">
   <div class="container">
     <div class="section-head row reveal">
       <div>
-        <div class="section-eyebrow"><span class="section-num">04</span> Cases</div>
+        <div class="section-eyebrow"><span class="section-num">03</span> Cases</div>
         <h2 class="section-title">自社で動かしている、<br />2つの現場から。</h2>
       </div>
       <p class="section-lede">
@@ -1744,31 +1672,23 @@ section {
     </div>
 
     <div class="case-grid reveal">
-      <article class="case">
+      <article class="case case-wide">
         <div class="meta">
-          <span class="pill">Case 01</span>
+          <span class="pill">Field-Proven</span>
           <span>株式会社スポンサル / 運送業</span>
+          <span class="meta-sep">·</span>
+          <span>株式会社SUI-GEN / 複数事業並走</span>
         </div>
-        <h3>配車・請求・ドライバー連絡を、<br />AI前提で再設計。</h3>
-        <p>「電話とFAXで動いている業界」と言われる運送業の中で、配車調整・請求書の確認・ドライバー連絡といった日々のオペレーションに、AIを業務フローとして差し込みました。研修ではなく、毎日その上で会社が動いている状態を作っています。</p>
+        <h3>「電話とFAX」の現場から、<br />複数事業を回す経営まで。</h3>
+        <p>
+          スポンサル（運送業）では、配車・請求・ドライバー連絡といった日々のオペレーションにAIを業務フローとして差し込み済み。
+          一方SUI-GENでは、営業の一次対応、開発、月次経理、資料生成まで自社で実践中。
+          研修ではなく、その手触りをそのまま御社に持ち込みます。
+        </p>
         <div class="deltas">
-          <div class="delta"><div class="k">領域</div><div class="v">運送業 / SMB</div></div>
-          <div class="delta"><div class="k">フェーズ</div><div class="v">実装 → 運用</div></div>
-          <div class="delta"><div class="k">主体</div><div class="v">丹野 / Sponsaru</div></div>
-        </div>
-      </article>
-
-      <article class="case">
-        <div class="meta">
-          <span class="pill">Case 02</span>
-          <span>株式会社SUI-GEN / 自社並走</span>
-        </div>
-        <h3>営業・開発・経理・資料作成、<br />すべての社内業務をAIで。</h3>
-        <p>創業初期のスタートアップが、いかに少人数で複数事業を並走させるか。営業の一次対応、開発の補助、月次の経理、提案資料の生成まで、自分たち自身がAIネイティブな経営を実践中。その方法をそのままお伝えします。</p>
-        <div class="deltas">
-          <div class="delta"><div class="k">領域</div><div class="v">複数事業 / 経営</div></div>
-          <div class="delta"><div class="k">フェーズ</div><div class="v">継続改善</div></div>
-          <div class="delta"><div class="k">主体</div><div class="v">穂高 / SUI-GEN</div></div>
+          <div class="delta"><div class="k">領域</div><div class="v">運送業 / SMB経営</div></div>
+          <div class="delta"><div class="k">フェーズ</div><div class="v">実装 → 運用 → 継続改善</div></div>
+          <div class="delta"><div class="k">主体</div><div class="v">穂高 × 丹野（2社共同）</div></div>
         </div>
       </article>
     </div>
@@ -1782,7 +1702,7 @@ section {
   <div class="container">
     <div class="section-head row reveal">
       <div>
-        <div class="section-eyebrow"><span class="section-num">05</span> Radio</div>
+        <div class="section-eyebrow"><span class="section-num">04</span> Radio</div>
         <h2 class="section-title">AX研究所ラジオ。<br />毎週、現役の手触りを<em>そのまま</em>。</h2>
       </div>
       <p class="section-lede">
@@ -1913,121 +1833,13 @@ section {
 </section>
 
 <!-- ============================================================ -->
-<!-- FUNNEL                                                        -->
-<!-- ============================================================ -->
-<section class="funnel" id="funnel" data-screen-label="07 Funnel">
-  <div class="container">
-    <div class="section-head row reveal">
-      <div>
-        <div class="section-eyebrow"><span class="section-num">06</span> Engagement</div>
-        <h2 class="section-title">点ではなく、<br />長い線でお付き合いを。</h2>
-      </div>
-      <p class="section-lede">
-        Community で空気を吸い、Pro で月1の伴走を始め、必要なときに Build で社内システムを建て、また Pro に戻る。
-        AIは"プロジェクト"ではなく"関係"です。
-      </p>
-    </div>
-
-    <div class="funnel-stage reveal">
-      <div class="funnel-step">
-        <div class="marker"></div>
-        <div class="n">STEP 01</div>
-        <h4>Community</h4>
-        <p>まずは月1万円で、AIの現場感に触れる。配信とオフ会で温度を共有。</p>
-        <div class="price-mini">¥10,000 / 月</div>
-      </div>
-      <div class="funnel-step cur">
-        <div class="marker"></div>
-        <div class="n">STEP 02</div>
-        <h4>Pro</h4>
-        <p>月1の対面MTGで、社内の業務にAIを差し込み始める。一番効くスタート地点。</p>
-        <div class="price-mini">¥50,000 / 月</div>
-      </div>
-      <div class="funnel-step">
-        <div class="marker"></div>
-        <div class="n">STEP 03</div>
-        <h4>Build</h4>
-        <p>研修や伴走で見えた「これは内製したい」を、社内システムとして実装。セキュリティ担保込み。</p>
-        <div class="price-mini">個別見積</div>
-      </div>
-      <div class="funnel-step">
-        <div class="marker"></div>
-        <div class="n">STEP 04</div>
-        <h4>Pro 継続</h4>
-        <p>作って終わりにしない。月1のリズムで、AIネイティブな経営を磨き続ける。</p>
-        <div class="price-mini">¥50,000 / 月</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- FIRST MEETING                                                 -->
-<!-- ============================================================ -->
-<section class="first" id="first" data-screen-label="08 First Meeting">
-  <div class="container">
-    <div class="section-head row reveal">
-      <div>
-        <div class="section-eyebrow"><span class="section-num">07</span> First Meeting</div>
-        <h2 class="section-title">最初の1時間で、<br />何が起きるか。</h2>
-      </div>
-      <p class="section-lede">
-        無料相談は60分。営業ではなく診療のような時間にしたいので、終わりに「いまは依頼しなくていい」と判断する選択肢も含めて、私たちから明確にお伝えします。
-      </p>
-    </div>
-
-    <div class="first-grid">
-      <aside class="first-card reveal">
-        <div class="row"><span class="k">DURATION</span><span class="v">60分</span></div>
-        <div class="row"><span class="k">FORMAT</span><span class="v">オンライン / 対面</span></div>
-        <div class="row"><span class="k">COST</span><span class="v">無料</span></div>
-        <div class="row"><span class="k">PARTICIPANT</span><span class="v">穂高 or 丹野（指名可）</span></div>
-        <div class="row"><span class="k">PREPARATION</span><span class="v">事前資料は不要</span></div>
-        <div class="row"><span class="k">OUTPUT</span><span class="v">推奨プラン + 次の一歩</span></div>
-      </aside>
-
-      <div class="first-steps reveal">
-        <div class="first-step">
-          <div class="time">0 — 5 min</div>
-          <div>
-            <h4>自己紹介と、今日のゴール合わせ</h4>
-            <p>AX研究所が何で、何でないか。今日の60分で「持ち帰っていただきたいもの」を最初に合意します。</p>
-          </div>
-        </div>
-        <div class="first-step">
-          <div class="time">5 — 35 min</div>
-          <div>
-            <h4>御社の業務 / 経営課題のヒアリング</h4>
-            <p>どんな業務が、誰の時間を、どれだけ食っているのか。「AIで解きたい」と思われている課題と、その奥にある本当のボトルネックを言語化します。</p>
-          </div>
-        </div>
-        <div class="first-step">
-          <div class="time">35 — 50 min</div>
-          <div>
-            <h4>その場で初期設計 — どう差し込むか</h4>
-            <p>当日中に「最初に手を入れる業務」「使うべきAIの粒度」「3ヶ月後の絵」を、口頭で設計します。納品物ではなく、共同作業のメモです。</p>
-          </div>
-        </div>
-        <div class="first-step">
-          <div class="time">50 — 60 min</div>
-          <div>
-            <h4>推奨プランの提示と、判断材料</h4>
-            <p>Pro から始めるのか、Build まで一気に踏み込むのか。「いま依頼しない方が良い」場合も、その理由をお伝えします。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
 <!-- TEAM                                                          -->
 <!-- ============================================================ -->
-<section class="team" id="team" data-screen-label="09 Team">
+<section class="team" id="team" data-screen-label="06 Team">
   <div class="container">
     <div class="section-head row reveal">
       <div>
-        <div class="section-eyebrow"><span class="section-num">08</span> Team</div>
+        <div class="section-eyebrow"><span class="section-num">05</span> Team</div>
         <h2 class="section-title">2000年生まれ、<br />現役の経営者がそのまま来ます。</h2>
       </div>
       <p class="section-lede">
@@ -2087,10 +1899,10 @@ section {
 <!-- ============================================================ -->
 <!-- FAQ                                                           -->
 <!-- ============================================================ -->
-<section class="faq" id="faq" data-screen-label="10 FAQ">
+<section class="faq" id="faq" data-screen-label="07 FAQ">
   <div class="container" style="max-width: 920px;">
     <div class="section-head reveal">
-      <div class="section-eyebrow"><span class="section-num">09</span> FAQ</div>
+      <div class="section-eyebrow"><span class="section-num">06</span> FAQ</div>
       <h2 class="section-title">よくいただくご質問。</h2>
     </div>
 
@@ -2098,77 +1910,44 @@ section {
       <details class="faq-item">
         <summary>
           <span class="q">Q1</span>
-          <span class="text">「25歳・26歳」というのは、正直なところ不安です。</span>
+          <span class="text">他のAI研修と何が違いますか。</span>
           <span class="plus"></span>
         </summary>
         <div class="faq-answer">
-          年齢は事実です。一方で、私たちはAIネイティブな世代の中で、すでに自分たちの会社を経営している"現役プレイヤー"です。お客様の社内で20年以上の経験を持つ方々のドメイン知識と、私たちの「AIで毎日仕事を回している手触り」を掛け合わせる前提でご一緒します。最初の60分でその嚙み合わせは確認いただけます。
+          「学んだあと、誰が手を動かすのか」まで含めて引き受けるかどうかです。研修だけで終わらず、Proでの月次伴走、Buildでの社内システム内製化まで、同じチームで一気通貫。1社のスタートアップではなく、SUI-GEN × スポンサルの2社体制で、お客様の手前のレイヤーをお預かりします。
         </div>
       </details>
 
       <details class="faq-item">
         <summary>
           <span class="q">Q2</span>
-          <span class="text">既に他のAI研修を受けています。違いは何ですか。</span>
+          <span class="text">業種が運送業ではないのですが、応用は可能ですか。</span>
           <span class="plus"></span>
         </summary>
         <div class="faq-answer">
-          一言で言うと「学んだあと、誰が手を動かすのか」まで含めて引き受けるかどうかです。私たちは研修だけでは終わらず、Pro での月次伴走、Build での社内システム内製化までを同じチームで担います。1社のスタートアップではなく、SUI-GEN × スポンサルの2社体制で、お客様の手前のレイヤーをお預かりします。
+          可能です。スポンサルの事例は「電話・紙・属人化」が強い業界でもAIを差し込める証明であり、SMB全般に応用できます。SUI-GENでは SaaS / コミュニティ / 教育など複数事業でAIを並走中。これらを業種に合わせて編み直してお渡しします。
         </div>
       </details>
 
       <details class="faq-item">
         <summary>
           <span class="q">Q3</span>
-          <span class="text">業種が運送業ではないのですが、応用は可能ですか。</span>
+          <span class="text">どのプランから始めるのが良いですか。</span>
           <span class="plus"></span>
         </summary>
         <div class="faq-answer">
-          可能です。スポンサルでの運送業事例は「電話・紙・属人化」が強い業界でもAIを差し込めることの証明であり、その方法論はSMB全般に応用できます。SUI-GENでは、SaaS / コミュニティ / 教育など複数事業でAIを並走させており、これらのノウハウを業種に合わせて編み直してお渡しします。
+          経営として継続的にAIを使っていきたい場合は <strong>Pro（¥50,000/月）</strong> からの開始を推奨。温度感を知りたいだけなら Community、社内システムまで踏み込むなら Build。1時間の無料相談で、最適なスタート地点をご提案します。
         </div>
       </details>
 
       <details class="faq-item">
         <summary>
           <span class="q">Q4</span>
-          <span class="text">どのプランから始めるのが良いでしょうか。</span>
-          <span class="plus"></span>
-        </summary>
-        <div class="faq-answer">
-          経営として継続的にAIを使っていきたい場合は <strong>Pro（¥50,000/月）</strong> からの開始を推奨しています。「まずは温度感を知りたい」場合は Community、社内システムまで踏み込む場合は Build。1時間の無料相談で、最適なスタート地点をご提案します。
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span class="q">Q5</span>
           <span class="text">セキュリティ面が心配です。情報の扱いはどうなりますか。</span>
           <span class="plus"></span>
         </summary>
         <div class="faq-answer">
-          NDAの締結はもちろん、社内データを扱う案件では、当社のセキュリティ担保エンジニア網と組んだ上で、データの保管場所・モデルの選定（クラウド／オンプレ／自社環境）まで含めて設計します。Build案件ではこの設計が前提に含まれます。
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span class="q">Q6</span>
-          <span class="text">途中でプランを変えたり、解約することは可能ですか。</span>
-          <span class="plus"></span>
-        </summary>
-        <div class="faq-answer">
-          可能です。Pro はいつでもプラン変更・解約いただけます。Build で集中的に作って → Pro に戻る、忙しい四半期は Community に下げる、といった可変運用を推奨しています。AIは"関係"であって"工事"ではないからです。
-        </div>
-      </details>
-
-      <details class="faq-item">
-        <summary>
-          <span class="q">Q7</span>
-          <span class="text">穂高さん・丹野さんのどちらかを指名できますか。</span>
-          <span class="plus"></span>
-        </summary>
-        <div class="faq-answer">
-          できます。ご相談内容に応じて、初回ミーティングで担当をご相談ください。基本的には、複数事業・経営並走の文脈は穂高、現場業務の再設計・運送業や中小企業の文脈は丹野が中心になりますが、必要に応じて両名で同席します。
+          NDA締結はもちろん、社内データを扱う案件ではセキュリティ担保エンジニア網と組み、データ保管場所・モデル選定（クラウド／オンプレ／自社環境）まで含めて設計します。Build案件ではこの設計が前提に含まれます。
         </div>
       </details>
     </div>
@@ -2178,7 +1957,7 @@ section {
 <!-- ============================================================ -->
 <!-- FINAL CTA                                                     -->
 <!-- ============================================================ -->
-<section class="final" id="cta" data-screen-label="11 Final CTA">
+<section class="final" id="cta" data-screen-label="08 Final CTA">
   <div class="final-inner reveal">
     <h2>あなたの会社の隣に、<br />来週から<em>座らせて</em>ください。</h2>
     <p>
