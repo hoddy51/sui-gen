@@ -36,6 +36,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="_shared.css">
+<style>
+.page-hero-with-art .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,5vw,80px);align-items:center}
+.page-hero-with-art .hero-art{margin:0;overflow:hidden;border-radius:0}
+.page-hero-with-art .hero-art img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:0}
+@media (max-width:980px){.page-hero-with-art .hero-grid{grid-template-columns:1fr;gap:32px}}
+
+/* Axis with photo column (Hearing & Build axes) */
+.axis-photo{display:grid;grid-template-columns:200px 1fr;gap:clamp(20px,3vw,48px);align-items:start;padding:clamp(36px,4vw,56px) 0;border-bottom:1px solid var(--rule)}
+.axis-photo figure{margin:0;overflow:hidden;aspect-ratio:3/4;border-radius:0}
+.axis-photo figure img{width:100%;height:100%;object-fit:cover;display:block;border-radius:0}
+.axis-photo .axis-body{display:flex;flex-direction:column;gap:14px}
+.axis-photo .axis-body .n{font-family:var(--sans);font-weight:800;font-size:clamp(22px,2vw,28px);color:var(--emerald);letter-spacing:0;line-height:1}
+.axis-photo .axis-body .en{font-family:var(--sans);font-weight:700;font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-50)}
+.axis-photo .axis-body .ja{font-family:var(--sans-jp);font-weight:700;font-size:clamp(18px,1.6vw,22px);letter-spacing:0.02em;color:var(--ink);line-height:1.4}
+.axis-photo .axis-body .body{font-family:var(--sans-jp);font-size:clamp(14px,1.1vw,16px);line-height:1.95;color:var(--ink-80);letter-spacing:0.02em}
+@media (max-width:680px){.axis-photo{grid-template-columns:1fr;gap:16px}.axis-photo figure{aspect-ratio:4/3;max-width:240px}}
+</style>
 </head>
 <body>
 
@@ -62,11 +79,18 @@
 </div>
 
 
-<section class="page-hero">
+<section class="page-hero page-hero-with-art">
   <div class="container">
-    <div class="crumb">— Tech / Web</div>
-    <h1>想いを、<br><em>そのまま編む。</em></h1>
-    <p class="lead">テンプレートを当てはめるだけのサイトは、要りません。会社の輪郭、伝えたいこと、迷っているところ——まずお話を伺うところから始めます。そのうえで、ブランディングを言葉と佇まいに落とし、AIを最大限に活かして素早く形にする。公開後も、小さな改修を重ねながらサイトを育てる伴走関係を続けます。</p>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="crumb">— Tech / Web</div>
+        <h1>想いを、<br><em>そのまま編む。</em></h1>
+        <p class="lead">テンプレートを当てはめるだけのサイトは、要りません。会社の輪郭、伝えたいこと、迷っているところ——まずお話を伺うところから始めます。そのうえで、ブランディングを言葉と佇まいに落とし、AIを最大限に活かして素早く形にする。公開後も、小さな改修を重ねながらサイトを育てる伴走関係を続けます。</p>
+      </div>
+      <figure class="hero-art">
+        <img src="/assets/web-branding-hearing.png" alt="企業の会議室でホームページの方向性について丁寧に対話するブランディングヒアリングの様子" loading="eager" width="1448" height="1086">
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -81,13 +105,14 @@
       </p>
 
       <div class="axes">
-        <div class="axis">
-          <span class="n">01</span>
-          <div class="name">
+        <div class="axis-photo">
+          <figure><img src="/assets/web-axis-hearing.png" alt="代表がクライアントの話を丁寧に聴きながらヒアリングに臨む様子" loading="lazy" width="1086" height="1448"></figure>
+          <div class="axis-body">
+            <span class="n">01</span>
             <span class="en">Hearing</span>
             <span class="ja">お話を聴くところから</span>
+            <p class="body">事業の輪郭、届けたい相手、伝えたい想い。まだ言葉になっていない部分も含めて、対話を重ねながらサイトの骨格を見つけていきます。</p>
           </div>
-          <p class="body">事業の輪郭、届けたい相手、伝えたい想い。まだ言葉になっていない部分も含めて、対話を重ねながらサイトの骨格を見つけていきます。</p>
         </div>
         <div class="axis">
           <span class="n">02</span>
@@ -97,13 +122,14 @@
           </div>
           <p class="body">何を伝え、どう見られたいか——その答えをコピーとデザイン言語に翻訳します。SUI-GENが日々のテック実装で培った美意識を、サイト全体の佇まいに反映します。</p>
         </div>
-        <div class="axis">
-          <span class="n">03</span>
-          <div class="name">
+        <div class="axis-photo">
+          <figure><img src="/assets/web-axis-build-iterate.png" alt="ノートPCを見ながらAIを使ってサイトを素早く組み立てる制作風景" loading="lazy" width="1086" height="1448"></figure>
+          <div class="axis-body">
+            <span class="n">03</span>
             <span class="en">Build &amp; Iterate</span>
             <span class="ja">AIで素早く、小回りで育てる</span>
+            <p class="body">AIを最大限に活用して初期構築を圧縮。公開後も、文言の差し替えやセクション追加など小さな改修に小回りよく応じます。サイトは作って終わりではなく、ともに育てるものです。</p>
           </div>
-          <p class="body">AIを最大限に活用して初期構築を圧縮。公開後も、文言の差し替えやセクション追加など小さな改修に小回りよく応じます。サイトは作って終わりではなく、ともに育てるものです。</p>
         </div>
       </div>
 
