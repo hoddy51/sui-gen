@@ -9,13 +9,13 @@
 <meta property="og:description" content="株式会社SUI-GEN × 株式会社スポンサルの共同事業。現役プレイヤーが直接、AIで事業を動かす。" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="ja_JP" />
-<meta property="og:image" content="assets/ogp.png" />
+<meta property="og:image" content="/ax-kenkyujo/assets/ogp.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="AX研究所 — 研修じゃない、伴走だ。" />
 <meta name="twitter:description" content="2000年生まれの現役起業家2名が、自社で毎日AIで事業を回す。SUI-GEN × Sponsaru の共同事業による法人向けAX伴走サービス。" />
-<meta name="twitter:image" content="assets/ogp.png" />
+<meta name="twitter:image" content="/ax-kenkyujo/assets/ogp.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -746,6 +746,26 @@ section {
   width: 8px; height: 1px; background: var(--ink-4);
 }
 .plan.is-recommended ul li::before { background: var(--accent); }
+.plan ul li.perk {
+  padding: 12px 14px;
+  margin: 8px 0 12px;
+  border: 1px solid rgba(184,58,36,.55);
+  background: rgba(184,58,36,.12);
+  line-height: 1.6;
+}
+.plan ul li.perk::before { display: none; }
+.plan .perk-tag {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--accent);
+  padding: 3px 8px;
+  margin-right: 8px;
+}
+.plan .perk-body { color: var(--white); font-weight: 600; }
 .plan .cta {
   width: 100%;
   justify-content: center;
@@ -2133,7 +2153,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('assets/podcast_recording.webp');
+  background-image: url('/ax-kenkyujo/assets/podcast_recording.webp');
   background-size: cover;
   background-position: center 30%;
   filter: grayscale(.3) contrast(1.06);
@@ -2290,14 +2310,14 @@ section {
         <div class="hf-label">— Founders</div>
         <div class="hf-people">
           <a class="founder-mini" href="#team">
-            <img src="assets/hodaka.jpg" alt="小野寺 穂高" loading="lazy" />
+            <img src="/ax-kenkyujo/assets/hodaka.jpg" alt="小野寺 穂高" loading="lazy" />
             <div class="founder-mini-info">
               <div class="fm-name">小野寺 穂高</div>
               <div class="fm-role">CEO · SUI-GEN</div>
             </div>
           </a>
           <a class="founder-mini" href="#team">
-            <img src="assets/tanno.jpg" alt="丹野 健心" loading="lazy" style="object-position: center 30%;" />
+            <img src="/ax-kenkyujo/assets/tanno.jpg" alt="丹野 健心" loading="lazy" style="object-position: center 30%;" />
             <div class="founder-mini-info">
               <div class="fm-name">丹野 健心</div>
               <div class="fm-role">CEO · スポンサル</div>
@@ -2342,7 +2362,7 @@ section {
 <!-- ============================================================ -->
 <section class="founders-scene" id="founders" data-screen-label="02 Founders">
   <div class="founders-bg" aria-hidden="true">
-    <img src="assets/founders_together.webp" alt="" loading="lazy" />
+    <img src="/ax-kenkyujo/assets/founders_together.webp" alt="" loading="lazy" />
   </div>
   <div class="container founders-layout">
     <div class="founders-copy reveal">
@@ -2423,11 +2443,11 @@ section {
     <div class="section-head row reveal">
       <div>
         <div class="section-eyebrow"><span class="section-num">04</span> Plans</div>
-        <h2 class="section-title">入口から実装まで、<br />5つのプラン。</h2>
+        <h2 class="section-title">入口から実装まで、<br />3つのプラン。</h2>
       </div>
       <p class="section-lede">
         「とりあえず空気を吸う」Community から、月次伴走の Pro、社内システムを建てる Build まで。<br />
-        まずは <strong style="color:var(--ink);font-weight:700;">Pro</strong> で月1の伴走を始めるのを推奨しています。
+        まずは <strong style="color:var(--ink);font-weight:700;">Pro</strong> を推奨。初月に御社の課題を1つ、動くたたき台まで一緒に作ります。
       </p>
     </div>
 
@@ -2441,9 +2461,9 @@ section {
           <span class="unit">/ 月（税別）</span>
         </div>
         <ul>
-          <li>週1配信（実装ノウハウ）</li>
-          <li>月1オフ会</li>
-          <li>メンバー限定コミュニティ</li>
+          <li>週1配信：実装ノウハウ（実際のプロンプト・ワークフロー）</li>
+          <li>AX研究ラジオ限定：未公開ディテール＋「業界AX設計図」テンプレ＋先行配信</li>
+          <li>月1オフ会 ／ メンバー限定コミュニティ</li>
           <li>Pro以上への優先枠</li>
         </ul>
         <!-- TODO: Stripe Payment Link 発行後、href="STRIPE_COMMUNITY_LINK" を本番URLに差し替え -->
@@ -2460,9 +2480,10 @@ section {
           <span class="unit">/ 月（税別）</span>
         </div>
         <ul>
-          <li>Communityの全特典</li>
+          <li class="perk"><span class="perk-tag">初月特典</span><span class="perk-body">御社の課題を1つ、設計図＋たたき台プロトタイプに（Claude Codeセットアップ込み）</span></li>
           <li>月1対面 / オンラインMTG（2h）</li>
           <li>個別伴走（実務にAIを差し込む）</li>
+          <li>Communityの全特典</li>
           <li>Build への接続</li>
         </ul>
         <a class="btn cta" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%20Pro%5D%20%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
@@ -2499,7 +2520,7 @@ section {
   <div class="container engagement-grid">
     <figure class="engagement-media reveal">
       <img
-        src="assets/training_session.webp"
+        src="/ax-kenkyujo/assets/training_session.webp"
         alt="企業の会議室でAI業務フローについて対話するAX研究所の伴走風景"
         loading="lazy"
       />
@@ -2510,10 +2531,11 @@ section {
         <h2 class="section-title">Pro でやっているのは、<br />知識提供ではなく設計です。</h2>
       </div>
       <p class="section-lede">
-        現場の業務を一緒に分解し、どこをAIに渡し、どこを人が握るかを決める。
-        その場で次回までの実装テーマまで落とし込みます。
+        初月は、御社の課題を1つ選び、設計図から動くたたき台まで一気に作ります。
+        以降は現場の業務を一緒に分解し、どこをAIに渡し、どこを人が握るかを決め、次回までの実装テーマに落とし込みます。
       </p>
       <ul class="engagement-list">
+        <li>初月に課題を1つ、設計図＋たたき台プロトタイプをつくる（Claude Code のセットアップ込み）</li>
         <li>既存業務を棚卸しし、AIを差し込む優先順位を決める</li>
         <li>月次MTGで実装テーマを更新し、現場の詰まりを解消する</li>
         <li>Build へつながる要件を整理し、内製化の道筋をつくる</li>
@@ -2555,7 +2577,7 @@ section {
         <figure class="case-visual">
           <div class="frame">
             <img
-              src="assets/transport_ai_field.webp"
+              src="/ax-kenkyujo/assets/transport_ai_field.webp"
               alt="運送現場でノートPCを開きAI業務改善を確認する丹野健心"
               loading="lazy"
             />
@@ -2581,7 +2603,7 @@ section {
       <div>
         <figure class="radio-head-art">
           <img
-            src="assets/podcast_recording.webp"
+            src="/ax-kenkyujo/assets/podcast_recording.webp"
             alt="AX研究ラジオを収録する小野寺穂高と丹野健心"
             loading="lazy"
           />
@@ -2615,7 +2637,7 @@ section {
       <article class="ep ep--live">
         <div class="ep-thumb">
           <span class="ep-latest-badge">第1回</span>
-          <img src="assets/radio/ep01-thumb.webp" alt="AX研究ラジオ #1 — AIで不動産仲介業はどこまで変わるか" loading="lazy" />
+          <img src="/ax-kenkyujo/assets/radio/ep01-thumb.webp" alt="AX研究ラジオ #1 — AIで不動産仲介業はどこまで変わるか" loading="lazy" />
         </div>
         <div class="ep-body">
           <div class="ep-meta">
@@ -2625,7 +2647,7 @@ section {
           <p class="ep-desc">記念すべき第1回。「AX = AIトランスフォーメーション」とは何か。不動産仲介業の日次・週次・月次業務を順に分解し、どこをAI化できるかを点数化していきます。家を買ったばかりのMC2人が、業界のど素人だからこそ言える"設計図"を描きます。</p>
 
           <audio class="ep-audio" controls preload="none">
-            <source src="assets/audio/ep01.mp3" type="audio/mpeg" />
+            <source src="/ax-kenkyujo/assets/audio/ep01.mp3" type="audio/mpeg" />
             お使いのブラウザは音声再生に対応していません。
           </audio>
 
@@ -2716,7 +2738,7 @@ section {
     <figure class="team-working reveal team-working-top">
       <div class="frame">
         <img
-          src="assets/founders_working.webp"
+          src="/ax-kenkyujo/assets/founders_working.webp"
           alt="同じデスクでノートPCとメモを広げて作業する小野寺穂高と丹野健心"
           loading="lazy"
         />
@@ -2728,7 +2750,7 @@ section {
       <article class="member">
         <div class="portrait">
           <span class="tag">Founder · SUI-GEN</span>
-          <img src="assets/hodaka.jpg" alt="小野寺 穂高" loading="lazy" />
+          <img src="/ax-kenkyujo/assets/hodaka.jpg" alt="小野寺 穂高" loading="lazy" />
         </div>
         <div class="name-block">
           <div class="name-jp">小野寺 穂高</div>
@@ -2750,7 +2772,7 @@ section {
       <article class="member">
         <div class="portrait">
           <span class="tag">Founder · Sponsaru</span>
-          <img src="assets/tanno.jpg" alt="丹野 健心" loading="lazy" style="object-position: center 30%;" />
+          <img src="/ax-kenkyujo/assets/tanno.jpg" alt="丹野 健心" loading="lazy" style="object-position: center 30%;" />
         </div>
         <div class="name-block">
           <div class="name-jp">丹野 健心</div>
