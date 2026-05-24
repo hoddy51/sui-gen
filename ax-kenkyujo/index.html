@@ -237,6 +237,18 @@ section {
     radial-gradient(ellipse 70% 60% at 15% 90%, rgba(245,241,232,.04), transparent 70%);
   pointer-events: none;
 }
+.hero::after {
+  /* very subtle podcast hint in bottom-right */
+  content: ""; position: absolute;
+  right: -8%; bottom: -10%;
+  width: 55%; height: 70%;
+  background: url('/ax-kenkyujo/assets/podcast_recording.webp') no-repeat center/contain;
+  opacity: .055;
+  filter: grayscale(100%) contrast(1.1);
+  pointer-events: none;
+  z-index: 0;
+}
+@media (max-width: 820px) { .hero::after { display: none; } }
 .hero-inner {
   flex: 1;
   display: grid;
@@ -278,6 +290,16 @@ section {
 .hero-headline .em-pause {
   display: inline-block;
   width: .4em;
+}
+.hero-tagline-sub {
+  margin-top: 18px;
+  font-family: var(--serif);
+  font-size: clamp(15px, 1.6vw, 22px);
+  line-height: 1.5;
+  color: rgba(245,241,232,.62);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: .01em;
 }
 .hero-sub {
   margin-top: 36px;
@@ -2251,6 +2273,136 @@ section {
   .team-working-top figcaption { bottom: 20px; left: 20px; font-size: 10px !important; }
 }
 
+/* ===== RADIO HOOK (Hero直下の最新エピソード) ===== */
+.radio-hook {
+  background: var(--paper-2);
+  padding: clamp(48px, 8vw, 96px) 0;
+  border-bottom: 1px solid var(--line);
+}
+.rh-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.rh-thumb {
+  position: relative;
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -20px rgba(0,0,0,.35);
+  aspect-ratio: 16 / 9;
+}
+.rh-thumb img {
+  width: 100%; height: 100%; display: block;
+  object-fit: cover;
+}
+.rh-play {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  display: flex; align-items: center; justify-content: center;
+  gap: 10px;
+  background: rgba(20,19,15,.42);
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+.rh-play:hover { background: rgba(20,19,15,.55); }
+.rh-play-icon {
+  display: inline-flex;
+  width: 56px; height: 56px;
+  align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--paper);
+  font-size: 22px;
+  padding-left: 4px;
+  transition: transform .2s ease;
+}
+.rh-play:hover .rh-play-icon { transform: scale(1.06); }
+.rh-play-text small { display: block; font-size: 12px; opacity: .85; font-weight: 400; margin-top: 2px; }
+.rh-body { padding-top: 4px; }
+.rh-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.rh-title {
+  font-family: var(--display);
+  font-size: clamp(28px, 3.6vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.015em;
+  margin: 0 0 22px;
+  color: var(--ink);
+}
+.rh-chapters {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  border-top: 1px solid var(--line);
+}
+.rh-chapters li {
+  display: flex;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+.rh-tc {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  min-width: 48px;
+  padding-top: 2px;
+}
+.rh-foot {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-3);
+  margin: 18px 0 18px;
+  line-height: 1.65;
+}
+.rh-actions {
+  display: flex; gap: 12px; align-items: center;
+  flex-wrap: wrap;
+}
+.rh-audio-wrap {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  display: flex; align-items: center; gap: 20px;
+  flex-wrap: wrap;
+}
+.rh-audio-wrap[hidden] { display: none; }
+.rh-audio {
+  flex: 1 1 360px;
+  min-width: 280px;
+  max-width: 560px;
+}
+.rh-cta-after-play {
+  flex: 0 0 auto;
+}
+@media (max-width: 820px) {
+  .rh-grid { grid-template-columns: 1fr; gap: 24px; }
+  .rh-thumb { max-width: 100%; }
+  .rh-play-icon { width: 48px; height: 48px; font-size: 18px; }
+  .rh-audio-wrap { flex-direction: column; align-items: stretch; }
+  .rh-audio { width: 100%; max-width: none; }
+  .rh-cta-after-play { width: 100%; text-align: center; }
+}
+
 </style>
 </head>
 <body>
@@ -2265,7 +2417,7 @@ section {
   </a>
   <nav class="nav" aria-label="Primary">
     <div class="nav-links">
-      <a href="#founders">運営</a>
+      <a href="#team">運営</a>
       <a href="#why">なぜAX研究所か</a>
       <a href="#plans">プラン</a>
       <a href="#cases">事例</a>
@@ -2295,9 +2447,10 @@ section {
 
     <div class="hero-body">
       <h1 class="hero-headline">
-        <span class="line">研修じゃない、</span>
-        <span class="line"><span class="accent">伴走</span>だ。</span>
+        <span class="line">業務フローを、</span>
+        <span class="line"><span class="accent">AI</span>で置き換える。</span>
       </h1>
+      <p class="hero-tagline-sub">— 研修じゃない、業務フローの作り直しだ。</p>
     </div>
 
     <div>
@@ -2358,238 +2511,40 @@ section {
 </section>
 
 <!-- ============================================================ -->
-<!-- FOUNDERS                                                      -->
+<!-- RADIO HOOK — Hero直下の最新エピソード提示                       -->
 <!-- ============================================================ -->
-<section class="founders-scene" id="founders" data-screen-label="02 Founders">
-  <div class="founders-bg" aria-hidden="true">
-    <img src="/ax-kenkyujo/assets/founders_together.webp" alt="" loading="lazy" />
-  </div>
-  <div class="container founders-layout">
-    <div class="founders-copy reveal">
-      <div class="section-eyebrow"><span class="section-num">02</span> Founders</div>
-      <h2 class="section-title">2社の代表が、同じ机で動かす。</h2>
-      <p>
-        AX研究所は、SUI-GEN とスポンサルの共同事業です。
-        研修を納品して終えるのではなく、自社経営でAIを使い倒している2人が、
-        御社の業務設計まで並走します。
-      </p>
-    </div>
-    <aside class="founders-panel reveal">
-      <p>
-        「研修じゃない、伴走だ。」を成立させるのは、
-        若さではなく実装の密度です。経営・現場・開発の距離が近い2人で、
-        導入後まで責任を持てる体制を組んでいます。
-      </p>
-      <dl>
-        <div>
-          <dt>Hodaka</dt>
-          <dd>全体設計、経営への落とし込み、社内実装の接続。</dd>
-        </div>
-        <div>
-          <dt>Tanno</dt>
-          <dd>現場起点の業務再設計、運送業でのAI活用知見。</dd>
-        </div>
-      </dl>
-    </aside>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- WHY AX研究所                                                   -->
-<!-- ============================================================ -->
-<section class="why" id="why" data-screen-label="03 Why AX研究所">
+<section class="radio-hook" id="radio-hook" data-screen-label="02 Radio Hook">
   <div class="container">
-    <div class="section-head row reveal">
-      <div>
-        <div class="section-eyebrow"><span class="section-num">03</span> Why AX研究所</div>
-        <h2 class="section-title">AX研究所にしか出せない、<em>3つの当事者性</em>。</h2>
-      </div>
-      <p class="section-lede">
-        AI研修屋でも、AIコンサルでもない。自分たちの会社をAIで回している人間が、
-        あなたの会社の隣に座る。それがAX研究所の定義です。
-      </p>
-    </div>
-
-    <div class="why-grid reveal">
-      <article class="item">
-        <div class="badge"><span class="n">1</span> Players, not Trainers</div>
-        <h3>2社の現役起業家が、共同で運営</h3>
-        <p>株式会社SUI-GEN（穂高 / 26歳）× 株式会社スポンサル（丹野 / 25歳）の共同事業。それぞれが自社の営業・開発・経理・資料作成まで、毎日AIで回しているプレイヤー本人が直接担当します。</p>
-        <div class="proof">— 1社のスタートアップではなく、<br />2社の現役プレイヤーが結託した体制。</div>
-      </article>
-
-      <article class="item">
-        <div class="badge"><span class="n">2</span> Field-Proven</div>
-        <h3>運送業のAI業務フロー改善、<br />実装済み。</h3>
-        <p>スポンサル（運送業）の現場で、配車・請求・ドライバー連絡などのAI業務フローを設計・実装。"AI化された会社"の中で経営を回す手触りを、そのまま持ち込みます。</p>
-        <div class="proof">— 教科書ではなく、<br />昨日まで現場で動いていたフローを共有。</div>
-      </article>
-
-      <article class="item">
-        <div class="badge"><span class="n">3</span> End-to-End</div>
-        <h3>研修 → 実装 → 内製開発、<br />一気通貫。</h3>
-        <p>「学んだあと誰がつくるのか」問題を残しません。セキュリティを担保できるエンジニア網と組み、社内システムの構築（Buildプラン）まで同じチームでお引き受けします。</p>
-        <div class="proof">— Community → Pro →<br />Build まで一筆書き。</div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- PLANS                                                         -->
-<!-- ============================================================ -->
-<section class="plans" id="plans" data-screen-label="04 Plans">
-  <div class="container">
-    <div class="section-head row reveal">
-      <div>
-        <div class="section-eyebrow"><span class="section-num">04</span> Plans</div>
-        <h2 class="section-title">入口から実装まで、<br />3つのプラン。</h2>
-      </div>
-      <p class="section-lede">
-        「とりあえず空気を吸う」Community から、月次伴走の Pro、社内システムを建てる Build まで。<br />
-        まずは <strong style="color:var(--ink);font-weight:700;">Pro</strong> を推奨。初月に御社の課題を1つ、動くたたき台まで一緒に作ります。
-      </p>
-    </div>
-
-    <div class="plans-grid reveal">
-      <!-- Community -->
-      <div class="plan">
-        <div class="tag">Entry</div>
-        <h3>Community</h3>
-        <div class="price">
-          <span class="num">¥10,000</span>
-          <span class="unit">/ 月（税別）</span>
-        </div>
-        <ul>
-          <li>週1配信：実装ノウハウ（実際のプロンプト・ワークフロー）</li>
-          <li>AX研究ラジオ限定：未公開ディテール＋「業界AX設計図」テンプレ＋先行配信</li>
-          <li>月1オフ会 ／ メンバー限定コミュニティ</li>
-          <li>Pro以上への優先枠</li>
+    <div class="rh-grid reveal">
+      <figure class="rh-thumb">
+        <img src="/ax-kenkyujo/assets/radio/ep01-thumb.webp" alt="AX研究ラジオ #1 — AIで不動産仲介業はどこまで変わるか" loading="lazy" />
+        <button class="rh-play" type="button" aria-label="今すぐ聴く">
+          <span class="rh-play-icon" aria-hidden="true">▶</span>
+          <span class="rh-play-text">今すぐ聴く <small>（38分）</small></span>
+        </button>
+      </figure>
+      <div class="rh-body">
+        <div class="rh-eyebrow">最新エピソード — AX研究ラジオ #1</div>
+        <h2 class="rh-title">不動産仲介業のAX</h2>
+        <ul class="rh-chapters">
+          <li><span class="rh-tc">14:20</span> 家を買って感じた、手続きの大変さ</li>
+          <li><span class="rh-tc">31:00</span> 不動産仲介の日次業務をAIで分解する</li>
+          <li><span class="rh-tc">33:55</span> AXスコア発表（穂高90点 / 健心75点）</li>
         </ul>
-        <!-- TODO: Stripe Payment Link 発行後、href="STRIPE_COMMUNITY_LINK" を本番URLに差し替え -->
-        <a class="btn cta cta-ghost" href="STRIPE_COMMUNITY_LINK">今すぐ申込 <span class="arr">→</span></a>
-      </div>
-
-      <!-- Pro -->
-      <div class="plan is-recommended">
-        <div class="ribbon">Recommended</div>
-        <div class="tag">Monthly Partner</div>
-        <h3>Pro</h3>
-        <div class="price">
-          <span class="num">¥50,000</span>
-          <span class="unit">/ 月（税別）</span>
+        <p class="rh-foot">あなたの業界の業務フローを、こうやって解体しています。</p>
+        <div class="rh-actions">
+          <a class="btn btn-ghost" href="#radio">全話を見る ↓</a>
         </div>
-        <ul>
-          <li class="perk"><span class="perk-tag">初月特典</span><span class="perk-body">御社の課題を1つ、設計図＋たたき台プロトタイプに（Claude Codeセットアップ込み）</span></li>
-          <li>月1対面 / オンラインMTG（2h）</li>
-          <li>個別伴走（実務にAIを差し込む）</li>
-          <li>Communityの全特典</li>
-          <li>Build への接続</li>
-        </ul>
-        <a class="btn cta" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%20Pro%5D%20%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
-      </div>
-
-      <!-- Build -->
-      <div class="plan">
-        <div class="tag">Custom</div>
-        <h3>Build</h3>
-        <div class="price">
-          <span class="ask">個別見積</span>
-        </div>
-        <ul>
-          <li>社内システムの設計・開発</li>
-          <li>セキュリティ担保エンジニア込み</li>
-          <li>運用・改修まで継続</li>
-          <li>Pro と並走</li>
-        </ul>
-        <a class="btn cta cta-ghost" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%20Build%5D%20%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
       </div>
     </div>
-
-    <div class="plans-note reveal">
-      <strong>料金について。</strong>
-      Community のみ Stripe で月額決済（即時申込）。Pro / Build は、まず1時間の無料相談で要件を伺った上でご提案します。途中プラン変更も可能です。
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- ENGAGEMENT                                                    -->
-<!-- ============================================================ -->
-<section class="engagement" id="engagement">
-  <div class="container engagement-grid">
-    <figure class="engagement-media reveal">
-      <img
-        src="/ax-kenkyujo/assets/training_session.webp"
-        alt="企業の会議室でAI業務フローについて対話するAX研究所の伴走風景"
-        loading="lazy"
-      />
-    </figure>
-    <div class="engagement-copy reveal">
-      <div class="section-head">
-        <div class="section-eyebrow">Engagement</div>
-        <h2 class="section-title">Pro でやっているのは、<br />知識提供ではなく設計です。</h2>
-      </div>
-      <p class="section-lede">
-        初月は、御社の課題を1つ選び、設計図から動くたたき台まで一気に作ります。
-        以降は現場の業務を一緒に分解し、どこをAIに渡し、どこを人が握るかを決め、次回までの実装テーマに落とし込みます。
-      </p>
-      <ul class="engagement-list">
-        <li>初月に課題を1つ、設計図＋たたき台プロトタイプをつくる（Claude Code のセットアップ込み）</li>
-        <li>既存業務を棚卸しし、AIを差し込む優先順位を決める</li>
-        <li>月次MTGで実装テーマを更新し、現場の詰まりを解消する</li>
-        <li>Build へつながる要件を整理し、内製化の道筋をつくる</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- CASES                                                         -->
-<!-- ============================================================ -->
-<section class="cases" id="cases" data-screen-label="05 Cases">
-  <div class="container">
-    <div class="section-head row reveal">
-      <div>
-        <div class="section-eyebrow"><span class="section-num">05</span> Cases</div>
-        <h2 class="section-title">自社で動かしている、<br />2つの現場から。</h2>
-      </div>
-      <p class="section-lede">
-        他社の事例を切り貼りした資料はお見せしません。私たち自身の事業で、AIをどう差し込んだか。
-        その手触りごと共有します。
-      </p>
-    </div>
-
-    <div class="case-grid reveal">
-      <article class="case case-wide">
-        <div class="meta">
-          <span class="pill">Field-Proven</span>
-          <span>株式会社スポンサル / 運送業</span>
-          <span class="meta-sep">·</span>
-          <span>株式会社SUI-GEN / 複数事業並走</span>
-        </div>
-        <h3>「電話とFAX」の現場から、<br />複数事業を回す経営まで。</h3>
-        <p>
-          スポンサル（運送業）では、配車・請求・ドライバー連絡といった日々のオペレーションにAIを業務フローとして差し込み済み。
-          一方SUI-GENでは、営業の一次対応、開発、月次経理、資料生成まで自社で実践中。
-          研修ではなく、その手触りをそのまま御社に持ち込みます。
-        </p>
-        <figure class="case-visual">
-          <div class="frame">
-            <img
-              src="/ax-kenkyujo/assets/transport_ai_field.webp"
-              alt="運送現場でノートPCを開きAI業務改善を確認する丹野健心"
-              loading="lazy"
-            />
-          </div>
-          <figcaption>丹野 / 株式会社スポンサル。運送現場の業務フロー改善を、当事者として積み上げています。</figcaption>
-        </figure>
-        <div class="deltas">
-          <div class="delta"><div class="k">領域</div><div class="v">運送業 / SMB経営</div></div>
-          <div class="delta"><div class="k">フェーズ</div><div class="v">実装 → 運用 → 継続改善</div></div>
-          <div class="delta"><div class="k">主体</div><div class="v">穂高 × 丹野（2社共同）</div></div>
-        </div>
-      </article>
+    <div class="rh-audio-wrap" hidden>
+      <audio class="rh-audio" controls preload="none">
+        <source src="/ax-kenkyujo/assets/audio/ep01.mp3" type="audio/mpeg" />
+        お使いのブラウザは音声再生に対応していません。
+      </audio>
+      <a class="btn btn-primary rh-cta-after-play" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BPodcast%E7%B5%8C%E7%94%B1%5D%20AX%E7%A0%94%E7%A9%B6%E6%89%80%20%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B&body=%E3%82%88%E3%81%8F%E8%81%B4%E3%81%84%E3%81%9F%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%EF%BC%9A%0A%0A%E6%B0%97%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E5%86%85%E5%AE%B9%EF%BC%9A%0A%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A">
+        この業界、自分の会社でもやれます。30分の無料相談へ <span class="arr">→</span>
+      </a>
     </div>
   </div>
 </section>
@@ -2597,7 +2552,7 @@ section {
 <!-- ============================================================ -->
 <!-- RADIO — AX研究ラジオ                                            -->
 <!-- ============================================================ -->
-<section class="radio" id="radio" data-screen-label="06 Radio">
+<section class="radio" id="radio" data-screen-label="03 Radio">
   <div class="container">
     <div class="section-head row reveal">
       <div>
@@ -2608,7 +2563,7 @@ section {
             loading="lazy"
           />
         </figure>
-        <div class="section-eyebrow"><span class="section-num">06</span> Radio</div>
+        <div class="section-eyebrow"><span class="section-num">03</span> Radio</div>
         <h2 class="section-title">AX研究ラジオ。<br />業界の業務フローを、<em>AXの設計図</em>に。</h2>
       </div>
       <p class="section-lede">
@@ -2704,7 +2659,7 @@ section {
     <!-- ============================================================ -->
     <aside class="radio-listener-cta reveal">
       <div class="rlc-eyebrow">For Listeners</div>
-      <h3 class="rlc-title">番組を聴いて、自社の業界が気になったら。</h3>
+      <h3 class="rlc-title">家を買った2人が不動産を解体したように、あなたの業界も30分で解体します。</h3>
       <p class="rlc-lede">
         御社の業界の業務フローを一緒に解体し、「どこにAIを当てると最大のレバレッジが効くか」を、その場で設計図にします。
         最初の30分は無料。営業の時間にはしないので、聞きにくいことから聞いてください。
@@ -2718,6 +2673,209 @@ section {
     </aside>
   </div>
 </section>
+
+<!-- ============================================================ -->
+<!-- WHY AX研究所                                                   -->
+<!-- ============================================================ -->
+<section class="why" id="why" data-screen-label="04 Why AX研究所">
+  <div class="container">
+    <div class="section-head row reveal">
+      <div>
+        <div class="section-eyebrow"><span class="section-num">04</span> Why AX研究所</div>
+        <h2 class="section-title">AX研究所にしか出せない、<em>3つの当事者性</em>。</h2>
+      </div>
+      <p class="section-lede">
+        AI研修屋でも、AIコンサルでもない。自分たちの会社をAIで回している人間が、
+        あなたの会社の隣に座る。それがAX研究所の定義です。
+        <br /><small style="opacity:.75; font-size:.85em;">— ラジオEP02予告: 「業務効率化10〜30% / DX 30〜50% / AX 50〜80%」自社のフェーズはどこか。</small>
+      </p>
+    </div>
+
+    <div class="why-grid reveal">
+      <article class="item">
+        <div class="badge"><span class="n">1</span> Players, not Trainers</div>
+        <h3>2社の現役起業家が、共同で運営</h3>
+        <p>株式会社SUI-GEN（穂高 / 26歳）× 株式会社スポンサル（丹野 / 25歳）の共同事業。それぞれが自社の営業・開発・経理・資料作成まで、毎日AIで回しているプレイヤー本人が直接担当します。</p>
+        <div class="proof">— 1社のスタートアップではなく、<br />2社の現役プレイヤーが結託した体制。</div>
+      </article>
+
+      <article class="item">
+        <div class="badge"><span class="n">2</span> Field-Proven</div>
+        <h3>運送業のAI業務フロー改善、<br />実装済み。</h3>
+        <p>スポンサル（運送業）の現場で、配車・請求・ドライバー連絡などのAI業務フローを設計・実装。"AI化された会社"の中で経営を回す手触りを、そのまま持ち込みます。</p>
+        <div class="proof">— 教科書ではなく、<br />昨日まで現場で動いていたフローを共有。</div>
+      </article>
+
+      <article class="item">
+        <div class="badge"><span class="n">3</span> End-to-End</div>
+        <h3>研修 → 実装 → 内製開発、<br />一気通貫。</h3>
+        <p>「学んだあと誰がつくるのか」問題を残しません。セキュリティを担保できるエンジニア網と組み、社内システムの構築（Buildプラン）まで同じチームでお引き受けします。</p>
+        <div class="proof">— Community → Pro →<br />Build まで一筆書き。</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PLANS                                                         -->
+<!-- ============================================================ -->
+<section class="plans" id="plans" data-screen-label="05 Plans">
+  <div class="container">
+    <div class="section-head row reveal">
+      <div>
+        <div class="section-eyebrow"><span class="section-num">05</span> Plans</div>
+        <h2 class="section-title">入口から実装まで、<br />3つのプラン。</h2>
+      </div>
+      <p class="section-lede">
+        「とりあえず空気を吸う」Community から、月次伴走の Pro、社内システムを建てる Build まで。<br />
+        まずは <strong style="color:var(--ink);font-weight:700;">Pro</strong> を推奨。初月に御社の課題を1つ、動くたたき台まで一緒に作ります。
+      </p>
+    </div>
+
+    <div class="plans-grid reveal">
+      <!-- Community -->
+      <div class="plan">
+        <div class="tag">Entry</div>
+        <h3>Community</h3>
+        <div class="price">
+          <span class="num">¥10,000</span>
+          <span class="unit">/ 月（税別）</span>
+        </div>
+        <ul>
+          <li>週1配信：実装ノウハウ（実際のプロンプト・ワークフロー）</li>
+          <li>AX研究ラジオ限定：未公開ディテール＋「業界AX設計図」テンプレ＋先行配信</li>
+          <li>月1オフ会 ／ メンバー限定コミュニティ</li>
+          <li>Pro以上への優先枠</li>
+        </ul>
+        <!-- TODO: Stripe Payment Link 発行後、href="STRIPE_COMMUNITY_LINK" を本番URLに差し替え -->
+        <a class="btn cta cta-ghost" href="STRIPE_COMMUNITY_LINK">今すぐ申込 <span class="arr">→</span></a>
+      </div>
+
+      <!-- Pro -->
+      <div class="plan is-recommended">
+        <div class="ribbon">Recommended</div>
+        <div class="tag">Monthly Partner</div>
+        <h3>Pro</h3>
+        <div class="price">
+          <span class="num">¥50,000</span>
+          <span class="unit">/ 月（税別）</span>
+        </div>
+        <ul>
+          <li class="perk"><span class="perk-tag">初月特典</span><span class="perk-body">御社の課題を1つ、設計図＋たたき台プロトタイプに（Claude Codeセットアップ込み）</span></li>
+          <li class="perk"><span class="perk-tag">Listener Pick</span><span class="perk-body">ラジオを聴いて来た方へ — 初月伴走テーマを「番組で扱った業界」から1つ無料設定</span></li>
+          <li>月1対面 / オンラインMTG（2h）</li>
+          <li>個別伴走（実務にAIを差し込む）</li>
+          <li>Communityの全特典</li>
+          <li>Build への接続</li>
+        </ul>
+        <a class="btn cta" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%20Pro%5D%20%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
+      </div>
+
+      <!-- Build -->
+      <div class="plan">
+        <div class="tag">Custom</div>
+        <h3>Build</h3>
+        <div class="price">
+          <span class="ask">個別見積</span>
+        </div>
+        <ul>
+          <li>社内システムの設計・開発</li>
+          <li>セキュリティ担保エンジニア込み</li>
+          <li>運用・改修まで継続</li>
+          <li>Pro と並走</li>
+        </ul>
+        <a class="btn cta cta-ghost" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%20Build%5D%20%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
+      </div>
+    </div>
+
+    <div class="plans-note reveal">
+      <strong>料金について。</strong>
+      Community のみ Stripe で月額決済（即時申込）。Pro / Build は、まず1時間の無料相談で要件を伺った上でご提案します。途中プラン変更も可能です。
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ENGAGEMENT                                                    -->
+<!-- ============================================================ -->
+<section class="engagement" id="engagement">
+  <div class="container engagement-grid">
+    <figure class="engagement-media reveal">
+      <img
+        src="/ax-kenkyujo/assets/training_session.webp"
+        alt="企業の会議室でAI業務フローについて対話するAX研究所の伴走風景"
+        loading="lazy"
+      />
+    </figure>
+    <div class="engagement-copy reveal">
+      <div class="section-head">
+        <div class="section-eyebrow">Engagement</div>
+        <h2 class="section-title">Pro でやっているのは、<br />知識提供ではなく設計です。</h2>
+      </div>
+      <p class="section-lede">
+        初月は、御社の課題を1つ選び、設計図から動くたたき台まで一気に作ります。
+        以降は現場の業務を一緒に分解し、どこをAIに渡し、どこを人が握るかを決め、次回までの実装テーマに落とし込みます。
+      </p>
+      <ul class="engagement-list">
+        <li>初月に課題を1つ、設計図＋たたき台プロトタイプをつくる（Claude Code のセットアップ込み）</li>
+        <li>既存業務を棚卸しし、AIを差し込む優先順位を決める</li>
+        <li>月次MTGで実装テーマを更新し、現場の詰まりを解消する</li>
+        <li>Build へつながる要件を整理し、内製化の道筋をつくる</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CASES                                                         -->
+<!-- ============================================================ -->
+<section class="cases" id="cases" data-screen-label="06 Cases">
+  <div class="container">
+    <div class="section-head row reveal">
+      <div>
+        <div class="section-eyebrow"><span class="section-num">06</span> Cases</div>
+        <h2 class="section-title">自社で動かしている、<br />2つの現場から。</h2>
+      </div>
+      <p class="section-lede">
+        他社の事例を切り貼りした資料はお見せしません。私たち自身の事業で、AIをどう差し込んだか。
+        その手触りごと共有します。
+      </p>
+    </div>
+
+    <div class="case-grid reveal">
+      <article class="case case-wide">
+        <div class="meta">
+          <span class="pill">Field-Proven</span>
+          <span>株式会社スポンサル / 運送業</span>
+          <span class="meta-sep">·</span>
+          <span>株式会社SUI-GEN / 複数事業並走</span>
+        </div>
+        <h3>「電話とFAX」の現場から、<br />複数事業を回す経営まで。</h3>
+        <p>
+          スポンサル（運送業）では、配車・請求・ドライバー連絡といった日々のオペレーションにAIを業務フローとして差し込み済み。
+          一方SUI-GENでは、営業の一次対応、開発、月次経理、資料生成まで自社で実践中。
+          研修ではなく、その手触りをそのまま御社に持ち込みます。
+        </p>
+        <figure class="case-visual">
+          <div class="frame">
+            <img
+              src="/ax-kenkyujo/assets/transport_ai_field.webp"
+              alt="運送現場でノートPCを開きAI業務改善を確認する丹野健心"
+              loading="lazy"
+            />
+          </div>
+          <figcaption>丹野 / 株式会社スポンサル。運送現場の業務フロー改善を、当事者として積み上げています。</figcaption>
+        </figure>
+        <div class="deltas">
+          <div class="delta"><div class="k">領域</div><div class="v">運送業 / SMB経営</div></div>
+          <div class="delta"><div class="k">フェーズ</div><div class="v">実装 → 運用 → 継続改善</div></div>
+          <div class="delta"><div class="k">主体</div><div class="v">穂高 × 丹野（2社共同）</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 
 <!-- ============================================================ -->
 <!-- TEAM                                                          -->
@@ -2990,6 +3148,21 @@ section {
     window.addEventListener('resize', updateNavState);
     updateNavState();
   }
+})();
+</script>
+
+<script>
+/* === RADIO HOOK: ▶ボタン→audio表示&再生 === */
+(function(){
+  var btn = document.querySelector('.rh-play');
+  var audioWrap = document.querySelector('.rh-audio-wrap');
+  var audio = document.querySelector('.rh-audio');
+  if (!btn || !audioWrap || !audio) return;
+  btn.addEventListener('click', function(){
+    audioWrap.hidden = false;
+    btn.style.display = 'none';
+    audio.play().catch(function(){ /* user gesture required edge cases */ });
+  });
 })();
 </script>
 
