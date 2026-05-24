@@ -9,7 +9,6 @@
 <meta property="og:description" content="株式会社SUI-GEN × 株式会社スポンサルの共同事業。現役プレイヤーが直接、AIで事業を動かす。" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="ja_JP" />
-<!-- TODO: assets/ogp.png（1200x630推奨）を後ほど制作して差し替え -->
 <meta property="og:image" content="assets/ogp.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -948,7 +947,7 @@ section {
 }
 
 /* ------------------------------------------------------------------
-   RADIO — AX研究所ラジオ
+   RADIO — AX研究ラジオ
 ------------------------------------------------------------------ */
 .radio {
   background: var(--paper-2);
@@ -1252,6 +1251,94 @@ section {
 
 @media (max-width: 820px) {
   .ep { width: 82vw; }
+}
+
+/* --- 実エピソード: サムネ画像・音声プレーヤー・チャプター --- */
+.ep-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.ep--live .ep-desc { flex: 0 0 auto; }
+.ep-audio {
+  width: 100%;
+  height: 38px;
+  margin: 2px 0 14px;
+  accent-color: var(--accent);
+}
+.ep-chapters {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  font-family: var(--mono);
+}
+.ep-chapters > summary {
+  cursor: pointer;
+  font-size: 10.5px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  list-style: none;
+}
+.ep-chapters > summary::-webkit-details-marker { display: none; }
+.ep-chapters > summary::after { content: " +"; color: var(--ink-4); }
+.ep-chapters[open] > summary::after { content: " –"; }
+.ep-chapters ul {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.ep-chapters li {
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  display: flex;
+  gap: 10px;
+}
+.ep-chapters li span {
+  color: var(--accent);
+  flex: 0 0 auto;
+}
+
+/* --- 配信予定（未収録）カード: ダミーリンク/日付を出さない正直表示 --- */
+.ep--soon { opacity: .9; }
+.ep-thumb--soon {
+  background:
+    linear-gradient(135deg, #35322C 0%, #211F1B 100%);
+}
+.ep-soon-badge {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: transparent;
+  border: 1px solid rgba(245,241,232,.45);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  z-index: 2;
+}
+
+/* --- 未公開時のプラットフォーム表記（デッドリンク回避） --- */
+.radio-platforms .soon {
+  padding: 6px 12px;
+  border: 1px dashed var(--line-2);
+  background: transparent;
+  color: var(--ink-3);
+  text-transform: none;
+  letter-spacing: .04em;
+}
+.radio-foot-note {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: .1em;
+  color: var(--ink-3);
 }
 
 /* ------------------------------------------------------------------
@@ -2046,7 +2133,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('/ax-kenkyujo/assets/podcast_recording.webp');
+  background-image: url('assets/podcast_recording.webp');
   background-size: cover;
   background-position: center 30%;
   filter: grayscale(.3) contrast(1.06);
@@ -2070,7 +2157,7 @@ section {
   position: relative;
 }
 .radio-head-art::after {
-  content: "ON AIR";
+  content: "SEASON 1";
   position: absolute;
   top: 10px; left: 10px;
   font-family: var(--mono);
@@ -2203,14 +2290,14 @@ section {
         <div class="hf-label">— Founders</div>
         <div class="hf-people">
           <a class="founder-mini" href="#team">
-            <img src="/ax-kenkyujo/assets/hodaka.jpg" alt="小野寺 穂高" loading="lazy" />
+            <img src="assets/hodaka.jpg" alt="小野寺 穂高" loading="lazy" />
             <div class="founder-mini-info">
               <div class="fm-name">小野寺 穂高</div>
               <div class="fm-role">CEO · SUI-GEN</div>
             </div>
           </a>
           <a class="founder-mini" href="#team">
-            <img src="/ax-kenkyujo/assets/tanno.jpg" alt="丹野 健心" loading="lazy" style="object-position: center 30%;" />
+            <img src="assets/tanno.jpg" alt="丹野 健心" loading="lazy" style="object-position: center 30%;" />
             <div class="founder-mini-info">
               <div class="fm-name">丹野 健心</div>
               <div class="fm-role">CEO · スポンサル</div>
@@ -2255,7 +2342,7 @@ section {
 <!-- ============================================================ -->
 <section class="founders-scene" id="founders" data-screen-label="02 Founders">
   <div class="founders-bg" aria-hidden="true">
-    <img src="/ax-kenkyujo/assets/founders_together.webp" alt="" loading="lazy" />
+    <img src="assets/founders_together.webp" alt="" loading="lazy" />
   </div>
   <div class="container founders-layout">
     <div class="founders-copy reveal">
@@ -2412,7 +2499,7 @@ section {
   <div class="container engagement-grid">
     <figure class="engagement-media reveal">
       <img
-        src="/ax-kenkyujo/assets/training_session.webp"
+        src="assets/training_session.webp"
         alt="企業の会議室でAI業務フローについて対話するAX研究所の伴走風景"
         loading="lazy"
       />
@@ -2423,8 +2510,8 @@ section {
         <h2 class="section-title">Pro でやっているのは、<br />知識提供ではなく設計です。</h2>
       </div>
       <p class="section-lede">
-        Claude Code・Codex・ChatGPT をローカル環境につなぎ、自然言語の指示だけで自社の構造をAIに組み立てさせている。
-        その実践を、御社の業務フローのどこに、どう差し込むかという設計に翻訳してお渡しします。
+        現場の業務を一緒に分解し、どこをAIに渡し、どこを人が握るかを決める。
+        その場で次回までの実装テーマまで落とし込みます。
       </p>
       <ul class="engagement-list">
         <li>既存業務を棚卸しし、AIを差し込む優先順位を決める</li>
@@ -2468,7 +2555,7 @@ section {
         <figure class="case-visual">
           <div class="frame">
             <img
-              src="/ax-kenkyujo/assets/transport_ai_field.webp"
+              src="assets/transport_ai_field.webp"
               alt="運送現場でノートPCを開きAI業務改善を確認する丹野健心"
               loading="lazy"
             />
@@ -2486,7 +2573,7 @@ section {
 </section>
 
 <!-- ============================================================ -->
-<!-- RADIO — AX研究所ラジオ                                          -->
+<!-- RADIO — AX研究ラジオ                                            -->
 <!-- ============================================================ -->
 <section class="radio" id="radio" data-screen-label="06 Radio">
   <div class="container">
@@ -2494,27 +2581,26 @@ section {
       <div>
         <figure class="radio-head-art">
           <img
-            src="/ax-kenkyujo/assets/podcast_recording.webp"
-            alt="マイクの前でAX研究所ラジオを収録する小野寺穂高と丹野健心"
+            src="assets/podcast_recording.webp"
+            alt="AX研究ラジオを収録する小野寺穂高と丹野健心"
             loading="lazy"
           />
         </figure>
         <div class="section-eyebrow"><span class="section-num">06</span> Radio</div>
-        <h2 class="section-title">AX研究所ラジオ。<br />毎週、現役の手触りを<em>そのまま</em>。</h2>
+        <h2 class="section-title">AX研究ラジオ。<br />業界の業務フローを、<em>AXの設計図</em>に。</h2>
       </div>
       <p class="section-lede">
-        穂高 × 丹野が、自社で起きているAI業務の生々しい話を毎週収録。
-        営業・開発・経営判断のリアルを、研修化する前の温度のままお届けします。
+        経営者 × エンジニアが、毎回ひとつの業界の業務フローを解体し、
+        「AIでどう作り直すか（AX）」の設計図を1本にまとめる討論番組。
+        業務効率化のtipsではなく、フロー全体の再設計を扱います。隔週配信。
       </p>
     </div>
 
     <div class="radio-toolbar reveal">
       <div class="radio-platforms">
         <span class="label">Listen on</span>
-        <!-- TODO: 各プラットフォームのチャンネルURLを差し替え -->
-        <a href="#">YouTube <span class="arr">↗</span></a>
-        <a href="#">Spotify <span class="arr">↗</span></a>
-        <a href="#">Apple Podcasts <span class="arr">↗</span></a>
+        <!-- TODO: プラットフォーム公開後、各チャンネルURL（YouTube/Spotify/Apple）へ差し替え -->
+        <span class="soon">YouTube・Spotify で近日配信</span>
       </div>
       <div class="radio-nav">
         <button class="rnav prev" type="button" aria-label="前の話へ">←</button>
@@ -2522,91 +2608,76 @@ section {
       </div>
     </div>
 
-    <!-- TODO: エピソードは <article class="ep">…</article> を1枚追加するだけで増やせます -->
+    <!-- エピソードは <article class="ep">…</article> を1枚追加するだけで増やせます -->
     <div class="radio-carousel reveal" id="radioCarousel">
 
-      <article class="ep">
+      <!-- EP01: 収録済み・その場で再生可（38分） -->
+      <article class="ep ep--live">
         <div class="ep-thumb">
-          <span class="ep-latest-badge">Latest</span>
-          <span class="ep-num">EP 04</span>
-          <span class="ep-play" aria-hidden="true">▶</span>
+          <span class="ep-latest-badge">第1回</span>
+          <img src="assets/radio/ep01-thumb.webp" alt="AX研究ラジオ #01 サムネイル — AIで業務効率化じゃない、業務を作り直す" loading="lazy" />
         </div>
         <div class="ep-body">
           <div class="ep-meta">
-            <span>2026-05-12</span><span class="dot-sep"></span><span>38 min</span>
+            <span>EP 01</span><span class="dot-sep"></span><span>38 min</span>
           </div>
-          <h3 class="ep-title">「AIに任せたら経理がラクになる」は嘘だった話</h3>
-          <p class="ep-desc">月次経理をAIに丸投げした最初の3ヶ月で、なぜ逆に時間が増えたのか。ようやく見えた「人が握るところ」と「AIに任せるところ」の境界線。</p>
-          <div class="ep-platforms">
-            <a href="#">YouTube ↗</a>
-            <a href="#">Spotify ↗</a>
-            <a href="#">Apple ↗</a>
-          </div>
+          <h3 class="ep-title">業界の業務フローを、AIで作り直す。— 番組、はじめます</h3>
+          <p class="ep-desc">記念すべき第1回。「AIで業務効率化」ではなく「業務を作り直す」とはどういうことか。番組のコンセプトと、経営者 × エンジニアの2人がなぜこの番組をやるのかを話します。</p>
+
+          <audio class="ep-audio" controls preload="none">
+            <source src="assets/audio/ep01.mp3" type="audio/mpeg" />
+            お使いのブラウザは音声再生に対応していません。
+          </audio>
+
+          <details class="ep-chapters">
+            <summary>チャプター</summary>
+            <ul>
+              <li><span>00:00</span> オープニング・番組紹介</li>
+              <li><span>03:00</span> 自己紹介① 小野寺穂高（SUI-GEN代表）</li>
+              <li><span>08:00</span> 自己紹介② 丹野健心（エンジニア）</li>
+              <li><span>13:00</span> なぜこの番組をやるのか／コンセプト</li>
+              <li><span>21:00</span> Season 1 ラインナップ予告</li>
+              <li><span>26:00</span> リスナーへのお願い・無料相談のご案内</li>
+            </ul>
+          </details>
         </div>
       </article>
 
-      <article class="ep">
-        <div class="ep-thumb">
-          <span class="ep-num">EP 03</span>
-          <span class="ep-play" aria-hidden="true">▶</span>
-        </div>
-        <div class="ep-body">
-          <div class="ep-meta">
-            <span>2026-05-05</span><span class="dot-sep"></span><span>42 min</span>
-          </div>
-          <h3 class="ep-title">25歳が運送業にAIを持ち込んだら、現場のおじさんが一番喜んだ</h3>
-          <p class="ep-desc">スポンサル運送業現場で配車・請求・連絡をAI化した実話。「電話とFAX」の世界に若い起業家が踏み込んで分かった、最も大事な順番。</p>
-          <div class="ep-platforms">
-            <a href="#">YouTube ↗</a>
-            <a href="#">Spotify ↗</a>
-            <a href="#">Apple ↗</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="ep">
-        <div class="ep-thumb">
+      <!-- EP02: 台本作成済み・収録待ち → 配信予定として正直に表示（ダミー日付/リンクは出さない） -->
+      <article class="ep ep--soon">
+        <div class="ep-thumb ep-thumb--soon">
+          <span class="ep-soon-badge">配信予定</span>
           <span class="ep-num">EP 02</span>
-          <span class="ep-play" aria-hidden="true">▶</span>
         </div>
         <div class="ep-body">
           <div class="ep-meta">
-            <span>2026-04-28</span><span class="dot-sep"></span><span>35 min</span>
+            <span>EP 02</span><span class="dot-sep"></span><span>Coming soon</span>
           </div>
-          <h3 class="ep-title">営業の一次対応をAIにしたら、商談の質が逆に上がった件</h3>
-          <p class="ep-desc">SUI-GEN社内で営業フローを再設計した過程。最初に切り出すべき業務はどこか、AIが取った後に人の時間がどこへ流れたか、を実例で。</p>
-          <div class="ep-platforms">
-            <a href="#">YouTube ↗</a>
-            <a href="#">Spotify ↗</a>
-            <a href="#">Apple ↗</a>
-          </div>
+          <h3 class="ep-title">AXとは何か — 業務効率化・DX・AXの違い</h3>
+          <p class="ep-desc">以降の業界回の共通言語をつくる回。「業務効率化10〜30%／DX 30〜50%／AX 50〜80%」、自社がいまどのフェーズにいるかを判断する物差しを整理します。</p>
         </div>
       </article>
 
-      <article class="ep">
-        <div class="ep-thumb">
-          <span class="ep-num">EP 01</span>
-          <span class="ep-play" aria-hidden="true">▶</span>
+      <!-- EP03: 配信予定 -->
+      <article class="ep ep--soon">
+        <div class="ep-thumb ep-thumb--soon">
+          <span class="ep-soon-badge">配信予定</span>
+          <span class="ep-num">EP 03</span>
         </div>
         <div class="ep-body">
           <div class="ep-meta">
-            <span>2026-04-21</span><span class="dot-sep"></span><span>40 min</span>
+            <span>EP 03</span><span class="dot-sep"></span><span>Coming soon</span>
           </div>
-          <h3 class="ep-title">AX研究所、はじめます — 研修じゃない、伴走を語る理由</h3>
-          <p class="ep-desc">穂高×丹野の初回収録。なぜ「AI研修屋」ではなく「現役プレイヤーの伴走」というポジションを選んだのか。2026年の起業観とAI観を率直に。</p>
-          <div class="ep-platforms">
-            <a href="#">YouTube ↗</a>
-            <a href="#">Spotify ↗</a>
-            <a href="#">Apple ↗</a>
-          </div>
+          <h3 class="ep-title">不動産仲介業のAX</h3>
+          <p class="ep-desc">業界深掘りシリーズ第1弾。最大市場のひとつ、不動産仲介の業務フローを解体し、「人を増やさず成約を伸ばす」3ステップの設計図を描きます。</p>
         </div>
       </article>
 
     </div>
 
     <div class="radio-foot reveal">
-      <!-- TODO: 全エピソード一覧ページ（YouTubeチャンネル等）にリンク -->
-      <a href="#">全エピソードを見る →</a>
+      <!-- TODO: プラットフォーム公開後、YouTubeチャンネル等の全話一覧にリンク -->
+      <span class="radio-foot-note">Season 1 は全10業界を予定 — 隔週で順次配信します。</span>
     </div>
 
     <!-- ============================================================ -->
@@ -2614,14 +2685,14 @@ section {
     <!-- ============================================================ -->
     <aside class="radio-listener-cta reveal">
       <div class="rlc-eyebrow">For Listeners</div>
-      <h3 class="rlc-title">番組を聴いて、AX研究所が気になったら。</h3>
+      <h3 class="rlc-title">番組を聴いて、自社の業界が気になったら。</h3>
       <p class="rlc-lede">
-        営業の時間にはしないので、聞きにくいことから聞いてください。
-        最初の1時間は無料。その場で「いま御社にとってAIをどう入れるか」を口頭で設計します。
+        御社の業界の業務フローを一緒に解体し、「どこにAIを当てると最大のレバレッジが効くか」を、その場で設計図にします。
+        最初の30分は無料。営業の時間にはしないので、聞きにくいことから聞いてください。
       </p>
       <div class="rlc-actions">
         <a class="btn btn-primary" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BPodcast%E7%B5%8C%E7%94%B1%5D%20AX%E7%A0%94%E7%A9%B6%E6%89%80%20%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B&body=%E3%82%88%E3%81%8F%E8%81%B4%E3%81%84%E3%81%9F%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%EF%BC%9A%0A%0A%E6%B0%97%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%9F%E5%86%85%E5%AE%B9%EF%BC%9A%0A%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E5%B8%8C%E6%9C%9B%E6%97%A5%E6%99%82%EF%BC%88%E7%AC%AC1%E5%B8%8C%E6%9C%9B%E3%83%BB%E7%AC%AC2%E5%B8%8C%E6%9C%9B%EF%BC%89%EF%BC%9A%0A%0A%E3%82%88%E3%82%8D%E3%81%97%E3%81%8F%E3%81%8A%E9%A1%98%E3%81%84%E3%81%84%E3%81%9F%E3%81%97%E3%81%BE%E3%81%99%E3%80%82">
-          無料相談を予約（Podcastリスナー枠） <span class="arr">→</span>
+          30分の無料相談を予約 <span class="arr">→</span>
         </a>
         <a class="btn btn-ghost" href="#plans">プランも見る</a>
       </div>
@@ -2648,7 +2719,7 @@ section {
     <figure class="team-working reveal team-working-top">
       <div class="frame">
         <img
-          src="/ax-kenkyujo/assets/founders_working.webp"
+          src="assets/founders_working.webp"
           alt="同じデスクでノートPCとメモを広げて作業する小野寺穂高と丹野健心"
           loading="lazy"
         />
@@ -2660,7 +2731,7 @@ section {
       <article class="member">
         <div class="portrait">
           <span class="tag">Founder · SUI-GEN</span>
-          <img src="/ax-kenkyujo/assets/hodaka.jpg" alt="小野寺 穂高" loading="lazy" />
+          <img src="assets/hodaka.jpg" alt="小野寺 穂高" loading="lazy" />
         </div>
         <div class="name-block">
           <div class="name-jp">小野寺 穂高</div>
@@ -2682,7 +2753,7 @@ section {
       <article class="member">
         <div class="portrait">
           <span class="tag">Founder · Sponsaru</span>
-          <img src="/ax-kenkyujo/assets/tanno.jpg" alt="丹野 健心" loading="lazy" style="object-position: center 30%;" />
+          <img src="assets/tanno.jpg" alt="丹野 健心" loading="lazy" style="object-position: center 30%;" />
         </div>
         <div class="name-block">
           <div class="name-jp">丹野 健心</div>
