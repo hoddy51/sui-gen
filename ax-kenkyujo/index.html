@@ -291,15 +291,18 @@ section {
   display: inline-block;
   width: .4em;
 }
-.hero-tagline-sub {
-  margin-top: 18px;
-  font-family: var(--serif);
-  font-size: clamp(15px, 1.6vw, 22px);
-  line-height: 1.5;
-  color: rgba(245,241,232,.62);
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: .01em;
+/* 1行版: 横幅いっぱい使う */
+.hero-headline--wide {
+  font-size: clamp(40px, 9.2vw, 148px);
+  line-height: 1.05;
+  letter-spacing: -.035em;
+  white-space: nowrap;
+}
+@media (max-width: 980px) {
+  .hero-headline--wide {
+    white-space: normal;
+    font-size: clamp(36px, 8.8vw, 80px);
+  }
 }
 .hero-sub {
   margin-top: 36px;
@@ -2446,11 +2449,9 @@ section {
     </div>
 
     <div class="hero-body">
-      <h1 class="hero-headline">
-        <span class="line">業務フローを、</span>
-        <span class="line"><span class="accent">AI</span>で置き換える。</span>
+      <h1 class="hero-headline hero-headline--wide">
+        業務フローを、<span class="accent">AI</span>で置き換える。
       </h1>
-      <p class="hero-tagline-sub">— 研修じゃない、業務フローの作り直しだ。</p>
     </div>
 
     <div>
@@ -2511,9 +2512,119 @@ section {
 </section>
 
 <!-- ============================================================ -->
+<!-- PLANS                                                         -->
+<!-- ============================================================ -->
+<section class="plans" id="plans" data-screen-label="02 Plans">
+  <div class="container">
+    <div class="section-head row reveal">
+      <div>
+        <div class="section-eyebrow"><span class="section-num">02</span> Plans</div>
+        <h2 class="section-title">入口から実装まで、<br />3つのプラン。</h2>
+      </div>
+      <p class="section-lede">
+        「とりあえず空気を吸う」Community から、月次伴走の Pro、社内システムを建てる Build まで。<br />
+        まずは <strong style="color:var(--ink);font-weight:700;">Pro</strong> を推奨。初月に御社の課題を1つ、動くたたき台まで一緒に作ります。
+      </p>
+    </div>
+
+    <div class="plans-grid reveal">
+      <!-- Community -->
+      <div class="plan">
+        <div class="tag">Entry</div>
+        <h3>Community</h3>
+        <div class="price">
+          <span class="num">¥10,000</span>
+          <span class="unit">/ 月（税別）</span>
+        </div>
+        <ul>
+          <li>週1配信：実装ノウハウ（実際のプロンプト・ワークフロー）</li>
+          <li>AX研究ラジオ限定：未公開ディテール＋「業界AX設計図」テンプレ＋先行配信</li>
+          <li>月1オフ会 ／ メンバー限定コミュニティ</li>
+          <li>Pro以上への優先枠</li>
+        </ul>
+        <!-- TODO: Stripe Payment Link 発行後、href="STRIPE_COMMUNITY_LINK" を本番URLに差し替え -->
+        <a class="btn cta cta-ghost" href="STRIPE_COMMUNITY_LINK">今すぐ申込 <span class="arr">→</span></a>
+      </div>
+
+      <!-- Pro -->
+      <div class="plan is-recommended">
+        <div class="ribbon">Recommended</div>
+        <div class="tag">Monthly Partner</div>
+        <h3>Pro</h3>
+        <div class="price">
+          <span class="num">¥50,000</span>
+          <span class="unit">/ 月（税別）</span>
+        </div>
+        <ul>
+          <li class="perk"><span class="perk-tag">初月特典</span><span class="perk-body">御社の課題を1つ、設計図＋たたき台プロトタイプに（Claude Codeセットアップ込み）</span></li>
+          <li class="perk"><span class="perk-tag">Listener Pick</span><span class="perk-body">ラジオを聴いて来た方へ — 初月伴走テーマを「番組で扱った業界」から1つ無料設定</span></li>
+          <li>月1対面 / オンラインMTG（2h）</li>
+          <li>個別伴走（実務にAIを差し込む）</li>
+          <li>Communityの全特典</li>
+          <li>Build への接続</li>
+        </ul>
+        <a class="btn cta" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%20Pro%5D%20%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
+      </div>
+
+      <!-- Build -->
+      <div class="plan">
+        <div class="tag">Custom</div>
+        <h3>Build</h3>
+        <div class="price">
+          <span class="ask">個別見積</span>
+        </div>
+        <ul>
+          <li>社内システムの設計・開発</li>
+          <li>セキュリティ担保エンジニア込み</li>
+          <li>運用・改修まで継続</li>
+          <li>Pro と並走</li>
+        </ul>
+        <a class="btn cta cta-ghost" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%20Build%5D%20%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
+      </div>
+    </div>
+
+    <div class="plans-note reveal">
+      <strong>料金について。</strong>
+      Community のみ Stripe で月額決済（即時申込）。Pro / Build は、まず1時間の無料相談で要件を伺った上でご提案します。途中プラン変更も可能です。
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- ENGAGEMENT                                                    -->
+<!-- ============================================================ -->
+<section class="engagement" id="engagement">
+  <div class="container engagement-grid">
+    <figure class="engagement-media reveal">
+      <img
+        src="/ax-kenkyujo/assets/training_session.webp"
+        alt="企業の会議室でAI業務フローについて対話するAX研究所の伴走風景"
+        loading="lazy"
+      />
+    </figure>
+    <div class="engagement-copy reveal">
+      <div class="section-head">
+        <div class="section-eyebrow">Engagement</div>
+        <h2 class="section-title">Pro でやっているのは、<br />知識提供ではなく設計です。</h2>
+      </div>
+      <p class="section-lede">
+        初月は、御社の課題を1つ選び、設計図から動くたたき台まで一気に作ります。
+        以降は現場の業務を一緒に分解し、どこをAIに渡し、どこを人が握るかを決め、次回までの実装テーマに落とし込みます。
+      </p>
+      <ul class="engagement-list">
+        <li>初月に課題を1つ、設計図＋たたき台プロトタイプをつくる（Claude Code のセットアップ込み）</li>
+        <li>既存業務を棚卸しし、AIを差し込む優先順位を決める</li>
+        <li>月次MTGで実装テーマを更新し、現場の詰まりを解消する</li>
+        <li>Build へつながる要件を整理し、内製化の道筋をつくる</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
 <!-- RADIO HOOK — Hero直下の最新エピソード提示                       -->
 <!-- ============================================================ -->
-<section class="radio-hook" id="radio-hook" data-screen-label="02 Radio Hook">
+<section class="radio-hook" id="radio-hook" data-screen-label="03 Radio Hook">
   <div class="container">
     <div class="rh-grid reveal">
       <figure class="rh-thumb">
@@ -2552,7 +2663,7 @@ section {
 <!-- ============================================================ -->
 <!-- RADIO — AX研究ラジオ                                            -->
 <!-- ============================================================ -->
-<section class="radio" id="radio" data-screen-label="03 Radio">
+<section class="radio" id="radio" data-screen-label="04 Radio">
   <div class="container">
     <div class="section-head row reveal">
       <div>
@@ -2563,7 +2674,7 @@ section {
             loading="lazy"
           />
         </figure>
-        <div class="section-eyebrow"><span class="section-num">03</span> Radio</div>
+        <div class="section-eyebrow"><span class="section-num">04</span> Radio</div>
         <h2 class="section-title">AX研究ラジオ。<br />業界の業務フローを、<em>AXの設計図</em>に。</h2>
       </div>
       <p class="section-lede">
@@ -2677,11 +2788,11 @@ section {
 <!-- ============================================================ -->
 <!-- WHY AX研究所                                                   -->
 <!-- ============================================================ -->
-<section class="why" id="why" data-screen-label="04 Why AX研究所">
+<section class="why" id="why" data-screen-label="05 Why AX研究所">
   <div class="container">
     <div class="section-head row reveal">
       <div>
-        <div class="section-eyebrow"><span class="section-num">04</span> Why AX研究所</div>
+        <div class="section-eyebrow"><span class="section-num">05</span> Why AX研究所</div>
         <h2 class="section-title">AX研究所にしか出せない、<em>3つの当事者性</em>。</h2>
       </div>
       <p class="section-lede">
@@ -2716,115 +2827,6 @@ section {
   </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- PLANS                                                         -->
-<!-- ============================================================ -->
-<section class="plans" id="plans" data-screen-label="05 Plans">
-  <div class="container">
-    <div class="section-head row reveal">
-      <div>
-        <div class="section-eyebrow"><span class="section-num">05</span> Plans</div>
-        <h2 class="section-title">入口から実装まで、<br />3つのプラン。</h2>
-      </div>
-      <p class="section-lede">
-        「とりあえず空気を吸う」Community から、月次伴走の Pro、社内システムを建てる Build まで。<br />
-        まずは <strong style="color:var(--ink);font-weight:700;">Pro</strong> を推奨。初月に御社の課題を1つ、動くたたき台まで一緒に作ります。
-      </p>
-    </div>
-
-    <div class="plans-grid reveal">
-      <!-- Community -->
-      <div class="plan">
-        <div class="tag">Entry</div>
-        <h3>Community</h3>
-        <div class="price">
-          <span class="num">¥10,000</span>
-          <span class="unit">/ 月（税別）</span>
-        </div>
-        <ul>
-          <li>週1配信：実装ノウハウ（実際のプロンプト・ワークフロー）</li>
-          <li>AX研究ラジオ限定：未公開ディテール＋「業界AX設計図」テンプレ＋先行配信</li>
-          <li>月1オフ会 ／ メンバー限定コミュニティ</li>
-          <li>Pro以上への優先枠</li>
-        </ul>
-        <!-- TODO: Stripe Payment Link 発行後、href="STRIPE_COMMUNITY_LINK" を本番URLに差し替え -->
-        <a class="btn cta cta-ghost" href="STRIPE_COMMUNITY_LINK">今すぐ申込 <span class="arr">→</span></a>
-      </div>
-
-      <!-- Pro -->
-      <div class="plan is-recommended">
-        <div class="ribbon">Recommended</div>
-        <div class="tag">Monthly Partner</div>
-        <h3>Pro</h3>
-        <div class="price">
-          <span class="num">¥50,000</span>
-          <span class="unit">/ 月（税別）</span>
-        </div>
-        <ul>
-          <li class="perk"><span class="perk-tag">初月特典</span><span class="perk-body">御社の課題を1つ、設計図＋たたき台プロトタイプに（Claude Codeセットアップ込み）</span></li>
-          <li class="perk"><span class="perk-tag">Listener Pick</span><span class="perk-body">ラジオを聴いて来た方へ — 初月伴走テーマを「番組で扱った業界」から1つ無料設定</span></li>
-          <li>月1対面 / オンラインMTG（2h）</li>
-          <li>個別伴走（実務にAIを差し込む）</li>
-          <li>Communityの全特典</li>
-          <li>Build への接続</li>
-        </ul>
-        <a class="btn cta" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%20Pro%5D%20%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
-      </div>
-
-      <!-- Build -->
-      <div class="plan">
-        <div class="tag">Custom</div>
-        <h3>Build</h3>
-        <div class="price">
-          <span class="ask">個別見積</span>
-        </div>
-        <ul>
-          <li>社内システムの設計・開発</li>
-          <li>セキュリティ担保エンジニア込み</li>
-          <li>運用・改修まで継続</li>
-          <li>Pro と並走</li>
-        </ul>
-        <a class="btn cta cta-ghost" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%20Build%5D%20%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
-      </div>
-    </div>
-
-    <div class="plans-note reveal">
-      <strong>料金について。</strong>
-      Community のみ Stripe で月額決済（即時申込）。Pro / Build は、まず1時間の無料相談で要件を伺った上でご提案します。途中プラン変更も可能です。
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- ENGAGEMENT                                                    -->
-<!-- ============================================================ -->
-<section class="engagement" id="engagement">
-  <div class="container engagement-grid">
-    <figure class="engagement-media reveal">
-      <img
-        src="/ax-kenkyujo/assets/training_session.webp"
-        alt="企業の会議室でAI業務フローについて対話するAX研究所の伴走風景"
-        loading="lazy"
-      />
-    </figure>
-    <div class="engagement-copy reveal">
-      <div class="section-head">
-        <div class="section-eyebrow">Engagement</div>
-        <h2 class="section-title">Pro でやっているのは、<br />知識提供ではなく設計です。</h2>
-      </div>
-      <p class="section-lede">
-        初月は、御社の課題を1つ選び、設計図から動くたたき台まで一気に作ります。
-        以降は現場の業務を一緒に分解し、どこをAIに渡し、どこを人が握るかを決め、次回までの実装テーマに落とし込みます。
-      </p>
-      <ul class="engagement-list">
-        <li>初月に課題を1つ、設計図＋たたき台プロトタイプをつくる（Claude Code のセットアップ込み）</li>
-        <li>既存業務を棚卸しし、AIを差し込む優先順位を決める</li>
-        <li>月次MTGで実装テーマを更新し、現場の詰まりを解消する</li>
-        <li>Build へつながる要件を整理し、内製化の道筋をつくる</li>
-      </ul>
-    </div>
-  </div>
-</section>
 
 <!-- ============================================================ -->
 <!-- CASES                                                         -->
