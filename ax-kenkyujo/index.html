@@ -2271,96 +2271,103 @@ section {
   .team-working-top figcaption { bottom: 20px; left: 20px; font-size: 10px !important; }
 }
 
-/* ===== CASES コンパクト版（事例カード化、さらに最小化） ===== */
-.cases { padding: 48px 0 !important; min-height: auto !important; height: auto !important; }
+/* ===== CASES カードグリッド版 ===== */
+.cases { padding: 56px 0 !important; min-height: auto !important; height: auto !important; }
 .cases::before, .cases::after { display: none !important; }
 .cases .container { padding: 0 var(--pad-x); }
-.cases .section-head { margin-bottom: 16px; }
-.cases .section-title { font-size: clamp(20px, 2vw, 26px) !important; }
+.cases .section-head { margin-bottom: 24px; }
+.cases .section-title { font-size: clamp(20px, 2.2vw, 28px) !important; }
 .cases .section-lede { font-size: 13px !important; }
-.cases .case-grid { max-width: 680px; margin: 20px auto 0; }
-.cases .case-wide {
+.cases .case-cards {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 18px;
-  padding: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 720px;
+  margin: 24px auto 0;
+}
+.case-card {
   border: 1px solid var(--line);
-  border-radius: 10px;
-  background: transparent;
-  align-items: start;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--paper);
+  display: flex; flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.cases .case-wide .meta {
-  grid-column: 2;
-  display: flex; flex-wrap: wrap; gap: 8px 12px;
+.case-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px -16px rgba(0,0,0,.2);
+}
+.case-card figure {
+  margin: 0;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+.case-card figure img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.case-card .cc-body {
+  padding: 16px 18px 18px;
+  display: flex; flex-direction: column; gap: 8px;
+  flex: 1;
+}
+.case-card .cc-meta {
+  display: flex; align-items: center; gap: 10px;
   font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .04em;
+  font-size: 10px;
+  letter-spacing: .12em;
   color: var(--ink-3);
-  margin: 0 0 8px;
+  text-transform: uppercase;
 }
-.cases .case-wide .meta .pill {
+.case-card .cc-pill {
   padding: 2px 8px;
   border: 1px solid var(--accent);
   color: var(--accent);
   border-radius: 99px;
-  background: rgba(184,58,36,.05);
+  background: rgba(184,58,36,.06);
+  font-size: 9px;
+  letter-spacing: .14em;
 }
-.cases .case-wide .meta-sep { opacity: .4; }
-.cases .case-wide h3 {
-  grid-column: 2;
+.case-card h3 {
   font-family: var(--display);
   font-size: 15px;
   line-height: 1.4;
   font-weight: 700;
-  margin: 0 0 6px;
+  margin: 4px 0 0;
   color: var(--ink);
 }
-.cases .case-wide > p {
-  grid-column: 2;
+.case-card .cc-body > p {
   font-size: 12px;
-  line-height: 1.6;
-  margin: 0 0 10px;
+  line-height: 1.65;
   color: var(--ink-2);
-}
-.cases .case-visual {
-  grid-column: 1;
-  grid-row: 1 / span 4;
   margin: 0;
-  aspect-ratio: 1 / 1;
-  border-radius: 6px;
-  overflow: hidden;
+  flex: 1;
 }
-.cases .case-visual .frame { height: 100%; }
-.cases .case-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.cases .case-visual figcaption { display: none; }
-.cases .deltas {
-  grid-column: 2;
-  display: flex; gap: 22px; flex-wrap: wrap;
+.case-card .cc-facts {
+  display: flex; gap: 18px;
   border-top: 1px solid var(--line);
-  padding-top: 12px;
-  margin: 4px 0 0;
+  padding-top: 10px;
+  margin: 8px 0 0;
 }
-.cases .delta { padding: 0; border: none; min-width: 0; }
-.cases .delta .k {
+.case-card .cc-facts > div { display: flex; flex-direction: column; gap: 2px; }
+.case-card .cc-facts dt {
   font-family: var(--mono);
   font-size: 9px;
-  letter-spacing: .16em;
+  letter-spacing: .14em;
   color: var(--ink-3);
   text-transform: uppercase;
-  margin-bottom: 2px;
+  margin: 0;
 }
-.cases .delta .v {
+.case-card .cc-facts dd {
   font-size: 12px;
   color: var(--ink-2);
+  margin: 0;
   font-weight: 500;
 }
 @media (max-width: 720px) {
-  .cases .case-wide { grid-template-columns: 1fr; padding: 16px; gap: 14px; }
-  .cases .case-visual { aspect-ratio: 16 / 9; grid-row: auto; }
-  .cases .case-wide .meta,
-  .cases .case-wide h3,
-  .cases .case-wide > p,
-  .cases .deltas { grid-column: auto; }
+  .cases .case-cards { grid-template-columns: 1fr; gap: 16px; }
 }
 
 /* ===== TEAM コンパクト版 ===== */
@@ -3070,34 +3077,34 @@ section {
       </p>
     </div>
 
-    <div class="case-grid reveal">
-      <article class="case case-wide">
-        <div class="meta">
-          <span class="pill">Field-Proven</span>
-          <span>株式会社スポンサル / 運送業</span>
-          <span class="meta-sep">·</span>
-          <span>株式会社SUI-GEN / 複数事業並走</span>
-        </div>
-        <h3>「電話とFAX」の現場から、<br />複数事業を回す経営まで。</h3>
-        <p>
-          スポンサル（運送業）では、配車・請求・ドライバー連絡といった日々のオペレーションにAIを業務フローとして差し込み済み。
-          一方SUI-GENでは、営業の一次対応、開発、月次経理、資料生成まで自社で実践中。
-          研修ではなく、その手触りをそのまま御社に持ち込みます。
-        </p>
-        <figure class="case-visual">
-          <div class="frame">
-            <img
-              src="/ax-kenkyujo/assets/transport_ai_field.webp"
-              alt="運送現場でノートPCを開きAI業務改善を確認する丹野健心"
-              loading="lazy"
-            />
-          </div>
-          <figcaption>丹野 / 株式会社スポンサル。運送現場の業務フロー改善を、当事者として積み上げています。</figcaption>
+    <div class="case-cards reveal">
+      <article class="case-card">
+        <figure>
+          <img src="/ax-kenkyujo/assets/transport_ai_field.webp" alt="運送現場でノートPCを開きAI業務改善を確認する丹野健心" loading="lazy" />
         </figure>
-        <div class="deltas">
-          <div class="delta"><div class="k">領域</div><div class="v">運送業 / SMB経営</div></div>
-          <div class="delta"><div class="k">フェーズ</div><div class="v">実装 → 運用 → 継続改善</div></div>
-          <div class="delta"><div class="k">主体</div><div class="v">穂高 × 丹野（2社共同）</div></div>
+        <div class="cc-body">
+          <div class="cc-meta"><span class="cc-pill">Field-Proven</span><span>運送業</span></div>
+          <h3>「電話とFAX」の現場から、AI業務フローへ。</h3>
+          <p>配車・請求・ドライバー連絡といった日々のオペレーションを、AI前提のフローへ作り直し。</p>
+          <dl class="cc-facts">
+            <div><dt>主体</dt><dd>丹野 / Sponsaru</dd></div>
+            <div><dt>フェーズ</dt><dd>実装 → 運用</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="case-card">
+        <figure>
+          <img src="/ax-kenkyujo/assets/founders_working.webp" alt="ノートPCで複数事業を並走する小野寺穂高" loading="lazy" />
+        </figure>
+        <div class="cc-body">
+          <div class="cc-meta"><span class="cc-pill">Self-Operating</span><span>SMB経営</span></div>
+          <h3>営業・開発・経理・資料生成まで、自社で実践中。</h3>
+          <p>複数事業を並走させながら、業務フロー全体をAI前提で組み直しています。</p>
+          <dl class="cc-facts">
+            <div><dt>主体</dt><dd>穂高 / SUI-GEN</dd></div>
+            <div><dt>フェーズ</dt><dd>運用 → 継続改善</dd></div>
+          </dl>
         </div>
       </article>
     </div>
