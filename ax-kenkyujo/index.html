@@ -291,18 +291,13 @@ section {
   display: inline-block;
   width: .4em;
 }
-/* 1行版: 横幅いっぱい使う */
+/* 1行版: 横幅をいっぱい使うが、はみ出さない（balance で自然折返し） */
 .hero-headline--wide {
-  font-size: clamp(40px, 9.2vw, 148px);
-  line-height: 1.05;
-  letter-spacing: -.035em;
-  white-space: nowrap;
-}
-@media (max-width: 980px) {
-  .hero-headline--wide {
-    white-space: normal;
-    font-size: clamp(36px, 8.8vw, 80px);
-  }
+  font-size: clamp(36px, 7.4vw, 116px);
+  line-height: 1.06;
+  letter-spacing: -.03em;
+  text-wrap: balance;
+  max-width: 100%;
 }
 .hero-sub {
   margin-top: 36px;
@@ -2276,6 +2271,114 @@ section {
   .team-working-top figcaption { bottom: 20px; left: 20px; font-size: 10px !important; }
 }
 
+/* ===== PROBLEM (問題提起) ===== */
+.problem {
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(72px, 11vw, 140px) 0;
+  position: relative;
+  overflow: hidden;
+}
+.problem::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 50% 50%, rgba(184,58,36,.10), transparent 70%);
+  pointer-events: none;
+}
+.problem-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative; z-index: 2;
+}
+.problem-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .28em;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+.problem-title {
+  font-family: var(--display);
+  font-size: clamp(32px, 5.6vw, 72px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  margin: 0 0 32px;
+  color: var(--paper);
+}
+.problem-title .accent { color: var(--accent); }
+.problem-lede {
+  font-family: var(--jp-sans);
+  font-size: clamp(15px, 1.4vw, 19px);
+  line-height: 2;
+  color: rgba(245,241,232,.78);
+  margin: 0 0 36px;
+  font-weight: 300;
+}
+.problem-divider {
+  margin: 36px auto;
+  color: rgba(245,241,232,.35);
+  font-family: var(--mono);
+  letter-spacing: .4em;
+}
+.problem-claim {
+  font-family: var(--display);
+  font-size: clamp(20px, 2.4vw, 30px);
+  line-height: 1.6;
+  margin: 0 0 48px;
+  color: var(--paper);
+}
+.problem-claim em { font-style: normal; color: var(--accent); }
+.problem-claim strong { font-weight: 800; }
+.problem-scale {
+  display: flex; align-items: center; justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 48px 0 32px;
+}
+.ps-item {
+  padding: 14px 22px;
+  border: 1px solid rgba(245,241,232,.18);
+  border-radius: 8px;
+  min-width: 140px;
+}
+.ps-item--accent {
+  border-color: var(--accent);
+  background: rgba(184,58,36,.12);
+}
+.ps-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: rgba(245,241,232,.6);
+  margin-bottom: 6px;
+}
+.ps-item--accent .ps-label { color: var(--accent); }
+.ps-range {
+  font-family: var(--display);
+  font-size: clamp(18px, 2vw, 26px);
+  font-weight: 700;
+  color: var(--paper);
+}
+.ps-arrow {
+  font-family: var(--mono);
+  color: rgba(245,241,232,.45);
+  font-size: 18px;
+}
+.problem-foot {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: rgba(245,241,232,.7);
+  margin: 0;
+}
+@media (max-width: 720px) {
+  .problem-scale { gap: 8px; }
+  .ps-item { min-width: 100px; padding: 10px 14px; }
+  .ps-arrow { font-size: 14px; }
+}
+
 /* ===== RADIO HOOK (Hero直下の最新エピソード) ===== */
 .radio-hook {
   background: var(--paper-2);
@@ -2512,13 +2615,55 @@ section {
 </section>
 
 <!-- ============================================================ -->
+<!-- PROBLEM — 問題提起                                              -->
+<!-- ============================================================ -->
+<section class="problem" id="problem" data-screen-label="02 Problem">
+  <div class="container">
+    <div class="problem-inner reveal">
+      <div class="problem-eyebrow">PROBLEM</div>
+      <h2 class="problem-title">
+        AI、入れたのに、<br />
+        <span class="accent">業務フローは変わってない。</span>
+      </h2>
+      <p class="problem-lede">
+        ChatGPTもClaudeも導入した。研修も受けた。<br />
+        でも結局、メール返信が少し早くなっただけで、<br />
+        本質的な業務フローは何も変わっていない。
+      </p>
+      <div class="problem-divider"><span>—</span></div>
+      <p class="problem-claim">
+        それは <em>"効率化"</em> の限界。<br />
+        <strong>AX は、フローを丸ごと作り直す。</strong>
+      </p>
+      <div class="problem-scale">
+        <div class="ps-item">
+          <div class="ps-label">業務効率化</div>
+          <div class="ps-range">10〜30%</div>
+        </div>
+        <div class="ps-arrow">→</div>
+        <div class="ps-item">
+          <div class="ps-label">DX</div>
+          <div class="ps-range">30〜50%</div>
+        </div>
+        <div class="ps-arrow">→</div>
+        <div class="ps-item ps-item--accent">
+          <div class="ps-label">AX</div>
+          <div class="ps-range">50〜80%</div>
+        </div>
+      </div>
+      <p class="problem-foot">自社のフェーズは、どこにありますか？</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
 <!-- PLANS                                                         -->
 <!-- ============================================================ -->
-<section class="plans" id="plans" data-screen-label="02 Plans">
+<section class="plans" id="plans" data-screen-label="03 Plans">
   <div class="container">
     <div class="section-head row reveal">
       <div>
-        <div class="section-eyebrow"><span class="section-num">02</span> Plans</div>
+        <div class="section-eyebrow"><span class="section-num">03</span> Plans</div>
         <h2 class="section-title">入口から実装まで、<br />3つのプラン。</h2>
       </div>
       <p class="section-lede">
@@ -2624,7 +2769,7 @@ section {
 <!-- ============================================================ -->
 <!-- RADIO HOOK — Hero直下の最新エピソード提示                       -->
 <!-- ============================================================ -->
-<section class="radio-hook" id="radio-hook" data-screen-label="03 Radio Hook">
+<section class="radio-hook" id="radio-hook" data-screen-label="04 Radio Hook">
   <div class="container">
     <div class="rh-grid reveal">
       <figure class="rh-thumb">
@@ -2663,7 +2808,7 @@ section {
 <!-- ============================================================ -->
 <!-- RADIO — AX研究ラジオ                                            -->
 <!-- ============================================================ -->
-<section class="radio" id="radio" data-screen-label="04 Radio">
+<section class="radio" id="radio" data-screen-label="05 Radio">
   <div class="container">
     <div class="section-head row reveal">
       <div>
@@ -2674,7 +2819,7 @@ section {
             loading="lazy"
           />
         </figure>
-        <div class="section-eyebrow"><span class="section-num">04</span> Radio</div>
+        <div class="section-eyebrow"><span class="section-num">05</span> Radio</div>
         <h2 class="section-title">AX研究ラジオ。<br />業界の業務フローを、<em>AXの設計図</em>に。</h2>
       </div>
       <p class="section-lede">
@@ -2788,11 +2933,11 @@ section {
 <!-- ============================================================ -->
 <!-- WHY AX研究所                                                   -->
 <!-- ============================================================ -->
-<section class="why" id="why" data-screen-label="05 Why AX研究所">
+<section class="why" id="why" data-screen-label="06 Why AX研究所">
   <div class="container">
     <div class="section-head row reveal">
       <div>
-        <div class="section-eyebrow"><span class="section-num">05</span> Why AX研究所</div>
+        <div class="section-eyebrow"><span class="section-num">06</span> Why AX研究所</div>
         <h2 class="section-title">AX研究所にしか出せない、<em>3つの当事者性</em>。</h2>
       </div>
       <p class="section-lede">
@@ -2831,11 +2976,11 @@ section {
 <!-- ============================================================ -->
 <!-- CASES                                                         -->
 <!-- ============================================================ -->
-<section class="cases" id="cases" data-screen-label="06 Cases">
+<section class="cases" id="cases" data-screen-label="07 Cases">
   <div class="container">
     <div class="section-head row reveal">
       <div>
-        <div class="section-eyebrow"><span class="section-num">06</span> Cases</div>
+        <div class="section-eyebrow"><span class="section-num">07</span> Cases</div>
         <h2 class="section-title">自社で動かしている、<br />2つの現場から。</h2>
       </div>
       <p class="section-lede">
@@ -2882,11 +3027,11 @@ section {
 <!-- ============================================================ -->
 <!-- TEAM                                                          -->
 <!-- ============================================================ -->
-<section class="team" id="team" data-screen-label="07 Team">
+<section class="team" id="team" data-screen-label="08 Team">
   <div class="container">
     <div class="section-head row reveal">
       <div>
-        <div class="section-eyebrow"><span class="section-num">07</span> Team</div>
+        <div class="section-eyebrow"><span class="section-num">08</span> Team</div>
         <h2 class="section-title">2000年生まれ、<br />現役の経営者がそのまま来ます。</h2>
       </div>
       <p class="section-lede">
@@ -2958,10 +3103,10 @@ section {
 <!-- ============================================================ -->
 <!-- FAQ                                                           -->
 <!-- ============================================================ -->
-<section class="faq" id="faq" data-screen-label="08 FAQ">
+<section class="faq" id="faq" data-screen-label="09 FAQ">
   <div class="container" style="max-width: 920px;">
     <div class="section-head reveal">
-      <div class="section-eyebrow"><span class="section-num">08</span> FAQ</div>
+      <div class="section-eyebrow"><span class="section-num">09</span> FAQ</div>
       <h2 class="section-title">よくいただくご質問。</h2>
     </div>
 
@@ -3016,7 +3161,7 @@ section {
 <!-- ============================================================ -->
 <!-- FINAL CTA                                                     -->
 <!-- ============================================================ -->
-<section class="final" id="cta" data-screen-label="09 Final CTA">
+<section class="final" id="cta" data-screen-label="10 Final CTA">
   <div class="final-inner reveal">
     <h2>あなたの会社の隣に、<br />来週から<em>座らせて</em>ください。</h2>
     <p>
