@@ -2271,18 +2271,21 @@ section {
   .team-working-top figcaption { bottom: 20px; left: 20px; font-size: 10px !important; }
 }
 
-/* ===== CASES コンパクト版（事例カード化） ===== */
-.cases { padding: 64px 0 !important; min-height: auto !important; height: auto !important; }
+/* ===== CASES コンパクト版（事例カード化、さらに最小化） ===== */
+.cases { padding: 48px 0 !important; min-height: auto !important; height: auto !important; }
 .cases::before, .cases::after { display: none !important; }
 .cases .container { padding: 0 var(--pad-x); }
-.cases .case-grid { max-width: 880px; margin: 28px auto 0; }
+.cases .section-head { margin-bottom: 16px; }
+.cases .section-title { font-size: clamp(20px, 2vw, 26px) !important; }
+.cases .section-lede { font-size: 13px !important; }
+.cases .case-grid { max-width: 680px; margin: 20px auto 0; }
 .cases .case-wide {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 28px;
-  padding: 24px;
+  grid-template-columns: 120px 1fr;
+  gap: 18px;
+  padding: 16px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 10px;
   background: transparent;
   align-items: start;
 }
@@ -2306,25 +2309,25 @@ section {
 .cases .case-wide h3 {
   grid-column: 2;
   font-family: var(--display);
-  font-size: 19px;
-  line-height: 1.35;
+  font-size: 15px;
+  line-height: 1.4;
   font-weight: 700;
-  margin: 0 0 10px;
+  margin: 0 0 6px;
   color: var(--ink);
 }
 .cases .case-wide > p {
   grid-column: 2;
-  font-size: 13px;
-  line-height: 1.7;
-  margin: 0 0 14px;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0 0 10px;
   color: var(--ink-2);
 }
 .cases .case-visual {
   grid-column: 1;
   grid-row: 1 / span 4;
   margin: 0;
-  aspect-ratio: 4 / 3;
-  border-radius: 8px;
+  aspect-ratio: 1 / 1;
+  border-radius: 6px;
   overflow: hidden;
 }
 .cases .case-visual .frame { height: 100%; }
@@ -2898,37 +2901,6 @@ section {
     <div class="plans-note reveal">
       <strong>料金について。</strong>
       Community のみ Stripe で月額決済（即時申込）。Pro / Build は、まず1時間の無料相談で要件を伺った上でご提案します。途中プラン変更も可能です。
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- ENGAGEMENT                                                    -->
-<!-- ============================================================ -->
-<section class="engagement" id="engagement">
-  <div class="container engagement-grid">
-    <figure class="engagement-media reveal">
-      <img
-        src="/ax-kenkyujo/assets/training_session.webp"
-        alt="企業の会議室でAI業務フローについて対話するAX研究所の伴走風景"
-        loading="lazy"
-      />
-    </figure>
-    <div class="engagement-copy reveal">
-      <div class="section-head">
-        <div class="section-eyebrow">Engagement</div>
-        <h2 class="section-title">Pro でやっているのは、<br />知識提供ではなく設計です。</h2>
-      </div>
-      <p class="section-lede">
-        初月は、御社の課題を1つ選び、設計図から動くたたき台まで一気に作ります。
-        以降は現場の業務を一緒に分解し、どこをAIに渡し、どこを人が握るかを決め、次回までの実装テーマに落とし込みます。
-      </p>
-      <ul class="engagement-list">
-        <li>初月に課題を1つ、設計図＋たたき台プロトタイプをつくる（Claude Code のセットアップ込み）</li>
-        <li>既存業務を棚卸しし、AIを差し込む優先順位を決める</li>
-        <li>月次MTGで実装テーマを更新し、現場の詰まりを解消する</li>
-        <li>Build へつながる要件を整理し、内製化の道筋をつくる</li>
-      </ul>
     </div>
   </div>
 </section>
