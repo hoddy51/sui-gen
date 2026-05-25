@@ -773,11 +773,13 @@ section {
 }
 .plan.is-recommended ul li::before { background: var(--accent); }
 .plan ul li.perk {
-  padding: 12px 14px;
-  margin: 8px 0 12px;
-  border: 1px solid rgba(184,58,36,.55);
-  background: rgba(184,58,36,.12);
-  line-height: 1.6;
+  padding: 12px 14px 14px;
+  margin: 10px 0 14px;
+  border: 1px solid rgba(184,58,36,.35);
+  background: rgba(184,58,36,.06);
+  line-height: 1.55;
+  border-radius: 4px;
+  list-style: none;
 }
 .plan ul li.perk::before { display: none; }
 .plan .perk-tag {
@@ -786,12 +788,20 @@ section {
   font-size: 9.5px;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--white);
+  color: var(--paper);
   background: var(--accent);
-  padding: 3px 8px;
-  margin-right: 8px;
+  padding: 3px 9px;
+  border-radius: 2px;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
-.plan .perk-body { color: var(--white); font-weight: 600; }
+.plan .perk-body {
+  display: block;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.6;
+}
 .plan .cta {
   width: 100%;
   justify-content: center;
