@@ -688,8 +688,14 @@ section {
 .plans { background: var(--paper); }
 .plans-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 980px) {
+  .plans-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .plans-grid { grid-template-columns: 1fr; }
 }
 .plan {
   background: var(--paper-card);
@@ -2777,12 +2783,12 @@ section {
           <div class="v">¥50,000 <small>/ 月</small></div>
         </div>
         <div class="stat">
-          <div class="k">Build</div>
-          <div class="v">ASK <small>・個別見積</small></div>
+          <div class="k">Visit · 週一訪問</div>
+          <div class="v">¥200,000 <small>/ 月</small></div>
         </div>
         <div class="stat">
-          <div class="k">First Meeting</div>
-          <div class="v">60 <small>min ・無料</small></div>
+          <div class="k">Build</div>
+          <div class="v">ASK <small>・個別見積</small></div>
         </div>
       </div>
     </div>
@@ -2844,7 +2850,7 @@ section {
         <h2 class="section-title">入口から実装まで、<br />3つのプラン。</h2>
       </div>
       <p class="section-lede">
-        「とりあえず空気を吸う」Community から、月次伴走の Pro、社内システムを建てる Build まで。<br />
+        「とりあえず空気を吸う」Community から、月次伴走の Pro、現場に毎週入る Visit、社内システムを建てる Build まで。<br />
         まずは <strong style="color:var(--ink);font-weight:700;">Pro</strong> を推奨。初月に御社の課題を1つ、動くたたき台まで一緒に作ります。
       </p>
     </div>
@@ -2888,6 +2894,24 @@ section {
         <a class="btn cta" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%20Pro%5D%20%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
       </div>
 
+      <!-- Visit -->
+      <div class="plan">
+        <div class="tag">Weekly Visit</div>
+        <h3>Visit</h3>
+        <div class="price">
+          <span class="num">¥200,000</span>
+          <span class="unit">/ 月（税別）</span>
+        </div>
+        <ul>
+          <li class="perk"><span class="perk-tag">毎週特典</span><span class="perk-body">週一出社（半日）— 訪問時間内でできるAIシステム開発を毎月1つ無料</span></li>
+          <li>現場での業務観察 → その場で実装</li>
+          <li>経営層・現場担当者と直接対話</li>
+          <li>Pro の全特典</li>
+          <li>Build への直結</li>
+        </ul>
+        <a class="btn cta" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%20Visit%5D%20%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
+      </div>
+
       <!-- Build -->
       <div class="plan">
         <div class="tag">Custom</div>
@@ -2899,7 +2923,7 @@ section {
           <li>社内システムの設計・開発</li>
           <li>セキュリティ担保エンジニア込み</li>
           <li>運用・改修まで継続</li>
-          <li>Pro と並走</li>
+          <li>Pro / Visit と並走</li>
         </ul>
         <a class="btn cta cta-ghost" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%20Build%5D%20%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
       </div>
