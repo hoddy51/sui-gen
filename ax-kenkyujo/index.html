@@ -1390,6 +1390,30 @@ section {
   text-transform: none;
   letter-spacing: .04em;
 }
+/* --- 配信プラットフォームCTA（ブランドカラー＋白ロゴ） --- */
+.radio-platforms .pf {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-family: var(--jp-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: none;
+}
+.radio-platforms .pf:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 10px 22px -10px rgba(20,19,15,.5);
+  color: #fff;
+}
+.radio-platforms .pf .pf-ico { width: 17px; height: 17px; flex: 0 0 auto; }
+.radio-platforms .pf-apple   { background: linear-gradient(135deg, #E081FF 0%, #9A37E0 52%, #7322B5 100%); }
+.radio-platforms .pf-spotify { background: #1DB954; }
 .radio-foot-note {
   font-family: var(--mono);
   font-size: 11.5px;
@@ -3013,8 +3037,14 @@ section {
     <div class="radio-toolbar reveal">
       <div class="radio-platforms">
         <span class="label">Listen on</span>
-        <!-- TODO: プラットフォーム公開後、各チャンネルURL（YouTube/Spotify/Apple）へ差し替え -->
-        <span class="soon">YouTube・Spotify で近日配信</span>
+        <a class="pf pf-apple" href="https://podcasts.apple.com/jp/podcast/ax%E7%A0%94%E7%A9%B6%E6%89%80%E3%83%A9%E3%82%B8%E3%82%AA/id1896823448" target="_blank" rel="noopener" aria-label="Apple Podcastsで聴く">
+          <svg class="pf-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M9.1 13.2c-.5.7-.6 1.6-.4 3.2l.4 3.1c.1.9.9 1.5 1.8 1.5h2.2c.9 0 1.7-.6 1.8-1.5l.4-3.1c.2-1.6.1-2.5-.4-3.2-.7-.9-1.9-1.2-2.9-1.2s-2.2.3-2.9 1.2z"/></svg>
+          Apple Podcasts
+        </a>
+        <a class="pf pf-spotify" href="https://open.spotify.com/episode/1kuEaAy0Ih6CnofM7VA8k7" target="_blank" rel="noopener" aria-label="Spotifyで聴く">
+          <svg class="pf-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.02.6-1.14 4.32-1.32 9.72-.66 13.439 1.62.361.181.54.78.302 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          Spotify
+        </a>
       </div>
       <div class="radio-nav">
         <button class="rnav prev" type="button" aria-label="前の話へ">←</button>
@@ -3079,16 +3109,15 @@ section {
           <div class="ep-meta">
             <span>EP 02</span><span class="dot-sep"></span><span>Coming soon</span>
           </div>
-          <h3 class="ep-title">AXとは何か — 業務効率化・DX・AXの違い</h3>
-          <p class="ep-desc">以降の業界回の共通言語をつくる回。「業務効率化10〜30%／DX 30〜50%／AX 50〜80%」、自社がいまどのフェーズにいるかを判断する物差しを整理します。</p>
+          <h3 class="ep-title">AIで農業はどこまで変わるか</h3>
+          <p class="ep-desc">第2回のテーマは農業。栽培計画・人手・天候・出荷／販路といった現場の業務を順に分解し、どこをAIで支えられるかを点数化していきます。EP01ラストの「次回予告：農業」の本編です。</p>
         </div>
       </article>
 
     </div>
 
     <div class="radio-foot reveal">
-      <!-- TODO: プラットフォーム公開後、YouTubeチャンネル等の全話一覧にリンク -->
-      <span class="radio-foot-note">Season 1 は全10業界を予定 — 隔週で順次配信します。</span>
+      <span class="radio-foot-note">Apple Podcasts・Spotify で配信中。Season 1 は全10業界を予定、隔週で順次更新します。</span>
     </div>
 
   </div>
