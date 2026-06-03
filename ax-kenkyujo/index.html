@@ -742,13 +742,45 @@ section {
 .plan.is-recommended .tag { color: rgba(245,241,232,.55); }
 .plan .price {
   margin-top: 22px;
-  display: flex; align-items: baseline; gap: 4px;
+  display: flex; align-items: baseline; gap: 4px; flex-wrap: wrap;
   font-family: var(--display);
 }
 .plan .price .num { font-size: 38px; font-weight: 700; letter-spacing: -.02em; }
 .plan .price .unit { font-size: 13px; color: var(--ink-3); font-family: var(--jp-sans); }
 .plan.is-recommended .price .unit { color: rgba(245,241,232,.6); }
 .plan .price .ask { font-size: 28px; font-weight: 600; letter-spacing: .02em; }
+/* 初期割引: 定価（取り消し線）＋ローンチ価格＋限定バッジ */
+.plan .price .list {
+  flex-basis: 100%;
+  font-family: var(--jp-sans);
+  font-size: 15px;
+  color: var(--ink-3);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  margin-bottom: 1px;
+}
+.plan.is-recommended .price .list { color: rgba(245,241,232,.6); }
+.plan .price .num.launch { color: var(--accent); }
+.plan .launch-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  padding: 6px 12px;
+  background: var(--accent);
+  color: var(--white);
+  font-family: var(--jp-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  border-radius: 999px;
+}
+.plan .launch-pill::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--white);
+}
 .plan ul {
   margin: 22px 0 24px;
   padding: 0;
@@ -833,6 +865,102 @@ section {
 }
 .plans-note strong { color: var(--ink); font-weight: 500; }
 
+/* --- Journey: As-is → To-be 行程表 --- */
+.plans-journey { margin-top: 56px; }
+.plans-journey-head { margin-bottom: 26px; }
+.plans-journey-head .pj-eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 8px;
+}
+.plans-journey-head h3 {
+  font-family: var(--jp-sans);
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: .01em;
+}
+.pj-lane {
+  margin-top: 18px;
+  padding: 22px 24px;
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.pj-lane-head {
+  display: flex; align-items: baseline; gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.pj-lane-head .pj-plan {
+  font-family: var(--jp-sans);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink);
+}
+.pj-lane-head .pj-tagline {
+  font-family: var(--jp-sans);
+  font-size: 12px;
+  color: var(--ink-3);
+}
+.pj-track {
+  display: flex; align-items: stretch; gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+.pj-track::-webkit-scrollbar { height: 6px; }
+.pj-track::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 99px; }
+.pj-step, .pj-cap {
+  flex: 1 0 auto;
+  min-width: 156px;
+  padding: 13px 15px;
+  border-radius: 8px;
+}
+.pj-step {
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.pj-cap--asis {
+  border: 1px dashed var(--line-2);
+  background: transparent;
+}
+.pj-cap--tobe {
+  border: 1px solid var(--accent);
+  background: rgba(184,58,36,.07);
+}
+.pj-when {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 7px;
+}
+.pj-cap--tobe .pj-when { color: var(--accent); }
+.pj-what {
+  font-family: var(--jp-sans);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.pj-cap--tobe .pj-what { color: var(--ink); font-weight: 500; }
+.pj-arrow {
+  align-self: center;
+  flex: 0 0 auto;
+  font-family: var(--mono);
+  color: var(--ink-3);
+  font-size: 14px;
+}
+@media (max-width: 560px) {
+  .pj-step, .pj-cap { min-width: 138px; }
+  .pj-arrow { font-size: 12px; }
+}
+
 /* ------------------------------------------------------------------
    ENGAGEMENT
 ------------------------------------------------------------------ */
@@ -911,6 +1039,39 @@ section {
 .cases .section-eyebrow::before { background: rgba(245,241,232,.55); }
 .cases .section-title { color: var(--paper); }
 .cases .section-lede { color: rgba(245,241,232,.72); }
+
+/* --- Cases: Coming Soon プレースホルダー --- */
+.cases-soon {
+  max-width: 720px;
+  margin: 24px auto 0;
+  padding: clamp(48px, 8vw, 72px) 24px;
+  border: 1px dashed rgba(245,241,232,.28);
+  border-radius: 12px;
+  text-align: center;
+  background: rgba(245,241,232,.03);
+}
+.cases-soon .cs-badge {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.cases-soon .cs-title {
+  font-family: var(--display);
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 700;
+  color: var(--paper);
+  margin: 0 0 10px;
+}
+.cases-soon .cs-text {
+  font-family: var(--jp-sans);
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: rgba(245,241,232,.72);
+  margin: 0;
+}
 
 .case-grid {
   display: grid;
@@ -1569,6 +1730,72 @@ section {
    TEAM
 ------------------------------------------------------------------ */
 .team { background: var(--paper); }
+
+/* --- Solutions: 対応ソリューションのロゴ --- */
+.solutions {
+  margin-top: clamp(40px, 6vw, 64px);
+  padding-top: clamp(32px, 5vw, 44px);
+  border-top: 1px solid var(--line);
+}
+.sol-head {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 24px;
+  text-align: center;
+}
+.sol-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 18px 0;
+}
+.sol-row + .sol-row { border-top: 1px dashed var(--line); }
+.sol-label {
+  font-family: var(--jp-sans);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-2);
+  min-width: 132px;
+  text-align: right;
+}
+.sol-logos {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(20px, 4vw, 40px);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.sol-logos figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  width: 78px;
+}
+.sol-logos img {
+  height: 30px;
+  width: auto;
+  max-width: 60px;
+  object-fit: contain;
+}
+.sol-logos figcaption {
+  font-family: var(--jp-sans);
+  font-size: 11px;
+  color: var(--ink-3);
+  text-align: center;
+  line-height: 1.35;
+}
+@media (max-width: 620px) {
+  .sol-row { flex-direction: column; gap: 14px; }
+  .sol-label { min-width: 0; text-align: center; }
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2884,8 +3111,8 @@ section {
         <h2 class="section-title">入口から実装まで、<br />4つのプラン。</h2>
       </div>
       <p class="section-lede">
-        無料で「とりあえず空気を吸う」Community から、月次伴走の Pro、現場に毎週入る Visit、社内システムを建てる Build まで。<br />
-        まずは <strong style="color:var(--ink);font-weight:700;">Pro</strong> を推奨。初月に御社の課題を1つ、動くたたき台まで一緒に作ります。
+        無料で「とりあえず空気を吸う」Community から、月次伴走の Pro、週1で伴走する Visit、社内システムを建てる Build まで。<br />
+        いま <strong style="color:var(--accent);font-weight:700;">初期メンバーを5社限定</strong>で募集中。Pro・Visit はローンチ価格でご案内します。
       </p>
     </div>
 
@@ -2913,13 +3140,14 @@ section {
         <div class="tag">Monthly Partner</div>
         <h3>Pro</h3>
         <div class="price">
-          <span class="num">¥50,000</span>
+          <span class="list">¥50,000</span>
+          <span class="num launch">¥20,000</span>
           <span class="unit">/ 月（税別）</span>
         </div>
+        <div class="launch-pill">初期メンバー限定 ・ 残り5社</div>
         <ul>
-          <li class="perk"><span class="perk-tag">初月特典</span><span class="perk-body">御社の課題を1つ、設計図＋たたき台プロトタイプに（Claude Codeセットアップ込み）</span></li>
-          <li class="perk"><span class="perk-tag">Listener Pick</span><span class="perk-body">ラジオを聴いて来た方へ — 初月伴走テーマを「番組で扱った業界」から1つ無料設定</span></li>
           <li>月1対面 / オンラインMTG（2h）</li>
+          <li>毎月積み上げる個別レッスン（下の行程表を参照）</li>
           <li>個別伴走（実務にAIを差し込む）</li>
           <li>Communityの全特典</li>
           <li>Build への接続</li>
@@ -2929,20 +3157,21 @@ section {
 
       <!-- Visit -->
       <div class="plan">
-        <div class="tag">AI Supporter</div>
+        <div class="tag">Weekly 伴走</div>
         <h3>Visit</h3>
         <div class="price">
-          <span class="num">¥200,000</span>
+          <span class="list">¥200,000</span>
+          <span class="num launch">¥100,000</span>
           <span class="unit">/ 月（税別）</span>
         </div>
+        <div class="launch-pill">初期メンバー限定 ・ 半額 ・ 残り5社</div>
         <ul>
-          <li class="perk"><span class="perk-tag">登録特典</span><span class="perk-body">業務時間内で行うシステム開発を1つ無料</span></li>
-          <li>AIサポーターとして週1回フル出社</li>
-          <li>出社日の業務時間内でAIシステム開発を毎月1つ実施</li>
-          <li>現場での業務観察 → その場で実装</li>
+          <li>初月は集中オンボーディングでAIプロレベルへ（下の行程表）</li>
+          <li>週1回・対面1時間のセットアップ伴走</li>
+          <li>業務へのAI導入を毎週一歩ずつ前進</li>
           <li>経営層・現場担当者と直接対話</li>
           <li>Pro の全特典</li>
-          <li>Build への直結</li>
+          <li>Build への助走（内製化の前段）</li>
         </ul>
         <a class="btn cta" href="https://forms.gle/F2mx7HR32bAVfXnaA" target="_blank" rel="noopener">申込フォームを開く <span class="arr">→</span></a>
       </div>
@@ -2964,9 +3193,89 @@ section {
       </div>
     </div>
 
+    <div class="plans-journey reveal">
+      <div class="plans-journey-head">
+        <div class="pj-eyebrow">Journey ・ As-is → To-be</div>
+        <h3>導入して、こう変わる。</h3>
+      </div>
+
+      <!-- Pro lane -->
+      <div class="pj-lane">
+        <div class="pj-lane-head">
+          <span class="pj-plan">Pro</span>
+          <span class="pj-tagline">毎月積み上げる — 個人技をチームの標準へ</span>
+        </div>
+        <div class="pj-track">
+          <div class="pj-cap pj-cap--asis">
+            <div class="pj-when">現状 / As-is</div>
+            <div class="pj-what">AIは入れたが各自バラバラ。断片的にしか使えていない。</div>
+          </div>
+          <span class="pj-arrow">→</span>
+          <div class="pj-step">
+            <div class="pj-when">1ヶ月目</div>
+            <div class="pj-what">Claude Code・Codex をローカル環境にセットアップ。日々の業務で初期活用を立ち上げ。</div>
+          </div>
+          <span class="pj-arrow">→</span>
+          <div class="pj-step">
+            <div class="pj-when">2ヶ月目</div>
+            <div class="pj-what">ローカルドライブ連携でチーム内に共有。個人技をチームの共通基盤へ。</div>
+          </div>
+          <span class="pj-arrow">→</span>
+          <div class="pj-step">
+            <div class="pj-when">3ヶ月目〜</div>
+            <div class="pj-what">各業務へ展開し、新機能を毎月キャッチアップ。継続的に伸ばす。</div>
+          </div>
+          <span class="pj-arrow">→</span>
+          <div class="pj-cap pj-cap--tobe">
+            <div class="pj-when">なりたい姿 / To-be</div>
+            <div class="pj-what">AI前提で事業が回り、社内で改善が回り続ける。</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visit lane -->
+      <div class="pj-lane">
+        <div class="pj-lane-head">
+          <span class="pj-plan">Visit</span>
+          <span class="pj-tagline">初月集中（週1回・対面） — 1ヶ月でプロレベルへ</span>
+        </div>
+        <div class="pj-track">
+          <div class="pj-cap pj-cap--asis">
+            <div class="pj-when">現状 / As-is</div>
+            <div class="pj-what">自己流で止まっている。何から手をつけるか分からない。</div>
+          </div>
+          <span class="pj-arrow">→</span>
+          <div class="pj-step">
+            <div class="pj-when">Week 1</div>
+            <div class="pj-what">ローカル環境を構築（Claude Code・Codex）。基礎の型を身につける。</div>
+          </div>
+          <span class="pj-arrow">→</span>
+          <div class="pj-step">
+            <div class="pj-when">Week 2</div>
+            <div class="pj-what">実務へAIを組み込む。手元の業務で成果を出す。</div>
+          </div>
+          <span class="pj-arrow">→</span>
+          <div class="pj-step">
+            <div class="pj-when">Week 3</div>
+            <div class="pj-what">繰り返し業務を自動化し、チームへ共有する。</div>
+          </div>
+          <span class="pj-arrow">→</span>
+          <div class="pj-step">
+            <div class="pj-when">Week 4</div>
+            <div class="pj-what">自走できる状態へ仕上げる。次の打ち手まで設計。</div>
+          </div>
+          <span class="pj-arrow">→</span>
+          <div class="pj-cap pj-cap--tobe">
+            <div class="pj-when">なりたい姿 / To-be</div>
+            <div class="pj-what">AIをプロレベルで使いこなし、社内で自走できる。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="plans-note reveal">
       <strong>料金について。</strong>
-      Community は無料（イベント参加時のみ会場費・飲食費などの実費を個別精算）。Pro / Visit / Build は、まず無料相談で要件を伺った上でご提案します。途中プラン変更も可能です。
+      Community は無料（イベント参加時のみ会場費・飲食費などの実費を個別精算）。Pro・Visit の表示価格は <strong>初期メンバー5社限定のローンチ価格</strong>です（定価 Pro ¥50,000／Visit ¥200,000・税別）。枠が埋まり次第、順次定価へ戻します。Pro / Visit / Build は、まず無料相談で要件を伺った上でご提案します。途中プラン変更も可能です。
     </div>
   </div>
 </section>
@@ -3133,44 +3442,17 @@ section {
     <div class="section-head row reveal">
       <div>
         <div class="section-eyebrow"><span class="section-num">06</span> Cases</div>
-        <h2 class="section-title">自社で動かしている、<br />2つの現場から。</h2>
+        <h2 class="section-title">導入事例。</h2>
       </div>
       <p class="section-lede">
-        他社の事例を切り貼りした資料はお見せしません。私たち自身の事業で、AIをどう差し込んだか。
-        その手触りごと共有します。
+        いま初期メンバーと進めている実装の事例を、近日この場所で公開します。
       </p>
     </div>
 
-    <div class="case-cards reveal">
-      <article class="case-card">
-        <figure>
-          <img src="/ax-kenkyujo/assets/transport_ai_field.webp" alt="運送現場でノートPCを開きAI業務改善を確認する丹野健心" loading="lazy" />
-        </figure>
-        <div class="cc-body">
-          <div class="cc-meta"><span class="cc-pill">Field-Proven</span><span>運送業</span></div>
-          <h3>「電話とFAX」の現場から、AI業務フローへ。</h3>
-          <p>配車・請求・ドライバー連絡といった日々のオペレーションを、AI前提のフローへ作り直し。</p>
-          <dl class="cc-facts">
-            <div><dt>主体</dt><dd>丹野 / Sponsaru</dd></div>
-            <div><dt>フェーズ</dt><dd>実装 → 運用</dd></div>
-          </dl>
-        </div>
-      </article>
-
-      <article class="case-card">
-        <figure>
-          <img src="/ax-kenkyujo/assets/founders_working.webp" alt="ノートPCで複数事業を並走する小野寺穂高" loading="lazy" />
-        </figure>
-        <div class="cc-body">
-          <div class="cc-meta"><span class="cc-pill">Self-Operating</span><span>SMB経営</span></div>
-          <h3>営業・開発・経理・資料生成まで、自社で実践中。</h3>
-          <p>複数事業を並走させながら、業務フロー全体をAI前提で組み直しています。</p>
-          <dl class="cc-facts">
-            <div><dt>主体</dt><dd>穂高 / SUI-GEN</dd></div>
-            <div><dt>フェーズ</dt><dd>運用 → 継続改善</dd></div>
-          </dl>
-        </div>
-      </article>
+    <div class="cases-soon reveal">
+      <div class="cs-badge">Coming Soon</div>
+      <p class="cs-title">導入事例は近日公開</p>
+      <p class="cs-text">他社の事例の切り貼りではなく、私たち自身の事業と、初期メンバーの現場から。<br />実装の手触りごと、ここで共有していきます。</p>
     </div>
   </div>
 </section>
@@ -3216,12 +3498,14 @@ section {
         <div class="role">CEO, 株式会社SUI-GEN / 26</div>
         <p class="bio">
           岩手県出身。少年期から大学まで野球一筋。<br />
-          2026年1月、株式会社SUI-GENを設立。「感動でつながり、世界を拡げる」を掲げ、地方と都心、個とコミュニティを行き来する複数事業を、AIを前提とした体制で並走させている。AX研究所では、研修・伴走・実装の総合設計を担当。
+          2026年1月、株式会社SUI-GENを設立。「感動でつながり、世界を拡げる」を掲げ、地方と都心、個とコミュニティを行き来する複数事業を、AIを前提とした体制で並走させている。<br />
+          大手ネット銀行のMicrosoft 365 Copilot導入支援（業務委託）に参画するほか、業務システムを自ら複数プロダクトとして企画・開発。AX研究所では、研修・伴走・実装の総合設計を担当。
         </p>
         <div class="facts">
           <span>SUI-GEN 代表</span>
+          <span>大手導入コンサル</span>
+          <span>プロダクト開発</span>
           <span>岩手 → 東京</span>
-          <span>野球一筋</span>
           <span>AI × 経営</span>
         </div>
       </article>
@@ -3238,15 +3522,36 @@ section {
         <div class="role">CEO, 株式会社スポンサル / 25</div>
         <p class="bio">
           サッカー一筋で育つ。株式会社スポンサル代表として、運送業領域でAI業務フロー改善を主導。<br />
-          配車・請求・現場連絡など、「電話とFAX」と呼ばれてきた業務の中身を、AI前提のフローへ作り変えてきた当事者。AX研究所では、現場実装と業務再設計を担当。
+          配車・請求・現場連絡など、「電話とFAX」と呼ばれてきた業務を、AI前提のフローへ作り変えてきた当事者。業務改善にとどまらず、運送業向けAIプロダクトの開発・現場実装まで自ら手がける。AX研究所では、現場実装と業務再設計を担当。
         </p>
         <div class="facts">
           <span>Sponsaru 代表</span>
           <span>運送業 AI実装</span>
-          <span>サッカー一筋</span>
+          <span>プロダクト開発</span>
           <span>業務再設計</span>
         </div>
       </article>
+    </div>
+
+    <div class="solutions reveal">
+      <div class="sol-head">主な対応ソリューション</div>
+      <div class="sol-row">
+        <div class="sol-label">ローカル環境</div>
+        <div class="sol-logos">
+          <figure><img src="/ax-kenkyujo/assets/logos/openai.svg" alt="OpenAI Codex" loading="lazy" /><figcaption>OpenAI Codex</figcaption></figure>
+          <figure><img src="/ax-kenkyujo/assets/logos/claude.svg" alt="Claude Code" loading="lazy" /><figcaption>Claude Code</figcaption></figure>
+        </div>
+      </div>
+      <div class="sol-row">
+        <div class="sol-label">クラウド・Web環境</div>
+        <div class="sol-logos">
+          <figure><img src="/ax-kenkyujo/assets/logos/openai.svg" alt="ChatGPT" loading="lazy" /><figcaption>ChatGPT</figcaption></figure>
+          <figure><img src="/ax-kenkyujo/assets/logos/gemini.svg" alt="Google Gemini" loading="lazy" /><figcaption>Gemini</figcaption></figure>
+          <figure><img src="/ax-kenkyujo/assets/logos/microsoft-copilot.svg" alt="Microsoft Copilot" loading="lazy" /><figcaption>Microsoft<br />Copilot</figcaption></figure>
+          <figure><img src="/ax-kenkyujo/assets/logos/manus.svg" alt="Manus" loading="lazy" /><figcaption>Manus</figcaption></figure>
+          <figure><img src="/ax-kenkyujo/assets/logos/notion.svg" alt="Notion" loading="lazy" /><figcaption>Notion</figcaption></figure>
+        </div>
+      </div>
     </div>
 
   </div>
