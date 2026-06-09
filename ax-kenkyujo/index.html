@@ -865,100 +865,71 @@ section {
 }
 .plans-note strong { color: var(--ink); font-weight: 500; }
 
-/* --- Journey: As-is → To-be 行程表 --- */
-.plans-journey { margin-top: 56px; }
-.plans-journey-head { margin-bottom: 26px; }
-.plans-journey-head .pj-eyebrow {
+.plan-visuals {
+  margin-top: clamp(38px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.plan-visual {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(220px, .9fr);
+  gap: clamp(18px, 3vw, 32px);
+  align-items: center;
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid var(--line);
+  background: var(--paper-card);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.plan-visual-copy {
+  min-width: 0;
+}
+.plan-visual-kicker {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 10.5px;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 8px;
+  color: var(--accent);
+  margin-bottom: 12px;
 }
-.plans-journey-head h3 {
-  font-family: var(--jp-sans);
-  font-size: clamp(20px, 2.4vw, 26px);
-  font-weight: 700;
+.plan-visual h3 {
+  margin: 0 0 12px;
+  font-family: var(--display);
+  font-size: clamp(21px, 2.2vw, 28px);
+  line-height: 1.35;
+  letter-spacing: -.01em;
   color: var(--ink);
+}
+.plan-visual p {
   margin: 0;
-  letter-spacing: .01em;
+  font-family: var(--jp-sans);
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: var(--ink-3);
 }
-.pj-lane {
-  margin-top: 18px;
-  padding: 22px 24px;
-  background: var(--paper-card);
+.plan-visual-media {
+  margin: 0;
+  background: var(--paper);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
-.pj-lane-head {
-  display: flex; align-items: baseline; gap: 10px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
+.plan-visual-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.pj-lane-head .pj-plan {
-  font-family: var(--jp-sans);
-  font-weight: 700;
-  font-size: 16px;
-  color: var(--ink);
+@media (max-width: 1100px) {
+  .plan-visuals { grid-template-columns: 1fr; }
 }
-.pj-lane-head .pj-tagline {
-  font-family: var(--jp-sans);
-  font-size: 12px;
-  color: var(--ink-3);
-}
-.pj-track {
-  display: flex; align-items: stretch; gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-  -webkit-overflow-scrolling: touch;
-}
-.pj-track::-webkit-scrollbar { height: 6px; }
-.pj-track::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 99px; }
-.pj-step, .pj-cap {
-  flex: 1 0 auto;
-  min-width: 156px;
-  padding: 13px 15px;
-  border-radius: 8px;
-}
-.pj-step {
-  border: 1px solid var(--line);
-  background: var(--white);
-}
-.pj-cap--asis {
-  border: 1px dashed var(--line-2);
-  background: transparent;
-}
-.pj-cap--tobe {
-  border: 1px solid var(--accent);
-  background: rgba(184,58,36,.07);
-}
-.pj-when {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-  margin-bottom: 7px;
-}
-.pj-cap--tobe .pj-when { color: var(--accent); }
-.pj-what {
-  font-family: var(--jp-sans);
-  font-size: 12.5px;
-  line-height: 1.6;
-  color: var(--ink-2);
-}
-.pj-cap--tobe .pj-what { color: var(--ink); font-weight: 500; }
-.pj-arrow {
-  align-self: center;
-  flex: 0 0 auto;
-  font-family: var(--mono);
-  color: var(--ink-3);
-  font-size: 14px;
-}
-@media (max-width: 560px) {
-  .pj-step, .pj-cap { min-width: 138px; }
-  .pj-arrow { font-size: 12px; }
+@media (max-width: 640px) {
+  .plan-visual {
+    grid-template-columns: 1fr;
+  }
+  .plan-visual-media {
+    order: -1;
+  }
 }
 
 /* ------------------------------------------------------------------
@@ -3103,6 +3074,123 @@ section {
 <!-- ============================================================ -->
 <!-- PLANS                                                         -->
 <!-- ============================================================ -->
+<!-- ============================================================ -->
+<!-- PRACTICE — 僕ら自身がAIで会社を回している（入会動機）            -->
+<!-- ============================================================ -->
+<section class="practice" id="practice" data-screen-label="02.5 Practice">
+  <style>
+    .practice{padding:clamp(72px,10vw,120px) 0;background:var(--paper,#f6f5f2)}
+    .practice .pr-head{max-width:760px;margin:0 auto;text-align:center}
+    .practice .pr-eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent,#c8531f);text-transform:uppercase}
+    .practice .pr-title{font-size:clamp(26px,4.4vw,42px);font-weight:800;line-height:1.25;margin:14px 0;color:var(--ink,#1a1a1a)}
+    .practice .pr-title em{font-style:normal;color:var(--accent,#c8531f)}
+    .practice .pr-lede{font-size:clamp(15px,2vw,17px);color:var(--ink-3,#555);line-height:1.85}
+    .practice .pr-people{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:860px;margin:46px auto 0}
+    @media(max-width:680px){.practice .pr-people{grid-template-columns:1fr;max-width:420px}}
+    .practice .pr-card{background:#fff;border-radius:22px;padding:26px 24px;box-shadow:0 18px 50px rgba(0,0,0,.08);text-align:center}
+    .practice .pr-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:top center;background:#eee;margin:0 auto 14px;display:block}
+    .practice .pr-name{font-weight:800;font-size:18px;color:var(--ink,#1a1a1a)}
+    .practice .pr-role{font-size:12.5px;color:var(--accent,#c8531f);font-weight:700;margin-top:3px}
+    .practice .pr-desc{font-size:13.5px;color:var(--ink-3,#555);line-height:1.75;margin-top:12px}
+    .practice .pr-foot{text-align:center;margin-top:42px}
+    .practice .pr-foot .pr-line{font-size:clamp(17px,2.4vw,22px);font-weight:800;color:var(--ink,#1a1a1a);margin-bottom:20px}
+    .practice .pr-foot .pr-line em{color:var(--accent,#c8531f);font-style:normal}
+    .practice .pr-ex-title{text-align:center;font-size:13px;font-weight:800;color:var(--ink,#1a1a1a);margin:48px 0 16px;letter-spacing:.04em}
+    .practice .pr-ex{max-width:860px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media(max-width:680px){.practice .pr-ex{grid-template-columns:1fr}}
+    .practice .pr-ex-item{background:#fff;border-radius:14px;padding:16px 18px;box-shadow:0 8px 26px rgba(0,0,0,.05);display:flex;gap:12px;align-items:flex-start}
+    .practice .pr-ex-ic{font-size:20px;flex:0 0 auto;line-height:1.3}
+    .practice .pr-ex-tx b{display:block;font-size:13.5px;color:var(--ink,#1a1a1a);font-weight:800;margin-bottom:3px}
+    .practice .pr-ex-tx span{font-size:12px;color:var(--ink-3,#555);line-height:1.6}
+  </style>
+  <div class="container">
+    <div class="pr-head reveal">
+      <div class="pr-eyebrow">Our Practice</div>
+      <h2 class="pr-title">僕ら自身が、<br />毎日<em>AIで会社を回して</em>います。</h2>
+      <p class="pr-lede">経営者とエンジニアの2人が、自分たちの会社をAIで動かしている。営業・経理・広報・採用までAIに任せ、プロダクトも自動化も自分の手で。受け売りではなく、自分でガリガリ回した実践だけを、そのまま渡します。</p>
+    </div>
+    <div class="pr-people reveal">
+      <div class="pr-card">
+        <img class="pr-photo" src="/ax-kenkyujo/assets/founders/hodaka.webp" alt="小野寺穂高" loading="lazy" />
+        <div class="pr-name">小野寺 穂高</div>
+        <div class="pr-role">経営 × AI ／ SUI-GEN代表</div>
+        <p class="pr-desc">会社の営業・経理・広報・採用をAIエージェントに任せ、組織そのものを“自走”させている。経営をAIで回す側の実践者。</p>
+      </div>
+      <div class="pr-card">
+        <img class="pr-photo" src="/ax-kenkyujo/assets/founders/tanno.webp" alt="丹野健心" loading="lazy" />
+        <div class="pr-name">丹野 健心</div>
+        <div class="pr-role">エンジニアリング × AI ／ Sponsaru</div>
+        <p class="pr-desc">プロダクト開発と業務自動化をAIで高速に。現場の課題をシステムに落とし込む、手を動かすエンジニア。</p>
+      </div>
+    </div>
+    <div class="pr-ex-title reveal">— たとえば、僕らが毎日やっていること —</div>
+    <div class="pr-ex reveal">
+      <div class="pr-ex-item"><span class="pr-ex-ic">🖥</span><span class="pr-ex-tx"><b>Claude Code × Codex を同時起動</b><span>ローカルのターミナルで両方を立ち上げ、いくつものセクションを並列で同時に進める。</span></span></div>
+      <div class="pr-ex-item"><span class="pr-ex-ic">🏢</span><span class="pr-ex-tx"><b>会社をAIエージェントで自走</b><span>組織構造を作り、毎朝リサーチを定期実行。営業・経理・広報まで自動で回す。</span></span></div>
+      <div class="pr-ex-item"><span class="pr-ex-ic">📣</span><span class="pr-ex-tx"><b>SNS発信を自動化</b><span>コンテンツの企画から投稿までAIで回し、発信を止めない。</span></span></div>
+      <div class="pr-ex-item"><span class="pr-ex-ic">🧾</span><span class="pr-ex-tx"><b>経費・資料もAIで</b><span>OCR × LINE × freee で領収書を撮るだけ経費登録。スライドもCodexで生成。</span></span></div>
+    </div>
+    <div class="pr-foot reveal">
+      <div class="pr-line">「<em>こうなりたい</em>」と思ったら、その型を一緒に。</div>
+      <a class="btn btn-primary" href="#plans">どう始めるか、プランを見る <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- DEKIRU — AXで実際にできるようになること（提供内容＝こういうことができる印象） -->
+<!-- ============================================================ -->
+<section class="dekiru" id="dekiru" data-screen-label="02.7 Can-Do">
+  <style>
+    .dekiru{padding:clamp(72px,10vw,120px) 0;background:#fff}
+    .dekiru .dk-head{max-width:760px;margin:0 auto;text-align:center}
+    .dekiru .dk-eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--accent,#c8531f);text-transform:uppercase}
+    .dekiru .dk-title{font-size:clamp(26px,4.4vw,42px);font-weight:800;line-height:1.25;margin:14px 0;color:var(--ink,#1a1a1a)}
+    .dekiru .dk-title em{font-style:normal;color:var(--accent,#c8531f)}
+    .dekiru .dk-lede{font-size:clamp(15px,2vw,17px);color:var(--ink-3,#555);line-height:1.85}
+    .dekiru .dk-grid{max-width:980px;margin:46px auto 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+    @media(max-width:880px){.dekiru .dk-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:560px){.dekiru .dk-grid{grid-template-columns:1fr}}
+    .dekiru .dk-card{border:1px solid var(--line,#e6e3de);border-radius:16px;padding:20px 18px;background:#fcfbfa}
+    .dekiru .dk-ic{font-size:24px}
+    .dekiru .dk-t{font-weight:800;font-size:14px;margin:8px 0 10px;color:var(--ink,#1a1a1a)}
+    .dekiru .dk-ba{font-size:12px;line-height:1.7}
+    .dekiru .dk-b{color:var(--ink-4,#999)}
+    .dekiru .dk-b b{color:var(--ink-3,#555);font-weight:700}
+    .dekiru .dk-arrow{color:var(--accent,#c8531f);font-weight:800;margin:2px 0}
+    .dekiru .dk-a{color:var(--ink,#1a1a1a)}
+    .dekiru .dk-a b{color:var(--accent,#c8531f);font-weight:800}
+    .dekiru .dk-foot{text-align:center;margin-top:40px}
+    .dekiru .dk-foot .dk-line{font-size:clamp(16px,2.2vw,21px);font-weight:800;color:var(--ink,#1a1a1a);margin-bottom:18px}
+    .dekiru .dk-foot .dk-line em{color:var(--accent,#c8531f);font-style:normal}
+  </style>
+  <div class="container">
+    <div class="dk-head reveal">
+      <div class="dk-eyebrow">What you can do</div>
+      <h2 class="dk-title">AXで、こんなことが<em>できるようになります</em>。</h2>
+      <p class="dk-lede">どれも、僕らが自社で毎日やっていること。研修では「ツールの使い方」ではなく、この“できる状態”を、あなたの会社にそのまま移植します。</p>
+    </div>
+    <div class="dk-grid reveal">
+      <div class="dk-card"><div class="dk-ic">🧾</div><div class="dk-t">経費・請求書</div>
+        <div class="dk-ba"><div class="dk-b">Before：<b>手入力で溜まっていく</b></div><div class="dk-arrow">↓</div><div class="dk-a">After：<b>撮るだけ</b>でAIが仕訳→freee登録</div></div></div>
+      <div class="dk-card"><div class="dk-ic">📝</div><div class="dk-t">議事録・文字起こし</div>
+        <div class="dk-ba"><div class="dk-b">Before：<b>後でまとめる手間</b></div><div class="dk-arrow">↓</div><div class="dk-a">After：録音すれば<b>要点を自動整理</b></div></div></div>
+      <div class="dk-card"><div class="dk-ic">📣</div><div class="dk-t">SNS・情報発信</div>
+        <div class="dk-ba"><div class="dk-b">Before：<b>続かない・止まる</b></div><div class="dk-arrow">↓</div><div class="dk-a">ネタ出しから投稿まで<b>AIで回す</b></div></div></div>
+      <div class="dk-card"><div class="dk-ic">📊</div><div class="dk-t">提案資料・スライド</div>
+        <div class="dk-ba"><div class="dk-b">Before：<b>作るのに半日</b></div><div class="dk-arrow">↓</div><div class="dk-a">AI（Codex）で<b>一晩に叩き台</b></div></div></div>
+      <div class="dk-card"><div class="dk-ic">🔎</div><div class="dk-t">市場・競合リサーチ</div>
+        <div class="dk-ba"><div class="dk-b">Before：<b>都度ググって整理</b></div><div class="dk-arrow">↓</div><div class="dk-a">毎朝AIが<b>自動で集めて報告</b></div></div></div>
+      <div class="dk-card"><div class="dk-ic">🤖</div><div class="dk-t">会社の運営（上級）</div>
+        <div class="dk-ba"><div class="dk-b">Before：<b>すべて人手頼み</b></div><div class="dk-arrow">↓</div><div class="dk-a">AIエージェントが<b>営業・経理・広報を自走</b></div></div></div>
+    </div>
+    <div class="dk-foot reveal">
+      <div class="dk-line">Pro（月¥5万）で、<em>毎月ひとつずつ</em>“できること”が増えていきます。</div>
+      <a class="btn btn-primary" href="#plans">プランを見る <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="plans" id="plans" data-screen-label="03 Plans">
   <div class="container">
     <div class="section-head row reveal">
@@ -3193,84 +3281,44 @@ section {
       </div>
     </div>
 
-    <div class="plans-journey reveal">
-      <div class="plans-journey-head">
-        <div class="pj-eyebrow">Journey ・ As-is → To-be</div>
-        <h3>導入して、こう変わる。</h3>
-      </div>
+    <div class="plan-visuals reveal" aria-label="ProとVisitの導入イメージ">
+      <article class="plan-visual">
+        <div class="plan-visual-copy">
+          <div class="plan-visual-kicker">Pro / Personal Build</div>
+          <h3>まずは、自分の業務がAIで動き出す。</h3>
+          <p>
+            業務システム、Webサイト、SNS自動化。月次伴走で、目の前の仕事をひとつずつ「作れる状態」へ引き上げます。
+          </p>
+        </div>
+        <figure class="plan-visual-media">
+          <img
+            src="/ax-lab/assets/plan-pro.png"
+            alt="Proの導入イメージ。個人事業主がノートPCでAI活用を始め、業務システム、Webサイト、SNS自動化へ広げている。"
+            loading="lazy"
+            width="1024"
+            height="1024"
+          />
+        </figure>
+      </article>
 
-      <!-- Pro lane -->
-      <div class="pj-lane">
-        <div class="pj-lane-head">
-          <span class="pj-plan">Pro</span>
-          <span class="pj-tagline">毎月積み上げる — 個人技をチームの標準へ</span>
+      <article class="plan-visual">
+        <div class="plan-visual-copy">
+          <div class="plan-visual-kicker">Visit / Organization AI</div>
+          <h3>次に、経営と組織全体へ広げる。</h3>
+          <p>
+            週1回の対面伴走で、経営者の判断、現場の運用、プロンプト共有、外部連携まで、会社のAI基盤として定着させます。
+          </p>
         </div>
-        <div class="pj-track">
-          <div class="pj-cap pj-cap--asis">
-            <div class="pj-when">現状 / As-is</div>
-            <div class="pj-what">AIは入れたが各自バラバラ。断片的にしか使えていない。</div>
-          </div>
-          <span class="pj-arrow">→</span>
-          <div class="pj-step">
-            <div class="pj-when">1ヶ月目</div>
-            <div class="pj-what">Claude Code・Codex をローカル環境にセットアップ。日々の業務で初期活用を立ち上げ。</div>
-          </div>
-          <span class="pj-arrow">→</span>
-          <div class="pj-step">
-            <div class="pj-when">2ヶ月目</div>
-            <div class="pj-what">ローカルドライブ連携でチーム内に共有。個人技をチームの共通基盤へ。</div>
-          </div>
-          <span class="pj-arrow">→</span>
-          <div class="pj-step">
-            <div class="pj-when">3ヶ月目〜</div>
-            <div class="pj-what">各業務へ展開し、新機能を毎月キャッチアップ。継続的に伸ばす。</div>
-          </div>
-          <span class="pj-arrow">→</span>
-          <div class="pj-cap pj-cap--tobe">
-            <div class="pj-when">なりたい姿 / To-be</div>
-            <div class="pj-what">AI前提で事業が回り、社内で改善が回り続ける。</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Visit lane -->
-      <div class="pj-lane">
-        <div class="pj-lane-head">
-          <span class="pj-plan">Visit</span>
-          <span class="pj-tagline">初月集中（週1回・対面） — 1ヶ月でプロレベルへ</span>
-        </div>
-        <div class="pj-track">
-          <div class="pj-cap pj-cap--asis">
-            <div class="pj-when">現状 / As-is</div>
-            <div class="pj-what">自己流で止まっている。何から手をつけるか分からない。</div>
-          </div>
-          <span class="pj-arrow">→</span>
-          <div class="pj-step">
-            <div class="pj-when">Week 1</div>
-            <div class="pj-what">ローカル環境を構築（Claude Code・Codex）。基礎の型を身につける。</div>
-          </div>
-          <span class="pj-arrow">→</span>
-          <div class="pj-step">
-            <div class="pj-when">Week 2</div>
-            <div class="pj-what">実務へAIを組み込む。手元の業務で成果を出す。</div>
-          </div>
-          <span class="pj-arrow">→</span>
-          <div class="pj-step">
-            <div class="pj-when">Week 3</div>
-            <div class="pj-what">繰り返し業務を自動化し、チームへ共有する。</div>
-          </div>
-          <span class="pj-arrow">→</span>
-          <div class="pj-step">
-            <div class="pj-when">Week 4</div>
-            <div class="pj-what">自走できる状態へ仕上げる。次の打ち手まで設計。</div>
-          </div>
-          <span class="pj-arrow">→</span>
-          <div class="pj-cap pj-cap--tobe">
-            <div class="pj-when">なりたい姿 / To-be</div>
-            <div class="pj-what">AIをプロレベルで使いこなし、社内で自走できる。</div>
-          </div>
-        </div>
-      </div>
+        <figure class="plan-visual-media">
+          <img
+            src="/ax-lab/assets/plan-visit.png"
+            alt="Visitの導入イメージ。経営者を中心に、組織まるごとAI化、専用プロンプト共有、MCP連携が広がっている。"
+            loading="lazy"
+            width="1024"
+            height="1024"
+          />
+        </figure>
+      </article>
     </div>
 
     <div class="plans-note reveal">
@@ -3408,18 +3456,50 @@ section {
         </div>
       </article>
 
-      <!-- EP02: 台本作成済み・収録待ち → 配信予定として正直に表示（ダミー日付/リンクは出さない） -->
-      <article class="ep ep--soon">
-        <div class="ep-thumb ep-thumb--soon">
-          <span class="ep-soon-badge">配信予定</span>
-          <span class="ep-num">EP 02</span>
+      <!-- EP02: 収録済み（農業 / 米農家のAX・17分） -->
+      <article class="ep ep--live">
+        <div class="ep-thumb">
+          <span class="ep-latest-badge">第2回</span>
+          <img src="/ax-kenkyujo/assets/radio/ep02-thumb.webp" alt="AX研究ラジオ #2 — AIで農業（米農家）はどこまで変わるか" loading="lazy" />
         </div>
         <div class="ep-body">
           <div class="ep-meta">
-            <span>EP 02</span><span class="dot-sep"></span><span>Coming soon</span>
+            <span>EP 02</span><span class="dot-sep"></span><span>17 min</span>
           </div>
-          <h3 class="ep-title">AIで農業はどこまで変わるか</h3>
-          <p class="ep-desc">第2回のテーマは農業。栽培計画・人手・天候・出荷／販路といった現場の業務を順に分解し、どこをAIで支えられるかを点数化していきます。EP01ラストの「次回予告：農業」の本編です。</p>
+          <h3 class="ep-title">AIで農業はどこまで変わるか（米農家のAX）</h3>
+          <p class="ep-desc">EP01予告の本編、テーマは農業。米農家に絞って日次・週次・月次の業務を棚卸しし、IoT／センサー、職人の暗黙知、どこを「管理」からAX化できるかを点数化。ショート版・カジュアル路線でお届けします。</p>
+
+          <audio class="ep-audio" controls preload="none">
+            <source src="/ax-kenkyujo/assets/audio/ep02.mp3" type="audio/mpeg" />
+            お使いのブラウザは音声再生に対応していません。
+          </audio>
+
+          <details class="ep-chapters">
+            <summary>チャプター（目安）</summary>
+            <ul>
+              <li><span>00:00</span> OP・自己紹介・農業×AI概観</li>
+              <li><span>02:00</span> AIツールTips（ChatGPT / Codex / ローカル環境）</li>
+              <li><span>05:00</span> 米農家の業務を棚卸し → IoT/センサー → 暗黙知</li>
+              <li><span>13:50</span> 今日のAXスコア（穂高 50点・反省込め）</li>
+              <li><span>14:10</span> AI Tips（スライドCodex / OCR×LINE×freee経費Bot）</li>
+              <li><span>18:00</span> 次回予告：飲食店</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+
+      <!-- EP03: 飲食店（EP02予告の本編）→ 収録待ちの配信予定 -->
+      <article class="ep ep--soon">
+        <div class="ep-thumb ep-thumb--soon">
+          <span class="ep-soon-badge">配信予定</span>
+          <span class="ep-num">EP 03</span>
+        </div>
+        <div class="ep-body">
+          <div class="ep-meta">
+            <span>EP 03</span><span class="dot-sep"></span><span>Coming soon</span>
+          </div>
+          <h3 class="ep-title">AIで飲食店はどこまで変わるか</h3>
+          <p class="ep-desc">テーマは飲食店。予約・仕入れ・シフト・接客といった現場の業務を分解し、どこをAIで支えられるかを点数化していきます。EP02ラストの「次回予告：飲食店」の本編です。</p>
         </div>
       </article>
 
