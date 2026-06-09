@@ -3848,5 +3848,121 @@ section {
 })();
 </script>
 
+<!-- ============================================================ -->
+<!-- FLOATING BOOKING BANNER（無料相談・右下追従）                  -->
+<!-- ============================================================ -->
+<style>
+  .book-fab {
+    position: fixed; right: 20px; bottom: 20px; z-index: 200;
+    width: 304px; max-width: calc(100vw - 24px);
+    background: var(--paper-card); color: var(--ink);
+    border: 1px solid rgba(20,19,15,.10); border-radius: 16px;
+    box-shadow: 0 14px 38px rgba(20,19,15,.26), 0 2px 8px rgba(20,19,15,.16);
+    padding: 16px 16px 15px; font-family: inherit;
+    transform: translateY(140%); opacity: 0;
+    transition: transform .45s cubic-bezier(.16,1,.3,1), opacity .35s ease;
+  }
+  .book-fab.is-visible { transform: translateY(0); opacity: 1; }
+  .book-fab__close {
+    position: absolute; top: 8px; right: 9px;
+    border: 0; background: transparent; color: var(--ink-4);
+    font-size: 18px; line-height: 1; cursor: pointer; padding: 4px;
+  }
+  .book-fab__close:hover { color: var(--ink); }
+  .book-fab__badge {
+    display: inline-block; font-size: 10.5px; font-weight: 700;
+    letter-spacing: .06em; color: var(--accent);
+    background: var(--accent-soft); border-radius: 999px;
+    padding: 3px 9px; margin-bottom: 8px;
+  }
+  .book-fab__main { font-size: 16px; font-weight: 700; line-height: 1.3; }
+  .book-fab__actions { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+  .book-fab__btn {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    text-decoration: none; font-size: 14px; font-weight: 700;
+    border-radius: 10px; padding: 11px 14px; line-height: 1;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .book-fab__btn .arr { transition: transform .25s ease; }
+  .book-fab__btn:hover .arr { transform: translateX(3px); }
+  .book-fab__btn--primary { background: var(--accent); color: var(--white); }
+  .book-fab__btn--primary:hover { background: var(--accent-ink); }
+  .book-fab__btn--ghost {
+    background: transparent; color: var(--ink);
+    border: 1px solid rgba(20,19,15,.18);
+  }
+  .book-fab__btn--ghost:hover { border-color: var(--ink); }
+  @media (max-width: 560px) {
+    .book-fab { right: 12px; left: 12px; bottom: 12px; width: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .book-fab { transition: opacity .3s ease; transform: none; }
+    .book-fab.is-visible { transform: none; }
+  }
+</style>
+<div class="book-fab" id="bookFab" hidden>
+  <button class="book-fab__close" id="bookFabClose" type="button" aria-label="閉じる">×</button>
+  <span class="book-fab__badge">初期メンバー限定枠 ・ 残りわずか</span>
+  <span class="book-fab__main">無料相談を予約</span>
+  <div class="book-fab__actions">
+    <a class="book-fab__btn book-fab__btn--primary" id="bookFabLink" href="#cta">Google予約で枠を取る <span class="arr">→</span></a>
+    <a class="book-fab__btn book-fab__btn--ghost" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%5D%20%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B&body=%E3%81%8A%E4%B8%96%E8%A9%B1%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%99%E3%80%82%0A%0A%E3%83%BB%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A%E3%83%BB%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E3%83%BB%E7%9B%B8%E8%AB%87%E5%86%85%E5%AE%B9%EF%BC%9A%0A%E3%83%BB%E5%B8%8C%E6%9C%9B%E6%97%A5%E6%99%82%EF%BC%9A%0A">日程が合わなければメールで</a>
+  </div>
+</div>
+<script>
+(function () {
+  /* ▼▼ 予約リンクの差し替えはここ1行だけ ▼▼
+     TimeRex / Google予約 などのカレンダーURLができたら下を差し替える。
+     '#cta' のままだとページ内の無料相談セクションへスクロールする。 */
+  var BOOKING_URL = 'https://calendar.app.google/bSHp2CsMzFedBTsy5';
+  /* ▲▲ ここまで ▲▲ */
+
+  var fab   = document.getElementById('bookFab');
+  var link  = document.getElementById('bookFabLink');
+  var close = document.getElementById('bookFabClose');
+  var finalSec = document.getElementById('cta');
+  if (!fab || !link || !close) return;
+
+  // リンク先を反映（外部URLなら新規タブ）
+  link.setAttribute('href', BOOKING_URL);
+  var isAnchor = BOOKING_URL.charAt(0) === '#';
+  if (!isAnchor) { link.setAttribute('target', '_blank'); link.setAttribute('rel', 'noopener'); }
+  else {
+    link.addEventListener('click', function (e) {
+      var t = document.querySelector(BOOKING_URL);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  }
+
+  // セッション中に閉じたら出さない
+  var DISMISS_KEY = 'axBookFabDismissed';
+  var dismissed = false;
+  try { dismissed = sessionStorage.getItem(DISMISS_KEY) === '1'; } catch (e) {}
+  close.addEventListener('click', function () {
+    fab.classList.remove('is-visible');
+    try { sessionStorage.setItem(DISMISS_KEY, '1'); } catch (e) {}
+    dismissed = true;
+  });
+
+  fab.hidden = false;
+
+  // ヒーロー通過後に出現／最終CTAが画面内のときは重複回避で隠す
+  function update() {
+    if (dismissed) return;
+    var scrolled = (window.scrollY || window.pageYOffset) > 600;
+    var ctaInView = false;
+    if (finalSec) {
+      var r = finalSec.getBoundingClientRect();
+      ctaInView = r.top < window.innerHeight * 0.85 && r.bottom > 0;
+    }
+    if (scrolled && !ctaInView) fab.classList.add('is-visible');
+    else fab.classList.remove('is-visible');
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
+
 </body>
 </html>
