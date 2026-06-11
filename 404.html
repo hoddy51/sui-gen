@@ -2,11 +2,11 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Not Found — SUI-GEN</title>
 <meta name="description" content="お探しのページが見つかりませんでした。">
 <meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#FAFAF7">
+<meta name="theme-color" content="#0C2336">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512.png">
@@ -15,102 +15,146 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/_shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/v3.css">
+
 <style>
-.notfound{min-height:calc(100vh - 160px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden}
-.notfound::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 600px at 50% 30%,rgba(16,185,129,.06),transparent 60%);pointer-events:none}
+/* ---- 404 page（v3トークン準拠） ---- */
+.notfound{
+  position:relative;overflow:hidden;color:#fff;
+  min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  background:linear-gradient(160deg,var(--navy-2) 0%,var(--navy) 56%,#123C50 100%);
+  padding:clamp(140px,20vh,200px) 24px clamp(88px,11vw,140px);
+}
+.notfound::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(54% 72% at 50% 100%, rgba(88,177,147,.32), transparent 70%),
+    radial-gradient(30% 44% at 12% 96%, rgba(246,144,33,.14), transparent 70%);
+}
 .notfound > *{position:relative;z-index:1}
-.notfound .code{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--emerald);letter-spacing:0.32em;text-transform:uppercase;margin-bottom:32px}
-.notfound .big{font-family:var(--sans);font-weight:800;font-size:clamp(120px,18vw,260px);line-height:0.9;letter-spacing:-0.05em;color:var(--ink);margin-bottom:24px}
-.notfound .big em{font-style:normal;color:var(--emerald)}
-.notfound h1{font-family:var(--sans-jp);font-weight:800;font-size:clamp(28px,4vw,52px);line-height:1.25;letter-spacing:-0.02em;color:var(--ink);margin-bottom:24px;text-wrap:balance}
-.notfound p{font-family:var(--sans-jp);font-size:15px;line-height:1.9;color:var(--ink-65);max-width:520px;margin-bottom:48px;letter-spacing:0.02em}
-.notfound .back{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:var(--bg);padding:18px 36px;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;transition:background .3s,gap .3s}
-.notfound .back:hover{background:var(--emerald);gap:18px}
-.notfound .links{margin-top:48px;display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
-.notfound .links a{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-50);transition:color .25s}
-.notfound .links a:hover{color:var(--emerald)}
+.nf-eyebrow{
+  display:inline-flex;align-items:center;gap:14px;margin-bottom:28px;
+  font-family:var(--disp);font-weight:700;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.72);
+}
+.nf-eyebrow::before{content:"";width:40px;height:1px;background:rgba(255,255,255,.45)}
+.nf-big{font-family:var(--disp);font-weight:700;font-size:clamp(96px,16vw,220px);line-height:1;letter-spacing:-.04em;margin-bottom:18px}
+.nf-big em{font-style:normal;color:var(--jade)}
+.notfound h1{font-family:var(--jp);font-weight:900;font-size:clamp(1.5rem,3.4vw,2.6rem);line-height:1.5;letter-spacing:.02em;margin-bottom:20px;text-wrap:balance}
+.notfound p{font-size:14px;line-height:2.05;letter-spacing:.04em;color:rgba(255,255,255,.78);max-width:520px;margin-bottom:44px;text-wrap:pretty}
+.nf-links{margin-top:48px;display:flex;gap:28px;flex-wrap:wrap;justify-content:center}
+.nf-links a{
+  font-family:var(--disp);font-weight:700;font-size:10px;letter-spacing:.26em;text-transform:uppercase;
+  color:rgba(255,255,255,.62);transition:color .25s;
+}
+.nf-links a:hover{color:var(--jade)}
 </style>
 </head>
 <body>
 
+<!-- Header -->
 <header class="site-header" id="header">
-  <div class="container-wide">
+  <div class="container">
     <nav class="nav">
-      <a href="/" class="brand"><span class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="SUI-GEN" width="36" height="36" loading="eager"></picture></span><span class="wordmark">SUI-GEN</span></a>
-      <div class="nav-links">
-        <a href="/about">About</a>
-        <a href="/real">Real</a>
-        <a href="/tech">Tech</a>
-        <a href="/#contact">Contact</a>
+      <a href="/" class="brand">
+        <span class="mark"><img src="/assets/sui-gen-logo.webp" alt="SUI-GEN" width="22" height="22"></span>
+        <span class="wordmark">SUI-GEN</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a class="c-link" href="/about">About<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a class="c-link" href="/#service">Service<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a class="c-link" href="/#work">Work<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+        </div>
+        <a href="/#contact" class="c-btn c-btn--sm">
+          <span class="c-btn__bg" aria-hidden="true"><span class="c-btn__bg-inner" style="--index:1"></span><span class="c-btn__bg-inner" style="--index:2"></span></span>
+          <span>お問い合わせ</span>
+          <span class="c-btn__arrows" aria-hidden="true">
+            <svg class="a1" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="a2" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
       </div>
-      <a href="mailto:hodaka-onodera@sui-gen.jp" class="nav-cta">Get in touch →</a>
-      <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
     </nav>
   </div>
 </header>
 
-<div id="mobile-nav" class="mobile-nav" hidden>
-  <a href="/about" class="mn-link">About</a>
-  <a href="/real" class="mn-link">Real</a>
-  <a href="/tech" class="mn-link">Tech</a>
-  <a href="/#contact" class="mn-link">Contact</a>
-  <div class="mn-meta">
-    Get in touch
-    <a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
-  </div>
+<div id="mobile-nav" class="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/#service">Service</a>
+  <a href="/#work">Work</a>
+  <a href="/#contact">Contact</a>
+  <a class="mn-mail" href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
 </div>
 
-
 <main class="notfound">
-  <div class="code">— Error / Page Not Found</div>
-  <div class="big">4<em>0</em>4</div>
-  <h1>ページが、<br>見つかりませんでした。</h1>
-  <p>探していたページは、移動・削除されたか、URLが間違っている可能性があります。<br>下のリンクからトップへお戻りください。</p>
-  <a href="/" class="back">→ Back to Top</a>
+  <p class="nf-eyebrow js-inview">Error — Page Not Found</p>
+  <div class="nf-big js-inview" style="--stagger:1">4<em>0</em>4</div>
+  <h1 class="js-inview" style="--stagger:2">ページが、<br>見つかりませんでした。</h1>
+  <p class="js-inview" style="--stagger:3">探していたページは、移動・削除されたか、URLが間違っている可能性があります。<br>下のボタンからトップへお戻りください。</p>
+  <a href="/" class="c-btn c-btn--lg js-inview" style="--stagger:4">
+    <span class="c-btn__bg" aria-hidden="true"><span class="c-btn__bg-inner" style="--index:1"></span><span class="c-btn__bg-inner" style="--index:2"></span></span>
+    <span>トップへ戻る</span>
+    <span class="c-btn__arrows" aria-hidden="true">
+      <svg class="a1" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="a2" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </a>
 
-  <div class="links">
+  <div class="nf-links js-inview" style="--stagger:5">
     <a href="/about">About</a>
     <a href="/real">Real</a>
     <a href="/tech">Tech</a>
-    <a href="mailto:hodaka-onodera@sui-gen.jp">Contact</a>
+    <a href="/web">Web</a>
+    <a href="/#contact">Contact</a>
   </div>
 </main>
 
+<!-- Footer -->
 <footer class="site-footer">
-  <div class="container-wide">
+  <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="" width="36" height="36" loading="lazy"></picture></span>
+        <span class="mark"><img src="/assets/sui-gen-logo.webp" alt="" width="24" height="24" loading="lazy"></span>
         <div class="name">SUI-GEN</div>
-        <p class="purpose">感動でつながり、<br>世界を<em>拡げる</em>。</p>
-        <span class="by">Moments Creator</span>
+        <div class="purpose">感動でつながり、世界を拡げる。</div>
+        <div class="byline">Moments Creator</div>
       </div>
-      <div class="footer-col"><h4>Site</h4><ul><li><a href="/about">About</a></li><li><a href="/real">Real</a></li><li><a href="/tech">Tech</a></li><li><a href="/#contact">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy">プライバシーポリシー</a></li><li><a href="/terms">利用規約</a></li><li><a href="/tokushou">特定商取引法</a></li></ul></div>
+      <div class="footer-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="/">ホーム</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/real">Real事業</a></li>
+          <li><a href="/tech">Tech事業</a></li>
+          <li><a href="/web">Web制作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">プライバシーポリシー</a></li>
+          <li><a href="/terms">利用規約</a></li>
+          <li><a href="/tokushou">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about#company">会社概要</a></li>
+          <li><a href="/#contact">お問い合わせ</a></li>
+          <li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span><div class="legal"><a href="/sitemap.xml">Sitemap</a><a href="#top">Back to top ↑</a></div></div>
+    <div class="footer-bottom">
+      <span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span>
+    </div>
   </div>
 </footer>
 
-<script>
-const h=document.getElementById('header');addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>24),{passive:true});
-(function(){
-  const hb=document.querySelector('.hamburger');
-  const mn=document.getElementById('mobile-nav');
-  if(!hb||!mn)return;
-  hb.addEventListener('click',()=>{
-    const open=hb.getAttribute('aria-expanded')==='true';
-    hb.setAttribute('aria-expanded',String(!open));
-    if(open){mn.setAttribute('hidden','');document.body.classList.remove('nav-open');}
-    else{mn.removeAttribute('hidden');document.body.classList.add('nav-open');}
-  });
-  mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    hb.setAttribute('aria-expanded','false');mn.setAttribute('hidden','');document.body.classList.remove('nav-open');
-  }));
-})();
-</script>
+<script src="/assets/v3.js" defer></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

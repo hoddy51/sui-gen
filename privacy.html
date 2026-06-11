@@ -2,11 +2,11 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>プライバシーポリシー — SUI-GEN</title>
-<meta name="description" content="株式会社SUI-GENのプライバシーポリシー（準備中）。">
-<meta name="robots" content="noindex,follow">
-<meta name="theme-color" content="#FAFAF7">
+<meta name="description" content="株式会社SUI-GENのプライバシーポリシー。取得する情報、利用目的、第三者提供、開示等のご請求窓口について定めています。">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0C2336">
 <link rel="canonical" href="https://www.sui-gen.jp/privacy">
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
@@ -14,111 +14,198 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SUI-GEN">
+<meta property="og:title" content="プライバシーポリシー — SUI-GEN">
+<meta property="og:description" content="株式会社SUI-GENのプライバシーポリシー。取得する情報、利用目的、第三者提供、開示等のご請求窓口について定めています。">
+<meta property="og:image" content="https://www.sui-gen.jp/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://www.sui-gen.jp/privacy">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="プライバシーポリシー — SUI-GEN">
+<meta name="twitter:description" content="株式会社SUI-GENのプライバシーポリシー。">
+<meta name="twitter:image" content="https://www.sui-gen.jp/assets/og.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/_shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/v3.css">
 <style>
-.legal{max-width:760px;padding:40px 0}
-.legal h2{font-family:var(--sans-jp);font-weight:800;font-size:clamp(20px,2vw,28px);letter-spacing:-0.01em;margin:48px 0 16px}
-.legal p{font-family:var(--sans-jp);font-size:15px;line-height:2;color:var(--ink-80);letter-spacing:0.02em;margin-bottom:14px}
-.legal .note{padding:24px;border-left:2px solid var(--emerald);background:var(--bg-2);color:var(--ink-80);font-size:14px;line-height:1.9;letter-spacing:0.02em;margin-top:32px}
+.legal-hero{background:var(--navy);color:#fff;padding:calc(76px + clamp(56px,9vw,110px)) 0 clamp(52px,6vw,84px)}
+.legal-hero .eyebrow{color:rgba(255,255,255,.72)}
+.legal-hero .eyebrow::before{background:rgba(255,255,255,.4)}
+.legal-hero__title{font-family:var(--jp);font-weight:900;font-size:clamp(1.7rem,3.8vw,3rem);line-height:1.3;letter-spacing:-.01em;text-wrap:balance}
+.legal-hero__title em{font-style:normal;color:var(--jade)}
+.legal-hero__lead{max-width:680px;margin-top:22px;font-size:14px;line-height:2.05;letter-spacing:.04em;color:rgba(255,255,255,.78);text-wrap:pretty}
+.legal-body{padding:clamp(72px,8vw,120px) 0}
+.legal-doc{max-width:800px}
+.legal-doc h2{display:flex;align-items:baseline;gap:14px;font-weight:900;font-size:clamp(1.1rem,1.7vw,1.4rem);letter-spacing:.02em;margin:clamp(44px,5vw,64px) 0 16px}
+.legal-doc h2 .n{font-family:var(--disp);font-weight:700;font-size:.7em;color:var(--jade);letter-spacing:.08em;flex:none}
+.legal-doc p{margin-bottom:14px;letter-spacing:.03em;text-wrap:pretty}
+.legal-doc ul{margin:0 0 18px;padding-left:1.5em;display:grid;gap:8px;letter-spacing:.03em}
+.legal-doc li::marker{color:var(--jade)}
+.legal-doc a{color:var(--jade-deep);font-weight:700}
+.legal-doc a:hover{text-decoration:underline}
+.legal-note{background:var(--tint);border-left:3px solid var(--jade);border-radius:0 8px 8px 0;padding:20px 26px;font-size:13.5px;line-height:2;letter-spacing:.03em;color:var(--ink-65);margin:36px 0 0;text-wrap:pretty}
+.legal-date{margin:44px 0 0;font-size:13px;letter-spacing:.04em;color:var(--ink-65)}
+.legal-dl{display:grid;border-top:1px solid var(--rule)}
+.legal-dl>div{display:grid;grid-template-columns:230px 1fr;gap:clamp(16px,3vw,48px);padding:20px 4px;border-bottom:1px solid var(--rule);align-items:baseline}
+.legal-dl dt{font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--ink-65)}
+.legal-dl dd{font-size:14px;line-height:1.95;letter-spacing:.03em}
+.legal-dl dd.is-tbd{color:var(--ink-45)}
+@media (max-width:680px){.legal-dl>div{grid-template-columns:1fr;gap:6px}}
 </style>
 </head>
 <body>
 
 <header class="site-header" id="header">
-  <div class="container-wide">
+  <div class="container">
     <nav class="nav">
-      <a href="/" class="brand"><span class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="SUI-GEN" width="36" height="36" loading="eager"></picture></span><span class="wordmark">SUI-GEN</span></a>
-      <div class="nav-links">
-        <a href="/about">About</a>
-        <a href="/real">Real</a>
-        <a href="/tech">Tech</a>
-        <a href="/#contact">Contact</a>
+      <a href="/" class="brand">
+        <span class="mark"><img src="/assets/sui-gen-logo.webp" alt="SUI-GEN" width="22" height="22"></span>
+        <span class="wordmark">SUI-GEN</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a class="c-link" href="/about">About<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a class="c-link" href="/#service">Service<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a class="c-link" href="/#work">Work<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+        </div>
+        <a href="/#contact" class="c-btn c-btn--sm">
+          <span class="c-btn__bg" aria-hidden="true"><span class="c-btn__bg-inner" style="--index:1"></span><span class="c-btn__bg-inner" style="--index:2"></span></span>
+          <span>お問い合わせ</span>
+          <span class="c-btn__arrows" aria-hidden="true">
+            <svg class="a1" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="a2" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
       </div>
-      <a href="mailto:hodaka-onodera@sui-gen.jp" class="nav-cta">Get in touch →</a>
-      <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
     </nav>
   </div>
 </header>
 
-<div id="mobile-nav" class="mobile-nav" hidden>
-  <a href="/about" class="mn-link">About</a>
-  <a href="/real" class="mn-link">Real</a>
-  <a href="/tech" class="mn-link">Tech</a>
-  <a href="/#contact" class="mn-link">Contact</a>
-  <div class="mn-meta">
-    Get in touch
-    <a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
-  </div>
+<div id="mobile-nav" class="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/#service">Service</a>
+  <a href="/#work">Work</a>
+  <a href="/#contact">Contact</a>
+  <a class="mn-mail" href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
 </div>
 
+<main>
 
-<section class="page-hero">
+<section class="legal-hero">
   <div class="container">
-    <div class="crumb">— Legal / Privacy Policy</div>
-    <h1>プライバシー<br><em>ポリシー。</em></h1>
-    <p class="lead">株式会社SUI-GEN（以下「当社」）は、当社が運営するウェブサイトおよび当社が提供するサービスにおいて、利用者の個人情報を適切に取り扱うため、以下のプライバシーポリシーを定めます。</p>
+    <p class="eyebrow js-inview"><span class="num">Legal</span>Privacy Policy</p>
+    <h1 class="legal-hero__title js-inview" style="--stagger:1">プライバシー<em>ポリシー</em>。</h1>
+    <p class="legal-hero__lead js-inview" style="--stagger:2">株式会社SUI-GEN（以下「当社」といいます）は、当社が運営するウェブサイト「sui-gen.jp」（以下「本サイト」といいます）における利用者の個人情報の取り扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定めます。</p>
   </div>
 </section>
 
-<section>
+<section class="legal-body">
   <div class="container">
-    <div class="legal">
-      <p class="note">本ポリシーは現在準備中です。確定版は2026年中に掲載予定です。それまでの間にお問い合わせの際は、<a href="mailto:hodaka-onodera@sui-gen.jp" style="color:var(--emerald);font-weight:600">hodaka-onodera@sui-gen.jp</a> までご連絡ください。</p>
+    <div class="legal-doc js-inview">
 
-      <h2>1. 取得する個人情報</h2>
-      <p>当社は、お問い合わせ・採用応募・サービス利用などにあたり、必要な範囲で氏名・メールアドレス・所属等の個人情報を取得します。</p>
+      <h2><span class="n">01</span>基本方針</h2>
+      <p>当社は、個人情報の保護に関する法律（個人情報保護法）その他の関係法令およびガイドラインを遵守し、利用者の個人情報を適切に取得・利用・管理します。</p>
 
-      <h2>2. 利用目的</h2>
-      <p>取得した個人情報は、お問い合わせへの対応、サービス提供、当社からのご連絡、統計データの作成などに利用します。</p>
+      <h2><span class="n">02</span>適用範囲</h2>
+      <p>本ポリシーは、本サイトの閲覧および本サイトを通じた当社へのお問い合わせ・ご予約等に関して適用されます。</p>
 
-      <h2>3. 第三者提供</h2>
-      <p>法令に基づく場合を除き、ご本人の同意なく個人情報を第三者に提供することはありません。</p>
+      <h2><span class="n">03</span>取得する情報と取得方法</h2>
+      <p>当社は、本サイトの運営にあたり、次の情報を取得します。</p>
+      <ul>
+        <li><strong>お問い合わせフォーム</strong> — ご用件の種別、お名前、会社・団体名、メールアドレス、お問い合わせ内容</li>
+        <li><strong>相談予約</strong> — 外部の日程予約サービスを通じてご入力いただくお名前、メールアドレス、ご希望日時等</li>
+        <li><strong>アクセス解析（Vercel Web Analytics）</strong> — 閲覧ページ、参照元、ご利用環境（ブラウザ・OS・国/地域等）に関する統計情報。Cookieを使用せず、特定の個人を識別しない形式で取得します</li>
+      </ul>
 
-      <h2>4. お問い合わせ窓口</h2>
-      <p>個人情報の開示・訂正・削除等のご要望は、上記メールアドレスまでお願いいたします。</p>
+      <h2><span class="n">04</span>利用目的</h2>
+      <p>取得した情報は、次の目的の範囲内で利用します。</p>
+      <ul>
+        <li>お問い合わせ・ご相談への対応およびご連絡のため</li>
+        <li>当社サービスの提供・運営・改善のため</li>
+        <li>本サイトの利用状況の把握および品質改善のため</li>
+        <li>法令に基づく対応のため</li>
+      </ul>
 
-      <h2>5. 改定</h2>
-      <p>本ポリシーは予告なく改定することがあります。改定後の本ポリシーは本ページに掲載した時点から効力を生じます。</p>
+      <h2><span class="n">05</span>第三者提供</h2>
+      <p>当社は、法令に基づく場合等を除き、ご本人の同意なく個人情報を第三者に提供しません。</p>
+
+      <h2><span class="n">06</span>外部サービスの利用</h2>
+      <p>本サイトのホスティングおよびアクセス解析には Vercel Inc. のサービスを利用しています。また、相談予約には外部の日程予約サービスを利用しており、当該サービス上で入力される情報には各事業者のプライバシーポリシーが適用されます。</p>
+
+      <h2><span class="n">07</span>安全管理措置</h2>
+      <p>当社は、個人情報の漏えい、滅失または毀損の防止その他個人情報の安全管理のため、必要かつ適切な措置を講じます。</p>
+
+      <h2><span class="n">08</span>開示・訂正・利用停止等のご請求</h2>
+      <p>ご本人からの個人情報の開示、訂正、追加、削除、利用停止等のご請求については、ご本人であることを確認のうえ、法令に従い速やかに対応します。ご請求は <a href="mailto:contact@sui-gen.jp">contact@sui-gen.jp</a> までご連絡ください。</p>
+
+      <h2><span class="n">09</span>本ポリシーの改定</h2>
+      <p>当社は、法令の改正やサービス内容の変更等に応じて、本ポリシーを改定することがあります。改定後の本ポリシーは、本ページに掲載した時点から効力を生じます。</p>
+
+      <h2><span class="n">10</span>お問い合わせ窓口</h2>
+      <p>本ポリシーおよび個人情報の取り扱いに関するお問い合わせは、下記までお願いいたします。</p>
+      <p>株式会社SUI-GEN　個人情報お問い合わせ窓口<br><a href="mailto:contact@sui-gen.jp">contact@sui-gen.jp</a></p>
+
+      <!-- TODO:確認後記入（制定日） -->
+      <p class="legal-date">本ポリシーは、本ページに掲載した時点から適用されます。</p>
     </div>
   </div>
 </section>
+
+</main>
 
 <footer class="site-footer">
-  <div class="container-wide">
+  <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="" width="36" height="36" loading="lazy"></picture></span>
+        <span class="mark"><img src="/assets/sui-gen-logo.webp" alt="" width="24" height="24" loading="lazy"></span>
         <div class="name">SUI-GEN</div>
-        <p class="purpose">感動でつながり、<br>世界を<em>拡げる</em>。</p>
-        <span class="by">Moments Creator</span>
+        <div class="purpose">感動でつながり、世界を拡げる。</div>
+        <div class="byline">Moments Creator</div>
       </div>
-      <div class="footer-col"><h4>Site</h4><ul><li><a href="/about">About</a></li><li><a href="/real">Real</a></li><li><a href="/tech">Tech</a></li><li><a href="/#contact">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy">プライバシーポリシー</a></li><li><a href="/terms">利用規約</a></li><li><a href="/tokushou">特定商取引法</a></li></ul></div>
+      <div class="footer-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="/">ホーム</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/real">Real事業</a></li>
+          <li><a href="/tech">Tech事業</a></li>
+          <li><a href="/web">Web制作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">プライバシーポリシー</a></li>
+          <li><a href="/terms">利用規約</a></li>
+          <li><a href="/tokushou">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about#company">会社概要</a></li>
+          <li><a href="/#contact">お問い合わせ</a></li>
+          <li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span><div class="legal"><a href="/sitemap.xml">Sitemap</a><a href="#top">Back to top ↑</a></div></div>
+    <div class="footer-bottom">
+      <span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span>
+    </div>
   </div>
 </footer>
 
-<script>
-const h=document.getElementById('header');addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>24),{passive:true});
-(function(){
-  const hb=document.querySelector('.hamburger');
-  const mn=document.getElementById('mobile-nav');
-  if(!hb||!mn)return;
-  hb.addEventListener('click',()=>{
-    const open=hb.getAttribute('aria-expanded')==='true';
-    hb.setAttribute('aria-expanded',String(!open));
-    if(open){mn.setAttribute('hidden','');document.body.classList.remove('nav-open');}
-    else{mn.removeAttribute('hidden');document.body.classList.add('nav-open');}
-  });
-  mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    hb.setAttribute('aria-expanded','false');mn.setAttribute('hidden','');document.body.classList.remove('nav-open');
-  }));
-})();
-</script>
+<script src="/assets/v3.js" defer></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

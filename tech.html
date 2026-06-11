@@ -2,11 +2,12 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tech テック事業 — SUI-GEN</title>
-<meta name="description" content="AIとハードウェアの力で、人の可能性を拡張する。企業向けAI研修・コンサルティング領域を中心としたSUI-GENのTech事業。">
+<meta name="description" content="AX研究所を中心に、AI活用の伴走支援・情報発信・ホームページ制作を展開するSUI-GENのTech事業。テクノロジーで人の可能性をしずかに拡張します。">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#FAFAF7">
+<meta name="author" content="株式会社SUI-GEN">
+<meta name="theme-color" content="#0C2336">
 <link rel="canonical" href="https://www.sui-gen.jp/tech">
 
 <!-- Favicons -->
@@ -20,8 +21,8 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SUI-GEN">
-<meta property="og:title" content="Tech — SUI-GEN">
-<meta property="og:description" content="再現可能な知としてのテクノロジー。SUI-GENのTech事業について。">
+<meta property="og:title" content="Tech テック事業 — SUI-GEN">
+<meta property="og:description" content="AX研究所を中心に、AI活用の伴走支援・情報発信・ホームページ制作を展開するSUI-GENのTech事業。">
 <meta property="og:image" content="https://www.sui-gen.jp/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -30,72 +31,158 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Tech — SUI-GEN">
-<meta name="twitter:description" content="再現可能な知としてのテクノロジー。SUI-GENのTech事業について。">
+<meta name="twitter:title" content="Tech テック事業 — SUI-GEN">
+<meta name="twitter:description" content="AX研究所を中心に、AI活用の伴走支援・情報発信・ホームページ制作を展開するSUI-GENのTech事業。">
 <meta name="twitter:image" content="https://www.sui-gen.jp/assets/og.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="_shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/v3.css">
+
+<style>
+/* ---- Tech page（v3トークン準拠） ---- */
+.page-hero{
+  position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(160deg,var(--navy-2) 0%,var(--navy) 56%,#123C50 100%);
+  padding:clamp(168px,24vh,248px) 0 clamp(88px,11vw,140px);
+}
+.page-hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(54% 72% at 80% 92%, rgba(88,177,147,.36), transparent 70%),
+    radial-gradient(30% 44% at 10% 100%, rgba(246,144,33,.15), transparent 70%);
+}
+.page-hero .container{position:relative;z-index:1}
+.ph-eyebrow{
+  display:inline-flex;align-items:center;gap:14px;margin-bottom:28px;
+  font-family:var(--disp);font-weight:700;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.72);
+}
+.ph-eyebrow::before{content:"";width:40px;height:1px;background:rgba(255,255,255,.45)}
+.ph-eyebrow .ja{font-family:var(--jp);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:none}
+.ph-title{font-family:var(--jp);font-weight:900;font-size:clamp(2.3rem,5.8vw,4.4rem);line-height:1.3;letter-spacing:.01em;text-wrap:balance}
+.ph-title em{font-style:normal;color:var(--jade)}
+.ph-lead{margin-top:30px;max-width:660px;font-size:15px;line-height:2.1;letter-spacing:.04em;color:rgba(255,255,255,.82);text-wrap:pretty}
+
+/* サービスカード */
+.svc-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px);margin-top:clamp(40px,5vw,64px)}
+.svc-card{
+  display:flex;flex-direction:column;justify-content:space-between;gap:32px;
+  background:#fff;border:1px solid var(--rule);border-radius:14px;
+  padding:clamp(26px,3vw,42px);
+  transition:transform .45s var(--ease-out-quart),box-shadow .45s var(--ease-out-quart),border-color .45s;
+}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 22px 48px -24px rgba(12,35,54,.28);border-color:var(--jade)}
+.svc-card .label{font-family:var(--disp);font-weight:700;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--jade-deep)}
+.svc-card .t{margin-top:14px;font-family:var(--jp);font-weight:900;font-size:clamp(1.15rem,1.7vw,1.45rem);line-height:1.5;letter-spacing:.02em}
+.svc-card .excerpt{margin-top:12px;font-size:13.5px;line-height:2;letter-spacing:.03em;color:var(--ink-65);text-wrap:pretty}
+.svc-card .more{font-family:var(--jp);font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--jade-deep)}
+@media (max-width:900px){.svc-cards{grid-template-columns:1fr}}
+
+/* サービス詳細 */
+.detail{max-width:840px}
+.detail .d-tagline{margin-top:18px;font-family:var(--jp);font-weight:900;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.6;letter-spacing:.02em;text-wrap:balance}
+.detail .d-tagline em{font-style:normal;color:var(--jade)}
+.detail .d-sub{margin-top:10px;font-size:13.5px;letter-spacing:.06em;color:var(--ink-65)}
+.detail .d-lead{margin-top:28px;font-size:15px;line-height:2.1;letter-spacing:.04em;color:var(--ink-65);text-wrap:pretty}
+.examples{margin-top:36px;display:grid;gap:12px;padding-left:1.4em;letter-spacing:.03em}
+.examples li{line-height:2;color:var(--ink-65)}
+.examples li::marker{color:var(--jade)}
+.closing{margin-top:36px;font-size:15px;line-height:2.1;letter-spacing:.04em;text-wrap:pretty}
+
+/* CTA帯 */
+.cta-band{background:var(--tint)}
+.cta-inner{display:flex;flex-direction:column;align-items:center;gap:36px;text-align:center}
+.cta-inner h2{font-family:var(--jp);font-weight:900;font-size:clamp(1.7rem,3.6vw,3rem);line-height:1.5;letter-spacing:.02em;text-wrap:balance}
+.cta-inner h2 em{font-style:normal;color:var(--jade)}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+
+/* 装飾円の配置（このページ用） */
+#services .deco--t1{width:clamp(220px,26vw,420px);height:clamp(220px,26vw,420px);top:6%;right:-7%}
+#ax-lab .deco--t2{width:clamp(160px,18vw,300px);height:clamp(160px,18vw,300px);bottom:10%;left:-6%}
+</style>
 </head>
 <body>
 
+<!-- Header -->
 <header class="site-header" id="header">
-  <div class="container-wide">
+  <div class="container">
     <nav class="nav">
-      <a href="index.html" class="brand"><span class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="SUI-GEN" width="36" height="36" loading="eager"></picture></span><span class="wordmark">SUI-GEN</span></a>
-      <div class="nav-links"><a href="about.html">About</a><a href="real.html">Real</a><a href="tech.html" class="active">Tech</a><a href="index.html#contact">Contact</a></div>
-      <a href="mailto:hodaka-onodera@sui-gen.jp" class="nav-cta">Get in touch →</a>
-      <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+      <a href="/" class="brand">
+        <span class="mark"><img src="/assets/sui-gen-logo.webp" alt="SUI-GEN" width="22" height="22"></span>
+        <span class="wordmark">SUI-GEN</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a class="c-link" href="/about">About<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a class="c-link" href="/#service">Service<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a class="c-link" href="/#work">Work<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+        </div>
+        <a href="/#contact" class="c-btn c-btn--sm">
+          <span class="c-btn__bg" aria-hidden="true"><span class="c-btn__bg-inner" style="--index:1"></span><span class="c-btn__bg-inner" style="--index:2"></span></span>
+          <span>お問い合わせ</span>
+          <span class="c-btn__arrows" aria-hidden="true">
+            <svg class="a1" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="a2" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+      </div>
     </nav>
   </div>
 </header>
 
-<div id="mobile-nav" class="mobile-nav" hidden>
-  <a href="/about" class="mn-link">About</a>
-  <a href="/real" class="mn-link">Real</a>
-  <a href="/tech" class="mn-link">Tech</a>
-  <a href="/#contact" class="mn-link">Contact</a>
-  <div class="mn-meta">
-    Get in touch
-    <a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
-  </div>
+<div id="mobile-nav" class="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/#service">Service</a>
+  <a href="/#work">Work</a>
+  <a href="/#contact">Contact</a>
+  <a class="mn-mail" href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
 </div>
 
-
+<!-- Page hero -->
 <section class="page-hero">
   <div class="container">
-    <div class="crumb">— Business / Tech</div>
-    <h1>可能性を、<br><em>しずかに拡張する。</em></h1>
-    <p class="lead">テクノロジーは、声を大きくするためのものではありません。むしろ、現場の熱量を消さないために、人の判断と行動に余白をつくるためにあります。SUI-GEN の Tech 事業は、AI とハードウェアの力で、人がもともと持っている可能性を一段階引き上げる——その役割に徹します。当面は、企業向けのAI活用伴走、現役の手触りを伝える情報発信、ブランディングを起点としたホームページ制作——3つのサービスを軸に、しずかに、誠実に手を動かしていきます。</p>
+    <div data-parallax="-0.05">
+      <p class="ph-eyebrow js-inview">Tech<span class="ja">— テック事業</span></p>
+      <h1 class="ph-title js-inview js-inview--none js-chars">可能性を、<br><em>しずかに拡張する。</em></h1>
+      <p class="ph-lead js-inview" style="--stagger:2">テクノロジーは、声を大きくするためのものではありません。むしろ、現場の熱量を消さないために、人の判断と行動に余白をつくるためにあります。SUI-GEN の Tech 事業は、AI の力で、人がもともと持っている可能性を一段階引き上げる——その役割に徹します。企業向けのAI活用伴走、現役の手触りを伝える情報発信、ブランディングを起点としたホームページ制作。3つのサービスを軸に、しずかに、誠実に手を動かしていきます。</p>
+    </div>
   </div>
 </section>
 
-<section>
+<!-- 01 Services -->
+<section id="services" class="has-bgfx">
+  <div class="deco deco--tint deco--t1" data-parallax="-0.06" data-mouse="8" aria-hidden="true"></div>
   <div class="container">
-    <span class="eyebrow">— Services</span>
-    <div class="tech-cards">
-      <a href="#ai-gym" class="tech-card">
+    <div class="sec-head">
+      <div class="js-inview">
+        <p class="eyebrow"><span class="num">01</span>Services</p>
+        <h2 class="sec-title js-inview js-inview--none js-chars">三つの<em>サービス。</em></h2>
+      </div>
+      <p class="lead js-inview" style="--stagger:1">AIと組織のあいだに立つ伴走支援を中心に、発信、Web制作まで。いま提供している3つのサービスです。</p>
+    </div>
+    <div class="svc-cards">
+      <a href="#ax-lab" class="svc-card js-inview">
         <div>
           <span class="label">01 — Consulting</span>
-          <h3 class="title">AI Gym.</h3>
+          <h3 class="t">AX研究所。</h3>
           <p class="excerpt">AIと組織のあいだに立ち、自社の言葉でAIを使いこなせる状態へ伴走するコンサル/研修プログラム。</p>
         </div>
         <span class="more">詳細を見る →</span>
       </a>
-      <a href="/ax-kenkyujo/#radio" class="tech-card">
+      <a href="/ax-kenkyujo/#radio" class="svc-card js-inview" style="--stagger:1">
         <div>
           <span class="label">02 — Broadcast</span>
-          <h3 class="title">AX研究所ラジオ。</h3>
+          <h3 class="t">AX研究所ラジオ。</h3>
           <p class="excerpt">毎週、現役起業家2名がAI実装の手触りをそのまま配信。業務フロー改善のヒアリングも個別に承ります。</p>
         </div>
         <span class="more">エピソードを聴く →</span>
       </a>
-      <a href="/web.html" class="tech-card">
+      <a href="/web" class="svc-card js-inview" style="--stagger:2">
         <div>
           <span class="label">03 — Web</span>
-          <h3 class="title">ホームページ制作。</h3>
+          <h3 class="t">ホームページ制作。</h3>
           <p class="excerpt">ブランディングを起点に、AI活用で効率的に。ヒアリングを重ねて小回りの効く改修まで一気通貫で。</p>
         </div>
         <span class="more">サービスを見る →</span>
@@ -104,23 +191,26 @@
   </div>
 </section>
 
-<section>
+<!-- 02 AX研究所 -->
+<section id="ax-lab" class="has-bgfx">
+  <div class="deco deco--ring deco--t2" data-parallax="0.05" data-mouse="-6" aria-hidden="true"></div>
   <div class="container">
-    <div class="service-detail" id="ai-gym">
-      <span class="label">— Service</span>
-      <h2 class="title">AI Gym.</h2>
-      <p class="tagline">AIと組織の、<br>あいだに立つ。</p>
-      <p class="lead">
-        新しい技術が押し寄せるたびに、組織は迷い、立ち止まり、誰かに翻訳を求めます。AI Gym は、AIの世界と、組織の現実の、あいだに立つ場所です。両方の言葉を話しながら、あなたの会社が自分たちの言葉で AI を使いこなせる状態へ、伴走します。
+    <div class="detail">
+      <p class="eyebrow js-inview"><span class="num">02</span>Service</p>
+      <h2 class="sec-title-en js-inview js-inview--none js-chars">AX Lab.</h2>
+      <p class="d-tagline js-inview" style="--stagger:1">AIと組織の、<br><em>あいだに立つ。</em></p>
+      <p class="d-sub js-inview" style="--stagger:2">AX研究所 — AI Transformation Lab</p>
+      <p class="d-lead js-inview" style="--stagger:3">
+        新しい技術が押し寄せるたびに、組織は迷い、立ち止まり、誰かに翻訳を求めます。AX研究所は、AIの世界と、組織の現実の、あいだに立つ場所です。両方の言葉を話しながら、あなたの会社が自分たちの言葉で AI を使いこなせる状態へ、伴走します。
       </p>
 
-      <ul class="examples">
+      <ul class="examples js-inview" style="--stagger:4">
         <li>AIを試したけれど、業務に組み込めていない</li>
         <li>社内に「AI担当」が一人いるだけで、組織として使いこなせていない</li>
         <li>ツールが増えすぎて、何を選び、誰がどう運用するかが定まっていない</li>
       </ul>
 
-      <p class="closing">
+      <p class="closing js-inview" style="--stagger:5">
         こういった問いを、毎月のアップデート、現場での伴走、短期集中のワークショップなど、状況に応じた形でほどいていきます。<br><br>
         私たち自身が AI を日々使い倒して事業を動かしている、25歳の現役起業家チーム。教科書ではなく、自社実践の生きたナレッジを持ち込みます。
       </p>
@@ -128,48 +218,70 @@
   </div>
 </section>
 
-<section class="cta-block">
+<!-- CTA -->
+<section class="cta-band">
   <div class="container">
     <div class="cta-inner">
-      <h2>AI活用・<em>研修</em>の<br>ご相談はこちらへ。</h2>
-      <a href="mailto:hodaka-onodera@sui-gen.jp" class="cta-mail">hodaka-onodera@sui-gen.jp →</a>
+      <h2 class="js-inview js-inview--blur">AI活用・<em>研修</em>の<br>ご相談はこちらへ。</h2>
+      <div class="cta-actions js-inview" style="--stagger:1">
+        <a href="/#contact" class="c-btn c-btn--lg">
+          <span class="c-btn__bg" aria-hidden="true"><span class="c-btn__bg-inner" style="--index:1"></span><span class="c-btn__bg-inner" style="--index:2"></span></span>
+          <span>お問い合わせ</span>
+          <span class="c-btn__arrows" aria-hidden="true">
+            <svg class="a1" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="a2" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <a class="c-link c-link--accent" href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="site-footer">
-  <div class="container-wide">
+  <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="" width="36" height="36" loading="lazy"></picture></span>
+        <span class="mark"><img src="/assets/sui-gen-logo.webp" alt="" width="24" height="24" loading="lazy"></span>
         <div class="name">SUI-GEN</div>
-        <p class="purpose">感動でつながり、<br>世界を<em>拡げる</em>。</p>
-        <span class="by">Moments Creator</span>
+        <div class="purpose">感動でつながり、世界を拡げる。</div>
+        <div class="byline">Moments Creator</div>
       </div>
-      <div class="footer-col"><h4>Site</h4><ul><li><a href="about.html">About</a></li><li><a href="real.html">Real</a></li><li><a href="tech.html">Tech</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy">プライバシーポリシー</a></li><li><a href="/terms">利用規約</a></li><li><a href="/tokushou">特定商取引法</a></li></ul></div>
+      <div class="footer-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="/">ホーム</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/real">Real事業</a></li>
+          <li><a href="/tech">Tech事業</a></li>
+          <li><a href="/web">Web制作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">プライバシーポリシー</a></li>
+          <li><a href="/terms">利用規約</a></li>
+          <li><a href="/tokushou">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about#company">会社概要</a></li>
+          <li><a href="/#contact">お問い合わせ</a></li>
+          <li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span><div class="legal"><a href="/sitemap.xml">Sitemap</a><a href="#top">Back to top ↑</a></div></div>
+    <div class="footer-bottom">
+      <span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span>
+    </div>
   </div>
 </footer>
 
-<script>
-const h=document.getElementById('header');addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>24),{passive:true});
-(function(){
-  const hb=document.querySelector('.hamburger');
-  const mn=document.getElementById('mobile-nav');
-  if(!hb||!mn)return;
-  hb.addEventListener('click',()=>{
-    const open=hb.getAttribute('aria-expanded')==='true';
-    hb.setAttribute('aria-expanded',String(!open));
-    if(open){mn.setAttribute('hidden','');document.body.classList.remove('nav-open');}
-    else{mn.removeAttribute('hidden');document.body.classList.add('nav-open');}
-  });
-  mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    hb.setAttribute('aria-expanded','false');mn.setAttribute('hidden','');document.body.classList.remove('nav-open');
-  }));
-})();
-</script>
+<script src="/assets/v3.js" defer></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

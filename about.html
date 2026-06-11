@@ -2,12 +2,40 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About 会社概要 — SUI-GEN</title>
-<meta name="description" content="株式会社SUI-GENの会社概要・経営理念・三つの哲学・チームについて。代表 小野寺穂高、2026年1月20日設立。">
+<meta name="description" content="株式会社SUI-GENの会社概要。パーパス「感動でつながり、世界を拡げる。」、経営理念、三つの哲学、会社情報。2026年1月20日設立、代表取締役 小野寺穂高。Real × Tech の二軸で事業を展開。">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#FAFAF7">
+<meta name="author" content="株式会社SUI-GEN">
+<meta name="theme-color" content="#0C2336">
 <link rel="canonical" href="https://www.sui-gen.jp/about">
+
+<!-- JSON-LD: AboutPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About — SUI-GEN",
+  "url": "https://www.sui-gen.jp/about",
+  "inLanguage": "ja-JP",
+  "about": {
+    "@type": "Organization",
+    "name": "株式会社SUI-GEN",
+    "alternateName": ["SUI-GEN", "SUI-GEN Inc.", "スイゲン"],
+    "url": "https://www.sui-gen.jp/",
+    "logo": "https://www.sui-gen.jp/assets/favicon-512.png",
+    "foundingDate": "2026-01-20",
+    "founder": {
+      "@type": "Person",
+      "name": "小野寺 穂高",
+      "alternateName": "Hodaka Onodera",
+      "jobTitle": "代表取締役 CEO"
+    },
+    "email": "contact@sui-gen.jp",
+    "slogan": "感動でつながり、世界を拡げる。"
+  }
+}
+</script>
 
 <!-- Favicons -->
 <link rel="icon" href="/assets/favicon.ico" sizes="any">
@@ -21,7 +49,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SUI-GEN">
 <meta property="og:title" content="About — SUI-GEN">
-<meta property="og:description" content="株式会社SUI-GENの会社概要・経営理念・チームについて。">
+<meta property="og:description" content="株式会社SUI-GENの会社概要・経営理念・三つの哲学について。">
 <meta property="og:image" content="https://www.sui-gen.jp/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -31,145 +59,333 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About — SUI-GEN">
-<meta name="twitter:description" content="株式会社SUI-GENの会社概要・経営理念・チームについて。">
+<meta name="twitter:description" content="株式会社SUI-GENの会社概要・経営理念・三つの哲学について。">
 <meta name="twitter:image" content="https://www.sui-gen.jp/assets/og.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="_shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/v3.css">
+
 <style>
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,6vw,120px);padding:clamp(80px,10vw,140px) 0;border-top:1px solid var(--rule);align-items:start}
-.about-grid h2{font-family:var(--sans);font-weight:800;font-size:clamp(28px,3.4vw,44px);line-height:1.2;letter-spacing:-0.025em;margin-bottom:36px;text-wrap:balance}
-.about-grid h2 em{font-style:normal;font-weight:800;color:var(--emerald)}
-.about-grid p{font-family:var(--sans-jp);font-size:15px;line-height:2.0;color:var(--ink-80);letter-spacing:0.03em;margin-bottom:20px;text-wrap:pretty;font-weight:400}
-dl.facts{display:grid;grid-template-columns:160px 1fr;gap:24px;border-top:1px solid var(--rule);padding-top:32px}
-dl.facts dt{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-50);padding-top:6px}
-dl.facts dd{font-family:var(--sans-jp);font-size:15px;line-height:1.9;color:var(--ink);letter-spacing:0.03em;padding-bottom:18px;border-bottom:1px solid var(--rule);font-weight:500}
-dl.facts dd em{font-family:var(--sans);font-style:normal;font-weight:700;color:var(--emerald)}
-dl.facts dt:last-of-type+dd,dl.facts dd:last-of-type{border-bottom:0}
-.values-block{padding:clamp(80px,10vw,140px) 0;border-top:1px solid var(--rule)}
-.values-block h2{font-family:var(--sans);font-weight:800;font-size:clamp(32px,4.2vw,56px);line-height:1.15;letter-spacing:-0.03em;margin-bottom:64px;text-wrap:balance;max-width:720px}
-.values-block h2 em{font-style:normal;font-weight:800;color:var(--emerald)}
-.v-list{display:grid;gap:0;border-top:1px solid var(--rule)}
-.v-row{display:grid;grid-template-columns:80px 1fr 2fr;gap:clamp(24px,4vw,72px);padding:clamp(40px,5vw,64px) 0;border-bottom:1px solid var(--rule);align-items:start}
-.v-row .no{font-family:var(--mono);font-weight:500;font-size:24px;color:var(--emerald);letter-spacing:0}
-.v-row .t{font-family:var(--sans-jp);font-weight:700;font-size:clamp(18px,1.6vw,22px);line-height:1.55;letter-spacing:0.03em;text-wrap:balance}
-.v-row .d{font-family:var(--sans-jp);font-size:14px;line-height:2.0;color:var(--ink-65);letter-spacing:0.02em;text-wrap:pretty;font-weight:400}
-@media (max-width:980px){.about-grid{grid-template-columns:1fr}.v-row{grid-template-columns:auto 1fr;gap:16px}.v-row .d{grid-column:1/-1;margin-top:8px}dl.facts{grid-template-columns:1fr;gap:8px}dl.facts dt{padding-top:0;margin-top:8px}dl.facts dd{border-bottom:0;padding-bottom:8px}}
+/* ---- About page（v3トークン準拠） ---- */
+.page-hero{
+  position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(160deg,var(--navy-2) 0%,var(--navy) 56%,#123C50 100%);
+  padding:clamp(168px,24vh,248px) 0 clamp(88px,11vw,140px);
+}
+.page-hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(54% 72% at 80% 92%, rgba(88,177,147,.36), transparent 70%),
+    radial-gradient(30% 44% at 10% 100%, rgba(246,144,33,.15), transparent 70%);
+}
+.page-hero .container{position:relative;z-index:1}
+.ph-eyebrow{
+  display:inline-flex;align-items:center;gap:14px;margin-bottom:28px;
+  font-family:var(--disp);font-weight:700;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.72);
+}
+.ph-eyebrow::before{content:"";width:40px;height:1px;background:rgba(255,255,255,.45)}
+.ph-eyebrow .ja{font-family:var(--jp);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:none}
+.ph-title{font-family:var(--jp);font-weight:900;font-size:clamp(2.3rem,5.8vw,4.4rem);line-height:1.3;letter-spacing:.01em;text-wrap:balance}
+.ph-title em{font-style:normal;color:var(--jade)}
+.ph-lead{margin-top:30px;max-width:660px;font-size:15px;line-height:2.1;letter-spacing:.04em;color:rgba(255,255,255,.82);text-wrap:pretty}
+
+/* 経営理念 */
+.phil-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(36px,6vw,110px);align-items:start}
+.phil-copy p{font-size:15px;line-height:2.1;letter-spacing:.04em;color:var(--ink-65);text-wrap:pretty;max-width:560px}
+.phil-copy p + p{margin-top:24px}
+
+/* 三つの哲学 */
+.v-list{border-top:1px solid var(--rule)}
+.v-row{
+  display:grid;grid-template-columns:88px 1fr 1.6fr;gap:clamp(24px,4vw,72px);
+  padding:clamp(36px,5vw,60px) 4px;border-bottom:1px solid var(--rule);align-items:start;
+}
+.v-row .no{font-family:var(--disp);font-weight:700;font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1.1;color:var(--jade);letter-spacing:-.02em}
+.v-row .t{font-family:var(--jp);font-weight:700;font-size:clamp(1.05rem,1.6vw,1.35rem);line-height:1.8;letter-spacing:.04em;text-wrap:balance}
+.v-row .d{font-size:14px;line-height:2.05;letter-spacing:.03em;color:var(--ink-65);text-wrap:pretty}
+
+/* CTA帯 */
+.cta-band{background:var(--tint)}
+.cta-inner{display:flex;flex-direction:column;align-items:center;gap:36px;text-align:center}
+.cta-inner h2{font-family:var(--jp);font-weight:900;font-size:clamp(1.7rem,3.6vw,3rem);line-height:1.5;letter-spacing:.02em;text-wrap:balance}
+.cta-inner h2 em{font-style:normal;color:var(--jade)}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+
+/* 装飾円の配置（このページ用） */
+#purpose .deco--p1{width:clamp(220px,26vw,420px);height:clamp(220px,26vw,420px);top:4%;right:-7%}
+#purpose .deco--p2{width:clamp(120px,12vw,200px);height:clamp(120px,12vw,200px);bottom:8%;left:-4%}
+#values .deco--p3{width:clamp(180px,20vw,340px);height:clamp(180px,20vw,340px);top:12%;left:-7%}
+
+@media (max-width:1024px){
+  .phil-grid{grid-template-columns:1fr}
+  .v-row{grid-template-columns:auto 1fr;gap:14px 18px}
+  .v-row .d{grid-column:1/-1}
+}
 </style>
 </head>
 <body>
 
+<!-- Header -->
 <header class="site-header" id="header">
-  <div class="container-wide">
+  <div class="container">
     <nav class="nav">
-      <a href="index.html" class="brand"><span class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="SUI-GEN" width="36" height="36" loading="eager"></picture></span><span class="wordmark">SUI-GEN</span></a>
-      <div class="nav-links">
-        <a href="about.html" class="active">About</a>
-        <a href="real.html">Real</a>
-        <a href="tech.html">Tech</a>
-        <a href="index.html#contact">Contact</a>
+      <a href="/" class="brand">
+        <span class="mark"><img src="/assets/sui-gen-logo.webp" alt="SUI-GEN" width="22" height="22"></span>
+        <span class="wordmark">SUI-GEN</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a class="c-link" href="/about">About<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a class="c-link" href="/#service">Service<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a class="c-link" href="/#work">Work<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+        </div>
+        <a href="/#contact" class="c-btn c-btn--sm">
+          <span class="c-btn__bg" aria-hidden="true"><span class="c-btn__bg-inner" style="--index:1"></span><span class="c-btn__bg-inner" style="--index:2"></span></span>
+          <span>お問い合わせ</span>
+          <span class="c-btn__arrows" aria-hidden="true">
+            <svg class="a1" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="a2" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
       </div>
-      <a href="mailto:hodaka-onodera@sui-gen.jp" class="nav-cta">Get in touch →</a>
-      <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
     </nav>
   </div>
 </header>
 
-<div id="mobile-nav" class="mobile-nav" hidden>
-  <a href="/about" class="mn-link">About</a>
-  <a href="/real" class="mn-link">Real</a>
-  <a href="/tech" class="mn-link">Tech</a>
-  <a href="/#contact" class="mn-link">Contact</a>
-  <div class="mn-meta">
-    Get in touch
-    <a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
-  </div>
+<div id="mobile-nav" class="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/#service">Service</a>
+  <a href="/#work">Work</a>
+  <a href="/#contact">Contact</a>
+  <a class="mn-mail" href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
 </div>
 
-
+<!-- Page hero -->
 <section class="page-hero">
   <div class="container">
-    <div class="crumb">— About / 私たちについて</div>
-    <h1>会社という、<br><em>ひとつの流れ。</em></h1>
-    <p class="lead">SUI-GEN は、リアルから生まれる感動と、人の可能性を拡げるテクノロジーを、ひとつの流れとして扱う会社です。スポーツ、学び、地域コミュニティ。源（みなもと）からの一滴が、いつしか川となり、誰かの世界を拡げていく——そんな循環を、事業として組み立てています。</p>
+    <div data-parallax="-0.05">
+      <p class="ph-eyebrow js-inview">About<span class="ja">— 私たちについて</span></p>
+      <h1 class="ph-title js-inview js-inview--none js-chars">会社という、<br><em>ひとつの流れ。</em></h1>
+      <p class="ph-lead js-inview" style="--stagger:2">SUI-GEN は、リアルから生まれる感動と、人の可能性を拡げるテクノロジーを、ひとつの流れとして扱う会社です。スポーツ、学び、地域コミュニティ。源（みなもと）からの一滴が、いつしか川となり、誰かの世界を拡げていく——そんな循環を、事業として組み立てています。</p>
+    </div>
   </div>
 </section>
 
-<section>
+<!-- 01 Purpose -->
+<section id="purpose" class="has-bgfx">
+  <div class="deco deco--tint deco--p1" data-parallax="-0.07" data-mouse="9" aria-hidden="true"></div>
+  <div class="deco deco--ring deco--p2" data-parallax="0.05" data-mouse="-6" aria-hidden="true"></div>
   <div class="container">
-    <div class="about-grid">
-      <div>
-        <h2>個の幸福と、<br>社会の改善を、<em>同時に。</em></h2>
+    <p class="eyebrow js-inview"><span class="num">01</span>Purpose</p>
+    <div class="purpose">
+      <span class="label js-inview">Our Purpose</span>
+      <h2 class="js-inview js-inview--none js-chars" data-inview-margin="0px 0px -18% 0px">感動でつながり、<em>世界を</em>拡げる。</h2>
+      <p class="en js-inview" style="--stagger:2">Connect with <span class="accent">Moments,</span> Expand the World.</p>
+      <span class="by js-inview" style="--stagger:3">— SUI-GEN, Moments Creator</span>
+    </div>
+    <p class="message-box js-inview js-inview--scale">
+      リアルから生まれる感動でつながり、テクノロジーで人の可能性を拡げる。SUI-GENは、現場の熱量と先端の知をひとつの流れに編む Moments Creator です。
+    </p>
+  </div>
+</section>
+
+<!-- 02 Philosophy / 経営理念 -->
+<section id="philosophy">
+  <div class="container">
+    <div class="phil-grid">
+      <div class="js-inview">
+        <p class="eyebrow"><span class="num">02</span>Philosophy</p>
+        <h2 class="sec-title js-inview js-inview--none js-chars">個の幸福と、<br>社会の改善を、<em>同時に。</em></h2>
+      </div>
+      <div class="phil-copy js-inview" style="--stagger:1">
         <p>私たちの経営理念は、全従業員の物心両面の幸福を追求することと、日本社会の改善に真に貢献する事業のみを追求すること。これは二つの目標ではなく、ひとつの構えです。</p>
         <p>働く人が満たされていなければ、社会に向ける手は形だけになる。社会への貢献を諦めてしまえば、働く意味が痩せていく。両方を同じ流れで追いかけることが、SUI-GEN の前提です。</p>
       </div>
-      <div>
-        <dl class="facts">
-          <dt>Company</dt><dd>株式会社SUI-GEN <em>/ SUI-GEN Inc.</em></dd>
-          <dt>Founded</dt><dd><em>January 20, 2026</em></dd>
-          <dt>Representative</dt><dd>小野寺 穂高 <em>/ Hodaka Onodera, CEO</em></dd>
-          <dt>Team</dt><dd>5 members</dd>
-          <dt>Contact</dt><dd><em>hodaka-onodera@sui-gen.jp</em></dd>
-          <dt>Domain</dt><dd><em>sui-gen.jp</em></dd>
-        </dl>
-      </div>
     </div>
+  </div>
+</section>
 
-    <div class="values-block">
-      <h2>三つの<em>哲学。</em></h2>
-      <div class="v-list">
-        <div class="v-row"><span class="no">01</span><h3 class="t">良き批判者であり、最高の友であろう。</h3><p class="d">ともに働くチームメートは最高の友であり、勝負の世界では良き批判者として切磋琢磨し合う最高の仲間となり、共に頂きを目指します。</p></div>
-        <div class="v-row"><span class="no">02</span><h3 class="t">行動で自信を生み、次の行動へつなげよう。</h3><p class="d">ビジョンに向かって勇気を持って行動すると自信が身につき、次の行動への自信となります。その結果さらなる行動へつながり、自信と行動力を兼ね備えます。</p></div>
-        <div class="v-row"><span class="no">03</span><h3 class="t">改善し続け、改革を起こそう。</h3><p class="d">日々改善を続けて時が満ちたら改革を起こします。変化を恐れず時代や市場の流れを捉え、柔軟にアップデートし続けるチームであり続けます。</p></div>
+<!-- 03 Mission & Vision -->
+<section id="mv">
+  <div class="container">
+    <div class="sec-head">
+      <div class="js-inview">
+        <p class="eyebrow"><span class="num">03</span>Mission &amp; Vision</p>
+        <h2 class="sec-title">使命と、<em>未来像。</em></h2>
+      </div>
+      <p class="lead js-inview" style="--stagger:1">パーパスを実現するために、SUI-GEN が果たす使命と、目指す未来のかたち。</p>
+    </div>
+    <div class="mvv">
+      <div class="mvv-row js-inview">
+        <span class="n">01</span>
+        <div class="l"><span class="en">Mission</span><span class="jp">使命</span></div>
+        <p class="t">リアルから生まれる<em>感動の総量</em>を、社会の意思決定が変わるところまで届ける。現場の熱を、テクノロジーで再現可能な仕組みに編み直す。</p>
+      </div>
+      <div class="mvv-row js-inview" style="--stagger:1">
+        <span class="n">02</span>
+        <div class="l"><span class="en">Vision</span><span class="jp">未来像</span></div>
+        <p class="t">人と地域、企業と学生、リアルとテック——分断されてきた領域を一本の流れにする<em>プラットフォーム</em>であり続ける。</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-block">
+<!-- 04 Values / 三つの哲学 -->
+<section id="values" class="has-bgfx">
+  <div class="deco deco--jade deco--p3" data-parallax="-0.05" data-mouse="7" aria-hidden="true"></div>
+  <div class="container">
+    <div class="sec-head">
+      <div class="js-inview">
+        <p class="eyebrow"><span class="num">04</span>Values</p>
+        <h2 class="sec-title js-inview js-inview--none js-chars">三つの<em>哲学。</em></h2>
+      </div>
+      <p class="lead js-inview" style="--stagger:1">日々の判断と行動のよりどころとなる、SUI-GEN の行動原則です。</p>
+    </div>
+    <div class="v-list">
+      <div class="v-row js-inview">
+        <span class="no">01</span>
+        <h3 class="t">良き批判者であり、最高の友であろう。</h3>
+        <p class="d">ともに働くチームメートは最高の友であり、勝負の世界では良き批判者として切磋琢磨し合う最高の仲間となり、共に頂きを目指します。</p>
+      </div>
+      <div class="v-row js-inview" style="--stagger:1">
+        <span class="no">02</span>
+        <h3 class="t">行動で自信を生み、次の行動へつなげよう。</h3>
+        <p class="d">ビジョンに向かって勇気を持って行動すると自信が身につき、次の行動への自信となります。その結果さらなる行動へつながり、自信と行動力を兼ね備えます。</p>
+      </div>
+      <div class="v-row js-inview" style="--stagger:2">
+        <span class="no">03</span>
+        <h3 class="t">改善し続け、改革を起こそう。</h3>
+        <p class="d">日々改善を続けて時が満ちたら改革を起こします。変化を恐れず時代や市場の流れを捉え、柔軟にアップデートし続けるチームであり続けます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- メッセージマーキー帯 -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <div class="marquee__group">
+      <span>Connect with Moments</span><span class="sep">✦</span>
+      <span class="ja">感動でつながる</span><span class="sep">✦</span>
+      <span>Expand the World</span><span class="sep">✦</span>
+      <span class="ja">世界を拡げる</span><span class="sep">✦</span>
+      <span>Real × Tech</span><span class="sep">✦</span>
+    </div>
+    <div class="marquee__group">
+      <span>Connect with Moments</span><span class="sep">✦</span>
+      <span class="ja">感動でつながる</span><span class="sep">✦</span>
+      <span>Expand the World</span><span class="sep">✦</span>
+      <span class="ja">世界を拡げる</span><span class="sep">✦</span>
+      <span>Real × Tech</span><span class="sep">✦</span>
+    </div>
+  </div>
+  <div class="marquee__track marquee__track--rev">
+    <div class="marquee__group">
+      <span>Real × Tech</span><span class="sep">✦</span>
+      <span class="ja">世界を拡げる</span><span class="sep">✦</span>
+      <span>Expand the World</span><span class="sep">✦</span>
+      <span class="ja">感動でつながる</span><span class="sep">✦</span>
+      <span>Connect with Moments</span><span class="sep">✦</span>
+    </div>
+    <div class="marquee__group">
+      <span>Real × Tech</span><span class="sep">✦</span>
+      <span class="ja">世界を拡げる</span><span class="sep">✦</span>
+      <span>Expand the World</span><span class="sep">✦</span>
+      <span class="ja">感動でつながる</span><span class="sep">✦</span>
+      <span>Connect with Moments</span><span class="sep">✦</span>
+    </div>
+  </div>
+</div>
+
+<!-- 05 Company / 会社概要 -->
+<section id="company">
+  <div class="container">
+    <div class="sec-head">
+      <div class="js-inview">
+        <p class="eyebrow"><span class="num">05</span>Company</p>
+        <h2 class="sec-title">会社概要</h2>
+      </div>
+    </div>
+    <dl class="company-dl js-inview" style="--stagger:1">
+      <div><dt>会社名</dt><dd>株式会社SUI-GEN</dd></div>
+      <div><dt>英文社名</dt><dd>SUI-GEN Inc.</dd></div>
+      <div><dt>設立</dt><dd><span class="js-count" data-count-to="2026">2026</span>年1月<span class="js-count" data-count-to="20">20</span>日</dd></div>
+      <div><dt>代表者</dt><dd>代表取締役 小野寺 穂高</dd></div>
+      <div><dt>事業内容</dt><dd>Real事業（SGC — 地域コミュニティの企画・運営）／Tech事業（AX研究所 — AI活用の伴走支援・研修、Web制作）</dd></div>
+      <!-- TODO:所在地・資本金 確認後追記 -->
+      <div><dt>連絡先</dt><dd><a href="mailto:contact@sui-gen.jp">contact@sui-gen.jp</a></dd></div>
+      <div><dt>Web</dt><dd>sui-gen.jp</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
   <div class="container">
     <div class="cta-inner">
-      <h2>ご一緒できる<em>かたち</em>を、<br>探していきましょう。</h2>
-      <a href="mailto:hodaka-onodera@sui-gen.jp" class="cta-mail">hodaka-onodera@sui-gen.jp →</a>
+      <h2 class="js-inview js-inview--blur">ご一緒できる<em>かたち</em>を、<br>探していきましょう。</h2>
+      <div class="cta-actions js-inview" style="--stagger:1">
+        <a href="/#contact" class="c-btn c-btn--lg">
+          <span class="c-btn__bg" aria-hidden="true"><span class="c-btn__bg-inner" style="--index:1"></span><span class="c-btn__bg-inner" style="--index:2"></span></span>
+          <span>お問い合わせ</span>
+          <span class="c-btn__arrows" aria-hidden="true">
+            <svg class="a1" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="a2" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <a class="c-link c-link--accent" href="mailto:contact@sui-gen.jp">contact@sui-gen.jp<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="site-footer">
-  <div class="container-wide">
+  <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="" width="36" height="36" loading="lazy"></picture></span>
+        <span class="mark"><img src="/assets/sui-gen-logo.webp" alt="" width="24" height="24" loading="lazy"></span>
         <div class="name">SUI-GEN</div>
-        <p class="purpose">感動でつながり、<br>世界を<em>拡げる</em>。</p>
-        <span class="by">Moments Creator</span>
+        <div class="purpose">感動でつながり、世界を拡げる。</div>
+        <div class="byline">Moments Creator</div>
       </div>
-      <div class="footer-col"><h4>Site</h4><ul><li><a href="about.html">About</a></li><li><a href="real.html">Real</a></li><li><a href="tech.html">Tech</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy">プライバシーポリシー</a></li><li><a href="/terms">利用規約</a></li><li><a href="/tokushou">特定商取引法</a></li></ul></div>
+      <div class="footer-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="/">ホーム</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/real">Real事業</a></li>
+          <li><a href="/tech">Tech事業</a></li>
+          <li><a href="/web">Web制作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">プライバシーポリシー</a></li>
+          <li><a href="/terms">利用規約</a></li>
+          <li><a href="/tokushou">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about#company">会社概要</a></li>
+          <li><a href="/#contact">お問い合わせ</a></li>
+          <li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span><div class="legal"><a href="/sitemap.xml">Sitemap</a><a href="#top">Back to top ↑</a></div></div>
+    <div class="footer-bottom">
+      <span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span>
+    </div>
   </div>
 </footer>
 
-<script>
-const h=document.getElementById('header');addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>24),{passive:true});
-(function(){
-  const hb=document.querySelector('.hamburger');
-  const mn=document.getElementById('mobile-nav');
-  if(!hb||!mn)return;
-  hb.addEventListener('click',()=>{
-    const open=hb.getAttribute('aria-expanded')==='true';
-    hb.setAttribute('aria-expanded',String(!open));
-    if(open){mn.setAttribute('hidden','');document.body.classList.remove('nav-open');}
-    else{mn.removeAttribute('hidden');document.body.classList.add('nav-open');}
-  });
-  mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    hb.setAttribute('aria-expanded','false');mn.setAttribute('hidden','');document.body.classList.remove('nav-open');
-  }));
-})();
-</script>
+<script src="/assets/v3.js" defer></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

@@ -2,11 +2,12 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Web ホームページ制作 — SUI-GEN</title>
 <meta name="description" content="ブランディングを起点に、AIを活用した効率的なホームページ制作。ヒアリングを重ね、小回りの効く改修・運用まで伴走するSUI-GENのTechサービス。">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#FAFAF7">
+<meta name="author" content="株式会社SUI-GEN">
+<meta name="theme-color" content="#0C2336">
 <link rel="canonical" href="https://www.sui-gen.jp/web">
 
 <!-- Favicons -->
@@ -36,160 +37,253 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="_shared.css">
-<style>
-.page-hero-with-art .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,5vw,80px);align-items:center}
-.page-hero-with-art .hero-art{margin:0;overflow:hidden;border-radius:0}
-.page-hero-with-art .hero-art img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:0}
-@media (max-width:980px){.page-hero-with-art .hero-grid{grid-template-columns:1fr;gap:32px}}
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/v3.css">
 
-/* Axis with photo column (Hearing & Build axes) */
-.axis-photo{display:grid;grid-template-columns:200px 1fr;gap:clamp(20px,3vw,48px);align-items:start;padding:clamp(36px,4vw,56px) 0;border-bottom:1px solid var(--rule)}
-.axis-photo figure{margin:0;overflow:hidden;aspect-ratio:3/4;border-radius:0}
-.axis-photo figure img{width:100%;height:100%;object-fit:cover;display:block;border-radius:0}
-.axis-photo .axis-body{display:flex;flex-direction:column;gap:14px}
-.axis-photo .axis-body .n{font-family:var(--sans);font-weight:800;font-size:clamp(22px,2vw,28px);color:var(--emerald);letter-spacing:0;line-height:1}
-.axis-photo .axis-body .en{font-family:var(--sans);font-weight:700;font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-50)}
-.axis-photo .axis-body .ja{font-family:var(--sans-jp);font-weight:700;font-size:clamp(18px,1.6vw,22px);letter-spacing:0.02em;color:var(--ink);line-height:1.4}
-.axis-photo .axis-body .body{font-family:var(--sans-jp);font-size:clamp(14px,1.1vw,16px);line-height:1.95;color:var(--ink-80);letter-spacing:0.02em}
-@media (max-width:680px){.axis-photo{grid-template-columns:1fr;gap:16px}.axis-photo figure{aspect-ratio:4/3;max-width:240px}}
+<style>
+/* ---- Web page（v3トークン準拠） ---- */
+.page-hero{
+  position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(160deg,var(--navy-2) 0%,var(--navy) 56%,#123C50 100%);
+  padding:clamp(168px,24vh,248px) 0 clamp(88px,11vw,140px);
+}
+.page-hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(54% 72% at 80% 92%, rgba(88,177,147,.36), transparent 70%),
+    radial-gradient(30% 44% at 10% 100%, rgba(246,144,33,.15), transparent 70%);
+}
+.page-hero .container{position:relative;z-index:1}
+.ph-eyebrow{
+  display:inline-flex;align-items:center;gap:14px;margin-bottom:28px;
+  font-family:var(--disp);font-weight:700;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.72);
+}
+.ph-eyebrow::before{content:"";width:40px;height:1px;background:rgba(255,255,255,.45)}
+.ph-eyebrow .ja{font-family:var(--jp);font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:none}
+.ph-title{font-family:var(--jp);font-weight:900;font-size:clamp(2.3rem,5.8vw,4.4rem);line-height:1.3;letter-spacing:.01em;text-wrap:balance}
+.ph-title em{font-style:normal;color:var(--jade)}
+.ph-lead{margin-top:30px;max-width:660px;font-size:15px;line-height:2.1;letter-spacing:.04em;color:rgba(255,255,255,.82);text-wrap:pretty}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,5vw,80px);align-items:center}
+.hero-art{margin:0;overflow:hidden;border-radius:14px;box-shadow:0 28px 64px -28px rgba(2,9,16,.6)}
+.hero-art img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:32px}}
+
+/* サービス詳細 */
+.detail{max-width:840px}
+.detail .d-tagline{margin-top:18px;font-family:var(--jp);font-weight:900;font-size:clamp(1.4rem,2.6vw,2.1rem);line-height:1.6;letter-spacing:.02em;text-wrap:balance}
+.detail .d-tagline em{font-style:normal;color:var(--jade)}
+.detail .d-lead{margin-top:28px;font-size:15px;line-height:2.1;letter-spacing:.04em;color:var(--ink-65);text-wrap:pretty}
+
+/* 制作の流れ（写真つき行） */
+.flow-list{border-top:1px solid var(--rule);margin-top:clamp(48px,6vw,80px)}
+.flow-row{
+  display:grid;grid-template-columns:200px 1fr;gap:clamp(20px,3vw,48px);align-items:start;
+  padding:clamp(36px,4vw,56px) 4px;border-bottom:1px solid var(--rule);
+}
+.flow-row figure{margin:0;overflow:hidden;aspect-ratio:3/4;border-radius:12px}
+.flow-row figure img{width:100%;height:100%;object-fit:cover;display:block}
+.flow-row.flow-row--noimg{grid-template-columns:1fr}
+.flow-body{display:flex;flex-direction:column;gap:12px}
+.flow-body .no{font-family:var(--disp);font-weight:700;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.1;color:var(--jade);letter-spacing:-.02em}
+.flow-body .en{font-family:var(--disp);font-weight:700;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-45)}
+.flow-body .ja{font-family:var(--jp);font-weight:700;font-size:clamp(1.05rem,1.6vw,1.35rem);letter-spacing:.03em;line-height:1.6}
+.flow-body .d{font-size:14px;line-height:2.05;letter-spacing:.03em;color:var(--ink-65);text-wrap:pretty;max-width:640px}
+@media (max-width:680px){
+  .flow-row{grid-template-columns:1fr;gap:16px}
+  .flow-row figure{aspect-ratio:4/3;max-width:260px}
+}
+
+/* 実績・締め */
+.examples{margin-top:clamp(40px,5vw,64px);display:grid;gap:12px;padding-left:1.4em;letter-spacing:.03em}
+.examples li{line-height:2;color:var(--ink-65)}
+.examples li::marker{color:var(--jade)}
+.closing{margin-top:32px;font-size:15px;line-height:2.1;letter-spacing:.04em;text-wrap:pretty}
+
+/* CTA帯 */
+.cta-band{background:var(--tint)}
+.cta-inner{display:flex;flex-direction:column;align-items:center;gap:36px;text-align:center}
+.cta-inner h2{font-family:var(--jp);font-weight:900;font-size:clamp(1.7rem,3.6vw,3rem);line-height:1.5;letter-spacing:.02em;text-wrap:balance}
+.cta-inner h2 em{font-style:normal;color:var(--jade)}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap}
+
+/* 装飾円の配置（このページ用） */
+#webbuild .deco--w1{width:clamp(220px,26vw,420px);height:clamp(220px,26vw,420px);top:3%;right:-7%}
+#webbuild .deco--w2{width:clamp(140px,14vw,240px);height:clamp(140px,14vw,240px);bottom:5%;left:-5%}
 </style>
 </head>
 <body>
 
+<!-- Header -->
 <header class="site-header" id="header">
-  <div class="container-wide">
+  <div class="container">
     <nav class="nav">
-      <a href="index.html" class="brand"><span class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="SUI-GEN" width="36" height="36" loading="eager"></picture></span><span class="wordmark">SUI-GEN</span></a>
-      <div class="nav-links"><a href="about.html">About</a><a href="real.html">Real</a><a href="tech.html" class="active">Tech</a><a href="index.html#contact">Contact</a></div>
-      <a href="mailto:hodaka-onodera@sui-gen.jp" class="nav-cta">Get in touch →</a>
-      <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+      <a href="/" class="brand">
+        <span class="mark"><img src="/assets/sui-gen-logo.webp" alt="SUI-GEN" width="22" height="22"></span>
+        <span class="wordmark">SUI-GEN</span>
+      </a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a class="c-link" href="/about">About<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a class="c-link" href="/#service">Service<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a class="c-link" href="/#work">Work<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+        </div>
+        <a href="/#contact" class="c-btn c-btn--sm">
+          <span class="c-btn__bg" aria-hidden="true"><span class="c-btn__bg-inner" style="--index:1"></span><span class="c-btn__bg-inner" style="--index:2"></span></span>
+          <span>お問い合わせ</span>
+          <span class="c-btn__arrows" aria-hidden="true">
+            <svg class="a1" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="a2" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+      </div>
     </nav>
   </div>
 </header>
 
-<div id="mobile-nav" class="mobile-nav" hidden>
-  <a href="/about" class="mn-link">About</a>
-  <a href="/real" class="mn-link">Real</a>
-  <a href="/tech" class="mn-link">Tech</a>
-  <a href="/#contact" class="mn-link">Contact</a>
-  <div class="mn-meta">
-    Get in touch
-    <a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
-  </div>
+<div id="mobile-nav" class="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/#service">Service</a>
+  <a href="/#work">Work</a>
+  <a href="/#contact">Contact</a>
+  <a class="mn-mail" href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
 </div>
 
-
-<section class="page-hero page-hero-with-art">
+<!-- Page hero -->
+<section class="page-hero">
   <div class="container">
-    <div class="hero-grid">
-      <div class="hero-text">
-        <div class="crumb">— Tech / Web</div>
-        <h1>想いを、<br><em>そのまま編む。</em></h1>
-        <p class="lead">テンプレートを当てはめるだけのサイトは、要りません。会社の輪郭、伝えたいこと、迷っているところ——まずお話を伺うところから始めます。そのうえで、ブランディングを言葉と佇まいに落とし、AIを最大限に活かして素早く形にする。公開後も、小さな改修を重ねながらサイトを育てる伴走関係を続けます。</p>
+    <div class="hero-grid" data-parallax="-0.05">
+      <div>
+        <p class="ph-eyebrow js-inview">Web<span class="ja">— ホームページ制作</span></p>
+        <h1 class="ph-title js-inview js-inview--none js-chars">想いを、<br><em>そのまま編む。</em></h1>
+        <p class="ph-lead js-inview" style="--stagger:2">テンプレートを当てはめるだけのサイトは、要りません。会社の輪郭、伝えたいこと、迷っているところ——まずお話を伺うところから始めます。そのうえで、ブランディングを言葉と佇まいに落とし、AIを最大限に活かして素早く形にする。公開後も、小さな改修を重ねながらサイトを育てる伴走関係を続けます。</p>
       </div>
-      <figure class="hero-art">
+      <figure class="hero-art js-inview js-inview--scale" style="--stagger:3">
         <img src="/assets/web-branding-hearing.png" alt="企業の会議室でホームページの方向性について丁寧に対話するブランディングヒアリングの様子" loading="eager" width="1448" height="1086">
       </figure>
     </div>
   </div>
 </section>
 
-<section>
+<!-- 01 Web Build -->
+<section id="webbuild" class="has-bgfx">
+  <div class="deco deco--tint deco--w1" data-parallax="-0.06" data-mouse="8" aria-hidden="true"></div>
+  <div class="deco deco--ring deco--w2" data-parallax="0.05" data-mouse="-6" aria-hidden="true"></div>
   <div class="container">
-    <div class="service-detail">
-      <span class="label">— Service</span>
-      <h2 class="title">Web Build.</h2>
-      <p class="tagline">ブランディングを、<br>そのままウェブの佇まいへ。</p>
-      <p class="lead">
+    <div class="detail">
+      <p class="eyebrow js-inview"><span class="num">01</span>Service</p>
+      <h2 class="sec-title-en js-inview js-inview--none js-chars">Web Build.</h2>
+      <p class="d-tagline js-inview" style="--stagger:1">ブランディングを、<br>そのまま<em>ウェブの佇まい</em>へ。</p>
+      <p class="d-lead js-inview" style="--stagger:2">
         ホームページは、会社の表札であり、最初の握手の場所です。私たちは、テンプレートを当てはめるのではなく、お話を伺うところから始めます。会社が大切にしていること、伝えたい相手、まだ言葉になっていない迷い——それらを丁寧にほどき、ブランディングとして形にしてから、AIを駆使して素早く立ち上げます。公開後も小さな改修を重ね、サイトをともに育てていきます。
       </p>
+    </div>
 
-      <div class="axes">
-        <div class="axis-photo">
-          <figure><img src="/assets/web-axis-hearing.png" alt="代表がクライアントの話を丁寧に聴きながらヒアリングに臨む様子" loading="lazy" width="1086" height="1448"></figure>
-          <div class="axis-body">
-            <span class="n">01</span>
-            <span class="en">Hearing</span>
-            <span class="ja">お話を聴くところから</span>
-            <p class="body">事業の輪郭、届けたい相手、伝えたい想い。まだ言葉になっていない部分も含めて、対話を重ねながらサイトの骨格を見つけていきます。</p>
-          </div>
-        </div>
-        <div class="axis">
-          <span class="n">02</span>
-          <div class="name">
-            <span class="en">Branding</span>
-            <span class="ja">言葉と佇まいに落とす</span>
-          </div>
-          <p class="body">何を伝え、どう見られたいか——その答えをコピーとデザイン言語に翻訳します。SUI-GENが日々のテック実装で培った美意識を、サイト全体の佇まいに反映します。</p>
-        </div>
-        <div class="axis-photo">
-          <figure><img src="/assets/web-axis-build-iterate.png" alt="ノートPCを見ながらAIを使ってサイトを素早く組み立てる制作風景" loading="lazy" width="1086" height="1448"></figure>
-          <div class="axis-body">
-            <span class="n">03</span>
-            <span class="en">Build &amp; Iterate</span>
-            <span class="ja">AIで素早く、小回りで育てる</span>
-            <p class="body">AIを最大限に活用して初期構築を圧縮。公開後も、文言の差し替えやセクション追加など小さな改修に小回りよく応じます。サイトは作って終わりではなく、ともに育てるものです。</p>
-          </div>
+    <div class="flow-list">
+      <div class="flow-row js-inview">
+        <figure><img src="/assets/web-axis-hearing.png" alt="代表がクライアントの話を丁寧に聴きながらヒアリングに臨む様子" loading="lazy" width="1086" height="1448"></figure>
+        <div class="flow-body">
+          <span class="no">01</span>
+          <span class="en">Hearing</span>
+          <span class="ja">お話を聴くところから</span>
+          <p class="d">事業の輪郭、届けたい相手、伝えたい想い。まだ言葉になっていない部分も含めて、対話を重ねながらサイトの骨格を見つけていきます。</p>
         </div>
       </div>
-
-      <ul class="examples">
-        <li>SUI-GEN コーポレートサイト（sui-gen.jp）— 本サイト自体</li>
-        <li>AX研究所LP（sui-gen.jp/ax-kenkyujo）— SUI-GEN × Sponsaru 共同事業のサービスLP</li>
-      </ul>
-
-      <p class="closing">
-        小さな会社のはじめての一枚から、既存サイトのブランド再構築まで。<br>
-        まずは一度、お話を聴かせてください。
-      </p>
+      <div class="flow-row flow-row--noimg js-inview" style="--stagger:1">
+        <div class="flow-body">
+          <span class="no">02</span>
+          <span class="en">Branding</span>
+          <span class="ja">言葉と佇まいに落とす</span>
+          <p class="d">何を伝え、どう見られたいか——その答えをコピーとデザイン言語に翻訳します。SUI-GENが日々のテック実装で培った美意識を、サイト全体の佇まいに反映します。</p>
+        </div>
+      </div>
+      <div class="flow-row js-inview" style="--stagger:2">
+        <figure><img src="/assets/web-axis-build-iterate.png" alt="ノートPCを見ながらAIを使ってサイトを素早く組み立てる制作風景" loading="lazy" width="1086" height="1448"></figure>
+        <div class="flow-body">
+          <span class="no">03</span>
+          <span class="en">Build &amp; Iterate</span>
+          <span class="ja">AIで素早く、小回りで育てる</span>
+          <p class="d">AIを最大限に活用して初期構築を圧縮。公開後も、文言の差し替えやセクション追加など小さな改修に小回りよく応じます。サイトは作って終わりではなく、ともに育てるものです。</p>
+        </div>
+      </div>
     </div>
+
+    <ul class="examples js-inview">
+      <li>SUI-GEN コーポレートサイト（sui-gen.jp）— 本サイト自体</li>
+      <li>AX研究所LP（sui-gen.jp/ax-kenkyujo）— AI伴走支援サービスのLP</li>
+    </ul>
+
+    <p class="closing js-inview" style="--stagger:1">
+      小さな会社のはじめての一枚から、既存サイトのブランド再構築まで。<br>
+      まずは一度、お話を聴かせてください。
+    </p>
   </div>
 </section>
 
-<section class="cta-block">
+<!-- CTA -->
+<section class="cta-band">
   <div class="container">
     <div class="cta-inner">
-      <h2><em>サイト制作</em>の<br>ご相談はこちらへ。</h2>
-      <a href="mailto:hodaka-onodera@sui-gen.jp" class="cta-mail">hodaka-onodera@sui-gen.jp →</a>
+      <h2 class="js-inview js-inview--blur"><em>サイト制作</em>の<br>ご相談はこちらへ。</h2>
+      <div class="cta-actions js-inview" style="--stagger:1">
+        <a href="/#contact" class="c-btn c-btn--lg">
+          <span class="c-btn__bg" aria-hidden="true"><span class="c-btn__bg-inner" style="--index:1"></span><span class="c-btn__bg-inner" style="--index:2"></span></span>
+          <span>お問い合わせ</span>
+          <span class="c-btn__arrows" aria-hidden="true">
+            <svg class="a1" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="a2" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
+        <a class="c-link c-link--accent" href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="site-footer">
-  <div class="container-wide">
+  <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <span class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="" width="36" height="36" loading="lazy"></picture></span>
+        <span class="mark"><img src="/assets/sui-gen-logo.webp" alt="" width="24" height="24" loading="lazy"></span>
         <div class="name">SUI-GEN</div>
-        <p class="purpose">感動でつながり、<br>世界を<em>拡げる</em>。</p>
-        <span class="by">Moments Creator</span>
+        <div class="purpose">感動でつながり、世界を拡げる。</div>
+        <div class="byline">Moments Creator</div>
       </div>
-      <div class="footer-col"><h4>Site</h4><ul><li><a href="about.html">About</a></li><li><a href="real.html">Real</a></li><li><a href="tech.html">Tech</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li></ul></div>
-      <div class="footer-col"><h4>Legal</h4><ul><li><a href="/privacy">プライバシーポリシー</a></li><li><a href="/terms">利用規約</a></li><li><a href="/tokushou">特定商取引法</a></li></ul></div>
+      <div class="footer-col">
+        <h4>Sitemap</h4>
+        <ul>
+          <li><a href="/">ホーム</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/real">Real事業</a></li>
+          <li><a href="/tech">Tech事業</a></li>
+          <li><a href="/web">Web制作</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy">プライバシーポリシー</a></li>
+          <li><a href="/terms">利用規約</a></li>
+          <li><a href="/tokushou">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about#company">会社概要</a></li>
+          <li><a href="/#contact">お問い合わせ</a></li>
+          <li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-bottom"><span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span><div class="legal"><a href="/sitemap.xml">Sitemap</a><a href="#top">Back to top ↑</a></div></div>
+    <div class="footer-bottom">
+      <span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span>
+    </div>
   </div>
 </footer>
 
-<script>
-const h=document.getElementById('header');addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>24),{passive:true});
-(function(){
-  const hb=document.querySelector('.hamburger');
-  const mn=document.getElementById('mobile-nav');
-  if(!hb||!mn)return;
-  hb.addEventListener('click',()=>{
-    const open=hb.getAttribute('aria-expanded')==='true';
-    hb.setAttribute('aria-expanded',String(!open));
-    if(open){mn.setAttribute('hidden','');document.body.classList.remove('nav-open');}
-    else{mn.removeAttribute('hidden');document.body.classList.add('nav-open');}
-  });
-  mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    hb.setAttribute('aria-expanded','false');mn.setAttribute('hidden','');document.body.classList.remove('nav-open');
-  }));
-})();
-</script>
+<script src="/assets/v3.js" defer></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SUI-GEN — 感動でつながり、世界を拡げる。</title>
-<meta name="description" content="株式会社SUI-GEN。リアルから生まれる感動でつながり、テクノロジーで人の可能性を拡げる。Real × Tech の二軸で、コミュニティ起点の事業を展開。">
-<meta name="keywords" content="SUI-GEN,スイゲン,感動,コミュニティ,Moments Creator,リアル,テック,AI研修">
+<meta name="description" content="株式会社SUI-GEN。リアルから生まれる感動でつながり、テクノロジーで人の可能性を拡げる。地域コミュニティ事業（SGC）とAI伴走支援（AX研究所）、Real × Tech の二軸で事業を展開。">
+<meta name="keywords" content="SUI-GEN,スイゲン,感動,コミュニティ,Moments Creator,リアル,テック,AI研修,AX研究所,SGC">
 <meta name="robots" content="index,follow">
 <meta name="author" content="株式会社SUI-GEN">
-<meta name="theme-color" content="#FAFAF7">
+<meta name="theme-color" content="#0C2336">
 <link rel="canonical" href="https://www.sui-gen.jp/">
 
 <!-- JSON-LD: Organization -->
@@ -21,7 +21,7 @@
   "url": "https://www.sui-gen.jp/",
   "logo": "https://www.sui-gen.jp/assets/favicon-512.png",
   "image": "https://www.sui-gen.jp/assets/og.png",
-  "description": "感動でつながり、世界を拡げる。リアル × テック の二軸でコミュニティ起点の事業を展開する企業。",
+  "description": "感動でつながり、世界を拡げる。地域コミュニティ事業（SGC）とAI伴走支援（AX研究所）、Real × Tech の二軸で事業を展開する企業。",
   "foundingDate": "2026-01-20",
   "founder": {
     "@type": "Person",
@@ -79,633 +79,398 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* ========================================================
-   SUI-GEN — Editorial Gothic on White
-   White canvas / Emerald accent / Bold geometric sans.
-   "感動でつながり、世界を拡げる。"
-======================================================== */
-:root{
-  --bg:#FAFAF7;
-  --bg-2:#F1F1ED;
-  --bg-3:#E7E7E1;
-  --ink:#0B0F0D;
-  --ink-80:#0B0F0DCC;
-  --ink-65:#0B0F0DA6;
-  --ink-50:#0B0F0D80;
-  --ink-35:#0B0F0D59;
-  --ink-20:#0B0F0D33;
-  --ink-12:#0B0F0D1F;
-  --ink-08:#0B0F0D14;
-  --emerald:#0E8C5F;
-  --emerald-deep:#066045;
-  --emerald-bright:#10B981;
-  --emerald-soft:#D5F0E5;
-  --hair:#0B0F0D14;
-  --rule:#0B0F0D1A;
-  --sans:"Inter","Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;
-  --sans-jp:"Noto Sans JP","Inter",sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,monospace;
-  --container:1320px;
-  --gutter:clamp(20px,4vw,72px);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:var(--sans-jp);
-  background:var(--bg);color:var(--ink);
-  font-size:15px;line-height:1.85;font-weight:400;
-  font-feature-settings:"palt";
-  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
-  overflow-x:hidden;
-}
-::selection{background:var(--emerald);color:#fff}
-img,svg{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
-.container{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
-
-/* Reveal */
-.reveal{opacity:0;transform:translateY(16px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none}
-.reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.18s}
-.reveal[data-d="3"]{transition-delay:.28s}.reveal[data-d="4"]{transition-delay:.38s}
-
-/* Eyebrow */
-.eyebrow{
-  display:inline-flex;align-items:center;gap:14px;
-  font-family:var(--sans);font-size:10px;font-weight:600;
-  letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-65);
-}
-.eyebrow::before{content:"";width:32px;height:1px;background:var(--ink-35)}
-.eyebrow .num{font-family:var(--mono);font-size:12px;letter-spacing:0;color:var(--emerald);text-transform:none;font-weight:500}
-
-/* ============ Header ============ */
-.site-header{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  transition:background .4s,backdrop-filter .4s,border-color .4s;
-  border-bottom:1px solid transparent;
-}
-.site-header.scrolled{
-  background:rgba(250,250,247,.85);
-  backdrop-filter:saturate(1.1) blur(16px);
-  -webkit-backdrop-filter:saturate(1.1) blur(16px);
-  border-bottom-color:var(--hair);
-}
-.nav{display:flex;align-items:center;justify-content:space-between;height:80px}
-.brand{display:flex;align-items:center;gap:14px}
-.brand .mark{width:32px;height:32px;display:flex;align-items:center;justify-content:center}
-.brand .mark img{width:100%;height:auto}
-.brand .wordmark{font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:0.22em;color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:48px}
-.nav-links{display:flex;align-items:center;gap:36px}
-.nav-links a{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-80);transition:color .25s;position:relative}
-.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--emerald);transform:scaleX(0);transform-origin:left;transition:transform .35s}
-.nav-links a:hover{color:var(--emerald)}
-.nav-links a:hover::after{transform:scaleX(1)}
-.nav-cta{
-  display:inline-flex;align-items:center;gap:10px;
-  background:var(--ink);color:var(--bg);padding:14px 24px;
-  font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;
-  transition:background .3s,color .3s,gap .3s;
-}
-.nav-cta:hover{background:var(--emerald);color:#fff;gap:14px}
-
-/* ============ Hero ============ */
-.hero{
-  position:relative;min-height:100vh;
-  padding:160px 0 80px;display:flex;align-items:center;
-  overflow:hidden;
-}
-.hero::before{
-  content:"";position:absolute;inset:0;
-  background:
-    radial-gradient(900px 600px at 80% 20%, rgba(16,185,129,.10), transparent 60%),
-    radial-gradient(700px 500px at 5% 90%, rgba(14,140,95,.07), transparent 60%);
-  pointer-events:none;
-}
-.hero::after{
-  content:"";position:absolute;inset:0;
-  background-image:
-    linear-gradient(var(--ink-08) 1px, transparent 1px),
-    linear-gradient(90deg, var(--ink-08) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, #000 30%, transparent 80%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, #000 30%, transparent 80%);
-  opacity:.6;pointer-events:none;
-}
-.hero-grid{position:relative;z-index:2;width:100%}
-.hero-tag{
-  display:flex;align-items:center;gap:18px;margin-bottom:64px;
-  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.34em;text-transform:uppercase;
-  color:var(--ink-65);
-}
-.hero-tag .line{width:48px;height:1px;background:var(--ink-35)}
-.hero-tag .ja{font-family:var(--sans-jp);font-size:13px;letter-spacing:0.06em;color:var(--ink);text-transform:none;font-weight:500}
-.hero h1{
-  font-family:var(--sans);font-weight:800;
-  font-size:clamp(48px,9.5vw,168px);
-  line-height:0.98;letter-spacing:-0.025em;
-  margin-bottom:48px;text-wrap:balance;
-}
-.hero h1 .jp{
-  display:block;font-family:var(--sans-jp);font-weight:800;
-  font-size:clamp(40px,8vw,140px);line-height:1.1;letter-spacing:-0.01em;
-  color:var(--ink);
-}
-.hero h1 .jp em{font-style:normal;font-weight:800;color:var(--emerald)}
-.hero h1 .en{
-  display:block;margin-top:32px;
-  font-size:clamp(20px,2.2vw,34px);font-weight:600;line-height:1.3;
-  color:var(--ink-65);letter-spacing:-0.01em;
-}
-.hero h1 .en .accent{color:var(--emerald)}
-
-.hero-bottom{
-  display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(40px,5vw,96px);
-  align-items:end;margin-top:clamp(56px,7vw,96px);
-  padding-top:32px;border-top:1px solid var(--hair);
-}
-.hero-sub{
-  font-family:var(--sans-jp);font-size:clamp(14px,1.05vw,16px);
-  line-height:2.0;color:var(--ink-80);letter-spacing:0.04em;
-  max-width:480px;text-wrap:pretty;font-weight:400;
-}
-.hero-meta{display:flex;justify-content:flex-end;gap:48px;flex-wrap:wrap}
-.hero-meta .item{display:flex;flex-direction:column;gap:8px}
-.hero-meta .k{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-50)}
-.hero-meta .v{font-family:var(--sans);font-size:18px;font-weight:600;color:var(--ink);letter-spacing:0.01em}
-
-/* Scroll cue */
-.scroll-cue{
-  position:absolute;left:50%;bottom:32px;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:14px;
-  font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;
-  color:var(--ink-50);z-index:3;
-}
-.scroll-cue .bar{width:1px;height:40px;background:linear-gradient(to bottom,var(--ink-35),transparent);animation:trickle 2.4s ease-in-out infinite}
-@keyframes trickle{
-  0%{transform:scaleY(0);transform-origin:top}
-  50%{transform:scaleY(1);transform-origin:top}
-  51%{transform:scaleY(1);transform-origin:bottom}
-  100%{transform:scaleY(0);transform-origin:bottom}
-}
-
-/* ============ Mantra Marquee ============ */
-.mantra{
-  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-  padding:36px 0;overflow:hidden;background:var(--bg);
-}
-.mantra-track{
-  display:flex;gap:80px;white-space:nowrap;
-  animation:slide 60s linear infinite;
-  font-family:var(--sans);font-weight:800;font-style:italic;
-  font-size:clamp(36px,5.4vw,76px);color:var(--ink);letter-spacing:-0.02em;
-}
-.mantra-track > span{display:inline-flex;align-items:center;gap:64px}
-.mantra-track .sep{color:var(--emerald);font-style:normal;font-weight:700;font-size:.6em}
-.mantra-track .ja{font-family:var(--sans-jp);font-style:normal;color:var(--ink-65);font-size:.7em;letter-spacing:0.02em;font-weight:700}
-@keyframes slide{to{transform:translateX(-50%)}}
-
-/* Section base */
-section{padding:clamp(120px,14vw,200px) 0;position:relative}
-.section-head{
-  display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(40px,6vw,120px);
-  margin-bottom:clamp(80px,9vw,128px);align-items:end;
-}
-.section-head h2{
-  font-family:var(--sans-jp);font-weight:800;
-  font-size:clamp(36px,5.4vw,80px);line-height:1.18;letter-spacing:-0.01em;
-  margin-top:32px;text-wrap:balance;
-}
-.section-head h2 em{font-style:normal;font-weight:800;color:var(--emerald)}
-.section-head .lead{
-  font-family:var(--sans-jp);font-size:15px;line-height:2.0;
-  color:var(--ink-65);letter-spacing:0.03em;max-width:520px;text-wrap:pretty;font-weight:400;
-}
-
-/* Big section index */
-.big-index{
-  display:flex;align-items:baseline;gap:24px;margin-bottom:24px;
-}
-.big-index .n{
-  font-family:var(--sans);font-weight:800;
-  font-size:clamp(80px,9vw,140px);color:var(--ink-12);line-height:1;letter-spacing:-0.04em;
-}
-.big-index .label{
-  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.36em;text-transform:uppercase;
-  color:var(--ink-65);padding-bottom:18px;
-}
-
-/* ============ Vision ============ */
-.vision-purpose{text-align:center;margin-bottom:clamp(120px,14vw,200px)}
-.vision-purpose .label{
-  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.36em;text-transform:uppercase;
-  color:var(--ink-50);margin-bottom:48px;display:inline-block;
-}
-.vision-purpose .label::before,.vision-purpose .label::after{
-  content:"";display:inline-block;width:48px;height:1px;background:var(--ink-35);
-  vertical-align:middle;margin:0 24px;
-}
-.vision-purpose h3{
-  font-family:var(--sans-jp);font-weight:800;
-  font-size:clamp(40px,7.6vw,120px);line-height:1.15;letter-spacing:-0.01em;
-  color:var(--ink);text-wrap:balance;margin-bottom:40px;
-}
-.vision-purpose h3 em{font-style:normal;font-weight:800;color:var(--emerald)}
-.vision-purpose h3 .accent{color:var(--emerald)}
-.vision-purpose .ja{
-  font-family:var(--sans);font-size:clamp(18px,2vw,28px);font-weight:600;
-  letter-spacing:-0.01em;color:var(--ink-65);
-}
-.vision-purpose .ja .accent{color:var(--emerald)}
-.vision-purpose .by{
-  font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink-50);
-  letter-spacing:0.18em;text-transform:uppercase;margin-top:32px;display:block;
-}
-
-.vision-rows{display:grid;border-top:1px solid var(--rule)}
-.vision-row{
-  display:grid;grid-template-columns:auto 1fr 1.6fr;gap:clamp(32px,5vw,96px);
-  padding:clamp(48px,6vw,80px) 0;border-bottom:1px solid var(--rule);align-items:start;
-}
-.vision-row .v-num{
-  font-family:var(--sans);font-weight:800;
-  font-size:clamp(48px,5vw,72px);color:var(--emerald);line-height:1;letter-spacing:-0.04em;
-}
-.vision-row .v-label{display:flex;flex-direction:column;gap:14px}
-.vision-row .v-en{
-  font-family:var(--sans);font-weight:700;
-  font-size:clamp(28px,3vw,42px);color:var(--ink);line-height:1.1;letter-spacing:-0.02em;
-}
-.vision-row .v-jp{
-  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;
-  color:var(--ink-50);
-}
-.vision-row .v-text{
-  font-family:var(--sans-jp);font-size:clamp(18px,1.7vw,24px);line-height:1.85;
-  color:var(--ink-80);letter-spacing:0.03em;text-wrap:pretty;font-weight:400;
-}
-.vision-row .v-text em{font-style:normal;font-weight:700;color:var(--emerald)}
-
-/* ============ Business ============ */
-.business{background:var(--bg-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.biz-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);margin-top:48px}
-.biz-card{
-  background:var(--bg-2);padding:clamp(40px,5vw,80px);
-  display:flex;flex-direction:column;gap:32px;
-  position:relative;transition:background .4s;
-}
-.biz-card:hover{background:var(--bg)}
-.biz-card .tag{
-  font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.36em;text-transform:uppercase;
-  color:var(--emerald);
-}
-.biz-card h3{
-  font-family:var(--sans);font-weight:800;
-  font-size:clamp(48px,5.5vw,84px);line-height:1;letter-spacing:-0.04em;
-}
-.biz-card .jp{font-family:var(--sans-jp);font-size:18px;letter-spacing:0.06em;color:var(--ink-80);font-weight:700}
-.biz-card p{font-family:var(--sans-jp);font-size:15px;line-height:1.95;color:var(--ink-65);letter-spacing:0.03em;text-wrap:pretty;font-weight:400}
-.biz-list{list-style:none;display:flex;flex-direction:column;gap:0;margin-top:auto;border-top:1px solid var(--rule)}
-.biz-list li{
-  display:grid;grid-template-columns:auto 1fr;gap:24px;
-  padding:18px 0;border-bottom:1px solid var(--rule);
-  font-family:var(--sans-jp);font-size:14px;letter-spacing:0.04em;color:var(--ink-80);font-weight:500;
-}
-.biz-list li:last-child{border-bottom:0}
-.biz-list .n{font-family:var(--mono);font-size:12px;color:var(--emerald);font-weight:500}
-
-/* ============ Services ============ */
-.services{background:var(--bg)}
-.svc-list{display:grid;border-top:1px solid var(--rule)}
-.svc-row{
-  display:grid;grid-template-columns:80px 1fr 1.4fr 1fr auto;
-  gap:clamp(24px,3vw,64px);padding:48px 0;border-bottom:1px solid var(--rule);
-  align-items:center;transition:padding .35s,background .35s;
-}
-.svc-row:hover{padding-left:16px;padding-right:16px;background:var(--bg-2)}
-.svc-row .n{font-family:var(--sans);font-weight:800;font-size:32px;color:var(--emerald);letter-spacing:-0.04em}
-.svc-row .name{display:flex;flex-direction:column;gap:6px}
-.svc-row .name .en{font-family:var(--sans);font-weight:700;font-size:24px;color:var(--ink);letter-spacing:-0.02em}
-.svc-row .name .ja{font-family:var(--sans-jp);font-size:14px;color:var(--ink-65);letter-spacing:0.04em;font-weight:500}
-.svc-row .desc{font-family:var(--sans-jp);font-size:14px;line-height:1.85;color:var(--ink-80);letter-spacing:0.02em;font-weight:400}
-.svc-row .target{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--ink-50)}
-.svc-row .arrow{font-family:var(--sans);font-weight:600;font-size:20px;color:var(--emerald);transition:transform .3s}
-.svc-row:hover .arrow{transform:translateX(8px)}
-
-/* ============ CTA ============ */
-.cta{background:var(--ink);color:var(--bg)}
-.cta-inner{
-  display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(40px,6vw,96px);
-  align-items:end;
-}
-.cta h2{
-  font-family:var(--sans);font-weight:800;
-  font-size:clamp(56px,9vw,148px);line-height:.94;letter-spacing:-0.04em;
-}
-.cta h2 .accent{color:var(--emerald-bright)}
-.cta h2 .ja{
-  display:block;margin-top:24px;font-family:var(--sans-jp);
-  font-size:clamp(20px,2vw,30px);font-weight:600;letter-spacing:0.06em;color:rgba(250,250,247,.65);
-}
-.cta-side{display:flex;flex-direction:column;gap:24px;padding-bottom:24px}
-.cta-mail{
-  font-family:var(--sans);font-weight:700;font-size:clamp(20px,2vw,28px);
-  color:var(--emerald-bright);padding-bottom:14px;border-bottom:1px solid var(--emerald-bright);
-  display:inline-flex;align-items:center;gap:18px;transition:gap .3s,color .3s,border-color .3s;letter-spacing:-0.01em;
-}
-.cta-mail:hover{gap:28px;color:var(--bg);border-bottom-color:var(--bg)}
-.cta-side .meta{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:rgba(250,250,247,.55)}
-
-/* ============ Footer ============ */
-.site-footer{background:var(--bg);border-top:1px solid var(--rule);padding:96px 0 40px}
-.footer-top{
-  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;
-  gap:clamp(32px,5vw,96px);padding-bottom:80px;
-  border-bottom:1px solid var(--rule);
-}
-.footer-brand .mark{width:36px;height:36px;margin-bottom:24px}
-.footer-brand .name{font-family:var(--sans);font-size:14px;letter-spacing:0.22em;font-weight:700;margin-bottom:24px}
-.footer-brand .purpose{font-family:var(--sans-jp);font-size:16px;line-height:1.85;color:var(--ink-80);letter-spacing:0.04em;margin-bottom:8px;font-weight:500}
-.footer-brand .by{font-family:var(--sans);font-size:11px;font-weight:600;color:var(--emerald);letter-spacing:0.18em;text-transform:uppercase}
-.footer-col h4{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-50);margin-bottom:24px}
-.footer-col ul{list-style:none}.footer-col li{margin-bottom:12px}
-.footer-col a{font-family:var(--sans-jp);font-size:13px;color:var(--ink-80);transition:color .25s;letter-spacing:0.03em;font-weight:500}
-.footer-col a:hover{color:var(--emerald)}
-.footer-bottom{padding-top:32px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
-.footer-bottom .copy{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.12em;color:var(--ink-50)}
-.footer-bottom .legal{display:flex;gap:28px;flex-wrap:wrap}
-.footer-bottom .legal a{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:var(--ink-50)}
-
-/* Hamburger button */
-.hamburger{display:none;width:44px;height:44px;background:transparent;cursor:pointer;position:relative;align-items:center;justify-content:center;border:0;z-index:60}
-.hamburger span{display:block;width:22px;height:1.5px;background:var(--ink);position:absolute;left:50%;transform-origin:center;transition:transform .3s ease,opacity .3s ease,top .3s ease}
-.hamburger span:nth-child(1){top:15px;transform:translateX(-50%)}
-.hamburger span:nth-child(2){top:21px;transform:translateX(-50%)}
-.hamburger span:nth-child(3){top:27px;transform:translateX(-50%)}
-.hamburger[aria-expanded="true"] span:nth-child(1){top:21px;transform:translateX(-50%) rotate(45deg)}
-.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
-.hamburger[aria-expanded="true"] span:nth-child(3){top:21px;transform:translateX(-50%) rotate(-45deg)}
-
-/* Mobile nav drawer */
-.mobile-nav{position:fixed;top:80px;left:0;right:0;bottom:0;background:var(--bg);z-index:49;display:flex;flex-direction:column;padding:48px 24px 80px;gap:8px;overflow-y:auto}
-.mobile-nav[hidden]{display:none}
-.mobile-nav a.mn-link{font-family:var(--sans-jp);font-weight:800;font-size:36px;letter-spacing:-0.02em;color:var(--ink);padding:18px 0;border-bottom:1px solid var(--rule);transition:color .25s}
-.mobile-nav a.mn-link:hover{color:var(--emerald)}
-.mobile-nav .mn-meta{margin-top:auto;padding-top:32px;font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--ink-50)}
-.mobile-nav .mn-meta a{display:block;font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--emerald);margin-top:12px}
-body.nav-open{overflow:hidden}
-@media (min-width:981px){.mobile-nav{display:none !important}}
-
-@media (max-width:980px){
-  .nav-links{display:none}
-  .nav-cta{display:none}
-  .hamburger{display:flex}
-  .hero-bottom{grid-template-columns:1fr;gap:32px}
-  .hero-meta{justify-content:flex-start;gap:24px}
-  .section-head{grid-template-columns:1fr;gap:24px}
-  .biz-grid{grid-template-columns:1fr}
-  .svc-row{grid-template-columns:auto 1fr;gap:16px}
-  .svc-row .desc,.svc-row .target,.svc-row .arrow{display:none}
-  .vision-row{grid-template-columns:1fr;gap:20px}
-  .cta-inner{grid-template-columns:1fr;gap:40px}
-  .footer-top{grid-template-columns:1fr 1fr;gap:48px}
-  .footer-brand{grid-column:1/-1}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/v3.css">
 </head>
 <body>
 
-<!-- ============ HEADER ============ -->
+<!-- Hero slider（固定背景 / すりガラスの向こう側）
+     各スライドは写真(webp)＋インラインSVGフォールバックの多重背景 -->
+<div class="hero-slider" aria-hidden="true">
+
+  <!-- Slide 01 — Real -->
+  <div class="slide" data-label="Real">
+    <div class="slide__media" style="background-image:url('/assets/hero-real.webp'), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic2t5IiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzFEMTQxMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii4zNiIgc3RvcC1jb2xvcj0iIzRBMjUxNyIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii41OCIgc3RvcC1jb2xvcj0iI0E0NEEyMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii43MCIgc3RvcC1jb2xvcj0iI0Q5N0EyQiIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii44MCIgc3RvcC1jb2xvcj0iIzhBNDQyMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyNDE0MDkiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9InN1biIgY3g9Ii41OCIgY3k9Ii42NCIgcj0iLjUyIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjRkZFM0IwIiBzdG9wLW9wYWNpdHk9Ii45NSIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii4yMiIgc3RvcC1jb2xvcj0iI0Y2OTAyMSIgc3RvcC1vcGFjaXR5PSIuNzIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIuNTgiIHN0b3AtY29sb3I9IiNFMTU5NEQiIHN0b3Atb3BhY2l0eT0iLjI2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0UxNTk0RCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJ2aWciIGN4PSIuNSIgY3k9Ii41IiByPSIuNzQiPgogICAgICA8c3RvcCBvZmZzZXQ9Ii41MiIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzEyMEEwNSIgc3RvcC1vcGFjaXR5PSIuNjIiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgICA8ZmlsdGVyIGlkPSJzb2Z0IiB4PSItNDAlIiB5PSItNDAlIiB3aWR0aD0iMTgwJSIgaGVpZ2h0PSIxODAlIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIyMCIvPjwvZmlsdGVyPgogICAgPGZpbHRlciBpZD0ic29mdDIiIHg9Ii00MCUiIHk9Ii00MCUiIHdpZHRoPSIxODAlIiBoZWlnaHQ9IjE4MCUiPjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjYiLz48L2ZpbHRlcj4KICAgIDxmaWx0ZXIgaWQ9ImdyYWluIj4KICAgICAgPGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuODIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz4KICAgICAgPGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMSAgMCAwIDAgMCAwLjk2ICAwIDAgMCAwIDAuOSAgMCAwIDAgMC4wNyAwIi8+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CgogIDxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjc2t5KSIvPgogIDxlbGxpcHNlIGN4PSI5MjgiIGN5PSI2NDAiIHJ4PSI3ODAiIHJ5PSI0NzAiIGZpbGw9InVybCgjc3VuKSIvPgogIDxjaXJjbGUgY3g9IjkyOCIgY3k9IjYyOCIgcj0iMTEyIiBmaWxsPSIjRkZEOUEwIiBvcGFjaXR5PSIuOSIgZmlsdGVyPSJ1cmwoI3NvZnQpIi8+CgogIDwhLS0g6YGg5pmv44Gu5bC+5qC5IC0tPgogIDxwYXRoIGQ9Ik0wIDcwNiBRIDIxMCA2NDIgNDIwIDY5MCBUIDg1MCA2OTggVCAxMjMwIDY3NiBUIDE2MDAgNzA0IFYxMDAwIEgwIFoiIGZpbGw9IiMzQTFFMTAiIG9wYWNpdHk9Ii44OCIgZmlsdGVyPSJ1cmwoI3NvZnQyKSIvPgogIDwhLS0g6L+R5pmv44Gu5aSn5ZywIC0tPgogIDxwYXRoIGQ9Ik0wIDc5MiBRIDMwMCA3NDIgNjIwIDgwMiBUIDExMDAgNzkwIFQgMTYwMCA4MTIgVjEwMDAgSDAgWiIgZmlsbD0iIzE5MEQwNiIvPgoKICA8IS0tIOePvuWgtOOBruS6uuW9se+8iOODnOOCseOBn+mAhuWFieOCt+ODq+OCqOODg+ODiO+8iSAtLT4KICA8ZyBmaWxsPSIjMTQwQTA1IiBmaWx0ZXI9InVybCgjc29mdDIpIiBvcGFjaXR5PSIuOTIiPgogICAgPGVsbGlwc2UgY3g9IjYzNiIgY3k9Ijc3OCIgcng9IjE2IiByeT0iNDgiLz4KICAgIDxlbGxpcHNlIGN4PSI2ODgiIGN5PSI3ODgiIHJ4PSIxNCIgcnk9IjQyIi8+CiAgICA8ZWxsaXBzZSBjeD0iMTAwOCIgY3k9Ijc3MCIgcng9IjE1IiByeT0iNDYiLz4KICAgIDxlbGxpcHNlIGN4PSIxMDUyIiBjeT0iNzgwIiByeD0iMTIiIHJ5PSIzOCIvPgogIDwvZz4KCiAgPCEtLSDmmpboibLjga7lobXjg7vnjonjg5zjgrEgLS0+CiAgPGcgZmlsdGVyPSJ1cmwoI3NvZnQyKSI+CiAgICA8Y2lyY2xlIGN4PSI0MjAiIGN5PSI1NTYiIHI9IjE0IiBmaWxsPSIjRkZDRThFIiBvcGFjaXR5PSIuMzQiLz4KICAgIDxjaXJjbGUgY3g9IjEyMzgiIGN5PSI0OTgiIHI9IjkiIGZpbGw9IiNGRkNFOEUiIG9wYWNpdHk9Ii4zIi8+CiAgICA8Y2lyY2xlIGN4PSI3NTgiIGN5PSI0MjgiIHI9IjYiIGZpbGw9IiNGRkU3QzIiIG9wYWNpdHk9Ii40MiIvPgogICAgPGNpcmNsZSBjeD0iMTM4OCIgY3k9IjYzOCIgcj0iMTgiIGZpbGw9IiNGNkExNEMiIG9wYWNpdHk9Ii4yNCIvPgogICAgPGNpcmNsZSBjeD0iMjQyIiBjeT0iNzAwIiByPSIxMSIgZmlsbD0iI0Y2QTE0QyIgb3BhY2l0eT0iLjMiLz4KICAgIDxjaXJjbGUgY3g9IjExMjAiIGN5PSI1OTIiIHI9IjciIGZpbGw9IiNGRkU3QzIiIG9wYWNpdHk9Ii4zNiIvPgogIDwvZz4KCiAgPCEtLSDjg5XjgqPjg6vjg6DjgrDjg6zjgqTjg7MgLS0+CiAgPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTAwMCIgZmlsdGVyPSJ1cmwoI2dyYWluKSIvPgogIDwhLS0g44OT44ON44OD44OIIC0tPgogIDxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9InVybCgjdmlnKSIvPgo8L3N2Zz4K')"></div>
+  </div>
+
+  <!-- Slide 02 — Tech -->
+  <div class="slide" data-label="Tech">
+    <div class="slide__media" style="background-image:url('/assets/hero-tech.webp'), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIHNsaWNlIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0idHNreSIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwNDEwMUMiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIuNSIgc3RvcC1jb2xvcj0iIzBBMUUzMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii43NCIgc3RvcC1jb2xvcj0iIzBDMjMzNiIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii44OCIgc3RvcC1jb2xvcj0iIzEyM0M1MCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwNjEzMjIiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9Imdsb3ciIGN4PSIuNSIgY3k9Ii44IiByPSIuNjIiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM1OEIxOTMiIHN0b3Atb3BhY2l0eT0iLjU1Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjQiIHN0b3AtY29sb3I9IiM1OEIxOTMiIHN0b3Atb3BhY2l0eT0iLjIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNThCMTkzIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9Imdsb3cyIiBjeD0iLjE2IiBjeT0iLjg0IiByPSIuMyI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI0Y2OTAyMSIgc3RvcC1vcGFjaXR5PSIuMjIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRjY5MDIxIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9InR2aWciIGN4PSIuNSIgY3k9Ii41IiByPSIuNzUiPgogICAgICA8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDIwOTEwIiBzdG9wLW9wYWNpdHk9Ii42NiIvPgogICAgPC9yYWRpYWxHcmFkaWVudD4KICAgIDxwYXR0ZXJuIGlkPSJ3aW4iIHdpZHRoPSIyNiIgaGVpZ2h0PSIzNCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxyZWN0IHg9IjYiIHk9IjkiIHdpZHRoPSI1IiBoZWlnaHQ9IjgiIGZpbGw9IiM5RkUwQzgiIG9wYWNpdHk9Ii44NSIvPgogICAgICA8cmVjdCB4PSIxNyIgeT0iMjEiIHdpZHRoPSI1IiBoZWlnaHQ9IjgiIGZpbGw9IiNDRkVFREUiIG9wYWNpdHk9Ii41Ii8+CiAgICA8L3BhdHRlcm4+CiAgICA8ZmlsdGVyIGlkPSJ0c29mdCIgeD0iLTQwJSIgeT0iLTQwJSIgd2lkdGg9IjE4MCUiIGhlaWdodD0iMTgwJSI+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iNyIvPjwvZmlsdGVyPgogICAgPGZpbHRlciBpZD0idHNvZnQyIiB4PSItNDAlIiB5PSItNDAlIiB3aWR0aD0iMTgwJSIgaGVpZ2h0PSIxODAlIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxNiIvPjwvZmlsdGVyPgogICAgPGZpbHRlciBpZD0idGdyYWluIj4KICAgICAgPGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuODIiIG51bU9jdGF2ZXM9IjIiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz4KICAgICAgPGZlQ29sb3JNYXRyaXggdHlwZT0ibWF0cml4IiB2YWx1ZXM9IjAgMCAwIDAgMC44NSAgMCAwIDAgMCAwLjk1ICAwIDAgMCAwIDEgIDAgMCAwIDAuMDYgMCIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgoKICA8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI3Rza3kpIi8+CiAgPGVsbGlwc2UgY3g9IjgwMCIgY3k9IjgwMCIgcng9IjkwMCIgcnk9IjUyMCIgZmlsbD0idXJsKCNnbG93KSIvPgogIDxlbGxpcHNlIGN4PSIyNTYiIGN5PSI4NDAiIHJ4PSI0MjAiIHJ5PSIyODAiIGZpbGw9InVybCgjZ2xvdzIpIi8+CgogIDwhLS0g6YGg5pmv44K544Kr44Kk44Op44Kk44Oz77yI44Oc44Kx77yJIC0tPgogIDxnIGZpbGw9IiMwQTFDMkMiIGZpbHRlcj0idXJsKCN0c29mdCkiIG9wYWNpdHk9Ii45Ij4KICAgIDxyZWN0IHg9Ii0yMCIgeT0iNjAwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwMCIvPgogICAgPHJlY3QgeD0iMTIwIiB5PSI1NTIiIHdpZHRoPSI4NiIgaGVpZ2h0PSI0NDgiLz4KICAgIDxyZWN0IHg9IjIyNiIgeT0iNjI4IiB3aWR0aD0iMTA0IiBoZWlnaHQ9IjM3MiIvPgogICAgPHJlY3QgeD0iMzUwIiB5PSI1NzIiIHdpZHRoPSI3MCIgaGVpZ2h0PSI0MjgiLz4KICAgIDxyZWN0IHg9IjQ0MCIgeT0iNjQwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjM2MCIvPgogICAgPHJlY3QgeD0iNTgwIiB5PSI1NDAiIHdpZHRoPSI5MiIgaGVpZ2h0PSI0NjAiLz4KICAgIDxyZWN0IHg9IjY5MiIgeT0iNjA4IiB3aWR0aD0iMTEwIiBoZWlnaHQ9IjM5MiIvPgogICAgPHJlY3QgeD0iODIyIiB5PSI1NTYiIHdpZHRoPSI4NCIgaGVpZ2h0PSI0NDQiLz4KICAgIDxyZWN0IHg9IjkyNiIgeT0iNjMyIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjM2OCIvPgogICAgPHJlY3QgeD0iMTA2NiIgeT0iNTY4IiB3aWR0aD0iOTIiIGhlaWdodD0iNDMyIi8+CiAgICA8cmVjdCB4PSIxMTc4IiB5PSI2MjQiIHdpZHRoPSIxMTIiIGhlaWdodD0iMzc2Ii8+CiAgICA8cmVjdCB4PSIxMzEwIiB5PSI1NDgiIHdpZHRoPSI4NiIgaGVpZ2h0PSI0NTIiLz4KICAgIDxyZWN0IHg9IjE0MTYiIHk9IjYxNiIgd2lkdGg9IjEyNCIgaGVpZ2h0PSIzODQiLz4KICAgIDxyZWN0IHg9IjE1NTYiIHk9IjU3NiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjQyNCIvPgogIDwvZz4KCiAgPCEtLSDov5Hmma/jgrnjgqvjgqTjg6njgqTjg7MgLS0+CiAgPGcgZmlsbD0iIzA0MEQxNiI+CiAgICA8cmVjdCB4PSItMjAiIHk9IjcyNCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIyNzYiLz4KICAgIDxyZWN0IHg9IjE4MCIgeT0iNjc2IiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjMyNCIvPgogICAgPHJlY3QgeD0iMzMwIiB5PSI3NTIiIHdpZHRoPSIxNjAiIGhlaWdodD0iMjQ4Ii8+CiAgICA8cmVjdCB4PSI1MTAiIHk9IjcwMCIgd2lkdGg9IjExMCIgaGVpZ2h0PSIzMDAiLz4KICAgIDxyZWN0IHg9IjY0MCIgeT0iNzY4IiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjIzMiIvPgogICAgPHJlY3QgeD0iODQwIiB5PSI2ODgiIHdpZHRoPSIxNDAiIGhlaWdodD0iMzEyIi8+CiAgICA8cmVjdCB4PSIxMDAwIiB5PSI3NDQiIHdpZHRoPSIxNzAiIGhlaWdodD0iMjU2Ii8+CiAgICA8cmVjdCB4PSIxMTkwIiB5PSI3MDQiIHdpZHRoPSIxMjAiIGhlaWdodD0iMjk2Ii8+CiAgICA8cmVjdCB4PSIxMzMwIiB5PSI3NjAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMjQwIi8+CiAgICA8cmVjdCB4PSIxNTEwIiB5PSI3MTIiIHdpZHRoPSIxMjAiIGhlaWdodD0iMjg4Ii8+CiAgPC9nPgoKICA8IS0tIOeqk+aYjuOBi+OCiiAtLT4KICA8ZyBvcGFjaXR5PSIuNSI+CiAgICA8cmVjdCB4PSIxODAiIHk9IjY3NiIgd2lkdGg9IjEzMCIgaGVpZ2h0PSIzMDAiIGZpbGw9InVybCgjd2luKSIvPgogICAgPHJlY3QgeD0iNTEwIiB5PSI3MDAiIHdpZHRoPSIxMTAiIGhlaWdodD0iMjc2IiBmaWxsPSJ1cmwoI3dpbikiLz4KICAgIDxyZWN0IHg9Ijg0MCIgeT0iNjg4IiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjI4OCIgZmlsbD0idXJsKCN3aW4pIi8+CiAgICA8cmVjdCB4PSIxMTkwIiB5PSI3MDQiIHdpZHRoPSIxMjAiIGhlaWdodD0iMjcyIiBmaWxsPSJ1cmwoI3dpbikiLz4KICA8L2c+CgogIDwhLS0g44K444Kn44Kk44OJ44Gu546J44Oc44KxIC0tPgogIDxnIGZpbHRlcj0idXJsKCN0c29mdDIpIj4KICAgIDxjaXJjbGUgY3g9IjM1MCIgY3k9IjUwMCIgcj0iMjIiIGZpbGw9IiM1OEIxOTMiIG9wYWNpdHk9Ii4zIi8+CiAgICA8Y2lyY2xlIGN4PSIxMjQwIiBjeT0iNDMwIiByPSIxNCIgZmlsbD0iIzlGRTBDOCIgb3BhY2l0eT0iLjI2Ii8+CiAgICA8Y2lyY2xlIGN4PSI5MDAiIGN5PSIzODAiIHI9IjkiIGZpbGw9IiNDRkVFREUiIG9wYWNpdHk9Ii4zIi8+CiAgICA8Y2lyY2xlIGN4PSIxNDYwIiBjeT0iNTQwIiByPSIyNiIgZmlsbD0iIzU4QjE5MyIgb3BhY2l0eT0iLjIiLz4KICAgIDxjaXJjbGUgY3g9IjYyMCIgY3k9IjMyMCIgcj0iNyIgZmlsbD0iIzlGRTBDOCIgb3BhY2l0eT0iLjI4Ii8+CiAgPC9nPgoKICA8IS0tIOawtOmdouOBruOCiOOBhuOBquWPjeWwhOOBruOBq+OBmOOBvyAtLT4KICA8ZWxsaXBzZSBjeD0iODAwIiBjeT0iOTk2IiByeD0iNzYwIiByeT0iNjAiIGZpbGw9IiM1OEIxOTMiIG9wYWNpdHk9Ii4xNCIgZmlsdGVyPSJ1cmwoI3Rzb2Z0MikiLz4KCiAgPCEtLSDjg5XjgqPjg6vjg6DjgrDjg6zjgqTjg7MgLS0+CiAgPHJlY3Qgd2lkdGg9IjE2MDAiIGhlaWdodD0iMTAwMCIgZmlsdGVyPSJ1cmwoI3RncmFpbikiLz4KICA8IS0tIOODk+ODjeODg+ODiCAtLT4KICA8cmVjdCB3aWR0aD0iMTYwMCIgaGVpZ2h0PSIxMDAwIiBmaWxsPSJ1cmwoI3R2aWcpIi8+Cjwvc3ZnPgo=')"></div>
+  </div>
+</div>
+
+<!-- Header -->
 <header class="site-header" id="header">
   <div class="container">
     <nav class="nav">
-      <a href="index.html" class="brand">
-        <div class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="SUI-GEN" width="36" height="36" loading="eager"></picture></div>
+      <a href="/" class="brand">
+        <span class="mark"><img src="/assets/sui-gen-logo.webp" alt="SUI-GEN" width="22" height="22"></span>
         <span class="wordmark">SUI-GEN</span>
       </a>
       <div class="nav-right">
         <div class="nav-links">
-          <a href="about.html">About</a>
-          <a href="real.html">Real</a>
-          <a href="tech.html">Tech</a>
-          <a href="#contact">Contact</a>
+          <a class="c-link" href="/about">About<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a class="c-link" href="/#service">Service<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <a class="c-link" href="/#work">Work<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
         </div>
-        <a href="#contact" class="nav-cta">Get in Touch →</a>
+        <a href="/#contact" class="c-btn c-btn--sm">
+          <span class="c-btn__bg" aria-hidden="true"><span class="c-btn__bg-inner" style="--index:1"></span><span class="c-btn__bg-inner" style="--index:2"></span></span>
+          <span>お問い合わせ</span>
+          <span class="c-btn__arrows" aria-hidden="true">
+            <svg class="a1" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg class="a2" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </a>
         <button class="hamburger" aria-label="メニュー" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
       </div>
     </nav>
   </div>
 </header>
 
-<div id="mobile-nav" class="mobile-nav" hidden>
-  <a href="/about" class="mn-link">About</a>
-  <a href="/real" class="mn-link">Real</a>
-  <a href="/tech" class="mn-link">Tech</a>
-  <a href="/#contact" class="mn-link">Contact</a>
-  <div class="mn-meta">
-    Get in touch
-    <a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
-  </div>
+<div id="mobile-nav" class="mobile-nav">
+  <a href="/about">About</a>
+  <a href="/#service">Service</a>
+  <a href="/#work">Work</a>
+  <a href="/#contact">Contact</a>
+  <a class="mn-mail" href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a>
 </div>
 
-<!-- ============ HERO ============ -->
-<section class="hero" data-screen-label="01 Hero">
-  <div class="container hero-grid">
-    <div class="hero-tag reveal">
-      <span class="line"></span>
-      <span>Sui-Gen Inc.</span>
-      <span class="ja">— 株式会社スイゲン</span>
+<!-- Hero（透明・スライダーの上） -->
+<section class="hero">
+  <div class="container" style="width:100%">
+    <div data-parallax="-0.06">
+      <p class="hero__eyebrow js-inview">Sui-Gen Inc.<span class="ja">— 株式会社スイゲン</span></p>
+      <h1 class="hero__title" aria-label="Connect with Moments, Expand the World.">
+        <span class="hw" style="--wi:0"><span class="hw__in">Connect</span></span>
+        <span class="hw" style="--wi:1"><span class="hw__in">with</span></span><br>
+        <span class="hw" style="--wi:2"><span class="hw__in accent">Moments,</span></span><br>
+        <span class="hw" style="--wi:3"><span class="hw__in">Expand</span></span><br>
+        <span class="hw" style="--wi:4"><span class="hw__in">the</span></span>
+        <span class="hw" style="--wi:5"><span class="hw__in">World.</span></span>
+      </h1>
+      <p class="hero__sub-purpose js-inview" style="--stagger:4">感動でつながり、世界を拡げる。</p>
+      <p class="hero__sub-copy js-inview" style="--stagger:5">リアルから生まれる感動でつながり、テクノロジーで人の可能性を拡げる。SUI-GENは、現場の熱量と先端の知をひとつの流れに編む Moments Creator です。</p>
     </div>
-    <h1 class="reveal" data-d="1">
-      <span class="jp">感動でつながり、<em>世界を</em>拡げる。</span>
-      <span class="en">Connect with <span class="accent">Moments,</span><br>Expand the World.</span>
-    </h1>
-    <div class="hero-bottom reveal" data-d="2">
-      <p class="hero-sub">
+    <div class="hero__bottom js-inview" style="--stagger:6">
+      <div class="hero__pager" id="pager">
+        <button class="dot" data-slide="0" type="button"><span class="bar"></span>01 Real — 現場の熱量</button>
+        <button class="dot" data-slide="1" type="button"><span class="bar"></span>02 Tech — 再現可能な知</button>
+      </div>
+      <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- すりガラス層（Hero通過後 blur(28px) が立ち上がる） -->
+<div class="glass" id="glass">
+
+  <!-- Who we are -->
+  <section id="who" class="has-bgfx">
+    <div class="deco deco--tint deco--a" data-parallax="-0.07" data-mouse="9" aria-hidden="true"></div>
+    <div class="deco deco--ring deco--b" data-parallax="0.05" data-mouse="-6" aria-hidden="true"></div>
+    <div class="container">
+      <p class="eyebrow js-inview"><span class="num">01</span>Who we are</p>
+
+      <div class="purpose">
+        <span class="label js-inview">Our Purpose</span>
+        <h2 class="js-inview js-inview--none js-chars" data-inview-margin="0px 0px -18% 0px">感動でつながり、<em>世界を</em>拡げる。</h2>
+        <p class="en js-inview" style="--stagger:2">Connect with <span class="accent">Moments,</span> Expand the World.</p>
+        <span class="by js-inview" style="--stagger:3">— SUI-GEN, Moments Creator</span>
+      </div>
+
+      <p class="message-box js-inview js-inview--scale">
         リアルから生まれる感動でつながり、テクノロジーで人の可能性を拡げる。SUI-GENは、現場の熱量と先端の知をひとつの流れに編む Moments Creator です。
       </p>
-      <div class="hero-meta">
-        <div class="item"><span class="k">Founded</span><span class="v">2026</span></div>
-        <div class="item"><span class="k">Based in</span><span class="v">Tokyo / Iwate</span></div>
-        <div class="item"><span class="k">Field</span><span class="v">Real × Tech</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="scroll-cue">
-    <span>Scroll</span>
-    <div class="bar"></div>
-  </div>
-</section>
 
-<!-- ============ MANTRA ============ -->
-<div class="mantra" aria-hidden="true">
-  <div class="mantra-track">
-    <span>
-      Connect with Moments
-      <span class="sep">✦</span>
-      <span class="ja">感動でつながる</span>
-      <span class="sep">✦</span>
-      Expand the World
-      <span class="sep">✦</span>
-      <span class="ja">世界を拡げる</span>
-      <span class="sep">✦</span>
-      Real × Tech
-      <span class="sep">✦</span>
-    </span>
-    <span>
-      Connect with Moments
-      <span class="sep">✦</span>
-      <span class="ja">感動でつながる</span>
-      <span class="sep">✦</span>
-      Expand the World
-      <span class="sep">✦</span>
-      <span class="ja">世界を拡げる</span>
-      <span class="sep">✦</span>
-      Real × Tech
-      <span class="sep">✦</span>
-    </span>
-  </div>
-</div>
-
-<!-- ============ VISION ============ -->
-<section id="vision" data-screen-label="02 Vision">
-  <div class="container">
-    <div class="big-index reveal">
-      <span class="n">01</span>
-      <span class="label">Purpose / Vision</span>
-    </div>
-
-    <div class="vision-purpose reveal" data-d="1">
-      <span class="label">Our Purpose</span>
-      <h3>
-        感動でつながり、<em>世界を</em>拡げる。
-      </h3>
-      <div class="ja">Connect with <span class="accent">Moments,</span> Expand the World.</div>
-      <span class="by">— SUI-GEN, Moments Creator</span>
-    </div>
-
-    <div class="vision-rows">
-      <div class="vision-row reveal">
-        <div class="v-num">01</div>
-        <div class="v-label">
-          <div class="v-en">Mission</div>
-          <div class="v-jp">使命</div>
+      <div class="mvv">
+        <div class="mvv-row js-inview">
+          <span class="n">01</span>
+          <div class="l"><span class="en">Mission</span><span class="jp">使命</span></div>
+          <p class="t">リアルから生まれる<em>感動の総量</em>を、社会の意思決定が変わるところまで届ける。現場の熱を、テクノロジーで再現可能な仕組みに編み直す。</p>
         </div>
-        <div class="v-text">
-          リアルから生まれる<em>感動の総量</em>を、社会の意思決定が変わるところまで届ける。現場の熱を、テクノロジーで再現可能な仕組みに編み直す。
+        <div class="mvv-row js-inview" style="--stagger:1">
+          <span class="n">02</span>
+          <div class="l"><span class="en">Vision</span><span class="jp">未来像</span></div>
+          <p class="t">人と地域、企業と学生、リアルとテック——分断されてきた領域を一本の流れにする<em>プラットフォーム</em>であり続ける。</p>
         </div>
-      </div>
-      <div class="vision-row reveal" data-d="1">
-        <div class="v-num">02</div>
-        <div class="v-label">
-          <div class="v-en">Vision</div>
-          <div class="v-jp">未来像</div>
-        </div>
-        <div class="v-text">
-          人と地域、企業と学生、リアルとテック——分断されてきた領域を一本の流れにする<em>プラットフォーム</em>であり続ける。
-        </div>
-      </div>
-      <div class="vision-row reveal" data-d="2">
-        <div class="v-num">03</div>
-        <div class="v-label">
-          <div class="v-en">Values</div>
-          <div class="v-jp">行動原則</div>
-        </div>
-        <div class="v-text">
-          良き批判であり、最高の友であろう。<br>行動で自信をまとい、次の行動へつなげよう。<br>改善し続け、<em>改革</em>を起こそう。
+        <div class="mvv-row js-inview" style="--stagger:2">
+          <span class="n">03</span>
+          <div class="l"><span class="en">Values</span><span class="jp">行動原則</span></div>
+          <p class="t">良き批判であり、最高の友であろう。<br>行動で自信をまとい、次の行動へつなげよう。<br>改善し続け、<em>改革</em>を起こそう。</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ BUSINESS ============ -->
-<section class="business" id="business" data-screen-label="03 Business">
-  <div class="container">
-    <div class="big-index reveal">
-      <span class="n">02</span>
-      <span class="label">Business Field</span>
-    </div>
-    <div class="section-head">
-      <div class="reveal">
-        <span class="eyebrow"><span class="num">— 02</span> Real × Tech</span>
-        <h2>二つの源泉、<br><em>ひとつの流れ。</em></h2>
+  <!-- Service / Our Business -->
+  <section class="service has-bgfx" id="service">
+    <div class="biz-ghost" id="bizGhost" aria-hidden="true">BUSINESS</div>
+    <div class="container">
+      <div class="biz-layout">
+
+        <div class="biz-side">
+          <div class="biz-side__sticky">
+            <p class="eyebrow js-inview"><span class="num">02</span>Service</p>
+            <div class="biz-circle js-inview js-inview--scale" style="--stagger:1">
+              <span class="biz-circle__en">Our<br>Business</span>
+              <span class="biz-circle__ja">事業体系</span>
+            </div>
+            <h2 class="sec-title js-inview js-inview--none js-chars">二つの源泉、<br><em>ひとつの流れ。</em></h2>
+            <p class="lead js-inview" style="--stagger:2">現場の熱量（Real）と、再現可能な知（Tech）。SUI-GENは、この二つを別物にしない。一本の流れの中で、感動を循環させ、世界の可能性を拡げます。</p>
+          </div>
+        </div>
+
+        <div class="biz-flow" id="bizFlow">
+          <svg class="biz-lines" id="bizLines" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="flowGradA" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#F69021"/>
+                <stop offset="1" stop-color="#58B193"/>
+              </linearGradient>
+              <linearGradient id="flowGradB" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#58B193"/>
+                <stop offset="1" stop-color="#1E7A6B"/>
+              </linearGradient>
+            </defs>
+            <path id="flowPathA" pathLength="1" d="M0 0" fill="none" stroke="url(#flowGradA)" stroke-width="2.5" stroke-linecap="round"/>
+            <path id="flowPathB" pathLength="1" d="M0 0" fill="none" stroke="url(#flowGradB)" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+
+          <ol class="biz-steps">
+            <li class="biz-step js-inview" style="--ac:var(--orange)">
+              <span class="biz-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="11" r="4"/>
+                  <path d="M4.5 26c0-4.1 3.4-7.5 7.5-7.5s7.5 3.4 7.5 7.5"/>
+                  <circle cx="22.5" cy="12.5" r="3"/>
+                  <path d="M21.5 18.6c3.5.5 6 3.5 6 7.2"/>
+                </svg>
+              </span>
+              <div class="biz-step__body">
+                <span class="biz-step__label">Step 1 — Real<span class="lj">リアル事業</span></span>
+                <h3 class="biz-step__en">SGC.</h3>
+                <p class="biz-step__jp">Social Good College</p>
+                <p class="biz-step__desc">地域を舞台に、人と人の助け合いが生まれるコミュニティ。学生・企業・地域が出会い、その出会いから生まれる感動が、関わる一人ひとりの世界を拡げていく。</p>
+                <a class="c-link" href="/real">View SGC<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+              </div>
+            </li>
+
+            <li class="biz-step js-inview" style="--ac:var(--jade)">
+              <span class="biz-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="10" y="10" width="12" height="12" rx="2.5"/>
+                  <path d="M16 4.5V10M16 22v5.5M4.5 16H10M22 16h5.5M7.5 7.5l3 3M24.5 7.5l-3 3M7.5 24.5l3-3M24.5 24.5l-3-3"/>
+                  <circle cx="16" cy="16" r="2.4"/>
+                </svg>
+              </span>
+              <div class="biz-step__body">
+                <span class="biz-step__label">Step 2 — Tech<span class="lj">テック事業</span></span>
+                <h3 class="biz-step__en">AX Lab.</h3>
+                <p class="biz-step__jp">AX研究所 — AIと組織の、あいだに立つ</p>
+                <p class="biz-step__desc">新しい技術と組織の現実のあいだに立ち、両方の言葉を話す。あなたの会社が自分たちの言葉で AI を使いこなせる状態へ、伴走する。</p>
+                <a class="c-link" href="/tech">View AX研究所<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+              </div>
+            </li>
+
+            <li class="biz-step biz-step--fusion js-inview">
+              <span class="biz-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 4.5C9 10 16 11 16 17"/>
+                  <path d="M23 4.5C23 10 16 11 16 17"/>
+                  <circle cx="16" cy="19.5" r="2.2"/>
+                  <path d="M11 24a6.5 6.5 0 0 0 10 0"/>
+                  <path d="M8 27.5a11 11 0 0 0 16 0"/>
+                </svg>
+              </span>
+              <div class="biz-step__body">
+                <span class="biz-step__label">Step 3 — Fusion<span class="lj">融合</span></span>
+                <h3 class="biz-step__en">Real × Tech.</h3>
+                <p class="biz-step__jp">二つの源泉、ひとつの流れ。</p>
+                <p class="biz-step__desc">現場の熱量（Real）と、再現可能な知（Tech）。SUI-GENは、この二つを別物にしない。一本の流れの中で、感動を循環させ、世界の可能性を拡げます。</p>
+                <div class="soon"><span class="soon-name">Sponsaru</span><span class="soon-badge">Coming soon</span></div>
+                <a class="c-link" href="/about">Our Approach<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+              </div>
+            </li>
+          </ol>
+        </div>
+
       </div>
-      <div class="lead reveal" data-d="1">
-        現場の熱量（Real）と、再現可能な知（Tech）。SUI-GENは、この二つを別物にしない。一本の流れの中で、感動を循環させ、世界の可能性を拡げます。
+    </div>
+  </section>
+
+  <!-- Work / 取り組み -->
+  <section id="work" class="has-bgfx">
+    <div class="deco deco--jade deco--c" data-parallax="-0.05" data-mouse="7" aria-hidden="true"></div>
+    <div class="container">
+      <div class="sec-head">
+        <div class="js-inview">
+          <p class="eyebrow"><span class="num">03</span>Work</p>
+          <h2 class="sec-title-en js-inview js-inview--none js-chars">取り組み</h2>
+        </div>
+        <p class="lead js-inview" style="--stagger:1">スポーツ、学び、地域コミュニティ。リアルの場でしか起きない化学反応と、AI・テクノロジーの伴走。いま動いている取り組みの一部をご紹介します。</p>
+      </div>
+
+      <div class="work-list">
+        <a class="w-row js-inview js-inview--none js-wipe" href="/tech">
+          <span class="cat" style="--ac:var(--jade)">Tech</span>
+          <span class="w-thumb" aria-hidden="true"><span class="thumb-art thumb-art--jade">AX</span></span>
+          <div class="name"><span class="en">AX研究所。</span><span class="ja">Consulting</span></div>
+          <p class="desc">AIと組織のあいだに立ち、自社の言葉でAIを使いこなせる状態へ伴走するコンサル/研修プログラム。</p>
+          <span class="arr">→</span>
+        </a>
+        <a class="w-row js-inview js-inview--none js-wipe" style="--stagger:1" href="/ax-kenkyujo">
+          <span class="cat" style="--ac:var(--jade)">Tech</span>
+          <span class="w-thumb" aria-hidden="true"><span class="thumb-art thumb-art--jade">RADIO</span></span>
+          <div class="name"><span class="en">AX研究所ラジオ。</span><span class="ja">Broadcast</span></div>
+          <p class="desc">毎週、現役起業家2名がAI実装の手触りをそのまま配信。業務フロー改善のヒアリングも個別に承ります。</p>
+          <span class="arr">→</span>
+        </a>
+        <a class="w-row js-inview js-inview--none js-wipe" style="--stagger:2" href="/web">
+          <span class="cat" style="--ac:var(--jade)">Tech</span>
+          <span class="w-thumb" aria-hidden="true"><span class="thumb-art thumb-art--jade">WEB</span></span>
+          <div class="name"><span class="en">ホームページ制作。</span><span class="ja">Web</span></div>
+          <p class="desc">ブランディングを起点に、AI活用で効率的に。ヒアリングを重ねて小回りの効く改修まで一気通貫で。</p>
+          <span class="arr">→</span>
+        </a>
+        <a class="w-row js-inview js-inview--none js-wipe" style="--stagger:3" href="/real">
+          <span class="cat" style="--ac:var(--orange)">Real</span>
+          <span class="w-thumb" aria-hidden="true"><span class="thumb-art thumb-art--orange">SGC</span></span>
+          <div class="name"><span class="en">SGC.</span><span class="ja">Community</span></div>
+          <p class="desc">SGC（Social Good College）は、SUI-GEN が運営する「地域を舞台にした、出会いと助け合いの場」です。</p>
+          <span class="arr">→</span>
+        </a>
       </div>
     </div>
+  </section>
 
-    <div class="biz-grid">
-      <a href="real.html" class="biz-card reveal" style="text-decoration:none">
-        <span class="tag">— i. Real</span>
-        <h3>SGC.</h3>
-        <div class="jp">Social Good College</div>
-        <p>地域を舞台に、人と人の助け合いが生まれるコミュニティ。学生・企業・地域が出会い、その出会いから生まれる感動が、関わる一人ひとりの世界を拡げていく。</p>
-        <ul class="biz-list">
-          <li><span class="n">→</span><span>View SGC</span></li>
-        </ul>
-      </a>
-      <a href="tech.html" class="biz-card reveal" data-d="1" style="text-decoration:none">
-        <span class="tag">— ii. Tech</span>
-        <h3>AI Gym.</h3>
-        <div class="jp">AIと組織の、あいだに立つ</div>
-        <p>新しい技術と組織の現実のあいだに立ち、両方の言葉を話す。あなたの会社が自分たちの言葉で AI を使いこなせる状態へ、伴走する。</p>
-        <ul class="biz-list">
-          <li><span class="n">→</span><span>View AI Gym</span></li>
-        </ul>
-      </a>
+  <!-- メッセージマーキー帯 -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span>Connect with Moments</span><span class="sep">✦</span>
+        <span class="ja">感動でつながる</span><span class="sep">✦</span>
+        <span>Expand the World</span><span class="sep">✦</span>
+        <span class="ja">世界を拡げる</span><span class="sep">✦</span>
+        <span>Real × Tech</span><span class="sep">✦</span>
+      </div>
+      <div class="marquee__group">
+        <span>Connect with Moments</span><span class="sep">✦</span>
+        <span class="ja">感動でつながる</span><span class="sep">✦</span>
+        <span>Expand the World</span><span class="sep">✦</span>
+        <span class="ja">世界を拡げる</span><span class="sep">✦</span>
+        <span>Real × Tech</span><span class="sep">✦</span>
+      </div>
+    </div>
+    <div class="marquee__track marquee__track--rev">
+      <div class="marquee__group">
+        <span>Real × Tech</span><span class="sep">✦</span>
+        <span class="ja">世界を拡げる</span><span class="sep">✦</span>
+        <span>Expand the World</span><span class="sep">✦</span>
+        <span class="ja">感動でつながる</span><span class="sep">✦</span>
+        <span>Connect with Moments</span><span class="sep">✦</span>
+      </div>
+      <div class="marquee__group">
+        <span>Real × Tech</span><span class="sep">✦</span>
+        <span class="ja">世界を拡げる</span><span class="sep">✦</span>
+        <span>Expand the World</span><span class="sep">✦</span>
+        <span class="ja">感動でつながる</span><span class="sep">✦</span>
+        <span>Connect with Moments</span><span class="sep">✦</span>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- ============ CTA ============ -->
-<section class="cta" id="contact" data-screen-label="04 Contact">
-  <div class="container cta-inner">
-    <h2 class="reveal">
-      Build with <span class="accent">us.</span>
-      <span class="ja">— 一緒に、流れをつくる。</span>
-    </h2>
-    <div class="cta-side reveal" data-d="1">
-      <span class="meta">— Get in Touch</span>
-      <a href="mailto:hodaka-onodera@sui-gen.jp" class="cta-mail">hodaka-onodera@sui-gen.jp →</a>
-      <span class="meta">— Tokyo / Iwate, Japan</span>
+  <!-- Contact -->
+  <section id="contact" class="has-bgfx">
+    <div class="deco deco--tint deco--d" data-parallax="0.06" data-mouse="-8" aria-hidden="true"></div>
+    <div class="container">
+      <div class="contact-inner">
+        <h2 class="js-inview js-inview--blur">
+          Build with <span class="accent">us.</span>
+          <span class="ja">— 一緒に、流れをつくる。</span>
+        </h2>
+        <div class="contact-side js-inview" style="--stagger:1">
+          <span class="meta">— Get in Touch</span>
+          <a href="https://calendar.app.google/XenvxaJk3WcQaojK6" target="_blank" rel="noopener" class="c-btn c-btn--lg">
+            <span class="c-btn__bg" aria-hidden="true"><span class="c-btn__bg-inner" style="--index:1"></span><span class="c-btn__bg-inner" style="--index:2"></span></span>
+            <span>相談日程を予約する</span>
+            <span class="c-btn__arrows" aria-hidden="true">
+              <svg class="a1" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="a2" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+          <a class="c-link c-link--accent" href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp<svg class="c-link__line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true"><path d="M0 1H100" stroke="currentColor" stroke-width="2"/></svg></a>
+          <span class="meta">— Tokyo / Iwate, Japan</span>
+        </div>
+
+        <form class="contact-form js-inview" action="/api/contact" method="post" style="--stagger:2">
+          <fieldset class="cf-type">
+            <legend class="cf-label">ご用件の種別</legend>
+            <div class="cf-seg">
+              <label><input type="radio" name="inquiry-type" value="研修" checked><span>研修</span></label>
+              <label><input type="radio" name="inquiry-type" value="協賛"><span>協賛</span></label>
+              <label><input type="radio" name="inquiry-type" value="自治体"><span>自治体</span></label>
+            </div>
+          </fieldset>
+          <div class="cf-grid">
+            <label class="cf-field"><span class="cf-label">お名前</span><input type="text" name="name" autocomplete="name" placeholder="山田 太郎" required></label>
+            <label class="cf-field"><span class="cf-label">会社・団体名</span><input type="text" name="org" autocomplete="organization" placeholder="株式会社〇〇"></label>
+            <label class="cf-field cf-field--full"><span class="cf-label">メールアドレス</span><input type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
+            <label class="cf-field cf-field--full"><span class="cf-label">お問い合わせ内容</span><textarea name="message" rows="5" placeholder="ご相談内容をご記入ください" required></textarea></label>
+          </div>
+          <button type="submit" class="c-btn">
+            <span class="c-btn__bg" aria-hidden="true"><span class="c-btn__bg-inner" style="--index:1"></span><span class="c-btn__bg-inner" style="--index:2"></span></span>
+            <span>送信する</span>
+            <span class="c-btn__arrows" aria-hidden="true">
+              <svg class="a1" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="a2" viewBox="0 0 16 16" fill="none"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <p class="cf-status" role="status" aria-live="polite"></p>
+          <p class="cf-note">※ フォームから送信できない場合は <a href="mailto:contact@sui-gen.jp">contact@sui-gen.jp</a> 宛にメールでお問い合わせください。</p>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ FOOTER ============ -->
+  <!-- Company / 会社概要 -->
+  <section id="company">
+    <div class="container">
+      <div class="sec-head">
+        <div class="js-inview">
+          <p class="eyebrow"><span class="num">04</span>Company</p>
+          <h2 class="sec-title">会社概要</h2>
+        </div>
+      </div>
+      <dl class="company-dl js-inview" style="--stagger:1">
+        <div><dt>会社名</dt><dd>株式会社SUI-GEN（SUI-GEN Inc.）</dd></div>
+        <div><dt>設立</dt><dd><span class="js-count" data-count-to="2026">2026</span>年1月<span class="js-count" data-count-to="20">20</span>日</dd></div>
+        <div><dt>代表者</dt><dd>代表取締役 小野寺 穂高</dd></div>
+        <div><dt>連絡先</dt><dd><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></dd></div>
+        <div><dt>Web</dt><dd>sui-gen.jp</dd></div>
+      </dl>
+    </div>
+  </section>
+
+</div><!-- /.glass -->
+
+<!-- Footer -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="mark"><picture><source srcset="/assets/sui-gen-logo.webp" type="image/webp"><img src="/assets/sui-gen-logo.png" alt="" width="36" height="36" loading="lazy"></picture></div>
+        <span class="mark"><img src="/assets/sui-gen-logo.webp" alt="" width="24" height="24" loading="lazy"></span>
         <div class="name">SUI-GEN</div>
         <div class="purpose">感動でつながり、世界を拡げる。</div>
-        <div class="by">Moments Creator</div>
+        <div class="byline">Moments Creator</div>
       </div>
       <div class="footer-col">
-        <h4>Company</h4>
+        <h4>Sitemap</h4>
         <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="about.html#info">会社概要</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Field</h4>
-        <ul>
-          <li><a href="real.html">Real</a></li>
-          <li><a href="tech.html">Tech</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li>
+          <li><a href="/">ホーム</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/real">Real事業</a></li>
+          <li><a href="/tech">Tech事業</a></li>
+          <li><a href="/web">Web制作</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -713,47 +478,25 @@ body.nav-open{overflow:hidden}
         <ul>
           <li><a href="/privacy">プライバシーポリシー</a></li>
           <li><a href="/terms">利用規約</a></li>
-          <li><a href="/tokushou">特定商取引法</a></li>
+          <li><a href="/tokushou">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about#company">会社概要</a></li>
+          <li><a href="/#contact">お問い合わせ</a></li>
+          <li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span class="copy">© 2026 SUI-GEN Inc. All rights reserved.</span>
-      <div class="legal">
-        <a href="/sitemap.xml">Sitemap</a>
-      </div>
     </div>
   </div>
 </footer>
 
-<script>
-// Header scroll
-const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 30);
-}, {passive: true});
-
-// Reveal on scroll
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-}, {threshold: 0.12, rootMargin: '0px 0px -60px 0px'});
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-// Mobile nav toggle
-(function(){
-  const hb=document.querySelector('.hamburger');
-  const mn=document.getElementById('mobile-nav');
-  if(!hb||!mn)return;
-  hb.addEventListener('click',()=>{
-    const open=hb.getAttribute('aria-expanded')==='true';
-    hb.setAttribute('aria-expanded',String(!open));
-    if(open){mn.setAttribute('hidden','');document.body.classList.remove('nav-open');}
-    else{mn.removeAttribute('hidden');document.body.classList.add('nav-open');}
-  });
-  mn.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    hb.setAttribute('aria-expanded','false');mn.setAttribute('hidden','');document.body.classList.remove('nav-open');
-  }));
-})();
-</script>
+<script src="/assets/v3.js" defer></script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
