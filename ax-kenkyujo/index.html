@@ -688,7 +688,7 @@ section {
 .plans { background: var(--paper); }
 .plans-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 @media (max-width: 980px) {
@@ -864,6 +864,44 @@ section {
   line-height: 1.8;
 }
 .plans-note strong { color: var(--ink); font-weight: 500; }
+
+/* AI顧問 — umbrella block with 2 delivery modes (リモート / 訪問) */
+.komon-block { margin-bottom: 22px; }
+.komon-head { margin-bottom: 16px; }
+.komon-head .pf-badge {
+  display: inline-block; font-family: var(--jp-sans);
+  font-size: 12px; font-weight: 700; letter-spacing: .08em;
+  color: var(--white); background: var(--accent);
+  padding: 4px 13px; border-radius: 999px; margin-bottom: 12px;
+}
+.komon-head .komon-title { font-size: clamp(22px, 3vw, 30px); font-weight: 700; letter-spacing: -.01em; color: var(--ink); margin: 0 0 8px; }
+.komon-head .komon-sub { font-family: var(--jp-sans); font-size: 14px; color: var(--ink-3); line-height: 1.7; max-width: 64ch; }
+.komon-modes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: stretch; }
+@media (max-width: 820px) { .komon-modes { grid-template-columns: 1fr; } }
+.komon-card {
+  position: relative; background: var(--ink); color: var(--paper);
+  border-radius: 16px; padding: 26px 28px; display: flex; flex-direction: column;
+}
+.komon-card .km-mode { font-size: 22px; font-weight: 700; color: var(--paper); display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; }
+.komon-card .km-mode span { font-family: var(--jp-sans); font-size: 12px; font-weight: 600; letter-spacing: .06em; color: var(--accent); border: 1px solid var(--accent); padding: 2px 9px; border-radius: 999px; }
+.komon-card .km-price { display: flex; align-items: baseline; gap: 8px; }
+.komon-card .km-price .list { font-family: var(--jp-sans); font-size: 15px; color: rgba(245,241,232,.45); text-decoration: line-through; }
+.komon-card .km-price .num { font-size: 34px; font-weight: 700; letter-spacing: -.02em; }
+.komon-card .km-price .unit { font-size: 12px; color: rgba(245,241,232,.6); font-family: var(--jp-sans); }
+.komon-card .launch-pill { display: inline-block; background: var(--accent); color: var(--white); font-family: var(--jp-sans); font-size: 11px; font-weight: 700; padding: 3px 11px; border-radius: 999px; letter-spacing: .03em; align-self: flex-start; margin-top: 8px; }
+.komon-card .launch-pill::before { display: none; }
+.komon-card .km-lead { font-family: var(--jp-sans); font-size: 14px; color: rgba(245,241,232,.82); margin: 12px 0 14px; font-weight: 600; }
+.komon-card .km-feats { list-style: none; margin: 0 0 20px; padding: 0; flex: 1; }
+.komon-card .km-feats li { font-family: var(--jp-sans); font-size: 13px; color: rgba(245,241,232,.82); line-height: 1.5; padding: 7px 0 7px 18px; position: relative; border-bottom: 1px solid rgba(245,241,232,.08); }
+.komon-card .km-feats li:last-child { border-bottom: none; }
+.komon-card .km-feats li::before { content: ''; position: absolute; left: 0; top: 14px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+.komon-card .km-cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--paper); color: var(--ink); font-family: var(--jp-sans);
+  font-weight: 600; font-size: 14px; padding: 12px 22px; border-radius: 999px;
+  text-decoration: none; transition: background .2s, color .2s; margin-top: auto;
+}
+.komon-card .km-cta:hover { background: var(--accent); color: var(--white); }
 
 .plan-visuals {
   margin-top: clamp(38px, 5vw, 64px);
@@ -3174,12 +3212,12 @@ section {
           <div class="v">無料 <small>（実費のみ）</small></div>
         </div>
         <div class="stat">
-          <div class="k">Pro</div>
-          <div class="v">¥50,000 <small>/ 月</small></div>
+          <div class="k">AI顧問 · リモート</div>
+          <div class="v">¥30,000 <small>/ 月</small></div>
         </div>
         <div class="stat">
-          <div class="k">Visit · 週一訪問</div>
-          <div class="v">¥200,000 <small>/ 月</small></div>
+          <div class="k">AI顧問 · 訪問</div>
+          <div class="v">¥100,000 <small>/ 月〜</small></div>
         </div>
         <div class="stat">
           <div class="k">Build</div>
@@ -3348,7 +3386,7 @@ section {
         <div class="dk-ba"><div class="dk-b">Before：<b>すべて人手頼み</b></div><div class="dk-arrow">↓</div><div class="dk-a">AIエージェントが<b>営業・経理・広報を自走</b></div></div></div>
     </div>
     <div class="dk-foot reveal">
-      <div class="dk-line">Pro（月¥5万）で、<em>毎月ひとつずつ</em>“できること”が増えていきます。</div>
+      <div class="dk-line">AI顧問（月¥3万）に毎日聞きながら、<em>ひとつずつ</em>“できること”を増やしていけます。</div>
       <a class="btn btn-primary" href="#plans">プランを見る <span class="arr">→</span></a>
     </div>
   </div>
@@ -3359,12 +3397,56 @@ section {
     <div class="section-head row reveal">
       <div>
         <div class="section-eyebrow"><span class="section-num">03</span> Plans</div>
-        <h2 class="section-title">入口から実装まで、<br />4つのプラン。</h2>
+        <h2 class="section-title">AI顧問を軸に、<br />入口から実装まで。</h2>
       </div>
       <p class="section-lede">
-        無料で「とりあえず空気を吸う」Community から、月次伴走の Pro、週1で伴走する Visit、社内システムを建てる Build まで。<br />
-        いま <strong style="color:var(--accent);font-weight:700;">初期メンバーを5社限定</strong>で募集中。Pro・Visit はローンチ価格でご案内します。
+        無料で「とりあえず空気を吸う」Community、主役の AI顧問（リモート／訪問）、社内システムを建てる Build まで。<br />
+        いま <strong style="color:var(--accent);font-weight:700;">初期メンバーを5社限定</strong>で募集中。AI顧問・訪問はローンチ価格でご案内します。
       </p>
+    </div>
+
+    <!-- AI顧問（傘ブランド：リモート / 訪問） -->
+    <div class="komon-block reveal">
+      <div class="komon-head">
+        <span class="pf-badge">AI顧問 ・ Daily AI Advisor</span>
+        <h3 class="komon-title">あなた専属のAI目利き。受け方は、2つ。</h3>
+        <p class="komon-sub">ChatGPTは、答え。AI顧問は、判断。“使わない方がいい”も言う、御社専属の相談相手。同じ顧問を、<strong>リモート（非対面）</strong>で日々受けるか、<strong>訪問（対面）</strong>で週1伴走してもらうかを選べます。</p>
+      </div>
+      <div class="komon-modes">
+
+        <!-- リモート（非対面） -->
+        <div class="komon-card">
+          <div class="km-mode">リモート<span>非対面</span></div>
+          <div class="km-price"><span class="num">¥30,000</span><span class="unit">/ 月（税別）</span></div>
+          <p class="km-lead">毎日チャットで、その場で聞ける。</p>
+          <ul class="km-feats">
+            <li>毎日チャット即レス（音声・電話・資料・動画でも解説）</li>
+            <li>気になるツールを代理検証（月1）</li>
+            <li>御社業種で効く “当たり” を月1厳選配信</li>
+            <li>契約後まず徹底ヒアリングで御社を深く理解</li>
+            <li>業務の自動化アイデア出し ／ AIニュース翻訳</li>
+          </ul>
+          <a class="km-cta" href="mailto:hodaka-onodera@sui-gen.jp?subject=AI%E9%A1%A7%E5%95%8F%20%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B&body=%E3%82%88%E3%81%8F%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8BAI%E3%82%84%E3%80%81%E6%B0%97%E3%81%AB%E3%81%AA%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A8%E3%82%92%E3%81%B2%E3%81%A8%E3%81%93%E3%81%A8%E3%81%A7%E3%82%82%EF%BC%9A%0A%0A%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E4%BC%9A%E7%A4%BE%E5%90%8D%EF%BC%9A%0A">30分の無料相談へ <span class="arr">→</span></a>
+        </div>
+
+        <!-- 訪問（対面） -->
+        <div class="komon-card">
+          <div class="km-mode">訪問<span>対面</span></div>
+          <div class="km-price"><span class="list">¥200,000</span><span class="num">¥100,000</span><span class="unit">/ 月（税別）</span></div>
+          <div class="launch-pill">初期メンバー限定 ・ 半額 ・ 残り5社</div>
+          <p class="km-lead">週1回、隣に座って対面で伴走。</p>
+          <ul class="km-feats">
+            <li>初月は集中オンボーディングでAIプロレベルへ</li>
+            <li>週1回・対面1時間のセットアップ伴走</li>
+            <li>業務へのAI導入を毎週一歩ずつ前進</li>
+            <li>経営層・現場担当者と直接対話</li>
+            <li>リモートAI顧問の相談も利用可能</li>
+            <li>Build への助走（内製化の前段）</li>
+          </ul>
+          <a class="km-cta" href="https://forms.gle/F2mx7HR32bAVfXnaA" target="_blank" rel="noopener">申込フォームを開く <span class="arr">→</span></a>
+        </div>
+
+      </div>
     </div>
 
     <div class="plans-grid reveal" data-stagger>
@@ -3381,50 +3463,9 @@ section {
           <li>月1オフ会・イベント参加（会場費・飲食費等の実費のみ）</li>
           <li>AX研究ラジオ限定コンテンツ・先行配信</li>
           <li>週1配信：実装ノウハウ（プロンプト・ワークフロー）</li>
-          <li>Pro以上への優先枠</li>
+          <li>有料プランへの優先枠</li>
         </ul>
         <a class="btn cta" href="https://forms.gle/tkpcsiJRMAJ1ZjcX7" target="_blank" rel="noopener">申込フォームを開く <span class="arr">→</span></a>
-      </div>
-
-      <!-- Pro -->
-      <div class="plan">
-        <div class="tag">Monthly Partner</div>
-        <h3>Pro</h3>
-        <div class="price">
-          <span class="list">¥50,000</span>
-          <span class="num launch">¥20,000</span>
-          <span class="unit">/ 月（税別）</span>
-        </div>
-        <div class="launch-pill">初期メンバー限定 ・ 残り5社</div>
-        <ul>
-          <li>月1対面 / オンラインMTG（2h）</li>
-          <li>毎月積み上げる個別レッスン（下の行程表を参照）</li>
-          <li>個別伴走（実務にAIを差し込む）</li>
-          <li>Communityの全特典</li>
-          <li>Build への接続</li>
-        </ul>
-        <a class="btn cta" href="https://forms.gle/e4aJEndk5TCzP4rt5" target="_blank" rel="noopener">申込フォームを開く <span class="arr">→</span></a>
-      </div>
-
-      <!-- Visit -->
-      <div class="plan">
-        <div class="tag">Weekly 伴走</div>
-        <h3>Visit</h3>
-        <div class="price">
-          <span class="list">¥200,000</span>
-          <span class="num launch">¥100,000</span>
-          <span class="unit">/ 月（税別）</span>
-        </div>
-        <div class="launch-pill">初期メンバー限定 ・ 半額 ・ 残り5社</div>
-        <ul>
-          <li>初月は集中オンボーディングでAIプロレベルへ（下の行程表）</li>
-          <li>週1回・対面1時間のセットアップ伴走</li>
-          <li>業務へのAI導入を毎週一歩ずつ前進</li>
-          <li>経営層・現場担当者と直接対話</li>
-          <li>Pro の全特典</li>
-          <li>Build への助走（内製化の前段）</li>
-        </ul>
-        <a class="btn cta" href="https://forms.gle/F2mx7HR32bAVfXnaA" target="_blank" rel="noopener">申込フォームを開く <span class="arr">→</span></a>
       </div>
 
       <!-- Build -->
@@ -3440,25 +3481,25 @@ section {
           <li>研修資料の作成・カリキュラム設計</li>
           <li>セキュリティ担保エンジニア込み</li>
           <li>運用・改修まで継続</li>
-          <li>Pro / Visit と並走</li>
+          <li>AI顧問（リモート / 訪問）と並走</li>
         </ul>
         <a class="btn cta" href="https://forms.gle/LdhzUu4mr5CHZmCZ8" target="_blank" rel="noopener">申込フォームを開く <span class="arr">→</span></a>
       </div>
     </div>
 
-    <div class="plan-visuals reveal" data-stagger aria-label="ProとVisitの導入イメージ">
+    <div class="plan-visuals reveal" data-stagger aria-label="AI顧問 リモートと訪問の導入イメージ">
       <article class="plan-visual">
         <div class="plan-visual-copy">
-          <div class="plan-visual-kicker">Pro / Personal Build</div>
-          <h3>まずは、自分の業務がAIで動き出す。</h3>
+          <div class="plan-visual-kicker">AI顧問 ・ リモート（非対面）</div>
+          <h3>まずは、迷わずAIを使えるようになる。</h3>
           <p>
-            業務システム、Webサイト、SNS自動化。月次伴走で、目の前の仕事をひとつずつ「作れる状態」へ引き上げます。
+            「これ使える?」を毎日その場で聞ける専属の目利き。流行に踊らされず、御社に効くものだけを選び、判断まで肩代わりします。
           </p>
         </div>
         <figure class="plan-visual-media">
           <img
             src="/ax-kenkyujo/assets/plans/plan-pro.png"
-            alt="Proの導入イメージ。個人事業主がノートPCでAI活用を始め、業務システム、Webサイト、SNS自動化へ広げている。"
+            alt="AI顧問の導入イメージ。経営者がノートPCの前でAIについて専門家に相談し、使うべきツールを見極めている。"
             loading="lazy"
             width="1024"
             height="1024"
@@ -3468,7 +3509,7 @@ section {
 
       <article class="plan-visual">
         <div class="plan-visual-copy">
-          <div class="plan-visual-kicker">Visit / Organization AI</div>
+          <div class="plan-visual-kicker">AI顧問 ・ 訪問（対面）</div>
           <h3>次に、経営と組織全体へ広げる。</h3>
           <p>
             週1回の対面伴走で、経営者の判断、現場の運用、プロンプト共有、外部連携まで、会社のAI基盤として定着させます。
@@ -3477,7 +3518,7 @@ section {
         <figure class="plan-visual-media">
           <img
             src="/ax-kenkyujo/assets/plans/plan-visit.png"
-            alt="Visitの導入イメージ。経営者を中心に、組織まるごとAI化、専用プロンプト共有、MCP連携が広がっている。"
+            alt="AI顧問・訪問の導入イメージ。経営者を中心に、組織まるごとAI化、専用プロンプト共有、MCP連携が広がっている。"
             loading="lazy"
             width="1024"
             height="1024"
@@ -3488,7 +3529,7 @@ section {
 
     <div class="plans-note reveal">
       <strong>料金について。</strong>
-      Community は無料（イベント参加時のみ会場費・飲食費などの実費を個別精算）。Pro・Visit の表示価格は <strong>初期メンバー5社限定のローンチ価格</strong>です（定価 Pro ¥50,000／Visit ¥200,000・税別）。枠が埋まり次第、順次定価へ戻します。Pro / Visit / Build は、まず無料相談で要件を伺った上でご提案します。途中プラン変更も可能です。
+      Community は無料（イベント参加時のみ会場費・飲食費などの実費を個別精算）。AI顧問・リモートは ¥30,000／月（税別）の定額。AI顧問・訪問の表示価格は <strong>初期メンバー5社限定のローンチ価格</strong>です（定価 ¥200,000・税別）。枠が埋まり次第、順次定価へ戻します。AI顧問 / Build は、まず無料相談で要件を伺った上でご提案します。途中で受け方（リモート⇄訪問）の変更も可能です。
     </div>
   </div>
 </section>
@@ -3852,7 +3893,7 @@ section {
           <span class="plus"></span>
         </summary>
         <div class="faq-answer">
-          「学んだあと、誰が手を動かすのか」まで含めて引き受けるかどうかです。研修だけで終わらず、Proでの月次伴走、Buildでの社内システム内製化まで、同じチームで一気通貫。1社のスタートアップではなく、SUI-GEN × スポンサルの2社体制で、お客様の手前のレイヤーをお預かりします。
+          「学んだあと、誰が手を動かすのか」まで含めて引き受けるかどうかです。研修だけで終わらず、AI顧問での日々の伴走、Buildでの社内システム内製化まで、同じチームで一気通貫。1社のスタートアップではなく、SUI-GEN × スポンサルの2社体制で、お客様の手前のレイヤーをお預かりします。
         </div>
       </details>
 
@@ -3874,7 +3915,7 @@ section {
           <span class="plus"></span>
         </summary>
         <div class="faq-answer">
-          経営として継続的にAIを使っていきたい場合は <strong>Pro（¥50,000/月）</strong> からの開始を推奨。温度感を知りたいだけなら Community、社内システムまで踏み込むなら Build。1時間の無料相談で、最適なスタート地点をご提案します。
+          経営として継続的にAIを使っていきたい場合は <strong>AI顧問（¥30,000/月）</strong> からの開始を推奨。温度感を知りたいだけなら Community、社内システムまで踏み込むなら Build。1時間の無料相談で、最適なスタート地点をご提案します。
         </div>
       </details>
 
