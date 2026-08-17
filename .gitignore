@@ -5,3 +5,19 @@
 .env
 .env.local
 node_modules/
+# --- AX研究所 街づくりの中間生成物（本番未使用） ---
+ax-kenkyujo/assets/city.png
+ax-kenkyujo/assets/ground.svg
+ax-kenkyujo/assets/town3d.png
+ax-kenkyujo/assets/town3dflat.png
+ax-kenkyujo/assets/townasphalt.png
+ax-kenkyujo/assets/townbase.png
+ax-kenkyujo/assets/townbase2.png
+ax-kenkyujo/assets/towncity.png
+ax-kenkyujo/assets/towncity3.png
+ax-kenkyujo/assets/townorg.png
+ax-kenkyujo/assets/towntokyo.png
+ax-kenkyujo/*.bak_*
+# --- 本リポ対象外（誤配置） ---
+ax-lab/
+divisions/

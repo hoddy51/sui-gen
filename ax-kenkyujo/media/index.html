@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>メディア｜AX研究所 — 業界特化AX × MCP の実装ノウハウ</title>
+<meta name="description" content="業界ごとのAX（AIトランスフォーメーション）事例、MCPで既存ツールにAIを組み込む技術、段階導入の考え方。AX研究所が現場で得た実装ノウハウを発信します。" />
+<meta property="og:title" content="メディア｜AX研究所" />
+<meta property="og:description" content="業界特化AX × MCP の実装ノウハウを発信するメディア。" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="/ax-kenkyujo/assets/ogp.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/ax-kenkyujo/media/media.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/ax-kenkyujo/" class="brand" aria-label="AX研究所 トップへ">
+    <span class="mark">AX<em>研究所</em></span>
+    <span class="sub">SUI-GEN × Sponsaru</span>
+  </a>
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-links">
+      <a href="/ax-kenkyujo/#industries">業界マップ</a>
+      <a href="/ax-kenkyujo/#cases">事例</a>
+      <a href="/ax-kenkyujo/#radio">ラジオ</a>
+      <a href="/ax-kenkyujo/media/" aria-current="page">メディア</a>
+      <a href="/ax-kenkyujo/#faq">FAQ</a>
+    </div>
+    <a class="btn btn-primary" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%5D%20%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
+  </nav>
+</header>
+
+<main>
+  <section class="mhero">
+    <div class="container">
+      <div class="eyebrow">Media</div>
+      <h1>業界ごとのAXを、<em>言葉でも</em>。</h1>
+      <p class="lede">現場でAIが事業を動かした実装ノウハウを、そのまま公開します。汎用論ではなく、御社の業界の"詰まった業務"に効く話を。</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="chips" id="chips">
+      <button class="chip is-active" data-cat="all">すべて</button>
+      <button class="chip" data-cat="industry">業界AX事例</button>
+      <button class="chip" data-cat="mcp">MCP・技術</button>
+      <button class="chip" data-cat="howto">進め方・思想</button>
+    </div>
+
+    <div class="grid" id="grid">
+
+      <!-- 記事カード（新規は article-template.html を複製→ここに1枚追加） -->
+      <a class="card reveal" data-cat="mcp" href="/ax-kenkyujo/media/mcp-toha.html">
+        <div class="card-cover"><span class="cat">MCP・技術</span></div>
+        <div class="card-body">
+          <h3>「ChatGPTでよくない？」への答え</h3>
+          <p>MCPで“既存ツールの中”にAIを組み込むと何が変わるのか。乗り換えも新ログインも要らない自動化の仕組みを解説。</p>
+          <div class="card-meta"><span>2026.08.14</span><span>読了 6分</span></div>
+        </div>
+      </a>
+
+      <div class="card is-soon reveal" data-cat="industry">
+        <div class="card-cover soon"><span class="cat">業界AX事例</span></div>
+        <div class="card-body">
+          <h3>物流倉庫のEC出荷業務を、AIで作り直す</h3>
+          <p>受注データからWMS取込用データへの変換を自動化。手作業の転記をゼロにするまでの設計と段階導入。</p>
+          <div class="card-meta"><span>近日公開</span></div>
+        </div>
+      </div>
+
+      <div class="card is-soon reveal" data-cat="howto">
+        <div class="card-cover soon"><span class="cat">進め方・思想</span></div>
+        <div class="card-body">
+          <h3>いきなり自動化しない。読取→承認→自動化。</h3>
+          <p>判断と責任を現場に残したまま、AIに任せる範囲を段階的に広げる。失敗しないAX導入の順序。</p>
+          <div class="card-meta"><span>近日公開</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="container">
+    <div class="cta">
+      <h2>御社の業務を、<em>AIで作り直す。</em></h2>
+      <p>まずは30分の無料相談で、いちばん詰まっている業務を一緒に見つけます。</p>
+      <a class="btn btn-primary btn-lg" href="mailto:hodaka-onodera@sui-gen.jp?subject=%5BAX研究所%5D%20%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="foot-grid">
+    <div class="foot-brand"><h4>AX<em>研究所</em></h4></div>
+    <div class="foot-col">
+      <h5>Service</h5>
+      <ul>
+        <li><a href="/ax-kenkyujo/#industries">業界マップ</a></li>
+        <li><a href="/ax-kenkyujo/#cases">事例</a></li>
+        <li><a href="/ax-kenkyujo/media/">メディア</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Team</h5>
+      <ul>
+        <li>穂高 / SUI-GEN</li>
+        <li>丹野 / スポンサル</li>
+        <li><a href="/ax-kenkyujo/#team">プロフィール</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:hodaka-onodera@sui-gen.jp">hodaka-onodera@sui-gen.jp</a></li>
+        <li><a href="mailto:hodaka-onodera@sui-gen.jp">無料相談を予約</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 SUI-GEN, Inc. × Sponsaru, Inc.</span>
+    <span>AX研究所 / AX Partner for SMB</span>
+  </div>
+</footer>
+
+<script>
+// カテゴリフィルタ
+(function(){
+  var chips = document.querySelectorAll('#chips .chip');
+  var cards = document.querySelectorAll('#grid .card');
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('is-active'); });
+      c.classList.add('is-active');
+      var cat = c.dataset.cat;
+      cards.forEach(function(card){
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+      });
+    });
+  });
+  // reveal on scroll
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
