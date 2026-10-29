@@ -1,7 +1,7 @@
 'use strict';
 
 const RESEND_ENDPOINT = 'https://api.resend.com/emails';
-const TO_ADDRESS = 'contact@sui-gen.jp';
+const TO_ADDRESS = 'info@sui-gen.jp';
 const FROM_ADDRESS = 'SUI-GEN Site <noreply@sui-gen.jp>';
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX_LENGTHS = {

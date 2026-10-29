@@ -279,7 +279,7 @@
         form.reset();
         setStatus('お問い合わせを受け付けました。担当者より折り返しご連絡いたします。', 'is-success');
       }).catch(function(){
-        setStatus('送信に失敗しました。お手数ですが <a href="mailto:contact@sui-gen.jp">contact@sui-gen.jp</a> 宛に直接メールでお問い合わせください。', 'is-error');
+        setStatus('送信に失敗しました。お手数ですが <a href="mailto:info@sui-gen.jp">info@sui-gen.jp</a> 宛に直接メールでお問い合わせください。', 'is-error');
       }).then(function(){
         if (submitBtn) { submitBtn.disabled = false; }
       });
