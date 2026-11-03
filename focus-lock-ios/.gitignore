@@ -1,0 +1,10 @@
+# xcodegen が生成するもの（project.yml から毎回作り直せる）
+*.xcodeproj/
+**/Info.plist
+**/*.entitlements
+
+# Xcode
+xcuserdata/
+DerivedData/
+build/
+.DS_Store
