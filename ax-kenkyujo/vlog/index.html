@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vlog｜AX研究所 — AXの現場を、そのまま映像で</title>
+<meta name="description" content="AX研究所のVlog。中小企業の現場に入り、業務をAIで作り直していく過程を、打ち合わせ・実装・研修・ラジオ収録の裏側まで映像で記録します。" />
+<meta property="og:title" content="Vlog｜AX研究所" />
+<meta property="og:description" content="AXの現場を、そのまま映像で。打ち合わせ・実装・研修の裏側を記録するVlog。" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="/ax-kenkyujo/assets/ogp.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/ax-kenkyujo/media/media.css" />
+<style>
+/* ---------- VLOG 固有スタイル（トークンは media.css と共通） ---------- */
+.vfeature { display: grid; grid-template-columns: 1.35fr 1fr; gap: 34px; align-items: center; padding: 40px 0 10px; }
+@media (max-width: 900px){ .vfeature { grid-template-columns: 1fr; gap: 22px; } }
+.vfeature .v-title { font-family: var(--serif); font-weight: 600; font-size: clamp(22px,2.6vw,30px); line-height: 1.4; margin: 10px 0 12px; }
+.vfeature .v-desc { color: var(--ink-3); font-size: 15px; margin: 0 0 16px; }
+.v-label { font-family: var(--mono); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+
+/* 動画プレイヤー枠（クリックでYouTubeを読み込む軽量埋め込み） */
+.player { position: relative; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; background: var(--ink); border: 1px solid var(--line); }
+.player img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease, opacity .3s; }
+.player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.player .play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; border: 0; background: linear-gradient(180deg, rgba(20,19,15,0) 40%, rgba(20,19,15,.45)); color: var(--white); width: 100%; }
+.player .play .btn-play { width: 68px; height: 68px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px -10px rgba(0,0,0,.6); transition: transform .2s; }
+.player .play .btn-play svg { width: 24px; height: 24px; margin-left: 4px; }
+.player .play:hover .btn-play { transform: scale(1.08); }
+.player:hover img { transform: scale(1.03); }
+.player .dur { position: absolute; right: 12px; bottom: 12px; font-family: var(--mono); font-size: 11.5px; padding: 3px 8px; border-radius: 6px; background: rgba(20,19,15,.78); color: var(--white); }
+.player.is-soon img { filter: grayscale(.35) brightness(.82); }
+.player .soon-tag { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.player .soon-tag span { font-family: var(--mono); font-size: 12px; letter-spacing: .18em; padding: 8px 16px; border-radius: 999px; background: rgba(20,19,15,.72); color: var(--paper); border: 1px solid rgba(245,241,232,.25); }
+.card .player { border-radius: 0; border: 0; }
+.card.is-soon { opacity: .78; pointer-events: auto; }
+.card.is-soon:hover { transform: none; box-shadow: none; }
+
+/* シリーズ紹介 */
+.series { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; padding: 54px 0 10px; }
+@media (max-width: 900px){ .series { grid-template-columns: 1fr; } }
+.series-item { padding: 22px 22px 24px; background: var(--paper-card); border: 1px solid var(--line); border-radius: 14px; }
+.series-item .s-no { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; color: var(--accent); }
+.series-item h3 { font-family: var(--serif); font-weight: 600; font-size: 18px; margin: 8px 0 6px; }
+.series-item p { font-size: 13.5px; color: var(--ink-3); margin: 0; }
+.sec-h { font-family: var(--serif); font-weight: 600; font-size: clamp(20px,2.4vw,26px); margin: 60px 0 0; }
+.sec-h small { display: block; font-family: var(--mono); font-weight: 400; font-size: 11.5px; letter-spacing: .18em; color: var(--ink-4); text-transform: uppercase; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/ax-kenkyujo/" class="brand" aria-label="AX研究所 トップへ">
+    <span class="mark">AX<em>研究所</em></span>
+    <span class="sub">SUI-GEN × Sponsaru</span>
+  </a>
+  <nav class="nav" aria-label="Primary">
+    <div class="nav-links">
+      <a href="/ax-kenkyujo/#industries">業界マップ</a>
+      <a href="/ax-kenkyujo/#cases">事例</a>
+      <a href="/ax-kenkyujo/#radio">ラジオ</a>
+      <a href="/ax-kenkyujo/vlog/" aria-current="page">Vlog</a>
+      <a href="/ax-kenkyujo/media/">メディア</a>
+      <a href="/ax-kenkyujo/#faq">FAQ</a>
+    </div>
+    <a class="btn btn-primary" href="mailto:info@sui-gen.jp?subject=%5BAX研究所%5D%20%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
+  </nav>
+</header>
+
+<main>
+  <section class="mhero">
+    <div class="container">
+      <div class="eyebrow">Vlog</div>
+      <h1>AXの現場を、<em>そのまま映像で</em>。</h1>
+      <p class="lede">業務をAIで作り直すまでの、きれいごとじゃない過程を記録します。現場ヒアリング、実装、研修、ラジオ収録の裏側まで。経営者 × エンジニアの2人が、毎週の「AXのある日常」をお届けします。</p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- 最新回（ピックアップ）。公開したら data-youtube に動画IDを入れるだけで再生可能になる -->
+    <section class="vfeature reveal">
+      <div class="player is-soon" data-youtube="">
+        <img src="/ax-kenkyujo/assets/founders_working.webp" alt="作業するAX研究所の2人" loading="eager" />
+      </div>
+      <div>
+        <div class="v-label">Vlog #01 ・ Coming soon</div>
+        <h2 class="v-title">AX研究所、はじめました。<br />2人の1日に密着</h2>
+        <p class="v-desc">SUI-GEN代表と丹野健心（Sponsaru）が、なぜ「業界特化のAX」を始めたのか。朝の打ち合わせから、Claude Codeで並列エージェントを回す実装作業、夜のラジオ収録まで、立ち上げ期のリアルな1日を追いかけます。</p>
+        <div class="card-meta"><span>近日公開</span><span>約12分</span></div>
+      </div>
+    </section>
+
+    <h2 class="sec-h"><small>Episodes</small>エピソード</h2>
+    <div class="chips" id="chips">
+      <button class="chip is-active" data-cat="all">すべて</button>
+      <button class="chip" data-cat="daily">日常・裏側</button>
+      <button class="chip" data-cat="field">現場密着</button>
+      <button class="chip" data-cat="build">実装ログ</button>
+    </div>
+
+    <!-- エピソードは <article class="card"> を1枚追加するだけで増やせます。
+         公開時：data-youtube="動画ID" を入れ、card の is-soon を外し、meta を日付に変更 -->
+    <div class="grid" id="grid">
+
+      <article class="card is-soon reveal" data-cat="daily">
+        <div class="player is-soon" data-youtube="">
+          <img src="/ax-kenkyujo/assets/founders_working.webp" alt="作業風景" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>#01 AX研究所、はじめました。2人の1日に密着</h3>
+          <p>立ち上げ期の朝会・実装・ラジオ収録まで。AX研究所がどう動いているのかを丸ごと公開。</p>
+          <div class="card-meta"><span>日常・裏側</span><span>近日公開</span></div>
+        </div>
+      </article>
+
+      <article class="card is-soon reveal" data-cat="field">
+        <div class="player is-soon" data-youtube="">
+          <img src="/ax-kenkyujo/assets/transport_ai_field.webp" alt="物流の現場" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>#02 物流倉庫の出荷業務、AIで何時間減らせる？</h3>
+          <p>EC出荷の現場に密着。受注データの手転記を見学し、その場で自動化の設計図を描くまで。</p>
+          <div class="card-meta"><span>現場密着</span><span>近日公開</span></div>
+        </div>
+      </article>
+
+      <article class="card is-soon reveal" data-cat="field">
+        <div class="player is-soon" data-youtube="">
+          <img src="/ax-kenkyujo/assets/training_session.webp" alt="AI研修の様子" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>#03 社員20人にAI研修。終わったあと何が変わった？</h3>
+          <p>研修当日の様子と、1か月後のフォローアップ。「使われるAI」になるまでの差分を記録。</p>
+          <div class="card-meta"><span>現場密着</span><span>近日公開</span></div>
+        </div>
+      </article>
+
+      <article class="card is-soon reveal" data-cat="build">
+        <div class="player is-soon" data-youtube="">
+          <img src="/ax-kenkyujo/assets/founders_together.webp" alt="ディスカッションする2人" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>#04 MCPで既存ツールにAIを入れる、実装の48時間</h3>
+          <p>お客様が毎日使うツールの中にAIを組み込む。設計 → 実装 → 承認フローまでの開発ログ。</p>
+          <div class="card-meta"><span>実装ログ</span><span>近日公開</span></div>
+        </div>
+      </article>
+
+      <article class="card is-soon reveal" data-cat="daily">
+        <div class="player is-soon" data-youtube="">
+          <img src="/ax-kenkyujo/assets/podcast_recording.webp" alt="ラジオ収録の様子" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>#05 AX研究ラジオ、収録の裏側</h3>
+          <p>業界の業務フローを1本の設計図にまとめるまで。台本なしの討論番組ができるまでを公開。</p>
+          <div class="card-meta"><span>日常・裏側</span><span>近日公開</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <h2 class="sec-h"><small>Series</small>3つのシリーズ</h2>
+    <div class="series">
+      <div class="series-item reveal">
+        <div class="s-no">01 / Daily</div>
+        <h3>日常・裏側</h3>
+        <p>AX研究所の2人の働き方、使っているAIツール、収録やイベントの舞台裏。</p>
+      </div>
+      <div class="series-item reveal">
+        <div class="s-no">02 / Field</div>
+        <h3>現場密着</h3>
+        <p>お客様の現場に入り、詰まっている業務を見つけて、AIで作り直すまでを追う。</p>
+      </div>
+      <div class="series-item reveal">
+        <div class="s-no">03 / Build</div>
+        <h3>実装ログ</h3>
+        <p>MCP・エージェント・自動化の実装過程。うまくいかなかった試行錯誤も含めて。</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="container">
+    <div class="cta">
+      <h2>御社の現場も、<em>AIで作り直す。</em></h2>
+      <p>Vlogで撮影させていただける企業さまも募集中です。まずは30分の無料相談から。</p>
+      <a class="btn btn-primary btn-lg" href="mailto:info@sui-gen.jp?subject=%5BAX研究所%5D%20%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%E5%B8%8C%E6%9C%9B">無料相談を予約 <span class="arr">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="foot-grid">
+    <div class="foot-brand"><h4>AX<em>研究所</em></h4></div>
+    <div class="foot-col">
+      <h5>Service</h5>
+      <ul>
+        <li><a href="/ax-kenkyujo/#industries">業界マップ</a></li>
+        <li><a href="/ax-kenkyujo/#cases">事例</a></li>
+        <li><a href="/ax-kenkyujo/vlog/">Vlog</a></li>
+        <li><a href="/ax-kenkyujo/media/">メディア</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Team</h5>
+      <ul>
+        <li>SUI-GEN</li>
+        <li>丹野 / スポンサル</li>
+        <li><a href="/ax-kenkyujo/#team">プロフィール</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:info@sui-gen.jp">info@sui-gen.jp</a></li>
+        <li><a href="mailto:info@sui-gen.jp">無料相談を予約</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <span>© 2026 SUI-GEN, Inc. × Sponsaru, Inc.</span>
+    <span>AX研究所 / AX Partner for SMB</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // 動画：data-youtube に ID があれば再生ボタンを出し、クリックで iframe を読み込む
+  var playIcon = '<span class="btn-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>';
+  document.querySelectorAll('.player').forEach(function(p){
+    var id = (p.dataset.youtube || '').trim();
+    if (!id) {
+      var tag = document.createElement('div');
+      tag.className = 'soon-tag';
+      tag.innerHTML = '<span>COMING SOON</span>';
+      p.appendChild(tag);
+      return;
+    }
+    p.classList.remove('is-soon');
+    var b = document.createElement('button');
+    b.className = 'play'; b.type = 'button'; b.setAttribute('aria-label', '動画を再生');
+    b.innerHTML = playIcon;
+    b.addEventListener('click', function(){
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0';
+      f.title = 'AX研究所 Vlog';
+      f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+      f.allowFullscreen = true;
+      p.innerHTML = ''; p.appendChild(f);
+    });
+    p.appendChild(b);
+  });
+
+  // カテゴリフィルタ
+  var chips = document.querySelectorAll('#chips .chip');
+  var cards = document.querySelectorAll('#grid .card');
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('is-active'); });
+      c.classList.add('is-active');
+      var cat = c.dataset.cat;
+      cards.forEach(function(card){
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+      });
+    });
+  });
+
+  // reveal on scroll
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
