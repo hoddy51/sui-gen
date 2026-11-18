@@ -531,6 +531,12 @@ section{padding:clamp(96px,11vw,160px) 0;position:relative}
 .company-dl dd{font-size:14px;letter-spacing:.04em;color:var(--ink)}
 .company-dl dd a{color:var(--jade-deep)}
 .company-dl dd a:hover{text-decoration:underline}
+.news-item{display:grid;gap:14px;max-width:620px}
+.news-item__title{font-weight:700;font-size:15px;line-height:1.85;letter-spacing:.04em}
+.news-item__body{font-size:13.5px;line-height:2;letter-spacing:.03em;color:var(--ink-65);text-wrap:pretty}
+.news-item__points{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--rule)}
+.news-item__points li{padding:12px 0;border-bottom:1px solid var(--rule);font-size:13px;line-height:1.9;letter-spacing:.03em;color:var(--ink-65)}
+.news-item__points strong{display:block;font-size:13px;color:var(--ink)}
 .company-note{margin-top:18px;font-size:11.5px;letter-spacing:.04em;color:var(--ink-45)}
 
 /* ------------------------------------------------------------
